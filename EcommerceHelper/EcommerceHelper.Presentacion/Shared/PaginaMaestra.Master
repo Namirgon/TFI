@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestra" %>
+
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <title></title>
+      <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <style>
+
+.header p {
+ position: relative;
+ margin: 0 0 1.5em 0;
+ }
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+
+    header p {
+        position: relative;
+        margin: 0 0 1.5em 0;
+    }
+#header a {
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    /*text-decoration: none;
+    text-transform: uppercase;*/
+    font-weight: 700;
+    font-size: .85em;
+}
+
+    #header .inner {
+        max-width: 65em;
+        width: calc(100% - 6em);
+        margin: 0 auto;
+        position: relative;
+    }
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+    }
+}
+
+
+header p {
+    color: #717171;
+}
+
+#nav {
+    display: inline-block;
+}
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: antiquewhite;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+
+
+        </style>
+    <form id="form1" runat="server">
+        
+        <header id="header">
+
+            <div class="inner">
+                <a href="Default.aspx" class="logo">Helper</a>
+                
+                <nav id="nav">
+                    <a href="../Public/IniciarSesion.aspx">Iniciar Sesion</a>
+                    <a href="../Public/NuestrosServicios.aspx">Nuestros Servicios</a>
+                    <a href="../Private/IniciarSesionIntranet.aspx">Intranet</a>
+                    <a  >Idioma </a>
+                   
+                         <asp:DropDownList runat="server" style="width:200px;  margin-left:55px">
+                        <asp:ListItem>Español</asp:ListItem>
+                        <asp:ListItem>English</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+
+                    </asp:DropDownList>
+         
+                </nav>
+                   
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+      <div class="container body-content">
+    <footer >
+        <div >
+
+            <br />
+          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+      </div>
+</body>
+    
+</html>

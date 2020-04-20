@@ -1,0 +1,18 @@
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb

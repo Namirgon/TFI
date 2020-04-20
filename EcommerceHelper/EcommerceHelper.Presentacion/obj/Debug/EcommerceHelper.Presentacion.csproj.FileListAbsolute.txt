@@ -1,0 +1,236 @@
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll.config
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.pdb
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.exe
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.exe.config
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.rsp
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.exe
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.exe.config
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.rsp
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.AppContext.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Console.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Compression.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Claims.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.ValueTuple.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.exe
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.exe.config
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.rsp
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\VBCSCompiler.exe
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.BLL.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Entidades.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Funciones.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Helpers.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Razor.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Razor.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.BLL.pdb
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Entidades.pdb
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Funciones.pdb
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Helpers.xml
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Razor.xml
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.xml
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Razor.xml
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.Razor.resources.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csprojAssemblyReference.cache
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CopyComplete
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.dll
+C:\Users\Gonzi\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.pdb
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll.config
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.pdb
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.exe
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.rsp
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.exe
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.rsp
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.AppContext.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Console.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Compression.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Pipes.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Claims.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.ValueTuple.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.exe
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.rsp
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\VBCSCompiler.exe
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.BLL.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Funciones.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Helpers.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Razor.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Deployment.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Razor.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.BLL.pdb
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Funciones.pdb
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Helpers.xml
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Razor.xml
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.xml
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Deployment.xml
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Razor.xml
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.Helpers.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.Razor.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CopyComplete
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.dll
+C:\Users\natal\Desktop\UAI\5to Año\SAP\Nuevo Proyecto\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll.config
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.exe
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csc.rsp
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.exe
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\csi.rsp
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.AppContext.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Console.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Compression.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.IO.Pipes.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Claims.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.ValueTuple.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.exe
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\vbc.rsp
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\VBCSCompiler.exe
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.BLL.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.DAL.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Funciones.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Helpers.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Razor.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Deployment.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Razor.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.BLL.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.DAL.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Funciones.pdb
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Helpers.xml
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.Razor.xml
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.xml
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Deployment.xml
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\System.Web.WebPages.Razor.xml
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.Helpers.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.Razor.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CopyComplete
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.dll
+C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.pdb

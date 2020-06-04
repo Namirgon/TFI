@@ -91,7 +91,7 @@ header p {
 
         </style>
     <form id="form1" runat="server">
-        
+         <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
         <header id="header">
 
             <div class="inner">

@@ -15,7 +15,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
         }
         public void RealizarLogueo(string elUsuario, string laClave)
         {
@@ -23,7 +23,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             usuario.Email = elUsuario;
             usuario.Password = laClave;
 
-            //if (TXTEmail.Text == "")
+
             if (!string.IsNullOrEmpty(usuario.Email))
             {
                 EtiquetaEmail.Text = "Ingrese el Email";
@@ -37,46 +37,16 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 EtiquetaPassword.Text = "Ingrese la contraseña";
                 EtiquetaPassword.Visible = true;
             }
+            else {
+                Response.Redirect("/Views/Public/NuestrosServicios.aspx");
+            }
 
-            //if (!string.IsNullOrEmpty(usuario.Email))
-            //{
-            //usuario.Familia = unManagerFamilia.FamiliaSelectNombreFamiliaByIdUsuario(usuario.IdUsuario);
-            //Session["Usuario"] = usuario;
-            ////Session["Permiso"] = unaFamilia.IdFamilia;
-            //SetUsuarioLogueado(usuario.NombreUsuario);
-
-            //CargarListaDeseosEnSession();
-
-            //    if (usuario.IdUsuarioTipo == 2)
-            //    {
-            //        divLinkIntranet.Visible = true;
-            //        Response.Redirect("/Areas/Intranet/Forms/ordenespedido.aspx");
-            //    }
-
-            //    Response.Redirect(Request.RawUrl);
-            //}
-            //else
-            //{
-            //    MensajeError.InnerText = "Usuario no registrado!";
-            //}
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //string usuario = TXTEmail.Text;
-            //string clave = TXTPassword.Text;
-            BLL.UsuarioBLL BLLUsuario = new BLL.UsuarioBLL();
-            //UsuarioEntidad usu = new UsuarioEntidad();
-            BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
-        
-            //usu.Email = usuario;
-            //usu.Password = clave;
 
-        
-            //string Consulta = BLLUsuario.IniciarSesion(usuario, clave);
-
-
-            if (TXTEmail.Text == "")
+            if (TXTEmail.Text==" ")
 
             {
                 EtiquetaEmail.Text = "Ingrese el Email";
@@ -84,13 +54,31 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
             }
-            else if (TXTPassword.Text == "")
-                    {
+            else if (TXTPassword.Text == " ")
+            {
 
                 EtiquetaPassword.Text = "Ingrese la contraseña";
                 EtiquetaPassword.Visible = true;
             } 
 
+
+            
+                BLL.UsuarioBLL BLLUsuario = new BLL.UsuarioBLL();
+                BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
+            
+
+            //Response.Redirect("/ Views / Public / NuestrosServicios.aspx");
+            }
+
+        protected void TXTPassword_TextChanged(object sender, EventArgs e)
+        {
+           
         }
+
+       
     }
-}
+         
+
+           
+        }
+    

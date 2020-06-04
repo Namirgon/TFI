@@ -26,13 +26,16 @@
    <br />
    <br />
    <br />
-   <p style="margin-left:100px">Usuario <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
-       <asp:Label ID="EtiquetaEmail" runat="server" Text="Label" Visible="False" style=" margin-left:50px"></asp:Label>
-    </p> 
+  
+       <asp:Label ID="EtiquetaEmail" runat="server" Text="Usuario" visible="true"  style=" margin-left:100px">Usuario</asp:Label>
+       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
    <br />
-   <p style="margin-left:100px"> Contraseña <asp:TextBox ID="TXTPassword" runat="server" style="width:400px; margin-left:50px"></asp:TextBox> 
-       <asp:Label ID="EtiquetaPassword" runat="server" Text="Label" Visible="False" style=" margin-left:50px"></asp:Label>
-    </p>
+     <br />
+    <asp:Label ID="EtiquetaPassword2" runat="server" Text="Password"  style=" margin-left:100px">Password</asp:Label>
+    <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:60px"></asp:TextBox> 
+       <asp:Label ID="EtiquetaPassword" runat="server" Text="Label" visible="false" style=" margin-left:50px"></asp:Label>
+    
    <br />
   
    <br />

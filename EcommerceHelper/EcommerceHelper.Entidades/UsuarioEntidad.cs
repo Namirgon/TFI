@@ -37,4 +37,13 @@ namespace EcommerceHelper.Entidades
 
         #endregion
     }
+
+
+    //public  RegistrarUsuario(UsuarioEntidad usuario)
+    //{
+
+
+
+    //}
+
 }

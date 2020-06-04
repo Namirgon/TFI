@@ -13,7 +13,7 @@ namespace EcommerceHelper.Funciones.Persistencia
             internal set { }
         }
 
-        private static string _connectionStringName = ConfigurationManager.ConnectionStrings["DataContext"].ConnectionString;
+        private static string _connectionStringName = ConfigurationManager.ConnectionStrings["HelperDataBase"].ConnectionString;
         private static SqlTransaction tr;
         private static SqlCommand command;
         private static SqlConnection connection;

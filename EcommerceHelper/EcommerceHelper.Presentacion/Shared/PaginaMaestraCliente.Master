@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestraCliente.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestraCliente" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+   
+
+     <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
+        <header id="header">
+
+            <div class="inner">
+                <a href="Default.aspx" class="logo">Helper</a>
+                
+                <nav id="nav">
+                      <a href="../Private/IniciarSesionIntranet.aspx">Hola</a> <%--// poner nombre del Usuario--%>
+                    <a href="../Public/IniciarSesion.aspx"> Mis Datos</a>
+                    <a href="../Public/NuestrosServicios.aspx">Mis Compras</a>
+                    <a href="../Public/NuestrosServicios.aspx">Cerrar Sesion</a>
+                    
+         
+                </nav>
+                   
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+      <div class="container body-content">
+    <footer >
+        <div >
+
+            <br />
+          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+      </div>
+
+      <style>
+
+.header p {
+ position: relative;
+ margin: 0 0 1.5em 0;
+ }
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+
+    header p {
+        position: relative;
+        margin: 0 0 1.5em 0;
+    }
+#header a {
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    font-size:30px;
+    /*text-decoration: none;
+    text-transform: uppercase;*/
+    font-weight: 700;
+    font-size: .85em;
+}
+
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+    }
+    #header .inner {
+        max-width: 65em;
+        width: calc(100% - 6em);
+        margin: 0 auto;
+        position: relative;
+    }
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+    }
+}
+
+
+header p {
+    color: #717171;
+    font-size:25px;
+  
+}
+
+#nav {
+    display: inline-block;
+}
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: antiquewhite;
+    font-size: 35px;
+    text-transform: none;
+    font-weight: normal;
+}
+
+
+
+        </style>
+  
+</body>
+</html>

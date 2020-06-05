@@ -149,6 +149,7 @@
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
+    <Content Include="Views\Public\MenuPrincipal.aspx" />
     <Content Include="Views\Public\MiDireccion.aspx" />
     <Content Include="Views\Public\Pago.aspx" />
     <Content Include="Views\Public\Default.aspx" />
@@ -175,6 +176,20 @@
     </Compile>
     <Compile Include="Shared\PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PaginaMaestraAdministracion.Master.cs">
+      <DependentUpon>PaginaMaestraAdministracion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginaMaestraAdministracion.Master.designer.cs">
+      <DependentUpon>PaginaMaestraAdministracion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PaginaMaestraCliente.Master.cs">
+      <DependentUpon>PaginaMaestraCliente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginaMaestraCliente.Master.designer.cs">
+      <DependentUpon>PaginaMaestraCliente.Master</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\AltaEmpleado.aspx.cs">
       <DependentUpon>AltaEmpleado.aspx</DependentUpon>
@@ -203,6 +218,13 @@
     </Compile>
     <Compile Include="Views\Private\IniciarSesionIntranet.aspx.designer.cs">
       <DependentUpon>IniciarSesionIntranet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\MenuPrincipal.aspx.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\MenuPrincipal.aspx.designer.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\MiDireccion.aspx.cs">
       <DependentUpon>MiDireccion.aspx</DependentUpon>
@@ -286,6 +308,8 @@
     <None Include="packages.config" />
     <Content Include="Content\Scripts\jquery-1.10.2.min.map" />
     <Content Include="Shared\PaginaMaestra.Master" />
+    <Content Include="Shared\PaginaMaestraAdministracion.Master" />
+    <Content Include="Shared\PaginaMaestraCliente.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

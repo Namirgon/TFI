@@ -58,9 +58,14 @@
     #header .inner {
         max-width: 90%;
         width: 90%;
+        text-align:left;
     }
 }
-
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+    }
 
 header p {
     color: #717171;
@@ -74,6 +79,7 @@ header p {
 #header .logo {
     font-family: 'Pacifico', cursive;
     display: inline-block;
+    text-align:left;
     height: inherit;
     left: 0;
     line-height: inherit;

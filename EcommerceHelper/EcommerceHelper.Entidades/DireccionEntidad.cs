@@ -21,9 +21,19 @@ namespace EcommerceHelper.Entidades
 
         public string Departamento { get; set; }
 
+        public ProvinciaEntidad MiProvincia { get; set; }
+
+        public int IdProvincia { get; set; }
+
         public LocalidadEntidad MiLocalidad { get; set; }
 
+        public int IdLocalidad { get; set; }
+
         public TipoDireccionEntidad MiTipoDireccion { get; set; }
+
+        public int IdTipoDireccion { get; set; }
+
+
 
         #endregion
     }

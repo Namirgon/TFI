@@ -31,3 +31,14 @@ C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\Ecomm
 C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.csproj.CopyComplete
 C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.dll
 C:\Users\natal\Desktop\UAI\5to Año\TFI\Proyecto Final TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\bin\Debug\EcommerceHelper.DAL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\bin\Debug\EcommerceHelper.DAL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\bin\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\bin\Debug\EcommerceHelper.Funciones.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\bin\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\bin\Debug\EcommerceHelper.Funciones.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.csproj.CopyComplete
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.DAL\obj\Debug\EcommerceHelper.DAL.pdb

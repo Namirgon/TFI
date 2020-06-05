@@ -26,13 +26,22 @@
    <br />
    <br />
    <br />
-   <p style="margin-left:300px; color:white">Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <input type="email" placeholder="Correo electronico" style="width:400px; margin-left:50px"></p> 
+    <br />
+  
+       <asp:Label ID="EtiquetaEmail" runat="server" Text="Usuario" visible="true"  style=" margin-left:200px; color:aliceblue">Usuario</asp:Label>
+       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
    <br />
-   <p style="margin-left:300px;  color:white;"> Contraseña  <input type="password" placeholder="Contraseña" style="width:400px; margin-left:50px"></p>
+     <br />
+    <asp:Label ID="EtiquetaPassword2" runat="server" Text="Password"  style=" margin-left:200px; color:aliceblue">Password</asp:Label>
+    <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:60px"></asp:TextBox> 
+       <asp:Label ID="EtiquetaPassword" runat="server" Text="Label" visible="false" style=" margin-left:50px"></asp:Label>
+    
    <br />
   
    <br />
-   <asp:Button style="margin-left:400px " ID="Button1" runat="server" Text="Aceptar"  Width="150px" />
+
+       <asp:Button style="margin-left:250px " ID="BtnAceptar" runat="server" Text="Aceptar"  Width="150px" OnClick="Button1_Click" />
    <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar" Width="150px" PostBackUrl ="~/Views/Public/Default.aspx" />
    <br />
    <br />

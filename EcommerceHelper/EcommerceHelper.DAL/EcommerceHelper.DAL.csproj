@@ -43,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSqlServer.cs" />
+    <Compile Include="DireccionDAL.cs" />
     <Compile Include="LocalidadDAL.cs" />
     <Compile Include="NuevaConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinciaDAL.cs" />
     <Compile Include="SexoDAL.cs" />
+    <Compile Include="TipoDomicilioDAL.cs" />
     <Compile Include="TipoTelefonoDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>

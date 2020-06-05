@@ -11,8 +11,12 @@ namespace EcommerceHelper.BLL
 {
     public class DireccionBLL
     {
+       
+       
+
         private LocalidadDAL GestorLocalidad = new LocalidadDAL();
         private ProvinciaDAL GestorProvincia = new ProvinciaDAL();
+        private TipoDomicilioDAL GestorTipoDomicilio = new TipoDomicilioDAL();
 
         public List<ProvinciaEntidad> SelectALLProvincias()
         {
@@ -23,6 +27,17 @@ namespace EcommerceHelper.BLL
             unasProv.ForEach(X => X.misLocalidades = unasLocal.Where(y => y.MiProvincia.IdProvincia == X.IdProvincia).ToList());
             return unasProv;
         }
+        public List<TipoDireccionEntidad> SelectALLTipoDomicilio()
+        {
+            TipoDomicilioBLL GestorTipoDomicilio = new TipoDomicilioBLL();
+
+            return GestorTipoDomicilio.SelectALLTipoDomicilio();
+
+
+            //return DalDeProvincia.SelectAll();
+        }
+
+
 
     }
 }

@@ -35,15 +35,11 @@ namespace EcommerceHelper.Entidades
 
         public int NumeroTelefono { get; set; }
 
+        public int IdUsuarioTipo { get; set; }
+
         #endregion
     }
 
 
-    //public  RegistrarUsuario(UsuarioEntidad usuario)
-    //{
-
-
-
-    //}
-
+   
 }

@@ -29,6 +29,48 @@ namespace EcommerceHelper.DAL
                 entidad = Mapeador.MapearFirst<UsuarioEntidad>(dt);
                 return entidad;
             }
+
+
+        }
+        public void Insert(UsuarioEntidad usuario)
+        {
+            ValidationUtility.ValidateArgument("usuario", usuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+
+                new SqlParameter("@IdTipoUsuario", usuario.IdUsuarioTipo),
+                new SqlParameter("@Nombre", usuario.Nombre),
+                new SqlParameter("@Apellido", usuario.Apellido),
+                //new SqlParameter("@IdTipoDocumento", usuario.MiDocumento.IdTipoDeDocumento),
+                new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
+                new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
+              //  new SqlParameter("@IdDireccion", usuario.MiDireccion),
+                new SqlParameter("@Email", usuario.Email),
+                new SqlParameter("@Password", usuario.Password),
+                new SqlParameter("@IdTipoTelefono", usuario.MiTelefono.IdTipoTelefono),
+                new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
+            };
+
+            var Resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioInsert", parameters);
+            int IdUsuarioRes = Decimal.ToInt32(Resultado);
+            usuario.IdUsuario = IdUsuarioRes;
+        }
+
+        public void UsuarioDireccionCrear(DireccionEntidad direccionUsuario, UsuarioEntidad elUsuario)
+        {
+            ValidationUtility.ValidateArgument("UsuarioDireccion", direccionUsuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdDireccion", direccionUsuario.IdDireccion),
+                new SqlParameter("@IdUsuario", elUsuario.IdUsuario),
+                new SqlParameter("@NumeroDocumento", elUsuario.NumeroDocumento),
+
+
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "DireccionUsuarioInsert", parameters);
         }
     }
 }

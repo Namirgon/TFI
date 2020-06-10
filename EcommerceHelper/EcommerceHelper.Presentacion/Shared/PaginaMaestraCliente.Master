@@ -10,19 +10,18 @@
    
 
     <asp:ContentPlaceHolder ID="head" runat="server">
+
+       
     </asp:ContentPlaceHolder>
 
 </head>
 <body>
-    
-    <%-- <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
-</asp:Content>--%>
+ 
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         
+   
             </asp:ContentPlaceHolder>
         </div>
    
@@ -38,10 +37,10 @@
                     <a href="../Public/IniciarSesion.aspx"> Mis Datos</a>
                     <a href="../Public/NuestrosServicios.aspx">Mis Compras</a>
                     <a href="../Public/NuestrosServicios.aspx">Cerrar Sesion</a>
-                    
-         
+                    <a><asp:Label ID="lblPedido" runat="server" Text=" Pedido "></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
+
+       
                 </nav>
-                   
             </div>
         </header>
         <div>
@@ -146,6 +145,26 @@ header p {
     font-weight: normal;
 }
 
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon-shopping-cart:before {
+    content: "\e116";
+}
 
 
         </style>

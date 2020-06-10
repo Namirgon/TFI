@@ -94,6 +94,8 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\miEstilo.css" />
     <Content Include="Content\css\Site.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Image\banner-curso-degrade.png" />
     <Content Include="Content\Image\banner.jpg" />
     <Content Include="Content\Image\banner2.jpg" />
@@ -134,6 +136,15 @@
     <Content Include="Content\Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Content\Scripts\bootstrap.js.map" />
     <Content Include="Content\Scripts\bootstrap.min.js.map" />
+    <Content Include="Content\fonts\bungee.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.min.js" />

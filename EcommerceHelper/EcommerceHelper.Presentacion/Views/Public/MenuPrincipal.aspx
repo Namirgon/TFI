@@ -2,8 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <link rel="stylesheet" href="../../Content/css/font-awesome.min.css" />
      <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="../../Content/css/bootstrap.css" />
+    <link href="../../Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
      <script src="../../Content/Scripts/modernizr-2.6.2.js"></script>
+    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -57,6 +59,8 @@
         </FooterTemplate>
 
     </asp:Repeater>
+
+     </div>
 
      </div>
      

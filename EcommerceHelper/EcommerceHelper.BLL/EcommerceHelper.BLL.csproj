@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="DireccionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioBLL.cs" />
     <Compile Include="SexoBLL.cs" />
     <Compile Include="TipoDomicilioBLL.cs" />
     <Compile Include="TipoTelefonoBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
+    <Compile Include="_ServicioDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EcommerceHelper.DAL\EcommerceHelper.DAL.csproj">

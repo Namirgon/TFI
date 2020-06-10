@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="DetalleServicio.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Public.Pedido" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestraCliente.Master" AutoEventWireup="true" CodeBehind="DetalleServicio.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Public.Pedido" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 

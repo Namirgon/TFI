@@ -2,16 +2,24 @@
 
 <!DOCTYPE html>
 
+
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+   
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
-
-
+    
+    <%-- <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h2><%: Title %>.</h2>
+    <h3>Your application description page.</h3>
+    <p>Use this area to provide additional information.</p>
+</asp:Content>--%>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

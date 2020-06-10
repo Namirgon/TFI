@@ -31,9 +31,9 @@
             limpieza de alfombras y cortinas<br />
             Consulta planes a tu medida!
         </p>  
-        <p style="margin-left:15px "><a class="btn btn-primary" href="DetalleServicio.aspx">Comprar</a></p>
+        <p style="margin-left:15px "><a class="btn btn-primary" href="IniciarSesion.aspx">Comprar</a></p>
      
-        <img style="margin-left:15px " src="../../Content/Image/sra vontage.jpg"/ >
+        <img style="margin-left:15px " src="../../Content/Image/sravintage.jpg"/ >
        
          </div>
     <div class="col-md-4">
@@ -45,7 +45,7 @@
             Panas y telas<br />
             Recupera la vida de tus muebles! </p>
         
-        <p><a class="btn btn-primary" href="DetalleServicio.aspx">Comprar</a></p>
+        <p><a class="btn btn-primary" href="IniciarSesion.aspx">Comprar</a></p>
         <img style="width:75%"  src="../../Content/Image/sillon.png"/>
         
         
@@ -64,8 +64,8 @@
                 Enrollables y mucho mas! <br/>
 
         </p>
-          <p><a class="btn btn-primary" href="DetalleServicio.aspx">Comprar</a></p>
-         <img  style="width:70%" src="../../Content/Image/Limpieza de cortinas.jpg"/>
+          <p><a class="btn btn-primary" href="IniciarSesion.aspx">Comprar</a></p>
+         <img  style="width:70%" src="../../Content/Image/Limpiezadecortinas.jpg"/>
       
         
     </div>
@@ -83,7 +83,7 @@
             living, cocinas, playroom y mas..<br />
             Consulta planes a tu medida!
         </p>  
-           <p style="margin-left:15px "><a class="btn btn-primary" href="DetalleServicio.aspx">Comprar</a></p>
+           <p style="margin-left:15px "><a class="btn btn-primary" href="IniciarSesion.aspx">Comprar</a></p>
          <img style="width:60%; border: groove; margin-left:15px "   src="../../Content/Image/domestica2.png"/>
       
          </div>
@@ -95,8 +95,8 @@
             Galerias y mas!!
 
         </p>
-          <p><a class="btn btn-primary" href="DetalleServicio.aspx">Comprar</a></p>
-         <img  style="width:65%" src="../../Content/Image/piso exteior.jpg"/>
+          <p><a class="btn btn-primary" href="IniciarSesion.aspx">Comprar</a></p>
+         <img  style="width:65%" src="../../Content/Image/pisoexteior.jpg"/>
       
       
         

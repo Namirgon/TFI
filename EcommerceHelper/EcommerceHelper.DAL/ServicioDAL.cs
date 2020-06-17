@@ -3,6 +3,7 @@ using EcommerceHelper.Funciones.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,25 @@ namespace EcommerceHelper.DAL
             }
 
         }
+        public ServicioEntidad Select(int IdServicio)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                
+                new SqlParameter("@IdSericio", IdServicio)
+            };
+
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ServicioSelect", parameters))
+            {
+
+                ServicioEntidad Producto = new ServicioEntidad();
+
+                Producto = MapearMuchos(dt).First();
+
+                return Producto;
+            }
+        }
+
 
 
 

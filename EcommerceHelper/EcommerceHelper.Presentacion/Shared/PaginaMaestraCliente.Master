@@ -7,10 +7,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-   
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="../Content/Scripts/jquery.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
-
+        
        
     </asp:ContentPlaceHolder>
 
@@ -33,18 +35,18 @@
                 <a href="Default.aspx" class="logo">Helper</a>
                 
                 <nav id="nav">
-                      <a href="../Private/IniciarSesionIntranet.aspx">Hola</a> <%--// poner nombre del Usuario--%>
+                      <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
                     <a href="../Public/IniciarSesion.aspx"> Mis Datos</a>
                     <a href="../Public/NuestrosServicios.aspx">Mis Compras</a>
-                    <a href="../Public/NuestrosServicios.aspx">Cerrar Sesion</a>
-                    <a><asp:Label ID="lblPedido" runat="server" Text=" Pedido "></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
-
+               <%--     <asp:Button ID="BtnCerrarSesion" runat="server" Text="Cerrar Sesion" OnClick="CerrarSesion" />--%>
+                    <a href="../Public/Default.aspx">Cerrar Sesion</a>
+                    <a><asp:Label runat="server" Text=" Pedido "></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
        
                 </nav>
             </div>
         </header>
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
 
 
             </asp:ContentPlaceHolder>
@@ -145,7 +147,7 @@ header p {
     font-weight: normal;
 }
 
-.glyphicon {
+/*.glyphicon {
     position: relative;
     top: 1px;
     display: inline-block;
@@ -164,7 +166,7 @@ header p {
 
 .glyphicon-shopping-cart:before {
     content: "\e116";
-}
+}*/
 
 
         </style>

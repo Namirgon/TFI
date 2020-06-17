@@ -11,11 +11,63 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <style>
+
+    <form id="form1" runat="server">
+         <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
+        <header id="header">
+
+            <div class="inner">
+                <a href="Default.aspx" class="logo">Helper</a>
+                
+                <nav id="nav">
+                    <a href="../Public/IniciarSesion.aspx">Iniciar Sesion</a>
+                    <a href="../Public/NuestrosServicios.aspx">Nuestros Servicios</a>
+                    <a href="../Private/IniciarSesionIntranet.aspx">Intranet</a>
+                    <a  >Idioma </a>
+                   
+                         <asp:DropDownList runat="server" style="width:200px;  margin-left:55px">
+                        <asp:ListItem>Español</asp:ListItem>
+                        <asp:ListItem>English</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+
+                    </asp:DropDownList>
+         
+                </nav>
+                   
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+
+      <div class="container body-content">
+    <footer >
+        <div >
+
+            <br />
+          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+      </div>
+ 
+
+
+
+</body>
+    
+</html>
+<style>
 
 .header p {
  position: relative;
  margin: 0 0 1.5em 0;
+ 
  }
 #header {
     background: #1c1c1c;
@@ -29,11 +81,14 @@
     top: 0;
     width: 100%;
     z-index: 10001;
+  
+
 }
 
     header p {
         position: relative;
         margin: 0 0 1.5em 0;
+        
     }
 #header a {
     transition: color 0.2s ease-in-out;
@@ -44,6 +99,7 @@
     text-transform: uppercase;*/
     font-weight: 700;
     font-size: .85em;
+    
 }
 
     #header .inner {
@@ -96,48 +152,4 @@ header p {
 
 
         </style>
-    <form id="form1" runat="server">
-         <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
-        <header id="header">
 
-            <div class="inner">
-                <a href="Default.aspx" class="logo">Helper</a>
-                
-                <nav id="nav">
-                    <a href="../Public/IniciarSesion.aspx">Iniciar Sesion</a>
-                    <a href="../Public/NuestrosServicios.aspx">Nuestros Servicios</a>
-                    <a href="../Private/IniciarSesionIntranet.aspx">Intranet</a>
-                    <a  >Idioma </a>
-                   
-                         <asp:DropDownList runat="server" style="width:200px;  margin-left:55px">
-                        <asp:ListItem>Español</asp:ListItem>
-                        <asp:ListItem>English</asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-
-                    </asp:DropDownList>
-         
-                </nav>
-                   
-            </div>
-        </header>
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
-
-            </asp:ContentPlaceHolder>
-        </div>
-
-    </form>
-      <div class="container body-content">
-    <footer >
-        <div >
-
-            <br />
-          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
-        </div>
-        
-    </footer>
-      </div>
-</body>
-    
-</html>

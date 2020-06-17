@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EcommerceHelper.BLL;
 using EcommerceHelper.Entidades;
+
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
@@ -12,10 +14,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
     {
 
         //DAL.NuevaConexion cn = new DAL.NuevaConexion();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+
         }
         public void RealizarLogueo(string elUsuario, string laClave)
         {
@@ -24,61 +27,34 @@ namespace EcommerceHelper.Presentacion.Views.Public
             usuario.Password = laClave;
 
 
-            if (!string.IsNullOrEmpty(usuario.Email))
-            {
-                EtiquetaEmail.Text = "Ingrese el Email";
-                EtiquetaEmail.Visible = true;
-
-
-            }
-            else if (!string.IsNullOrEmpty(usuario.Password))
-            {
-
-                EtiquetaPassword.Text = "Ingrese la contraseña";
-                EtiquetaPassword.Visible = true;
-            }
-            else {
-                Response.Redirect("/Views/Public/NuestrosServicios.aspx");
-            }
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            UsuarioBLL BLLUsuario = new UsuarioBLL();
+            UsuarioEntidad usuario = new UsuarioEntidad();
+            usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
 
-            if (TXTEmail.Text==" ")
+            if (usuario != null)
 
             {
-                EtiquetaEmail.Text = "Ingrese el Email";
-                EtiquetaEmail.Visible = true;
-
-
+                Session["NomUsuario"] = usuario.Nombre;
+                Response.Redirect("/Views/Public/MenuPrincipal.aspx");
             }
-            else if (TXTPassword.Text == " ")
+            else
             {
-
-                EtiquetaPassword.Text = "Ingrese la contraseña";
-                EtiquetaPassword.Visible = true;
-            } 
-
-
-            
-                BLL.UsuarioBLL BLLUsuario = new BLL.UsuarioBLL();
-                BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
-            
-
-            //Response.Redirect("/ Views / Public / NuestrosServicios.aspx");
+                Response.Write("<script>alert('usuario o clave incorrecta')</script>");
+                limpiarCampos();
             }
+        }
 
-        protected void TXTPassword_TextChanged(object sender, EventArgs e)
+        public void limpiarCampos()
         {
-           
+            TXTEmail.Text = string.Empty;
+            TXTPassword.Text = string.Empty;
+
         }
 
-       
     }
-         
-
-           
-        }
+             }
     

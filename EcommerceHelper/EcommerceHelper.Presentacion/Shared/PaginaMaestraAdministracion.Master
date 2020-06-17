@@ -23,7 +23,7 @@
                 <a href="Default.aspx" class="logo">Helper</a>
                 
                 <nav id="nav">
-                      <a href="../Private/IniciarSesionIntranet.aspx">Hola</a> <%--// poner nombre del Usuario--%>
+                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
                      <a href="../Public/IniciarSesion.aspx"> Comercial</a>
                     <a href="../Public/IniciarSesion.aspx"> Facturacion</a>
                     <a href="../Public/NuestrosServicios.aspx">RRHH</a>

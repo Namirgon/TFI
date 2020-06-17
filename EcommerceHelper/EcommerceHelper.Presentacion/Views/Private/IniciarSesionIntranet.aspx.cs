@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.Entidades;
+﻿using EcommerceHelper.BLL;
+using EcommerceHelper.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,53 +23,34 @@ namespace EcommerceHelper.Presentacion.Views.Private
             usuario.Password = laClave;
 
 
-            if (!string.IsNullOrEmpty(usuario.Email))
-            {
-                EtiquetaEmail.Text = "Ingrese el Email";
-                EtiquetaEmail.Visible = true;
-
-
-            }
-            else if (!string.IsNullOrEmpty(usuario.Password))
-            {
-
-                EtiquetaPassword.Text = "Ingrese la contraseña";
-                EtiquetaPassword.Visible = true;
-            }
-            else
-            {
-                Response.Redirect("/Views/Public/NuestrosServicios.aspx");
-            }
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        {
+        { 
 
-            if (TXTEmail.Text == " ")
+         UsuarioBLL BLLUsuario = new UsuarioBLL();
+         UsuarioEntidad usuario = new UsuarioEntidad();
+         usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
+
+            if (usuario != null)
 
             {
-                EtiquetaEmail.Text = "Ingrese el Email";
-                EtiquetaEmail.Visible = true;
-
-
+                Session["NomUsuario"] = usuario.Nombre;
+                Response.Redirect("/Views/Private/AltaEmpleado.aspx");
             }
-            else if (TXTPassword.Text == " ")
+            else
             {
-
-                EtiquetaPassword.Text = "Ingrese la contraseña";
-                EtiquetaPassword.Visible = true;
-            }
-
-
-
-            BLL.UsuarioBLL BLLUsuario = new BLL.UsuarioBLL();
-            BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
-
-
-            //Response.Redirect("/ Views / Public / NuestrosServicios.aspx");
+                Response.Write("<script>alert('usuario o clave incorrecta')</script>");
+                limpiarCampos();
+}
         }
 
+        public void limpiarCampos()
+        {
+           TXTEmail.Text = string.Empty;
+          TXTPassword.Text = string.Empty;
+
+        }           
 
 
 

@@ -47,6 +47,10 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -118,6 +122,7 @@
     <Content Include="Content\Image\tweeter.png" />
     <Content Include="Content\Scripts\bootstrap.bundle.js" />
     <Content Include="Content\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Content\Scripts\jquery.min.js" />
     <Content Include="Content\Scripts\jquery.mousewheel-3.0.6.min.js" />
     <Content Include="Content\Scripts\jquery.rondell.css" />
     <Content Include="Content\Scripts\jquery.rondell.js" />
@@ -156,6 +161,33 @@
     <Content Include="Content\Scripts\modernizr-2.6.2.js" />
     <Content Include="Content\Scripts\respond.js" />
     <Content Include="Content\Scripts\respond.min.js" />
+    <Content Include="Script\Shared\Funciones.js" />
+    <Content Include="Script\Shared\Validaciones.js" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_highlight-hard_20_0972a5_1x100.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_highlight-soft_33_003147_1x100.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_highlight-soft_35_222222_1x100.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_highlight-soft_44_444444_1x100.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-bg_loop_25_000000_21x21.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-icons_222222_256x240.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-icons_a83300_256x240.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Script\Thirdparty\Autocomplete\jquery-ui.css" />
+    <Content Include="Script\Thirdparty\Autocomplete\jquery-ui.js" />
+    <Content Include="Script\Thirdparty\Autocomplete\jquery.js" />
+    <Content Include="Script\Thirdparty\bootstrap.js" />
+    <Content Include="Script\Thirdparty\bootstrap.min.js" />
+    <None Include="Script\Thirdparty\jquery-3.4.1.intellisense.js" />
+    <Content Include="Script\Thirdparty\jquery-3.4.1.js" />
+    <Content Include="Script\Thirdparty\jquery-3.4.1.min.js" />
+    <Content Include="Script\Thirdparty\jquery-3.4.1.slim.js" />
+    <Content Include="Script\Thirdparty\jquery-3.4.1.slim.min.js" />
+    <Content Include="Script\Thirdparty\jquery.signalR-2.1.2.js" />
+    <Content Include="Script\Thirdparty\jquery.signalR-2.1.2.min.js" />
+    <Content Include="Script\Thirdparty\jquery.timeago.js" />
     <Content Include="Views\Private\AltaEmpleado.aspx" />
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
@@ -321,6 +353,8 @@
     <Content Include="Shared\PaginaMaestra.Master" />
     <Content Include="Shared\PaginaMaestraAdministracion.Master" />
     <Content Include="Shared\PaginaMaestraCliente.Master" />
+    <Content Include="Script\Thirdparty\jquery-3.4.1.min.map" />
+    <Content Include="Script\Thirdparty\jquery-3.4.1.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

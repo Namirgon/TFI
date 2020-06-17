@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TFI.Entidades.Servicios.Permisos;
 
 namespace EcommerceHelper.Entidades
 {
@@ -38,8 +39,36 @@ namespace EcommerceHelper.Entidades
         public int IdUsuarioTipo { get; set; }
 
         #endregion
+
+        public List<ListaDeDeseoEntidad> misDeseos { get; set; }
+       
+
+        private FamiliaEntidad _Familia = new FamiliaEntidad();
+
+        public FamiliaEntidad Familia
+        {
+            get
+            {
+                return _Familia;
+            }
+            set
+            {
+                _Familia = value;
+            }
+        }
+
+
+        private List<IFamPat> _Permisos = new List<IFamPat>();
+
+        public List<IFamPat> Permisos
+        {
+            get { return _Permisos; }
+            set { _Permisos = value; }
+        }
+
+
     }
 
 
-   
+
 }

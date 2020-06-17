@@ -11,7 +11,17 @@ namespace EcommerceHelper.Presentacion.Shared
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string nombre = Session["NomUsuario"].ToString();
+                lblNombreUsuario.Text = " Hola " + nombre;
 
+            }
+            catch (Exception ex)
+            {
+
+                Response.Redirect("/Views/Public/Default.aspx");
+            }
         }
     }
 }

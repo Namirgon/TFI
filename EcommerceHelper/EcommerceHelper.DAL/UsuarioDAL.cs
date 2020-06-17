@@ -27,9 +27,21 @@ namespace EcommerceHelper.DAL
             {
                 UsuarioEntidad entidad = new UsuarioEntidad();
                 entidad = Mapeador.MapearFirst<UsuarioEntidad>(dt);
-                return entidad;
+
+
+                if (entidad.Email != null && entidad.Password!=null)
+                {
+                    return entidad;
+                } 
+                else
+                {
+                    return null;
+
+                }
             }
 
+
+  
 
         }
         public void Insert(UsuarioEntidad usuario)

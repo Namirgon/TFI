@@ -23,13 +23,15 @@ namespace EcommerceHelper.BLL
 
             try
             {
-
-                return _DalUsuario.BuscarUsuario(Email, Password);
-
+              
+                    return _DalUsuario.BuscarUsuario(Email, Password);
+        
             }
             catch (Exception ex)
             {
-                throw ex;
+
+
+                throw ex;   
 
             }
 

@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="ConexionSqlServer.cs" />
     <Compile Include="DireccionDAL.cs" />
+    <Compile Include="FamiliaDAL.cs" />
+    <Compile Include="ListaDeseoDAL.cs" />
     <Compile Include="LocalidadDAL.cs" />
     <Compile Include="NuevaConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

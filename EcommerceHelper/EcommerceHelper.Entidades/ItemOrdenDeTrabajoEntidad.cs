@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcommerceHelper.Entidades
 {
-   public  class ItemOrdenDeTrabajoEntidad
+    public class ItemOrdenDeTrabajoEntidad
     {
 
         #region properties
@@ -15,13 +15,17 @@ namespace EcommerceHelper.Entidades
 
         public ServicioEntidad MiServicio { get; set; }
 
-        public OrdenDeTrabajoEntidad MiOrdenDeTrabajo { get; set; }
+       
 
         public UsuarioEntidad MiUsuario { get; set; }
 
-        public int Cantidad { get; set; }
+        public UsuarioEntidad MiDNI { get; set; }
 
+        public DireccionEntidad MiDireccion { get; set; }
         public decimal Precio { get; set; }
+
+        public DateTime Fecha { get; set; }
+        public DateTime Hora { get; set; }
 
 
         #endregion

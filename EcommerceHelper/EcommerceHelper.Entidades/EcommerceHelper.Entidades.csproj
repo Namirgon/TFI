@@ -49,6 +49,7 @@
     <Compile Include="FormaDePagoEntidad.cs" />
     <Compile Include="IdiomaEntidad.cs" />
     <Compile Include="ItemOrdenDeTrabajoEntidad.cs" />
+    <Compile Include="ListaDeDeseoEntidad.cs" />
     <Compile Include="LocalidadEntidad.cs" />
     <Compile Include="MultiIdiomaEntidad.cs" />
     <Compile Include="OrdenDeTrabajoEntidad.cs" />
@@ -57,6 +58,9 @@
     <Compile Include="ProvinciaEntidad.cs" />
     <Compile Include="ReciboEntidad.cs" />
     <Compile Include="ServicioEntidad.cs" />
+    <Compile Include="Servicios\Permisos\Familia.cs" />
+    <Compile Include="Servicios\Permisos\IFamPat.cs" />
+    <Compile Include="Servicios\Permisos\Patente.cs" />
     <Compile Include="SexoEntidad.cs" />
     <Compile Include="SucursalEntidad.cs" />
     <Compile Include="TarjetaEntidad.cs" />

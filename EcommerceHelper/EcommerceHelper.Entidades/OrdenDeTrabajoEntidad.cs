@@ -14,7 +14,6 @@ namespace EcommerceHelper.Entidades
         public UsuarioEntidad MiUsuario { get; set; }
 
 
-        public string Detalle { get; set; }
 
         public DateTime Fecha { get; set; }
 

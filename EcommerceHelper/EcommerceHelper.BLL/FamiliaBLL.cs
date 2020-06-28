@@ -138,17 +138,17 @@ namespace EcommerceHelper.BLL
             }
         }
 
-        public List<UsuarioEntidad> FamiliaUsuariosAsociados(int IdFamilia)
-        {
-            try
-            {
-                return GestorFamilia.FamiliaUsuariosAsociados(IdFamilia);
-            }
-            catch (Exception es)
-            {
-                throw;
-            }
-        }
+        //public List<UsuarioEntidad> FamiliaUsuariosAsociados(int IdFamilia)
+        //{
+        //    try
+        //    {
+        //        return GestorFamilia.FamiliaUsuariosAsociados(IdFamilia);
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        throw;
+        //    }
+        //}
 
 
         public static bool BuscarPermiso(List<IFamPat> PermisosVer, string[] unTagControl)

@@ -7,12 +7,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
+          <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/css/bootstrap.css" rel="stylesheet" />
     <script src="../Content/Scripts/jquery.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
-        
+  
        
     </asp:ContentPlaceHolder>
 
@@ -30,20 +30,19 @@
 
      <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
         <header id="header">
-
+<%--          ----------------------------------------------------  Menu del cliente ---------------------------------------------------------------------%>
             <div class="inner">
-                <a href="Default.aspx" class="logo">Helper</a>
+                <a href="Default.aspx" class="logo" >Helper</a>
                 
                 <nav id="nav">
-                      <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
+                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
                     <a href="../Public/IniciarSesion.aspx"> Mis Datos</a>
-                    <a href="../Public/NuestrosServicios.aspx">Mis Compras</a>
-               <%--     <asp:Button ID="BtnCerrarSesion" runat="server" Text="Cerrar Sesion" OnClick="CerrarSesion" />--%>
                     <a href="../Public/Default.aspx">Cerrar Sesion</a>
-                    <a><asp:Label runat="server" Text=" Pedido "></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a href="../Public/Pedido.aspx"><asp:Label runat="server" Text=" Pedido "></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
        
                 </nav>
             </div>
+    <%------------------------------------------------------ fin del Menu del cliente ---------------------------------------------------------------------%>
         </header>
         <div>
             <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
@@ -64,11 +63,12 @@
     </footer>
       </div>
 
-      <style>
+<style>
 
 .header p {
  position: relative;
  margin: 0 0 1.5em 0;
+ 
  }
 #header {
     background: #1c1c1c;
@@ -82,33 +82,35 @@
     top: 0;
     width: 100%;
     z-index: 10001;
+  
+
 }
 
     header p {
         position: relative;
         margin: 0 0 1.5em 0;
+        
     }
 #header a {
     transition: color 0.2s ease-in-out;
     display: inline-block;
     padding: 0 2em;
     color: #ffffff;
-    font-size:30px;
     /*text-decoration: none;
     text-transform: uppercase;*/
     font-weight: 700;
     font-size: .85em;
+    text-decoration: none;
+    
 }
 
- #header nav a {
-        font-size:18px;
-        color:antiquewhite;
-    }
     #header .inner {
         max-width: 65em;
         width: calc(100% - 6em);
         margin: 0 auto;
         position: relative;
+        top: -5px;
+        left: 1px;
     }
 
 @media screen and (max-width: 480px) {
@@ -116,14 +118,17 @@
     #header .inner {
         max-width: 90%;
         width: 90%;
+        text-align:left;
     }
 }
-
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+    }
 
 header p {
     color: #717171;
-    font-size:25px;
-  
 }
 
 #nav {
@@ -134,6 +139,7 @@ header p {
 #header .logo {
     font-family: 'Pacifico', cursive;
     display: inline-block;
+    text-align:left;
     height: inherit;
     left: 0;
     line-height: inherit;
@@ -142,31 +148,12 @@ header p {
     position: absolute;
     top: 0;
     color: antiquewhite;
-    font-size: 35px;
+    font-size: 1.75em;
     text-transform: none;
     font-weight: normal;
+  
 }
 
-/*.glyphicon {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('../fonts/glyphicons-halflings-regular.eot');
-    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-.glyphicon-shopping-cart:before {
-    content: "\e116";
-}*/
 
 
         </style>

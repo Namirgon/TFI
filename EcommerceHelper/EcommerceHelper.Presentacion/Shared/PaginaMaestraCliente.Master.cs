@@ -11,13 +11,16 @@ namespace EcommerceHelper.Presentacion.Shared
     public partial class PaginaMaestraCliente : System.Web.UI.MasterPage
     {
         private HttpContext Current = HttpContext.Current;
+        public UsuarioEntidad usuario { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             try
             {
-                string nombre = Session["NomUsuario"].ToString();
-                lblNombreUsuario.Text = " Hola " + nombre;
-               
+                string nombre = Session["NomUsuario"].ToString();               
+                lblNombreUsuario.Text = "  Hola " + nombre;
+
             }
             catch (Exception ex)
             {
@@ -26,7 +29,7 @@ namespace EcommerceHelper.Presentacion.Shared
             }
 
         }
-
+       
         public bool Autenticar(string elPermiso)
         {
             UsuarioEntidad usuarioAutenticado = new UsuarioEntidad();

@@ -200,6 +200,7 @@
     <Content Include="Views\Public\IniciarSesion.aspx" />
     <Content Include="Views\Public\NuestrosServicios.aspx" />
     <Content Include="Views\Public\DetalleServicio.aspx" />
+    <Content Include="Views\Public\Pedido.aspx" />
     <Content Include="Views\Public\Presupuesto.aspx" />
     <Content Include="Views\Public\Registrarme.aspx" />
     <Content Include="Views\Public\Resumen.aspx" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="Views\Public\DetalleServicio.aspx.designer.cs">
       <DependentUpon>DetalleServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\Pedido.aspx.cs">
+      <DependentUpon>Pedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\Pedido.aspx.designer.cs">
+      <DependentUpon>Pedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\Presupuesto.aspx.cs">
       <DependentUpon>Presupuesto.aspx</DependentUpon>

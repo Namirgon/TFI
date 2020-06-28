@@ -45,7 +45,7 @@
    <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px"  PostBackUrl ="~/Views/Public/Default.aspx" />
    <br />
    <br />
-      <p style="margin-left:100px; "><a style="color:white" href="Registrarme.aspx">Registrarme</a></p>
+      <p style="margin-left:100px; "><a style="color:brown" href="Registrarme.aspx">Registrarme</a></p>
    <br />
     </div>
    </div>

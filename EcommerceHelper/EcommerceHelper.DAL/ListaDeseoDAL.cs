@@ -19,10 +19,11 @@ namespace EcommerceHelper.DAL
 
             SqlParameter[] parameters = new SqlParameter[]
             {
+                //new SqlParameter("@IdDeseo", listaDeseo.IdDeseo),
                 new SqlParameter("@NumeroDocumento", listaDeseo.NumeroDocumento),
-
                 new SqlParameter("@NombreUsuario", listaDeseo.NombreUsuario),
                 new SqlParameter("@IdServicio", listaDeseo.IdServicio)
+
             };
 
             SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaDeseosInsert", parameters);

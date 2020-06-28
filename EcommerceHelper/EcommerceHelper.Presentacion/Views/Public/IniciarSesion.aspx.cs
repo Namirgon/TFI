@@ -39,6 +39,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             {
                 Session["NomUsuario"] = usuario.Nombre;
+                Session["Usuario"] = usuario;
                 Response.Redirect("/Views/Public/MenuPrincipal.aspx");
             }
             else

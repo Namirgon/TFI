@@ -11,11 +11,12 @@ namespace EcommerceHelper.Presentacion.Shared
     public partial class PaginaMaestraCliente : System.Web.UI.MasterPage
     {
         private HttpContext Current = HttpContext.Current;
-        public UsuarioEntidad usuario { get; set; }
+       
+        UsuarioEntidad usuario = new UsuarioEntidad();
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
+            usuario = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
             try
             {
                 string nombre = Session["NomUsuario"].ToString();               

@@ -13,12 +13,22 @@ namespace EcommerceHelper.BLL
         private ListaDeseoDAL unaListaDeseosDAL = new ListaDeseoDAL();
         public int ListaDeseosInsert(ListaDeDeseoEntidad laListaDeseo)
         {
-            if (unaListaDeseosDAL.Select(laListaDeseo).IdServicio == 0)
+            try
             {
                 unaListaDeseosDAL.Insert(laListaDeseo);
-                return 1; //Así se si se inserto algo o no
+                return 0;
             }
-            return 0;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            //if (unaListaDeseosDAL.Select(laListaDeseo).IdServicio == 0)
+            //{
+          
+            //    return 1; //Así se si se inserto algo o no
+            //}
+            //return 0;
         }
 
 

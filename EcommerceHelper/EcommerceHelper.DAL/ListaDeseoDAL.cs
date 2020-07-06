@@ -29,6 +29,24 @@ namespace EcommerceHelper.DAL
             SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaDeseosInsert", parameters);
         }
 
+        public List<ListaDeDeseoEntidad> SelectAllByNumeroDocumento(int NumeroDocumento)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@NumeroDocumento", NumeroDocumento),
+                
+            };
+
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarDeseoByNumeroDocumento", parameters))
+            {
+                List<ListaDeDeseoEntidad> listaDeseoEntidadList = new List<ListaDeDeseoEntidad>();
+
+                listaDeseoEntidadList = Mapeador.Mapear<ListaDeDeseoEntidad>(dt);
+
+                return listaDeseoEntidadList;
+            }
+        }
+
 
         public ListaDeDeseoEntidad Select(ListaDeDeseoEntidad listaDeseo)
         {

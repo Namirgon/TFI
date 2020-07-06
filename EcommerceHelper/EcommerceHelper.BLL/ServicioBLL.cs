@@ -28,7 +28,7 @@ namespace EcommerceHelper.BLL
             return unServicio;
         }
 
-        public Entidades.ServicioEntidad Find(int id)
+        public Entidades.ServicioEntidad FindServicio(int id)
         {
           
             ServicioEntidad nuevo = new ServicioEntidad();
@@ -36,10 +36,7 @@ namespace EcommerceHelper.BLL
             var p = GestorServicios.Select(id);
             lista.Add(p);
             nuevo = p;
-            //if (cotizacion.Cotizacion > 1)
-            //    nuevo.PrecioUnitario = System.Decimal.Round(p.PrecioUnitario / cotizacion.Cotizacion, 2);
-            //else
-            //    nuevo.PrecioUnitario = System.Decimal.Round(p.PrecioUnitario * cotizacion.Cotizacion, 2);
+         
             return nuevo;
         }
 

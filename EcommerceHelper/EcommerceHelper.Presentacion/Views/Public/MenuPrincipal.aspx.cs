@@ -26,18 +26,18 @@ namespace EcommerceHelper.Presentacion.Views.Public
             string nombre= Session["NomUsuario"].ToString();
 
 
-            //if (usuarioentidad == null)
-            //Response.Redirect("Default.aspx");
+            if (usuarioentidad == null)
+                Response.Redirect("Default.aspx");
 
 
-            // Cargo el repeater
+            // Cargo el repeater con los servicios en venta
             unServicios = (List<ServicioEntidad>)unServicioBLL.SelectALLServicios();
             InfoServicio.DataSource = unServicios;
             InfoServicio.DataBind();
 
 
         }
-        // Lista de Deseo
+        // grabo en BD Lista de Deseos del cliente
         protected void BtnComprar_Click(object sender, EventArgs e)
         {
             var Current = HttpContext.Current;
@@ -63,21 +63,13 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 unaListaDeseo.IdServicio = IdServ;
                 unaListaDeseosBLL.ListaDeseosInsert(unaListaDeseo);
 
-
-
-
-
-
         }
-
-
-
 
 
     }
 
 
-}
+}   // Fin clase
 
 
 // FIN CLASE

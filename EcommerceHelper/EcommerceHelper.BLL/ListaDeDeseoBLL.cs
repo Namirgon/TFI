@@ -23,12 +23,15 @@ namespace EcommerceHelper.BLL
                 throw ex;
             }
 
-            //if (unaListaDeseosDAL.Select(laListaDeseo).IdServicio == 0)
-            //{
-          
-            //    return 1; //Así se si se inserto algo o no
-            //}
-            //return 0;
+        }
+
+        
+
+        public List<ListaDeDeseoEntidad> ListaDeseosSelectAllByNumeroDocumento(int NumeroDocumento)
+        {
+
+            return unaListaDeseosDAL.SelectAllByNumeroDocumento( NumeroDocumento);
+
         }
 
 

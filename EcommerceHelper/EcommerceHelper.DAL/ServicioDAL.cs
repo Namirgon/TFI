@@ -57,7 +57,7 @@ namespace EcommerceHelper.DAL
             SqlParameter[] parameters = new SqlParameter[]
             {
                 
-                new SqlParameter("@IdSericio", IdServicio)
+                new SqlParameter("@IdServicio", IdServicio)
             };
 
             using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ServicioSelect", parameters))

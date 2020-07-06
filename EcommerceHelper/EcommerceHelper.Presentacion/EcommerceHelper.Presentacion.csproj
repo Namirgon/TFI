@@ -106,9 +106,11 @@
     <Content Include="Content\Image\banner3.jpg" />
     <Content Include="Content\Image\banner4.jpg" />
     <Content Include="Content\Image\bannerIntranet.jpg" />
+    <Content Include="Content\Image\calendario.png" />
     <Content Include="Content\Image\cocina2.jpg" />
     <Content Include="Content\Image\domestica2.png" />
     <Content Include="Content\Image\facebook1.png" />
+    <Content Include="Content\Image\hora.png" />
     <Content Include="Content\Image\instagram.png" />
     <Content Include="Content\Image\Limpiezadecortinas.jpg" />
     <Content Include="Content\Image\limpieza exterior.png" />
@@ -117,6 +119,7 @@
     <Content Include="Content\Image\Carrusel\slide1.jpg" />
     <Content Include="Content\Image\Carrusel\slide2.jpg" />
     <Content Include="Content\Image\pisoexteior.jpg" />
+    <Content Include="Content\Image\reloj.png" />
     <Content Include="Content\Image\sillon.png" />
     <Content Include="Content\Image\sravintage.jpg" />
     <Content Include="Content\Image\tweeter.png" />
@@ -192,6 +195,8 @@
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
+    <Content Include="Views\Public\DatosPersonales.aspx" />
+    <Content Include="Views\Public\FormaDePago.aspx" />
     <Content Include="Views\Public\MenuPrincipal.aspx" />
     <Content Include="Views\Public\MiDireccion.aspx" />
     <Content Include="Views\Public\Pago.aspx" />
@@ -213,6 +218,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DTO\ListaServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
@@ -262,6 +268,20 @@
     </Compile>
     <Compile Include="Views\Private\IniciarSesionIntranet.aspx.designer.cs">
       <DependentUpon>IniciarSesionIntranet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\DatosPersonales.aspx.cs">
+      <DependentUpon>DatosPersonales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\DatosPersonales.aspx.designer.cs">
+      <DependentUpon>DatosPersonales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\FormaDePago.aspx.cs">
+      <DependentUpon>FormaDePago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\FormaDePago.aspx.designer.cs">
+      <DependentUpon>FormaDePago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\MenuPrincipal.aspx.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>

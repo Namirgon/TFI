@@ -14,7 +14,7 @@
    <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />
    <br />     
-   <h2  style="margin-left:30px; margin-top:30px">Nuestros Servicios</h2>
+   <h3  style="margin-left:30px; margin-top:30px">Nuestros Servicios</h3>
    <br />     
    <br />
    </div>

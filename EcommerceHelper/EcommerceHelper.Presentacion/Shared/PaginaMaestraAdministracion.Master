@@ -41,7 +41,16 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+        <div class="container body-content">
+    <footer >
+        <div >
 
+            <br />
+          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+      </div>
           <style>
 
 .header p {

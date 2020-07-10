@@ -30,7 +30,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             if (!Page.IsPostBack)
             {
                 CargarDeseos();
-                Calendar.Visible = false;
+                //Calendar.Visible = false;
             }
         }
 
@@ -64,26 +64,26 @@ namespace EcommerceHelper.Presentacion.Views.Public
             Response.Redirect("DatosPersonales.aspx");
         }
 
-        protected void ImagenBtn_Click(object sender, ImageClickEventArgs e)
-        {
-            if (Calendar.Visible)
-            {
+        //protected void ImagenBtn_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (Calendar.Visible)
+        //    {
 
-                Calendar.Visible = false;
-            }
-            else
-            {
+        //        Calendar.Visible = false;
+        //    }
+        //    else
+        //    {
 
-                Calendar.Visible = true;
-            }
-            Calendar.Attributes.Add("style", "position:absolute ");
-        }
+        //        Calendar.Visible = true;
+        //    }
+        //    Calendar.Attributes.Add("style", "position:absolute ");
+        //}
 
-        protected void Calendar_SelectionChanged(object sender, EventArgs e)
-        {
-            Fecha.Text = Calendar.SelectedDate.ToString("dd/mm/yyyy");
-            Calendar.Visible = false;
-        }
+        //protected void Calendar_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    Fecha.Text = Calendar.SelectedDate.ToString("dd/mm/yyyy");
+        //    Calendar.Visible = false;
+        //}
 
         protected void Calendar_DayRender(object sender, DayRenderEventArgs e)
         {

@@ -20,15 +20,10 @@
 <body>
  
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-         
-   
-            </asp:ContentPlaceHolder>
-        </div>
+     
    
 
-     <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
+  <%--   <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>--%>
         <header id="header">
 <%--          ----------------------------------------------------  Menu del cliente ---------------------------------------------------------------------%>
             <div class="inner">
@@ -44,24 +39,48 @@
             </div>
     <%------------------------------------------------------ fin del Menu del cliente ---------------------------------------------------------------------%>
         </header>
-        <div>
+       <div>
             <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
 
 
             </asp:ContentPlaceHolder>
         </div>
+           <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         
+        
+
+   
+            </asp:ContentPlaceHolder>
+
+              
+        </div>
 
     </form>
+
+      <br />
+      <br />
+      <br />
       <div class="container body-content">
+      <br />
+      </div>
+            
+       
+                    
     <footer >
-        <div >
+        <div style="margin-bottom: 0px" >
 
             <br />
-          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+               <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
         </div>
         
     </footer>
-      </div>
+                  
+       
+                    
+    </body>
+</html>
+
 
 <style>
 
@@ -158,5 +177,3 @@ header p {
 
         </style>
   
-</body>
-</html>

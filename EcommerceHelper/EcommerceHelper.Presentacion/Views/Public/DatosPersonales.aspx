@@ -11,7 +11,7 @@
      <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />
    <br />     
-   <h2  style="margin-left:30px; margin-top:30px"> Menu Princioal  /  Pedidos  / Datos Personales</h2>
+   <h3  style="margin-left:30px; margin-top:30px"> Servicios  /  Pedidos  / Datos Personales</h3>
    <br />     
     <br />
       </div>

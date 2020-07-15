@@ -19,7 +19,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         public List<ServicioEntidad> ListaDeServicios = new List<ServicioEntidad>();
         ListaDeDeseoBLL cargarLista = new ListaDeDeseoBLL();
         ServicioBLL BuscarServicios = new ServicioBLL();
-
+        ListaDeDeseoBLL CancelarDeseo = new ListaDeDeseoBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -64,46 +64,33 @@ namespace EcommerceHelper.Presentacion.Views.Public
             Response.Redirect("DatosPersonales.aspx");
         }
 
-        //protected void ImagenBtn_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if (Calendar.Visible)
-        //    {
-
-        //        Calendar.Visible = false;
-        //    }
-        //    else
-        //    {
-
-        //        Calendar.Visible = true;
-        //    }
-        //    Calendar.Attributes.Add("style", "position:absolute ");
-        //}
-
-        //protected void Calendar_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    Fecha.Text = Calendar.SelectedDate.ToString("dd/mm/yyyy");
-        //    Calendar.Visible = false;
-        //}
-
-        protected void Calendar_DayRender(object sender, DayRenderEventArgs e)
+        public static void DeleteItem(int id)
         {
-            if (e.Day.Date.DayOfWeek != DayOfWeek.Sunday)
-            {
+            var Current = HttpContext.Current;
+            var list = (List<ListaDeDeseoEntidad>)Current.Session["usuario"];
+            Current.Session["usuario"] = list.Where(x => x.IdDeseo != id).ToList();
 
-                e.Day.IsSelectable = true;
-            }
-            else
-            {
-
-                e.Cell.ApplyStyle(new Style { BackColor = System.Drawing.Color.Gray });
-                e.Day.IsSelectable = false;
-            }
         }
 
-        protected void ImageButtonhora_Click(object sender, ImageClickEventArgs e)
+
+
+        public void CancelarDeseoDeLaLista(int id)
         {
 
+            var Current = HttpContext.Current;
+            var list = (List<ListaDeDeseoEntidad>)Current.Session["usuario"];
+            Current.Session["usuario"] = list.Where(x => x.IdDeseo == id).ToList();
+
+            foreach (ListaDeDeseoEntidad x in list)
+            {
+
+                CancelarDeseo.ListaDeDeseosUpdate(x);
+            }
+
         }
+
+
+
 
 
 

@@ -90,10 +90,7 @@
                                          <div class='input-group date' style="display:flex; color:#000000; width:110px">
 
                                              <input  type="text"  id="disableTimeRangesExample" style="width:200px;background-color:#ffffff; align-self:center " class="form-control"/>
-                                          <%--  <input type='text' class="form-control" />--%>
-                                         <%--   <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                            </span>--%>
+                                       
                                          </div>
                                         
                                      </td>
@@ -151,12 +148,30 @@
         $(function() {
       $('#disableTimeRangesExample').timepicker({
           'disableTimeRanges': [
-                ['7.59am', '12.01pm' ],
-              ['12.02pm', '7.58am']
+                ['0.00am', '7.59am' ],
+              ['12.01pm', '23.59am']
            
 	]
           });
-             });
+        });
+
+
+      
+        $('.delete-cart').click(function () {
+            $.ajax({
+                type: "POST",
+                url: "Pedido.aspx/DeleteItem",
+                data: '{ id: ' + $(this).data('s') + '}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                error: function (xhr, status, error) {
+                    alert(error);
+                },
+                success: function () {
+                    app.reload();
+
+                }
+            });
         </script>
    <%-- <script type="text/javascript">
           jQuery('#fecha').datepicker({  //datatimepicker2 fecha

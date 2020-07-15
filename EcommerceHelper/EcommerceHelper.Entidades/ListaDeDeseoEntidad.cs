@@ -32,6 +32,8 @@ namespace EcommerceHelper.Entidades
 
         public int IdDeseo { get; set; }
 
+        public int IdEstado { get; set; }
+
         #endregion
     }
 }

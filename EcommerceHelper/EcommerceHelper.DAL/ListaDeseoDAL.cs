@@ -67,5 +67,18 @@ namespace EcommerceHelper.DAL
             }
         }
 
+
+        public void ActualizarEstadoListaDeseo(ListaDeDeseoEntidad IdDeseo)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+                {
+                new SqlParameter("@IdDeseo", IdDeseo),
+                new SqlParameter("@IdEstado", 2)
+                };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaDeDeseosUpDate", parameters);
+        }
+
+
     }
 }

@@ -2,12 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
      <script src="../../Script/Thirdparty/jquery-3.4.1.min.js"></script>
-    <link href="../../Content/Scripts/bootstrap-datepicker.css" rel="stylesheet" />
-    <script src="../../Content/Scripts/jquery.timepicker.js"></script>
-    <script src="../../Content/Scripts/bootstrap-datepicker.js"></script>
-    <link href="../../Content/Scripts/jquery.timepicker.css" rel="stylesheet" />
-    <link href="../../Content/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <script src="../../Script/Thirdparty/bootstrap.min.js"></script>
+      <script src="../../Script/Thirdparty/bootstrap.min.js"></script>
+     <script src="../../Content/Scripts/jquery.timepicker.js"></script>
+    
+   
+    <script src="../../Content/bootstrap-datepicker.js"></script>
+      <link href="../../Content/Scripts/jquery.timepicker.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-datepicker.css" rel="stylesheet" />
+      
+  
+    <link href="../../Content/bootstrap-datetimepicker.css" rel="stylesheet" /> 
     <link href="../../Content/css/bootstrap.min.css" rel="stylesheet" />
    
 </asp:Content>
@@ -72,30 +76,32 @@
                                           <h4><%=s.Descripcion%></h4>
                                             
                                       </td>
-                                      <td class="text-center">
+                                      <td class="text-center" style="width: 80px">
                                          <p><span> $ </span>  <span><%= s.Precio %></span>
                                          </p>
                                      </td>
                                       <td>
                                           <%--fecha--%>
                                      
-                                          <div class="dates" style="display:flex; color:#000000; width:110px">
+                                         
+                                          <div class="dates" style="display:flex; color:#000000; width:120px">
     
-                                         <input type="text" style="width:200px;background-color:#ffffff; align-self:center " class="form-control" id="usr1" name="event_date" placeholder="YYYY-MM-DD" autocomplete="off" >
+                                         <input type="text"  class="form-control" id="usr1"  placeholder="YYYY-MM-DD" autocomplete="off" style="width:120px;background-color:#ffffff; align-self:center " >
                                          </div>
                                             
                                        </td>
                                      <td>
                                   <%--   horario--%>
-                                         <div class='input-group date' style="display:flex; color:#000000; width:110px">
+                                         <div class='times' style="display:flex; color:#000000; width:110px">
 
-                                             <input  type="text"  id="disableTimeRangesExample" style="width:200px;background-color:#ffffff; align-self:center " class="form-control"/>
+
+                                             <input  type="text"  id="disableTimeRangesExample"  class="form-control" style="width:110px;background-color:#ffffff; align-self:center "/>
                                        
                                          </div>
                                         
                                      </td>
 
-                                     <td class="text-center">
+                                     <td class="text-center"  style="width: 80px">
                                              <button class="btn btn-default delete-cart" data-producto="<%=s.IdServicio %>">
                                              <i class=" glyphicon glyphicon-trash"></i>
                                              </button>
@@ -127,52 +133,52 @@
 
 
    
-  <script type="text/javascript">
-           
-      $(function () {
-           //$('#basicExample').timepicker();
+  <script>
 
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-                });
-      });
-      $(function() {
+
+       $ (function() {
 			$('.dates #usr1').datepicker({
                 'format': 'yyyy-mm-dd',
-               
-                'autoclose': true,
-      
+                 daysOfWeekDisabled: [0],
+				'autoclose': true
 			});
-      });
+	   });
 
         $(function() {
-      $('#disableTimeRangesExample').timepicker({
+      $('.times #disableTimeRangesExample').timepicker({
           'disableTimeRanges': [
                 ['0.00am', '7.59am' ],
-              ['12.01pm', '23.59am']
+               ['12.01pm', '23.59am']
            
-	]
-          });
+	      ]
         });
+      });
+           
+      //$(function () {
+      //     //$('#basicExample').timepicker();
 
+      //          $('#datetimepicker3').datetimepicker({
+      //              format: 'LT'
+      //          });
+      //});
+     
+      //  $('.delete-cart').click(function () {
+      //      $.ajax({
+      //          type: "POST",
+      //          url: "Pedido.aspx/DeleteItem",
+      //          data: '{ id: ' + $(this).data('s') + '}',
+      //          contentType: "application/json; charset=utf-8",
+      //          dataType: "json",
+      //          error: function (xhr, status, error) {
+      //              alert(error);
+      //          },
+      //          success: function () {
+      //              app.reload();
 
-      
-        $('.delete-cart').click(function () {
-            $.ajax({
-                type: "POST",
-                url: "Pedido.aspx/DeleteItem",
-                data: '{ id: ' + $(this).data('s') + '}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                error: function (xhr, status, error) {
-                    alert(error);
-                },
-                success: function () {
-                    app.reload();
+      //          }
+      //    });
 
-                }
-            });
-        </script>
+  </script>
    <%-- <script type="text/javascript">
           jQuery('#fecha').datepicker({  //datatimepicker2 fecha
 
@@ -222,5 +228,5 @@
     </style>
  </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptSection" runat="server">
-
+  
 </asp:Content>

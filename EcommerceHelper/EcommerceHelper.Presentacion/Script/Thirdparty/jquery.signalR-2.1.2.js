@@ -1,3 +1,6 @@
+/// <reference path="../../content/scripts/jquery-1.10.2.js" />
+/// <reference path="../../content/scripts/jquery-1.10.2.js" />
+/// <reference path="../../scripts/jquery-1.9.1.js" />
 /* jquery.signalR.core.js */
 /*global window:false */
 /*!
@@ -7,8 +10,8 @@
  * Copyright (C) Microsoft Corporation. All rights reserved.
  *
  */
-
-/// <reference path="Scripts/jquery-1.6.4.js" />
+<reference path="Scripts/jquery-1.9.1.js" />
+///// <reference path="Scripts/jquery-1.6.4.js" />
 /// <reference path="jquery.signalR.version.js" />
 (function ($, window, undefined) {
 

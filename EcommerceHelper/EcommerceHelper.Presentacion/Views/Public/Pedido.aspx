@@ -101,10 +101,11 @@
                                         
                                      </td>
 
-                                     <td class="text-center"  style="width: 80px">
-                                             <button class="btn btn-default delete-cart" data-producto="<%=s.IdServicio %>">
+                                     <td class="borrar"  style="width: 80px">
+                                         <input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo" />
+                                            <%-- <button class="btn btn-default delete-cart" data-s="<%=s.IdServicio %>">
                                              <i class=" glyphicon glyphicon-trash"></i>
-                                             </button>
+                                             </button>--%>
                                      </td>
 
                                 <%
@@ -153,8 +154,33 @@
 	      ]
         });
       });
+
+  </script>
+
+<script type="text/javascript">
+      
+       $(function EliminarDeseo() {
+            $('.borrar #EliminarDeseo').click(function() {
+
+                var ValorId = $('IdServicio').val();
            
-      //$(function () {
+           $.ajax({
+               type: "POST",
+               url: "Pedido.aspx/CancelarDeseoDeLaLista" ,
+               data: '{ id: ' + ValorId + '}',
+                 //data: '{ id: ' + $(this).data('s') +'}',
+               contentType: "application/json; charset=utf-8",
+               dataType: "json",
+                success: OnSuccess,
+                error: function (result) {
+                alert("Error" + result);
+           }
+               });
+        });
+</script>
+
+
+<%--      //$(function () {
       //     //$('#basicExample').timepicker();
 
       //          $('#datetimepicker3').datetimepicker({
@@ -177,8 +203,8 @@
 
       //          }
       //    });
+--%>
 
-  </script>
    <%-- <script type="text/javascript">
           jQuery('#fecha').datepicker({  //datatimepicker2 fecha
 

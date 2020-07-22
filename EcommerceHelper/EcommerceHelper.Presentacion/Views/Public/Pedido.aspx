@@ -101,7 +101,7 @@
                                         
                                      </td>
 
-                                     <td class="borrar"  style="width: 80px">
+                                     <td class="text-center"  style="width: 80px">
                                          <input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo" />
                                             <%-- <button class="btn btn-default delete-cart" data-s="<%=s.IdServicio %>">
                                              <i class=" glyphicon glyphicon-trash"></i>
@@ -160,7 +160,7 @@
 <script type="text/javascript">
       
        $(function EliminarDeseo() {
-            $('.borrar #EliminarDeseo').click(function() {
+            $('#EliminarDeseo').click(function() {
 
                 var ValorId = $('IdServicio').val();
            

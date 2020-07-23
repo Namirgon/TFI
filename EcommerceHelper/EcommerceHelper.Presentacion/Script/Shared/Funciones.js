@@ -67,21 +67,21 @@ function onBtnAddClick(btn) {
 };
 
 //********Para quitar servicio de Lista Deseos*************
-function onbtnEliminarDeseo(lapagina) {
+function fEliminarDeseo(lapagina) {
     var control = $(lapagina);
-    var idServicio = control.data('Servicioeliminar');
+    var idServicio = control.data('fEliminarDeseo');
 
     $.ajax({
         type: "POST",
-        url: "ListaDeDeseos.aspx/QuitarDeseo",
-        data: '{ idServicio: ' + idServicio + '}',
+        url: "Pedido.aspx/CancelarDeseoDeLaLista",
+        data: '{ id: ' + idServicio + '}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         error: function (xhr, status, error) {
             alert(error);
         },
         success: function (result) {
-            updateDeseos();
+            CargarDeseos();
             //var $modal = $('.modal');
             //$modal.find('#prod').text(result.d);
             //$modal.modal("show");

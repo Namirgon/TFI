@@ -318,6 +318,7 @@
     <Content Include="Views\Public\FormaDePago.aspx" />
     <Content Include="Views\Public\MenuPrincipal.aspx" />
     <Content Include="Views\Public\MiDireccion.aspx" />
+    <Content Include="Views\Public\MisDirecciones.aspx" />
     <Content Include="Views\Public\Pago.aspx" />
     <Content Include="Views\Public\Default.aspx" />
     <Content Include="Views\Public\Direccion.aspx" />
@@ -414,6 +415,13 @@
     </Compile>
     <Compile Include="Views\Public\MiDireccion.aspx.designer.cs">
       <DependentUpon>MiDireccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\MisDirecciones.aspx.cs">
+      <DependentUpon>MisDirecciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\MisDirecciones.aspx.designer.cs">
+      <DependentUpon>MisDirecciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\Pago.aspx.cs">
       <DependentUpon>Pago.aspx</DependentUpon>

@@ -86,7 +86,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
                 CancelarDeseo.ListaDeDeseosUpdate(x);
             }
-
+            CargarDeseos();
         }
 
 

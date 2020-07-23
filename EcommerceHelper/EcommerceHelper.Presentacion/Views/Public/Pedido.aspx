@@ -102,10 +102,9 @@
                                      </td>
 
                                      <td class="text-center"  style="width: 80px">
-                                         <input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo" />
-                                            <%-- <button class="btn btn-default delete-cart" data-s="<%=s.IdServicio %>">
-                                             <i class=" glyphicon glyphicon-trash"></i>
-                                             </button>--%>
+                                         <button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="fEliminarDeseo(this)" class="btn-default " title="Eliminar" >Eliminar</button>
+                                         <%--<input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo()" clientidmode="static" runat="server" />--%>
+                                          
                                      </td>
 
                                 <%
@@ -158,25 +157,48 @@
   </script>
 
 <script type="text/javascript">
-      
-       $(function EliminarDeseo() {
-            $('#EliminarDeseo').click(function() {
 
-                var ValorId = $('IdServicio').val();
-           
-           $.ajax({
-               type: "POST",
-               url: "Pedido.aspx/CancelarDeseoDeLaLista" ,
-               data: '{ id: ' + ValorId + '}',
-                 //data: '{ id: ' + $(this).data('s') +'}',
-               contentType: "application/json; charset=utf-8",
-               dataType: "json",
+     function fEliminarDeseo(laPagina) {
+       
+          var control = $(laPagina);
+           var idServicio = control.data('s');  /*el idServicio viene del data-s*/
+
+            $.ajax({
+                type: "POST",
+                url: "Pedido.aspx/CancelarDeseoDeLaLista",
+                data: '{ id: ' + idServicio + '}',
+            
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
                 success: OnSuccess,
                 error: function (result) {
-                alert("Error" + result);
-           }
-               });
-        });
+                    alert("Error" + result);
+                }
+            });
+        
+    };
+      
+       //$(function EliminarDeseo() {
+       //     $('#EliminarDeseo').click(function() {
+
+       //         var ValorId = $('IdServicio').val();
+           
+       //    $.ajax({
+       //        type: "POST",
+       //        url: "Pedido.aspx/CancelarDeseoDeLaLista" ,
+       //        data: '{ id: ' + ValorId + '}',
+       //          //data: '{ id: ' + $(this).data('s') +'}',
+       //        contentType: "application/json; charset=utf-8",
+       //        dataType: "json",
+       //         success: OnSuccess,
+       //         error: function (result) {
+       //         alert("Error" + result);
+       //    }
+       //        });
+       // });
+
+       //});
+
 </script>
 
 
@@ -236,7 +258,7 @@
   
     <div  class="item-toolbar" runat="server"  >
   
-           <a href="DatosPersonales.aspx"  class="btn btn-lg btn-default  " runat="server" style="position: fixed; margin-left: 75px; background-color:cadetblue " > Continuar </a>
+           <a href="MisDirecciones.aspx"  class="btn btn-lg btn-default  " runat="server" style="position: fixed; margin-left: 75px; background-color:cadetblue " > Continuar </a>
                 <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
 
            </div>

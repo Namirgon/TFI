@@ -22,7 +22,8 @@ namespace EcommerceHelper.DAL
                 //new SqlParameter("@IdDeseo", listaDeseo.IdDeseo),
                 new SqlParameter("@NumeroDocumento", listaDeseo.NumeroDocumento),
                 new SqlParameter("@NombreUsuario", listaDeseo.NombreUsuario),
-                new SqlParameter("@IdServicio", listaDeseo.IdServicio)
+                new SqlParameter("@IdServicio", listaDeseo.IdServicio),
+                new SqlParameter("@IdEstado", 1)
 
             };
 
@@ -68,11 +69,12 @@ namespace EcommerceHelper.DAL
         }
 
 
-        public void ActualizarEstadoListaDeseo(ListaDeDeseoEntidad IdDeseo)
+        public void ActualizarEstadoListaDeseo(ListaDeDeseoEntidad listaDeDeseo)
         {
             SqlParameter[] parameters = new SqlParameter[]
                 {
-                new SqlParameter("@IdDeseo", IdDeseo),
+                 new SqlParameter("@NumeroDocumento", listaDeDeseo.NumeroDocumento),
+                new SqlParameter("@IdDeseo", listaDeDeseo.IdDeseo),
                 new SqlParameter("@IdEstado", 2)
                 };
 

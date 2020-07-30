@@ -22,15 +22,15 @@ C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.E
 C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
 C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csprojAssemblyReference.cache
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.dll
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.pdb
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csprojAssemblyReference.cache
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Debug\EcommerceHelper.Entidades.pdb

@@ -7,13 +7,21 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-     <script src="../../Script/Thirdparty/jquery-3.4.1.min.js"></script>
-   <%-- <script src="../Content/Scripts/jquery.min.js"></script>--%>
-<link href="../Script/Thirdparty/Autocomplete/jquery-ui.css" rel="stylesheet" />
+    
+      
     <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
-   
+    <link href="../Content/Scripts/jquery.timepicker.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-datetimepicker.css" rel="stylesheet" />
 
+    <link href="../Script/Thirdparty/Autocomplete/jquery-ui.css" rel="stylesheet" />
+   <%-- <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+     />--%>
+       <script src="/Script/Thirdparty/jquery-3.4.1.min.js"></script>
+        <script src="/Script/Thirdparty/bootstrap.min.js"></script>
+        <script src="/Content/Scripts/jquery.timepicker.js"></script>
+       <script src="/Content/bootstrap-datepicker.js"></script>         
+      
     <asp:ContentPlaceHolder ID="head" runat="server">
   
        
@@ -78,8 +86,8 @@
         </div>
         
     </footer>
-                  
-       
+      
+  
                     
     </body>
 </html>

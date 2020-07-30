@@ -7,10 +7,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EcommerceHelper.BLL;
+using System.Web.Services;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Pedido1 : System.Web.UI.Page
+    public partial class Pedido : System.Web.UI.Page
     {
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
@@ -19,18 +20,31 @@ namespace EcommerceHelper.Presentacion.Views.Public
         public List<ServicioEntidad> ListaDeServicios = new List<ServicioEntidad>();
         ListaDeDeseoBLL cargarLista = new ListaDeDeseoBLL();
         ServicioBLL BuscarServicios = new ServicioBLL();
-        ListaDeDeseoBLL CancelarDeseo = new ListaDeDeseoBLL();
+      
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            var Current = HttpContext.Current;
             usuarioentidad = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
 
             string nombre = Session["NomUsuario"].ToString();
 
+            //if (Current.Session["ListaDeServicios"] == null)
+            //    Response.Redirect("MenuPrincipal.aspx");
+
             if (!Page.IsPostBack)
             {
                 CargarDeseos();
-                //Calendar.Visible = false;
+                
+            }
+            else
+            {
+                // son los pedidos de servicio actuales
+                  ListaDeServicios = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
+
+
+                // son la lista de los deseos
+                  DeseoDeServicios= (List<ListaDeDeseoEntidad>)Current.Session["DeseoDeServicios"];
             }
         }
 
@@ -64,29 +78,43 @@ namespace EcommerceHelper.Presentacion.Views.Public
             Response.Redirect("DatosPersonales.aspx");
         }
 
-        public static void DeleteItem(int id)
+        //public static void DeleteItem(int id)
+        //{
+        //    var Current = HttpContext.Current;
+        //    var list = (List<ListaDeDeseoEntidad>)Current.Session["usuario"];
+        //    Current.Session["usuario"] = list.Where(x => x.IdDeseo != id).ToList();
+
+        //}
+
+
+        [WebMethod]
+        public static void CancelarDeseoDeLaLista(int id)
         {
-            var Current = HttpContext.Current;
-            var list = (List<ListaDeDeseoEntidad>)Current.Session["usuario"];
-            Current.Session["usuario"] = list.Where(x => x.IdDeseo != id).ToList();
-
-        }
-
-
-
-        public void CancelarDeseoDeLaLista(int id)
-        {
 
             var Current = HttpContext.Current;
-            var list = (List<ListaDeDeseoEntidad>)Current.Session["usuario"];
-            Current.Session["usuario"] = list.Where(x => x.IdDeseo == id).ToList();
+            //la lista de deseo contiene el detalle del servicio mas dia y horario para el servicio
+            var deseo= (List<ListaDeDeseoEntidad>)Current.Session["DeseoDeServicios"];
+            // la lista de servicios contiene el detalle del servicio propiamente dicho .. titulo, imagen, descripcion y precio
+            var list = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
 
-            foreach (ListaDeDeseoEntidad x in list)
+            Current.Session["ListaDeServicios"] = list.Where(x => x.IdServicio == id).ToList();
+
+            Current.Session["DeseoDeServicios"] = deseo.Where(x => x.IdServicio != id).ToList();
+
+           
+
+
+            foreach (ListaDeDeseoEntidad IdServ in deseo) 
             {
 
-                CancelarDeseo.ListaDeDeseosUpdate(x);
+
+               ListaDeDeseoBLL CancelarDeseo = new ListaDeDeseoBLL();
+               CancelarDeseo.ListaDeDeseosUpdate(IdServ);
+
+
             }
-            CargarDeseos();
+         
+           
         }
 
 

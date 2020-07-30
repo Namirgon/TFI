@@ -11,6 +11,26 @@
    <br />     
     <br />
       </div>
+
+
+    <asp:GridView ID="GVMisDirecciones" runat="server" cssclass="table table-striped " OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <Columns>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:HiddenField  id="IdDireccion" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "IdDireccion")%> '  />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField DataField="Calle"  HeaderText=" Calle"/>
+            <asp:BoundField DataField="Numero" HeaderText="Numero"/>
+            <asp:BoundField DataField="Piso" HeaderText="Piso"/>
+            <asp:BoundField DataField="Departamento" HeaderText="Departamento"/>
+            <asp:BoundField DataField="IdLocalidad" HeaderText="Localidad"/>
+        </Columns>
+
+
+    </asp:GridView>
+
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>

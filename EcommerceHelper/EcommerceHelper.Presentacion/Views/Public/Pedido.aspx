@@ -1,19 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestraCliente.Master" AutoEventWireup="true" CodeBehind="Pedido.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Public.Pedido1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestraCliente.Master" AutoEventWireup="true" CodeBehind="Pedido.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Public.Pedido" %>
 
-     <script src="../../Script/Thirdparty/jquery-3.4.1.min.js"></script>
-      <script src="../../Script/Thirdparty/bootstrap.min.js"></script>
-     <script src="../../Content/Scripts/jquery.timepicker.js"></script>
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestraCliente.Master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-   
-    <script src="../../Content/bootstrap-datepicker.js"></script>
-      <link href="../../Content/Scripts/jquery.timepicker.css" rel="stylesheet" />
-    <link href="../../Content/bootstrap-datepicker.css" rel="stylesheet" />
-      
-  
-    <link href="../../Content/bootstrap-datetimepicker.css" rel="stylesheet" /> 
-    <link href="../../Content/css/bootstrap.min.css" rel="stylesheet" />
-   
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -136,7 +127,7 @@
   <script>
 
 
-       $ (function() {
+       $(document).ready(function() {
 			$('.dates #usr1').datepicker({
                 'format': 'yyyy-mm-dd',
                  daysOfWeekDisabled: [0],
@@ -144,8 +135,8 @@
 			});
 	   });
 
-        $(function() {
-      $('.times #disableTimeRangesExample').timepicker({
+      $(document).ready(function() {
+        $('.times #disableTimeRangesExample').timepicker({
           'disableTimeRanges': [
                 ['0.00am', '7.59am' ],
                ['12.01pm', '23.59am']
@@ -170,7 +161,7 @@
             
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: OnSuccess,
+                //success: OnSuccess,
                 error: function (result) {
                     alert("Error" + result);
                 }

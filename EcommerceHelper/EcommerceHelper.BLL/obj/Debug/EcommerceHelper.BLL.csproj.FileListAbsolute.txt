@@ -53,22 +53,6 @@ C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.B
 C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csproj.CopyComplete
 C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.dll
 C:\Users\natal\Downloads\TFI-master\TFI-master\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.dll.config
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.DAL.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Entidades.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Funciones.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\Newtonsoft.Json.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.DAL.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Entidades.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Funciones.pdb
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\Newtonsoft.Json.xml
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csprojAssemblyReference.cache
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csproj.CoreCompileInputs.cache
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csproj.CopyComplete
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.pdb
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.dll.config
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.dll
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.pdb
@@ -85,3 +69,19 @@ C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csproj.CopyComplete
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.dll
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.dll.config
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.BLL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.DAL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Funciones.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.DAL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\EcommerceHelper.Funciones.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.csproj.CopyComplete
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Debug\EcommerceHelper.BLL.pdb

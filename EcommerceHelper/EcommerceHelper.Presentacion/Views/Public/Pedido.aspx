@@ -117,13 +117,39 @@
     <br />
     <br />
     <br />
+
+    
   
        <%-- ---------------------- Fin de Tabla deseos Titulo - Descripcion - Precio  - Fecha - Horario - Eliminar  - Total --------------------------%>
 
             
 
 
-   
+ 
+    <div  class="item-toolbar" runat="server"  >
+  
+           <a href="MisDirecciones.aspx"  class="btn btn-lg btn-default  " runat="server" style="position: fixed; margin-left: 75px; background-color:cadetblue " > Continuar </a>
+                <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
+
+           </div>
+  
+    <style>
+
+        #footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
+}
+    </style>
+
+  
+ </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ScriptSection" runat="server">
+
+      
   <script>
 
 
@@ -247,25 +273,5 @@
             ['12:01', '18:01']]//unavailableTime
     });--%>
   
-    <div  class="item-toolbar" runat="server"  >
-  
-           <a href="MisDirecciones.aspx"  class="btn btn-lg btn-default  " runat="server" style="position: fixed; margin-left: 75px; background-color:cadetblue " > Continuar </a>
-                <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
-
-           </div>
-  
-    <style>
-
-        #footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   background:#999;
-}
-    </style>
- </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ScriptSection" runat="server">
   
 </asp:Content>

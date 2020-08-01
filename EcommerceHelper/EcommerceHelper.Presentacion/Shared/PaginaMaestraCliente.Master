@@ -17,11 +17,7 @@
     <link href="../Script/Thirdparty/Autocomplete/jquery-ui.css" rel="stylesheet" />
    <%-- <link href="../Content/css/bootstrap.css" rel="stylesheet" />
      />--%>
-       <script src="/Script/Thirdparty/jquery-3.4.1.min.js"></script>
-        <script src="/Script/Thirdparty/bootstrap.min.js"></script>
-        <script src="/Content/Scripts/jquery.timepicker.js"></script>
-       <script src="/Content/bootstrap-datepicker.js"></script>         
-      
+   
     <asp:ContentPlaceHolder ID="head" runat="server">
   
        
@@ -51,10 +47,7 @@
     <%------------------------------------------------------ fin del Menu del cliente ---------------------------------------------------------------------%>
         </header>
        <div>
-            <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
-
-
-            </asp:ContentPlaceHolder>
+           
         </div>
            <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -86,7 +79,15 @@
         </div>
         
     </footer>
+        <script src="/Script/Thirdparty/jquery-3.4.1.min.js"></script>
+        <script src="/Script/Thirdparty/bootstrap.min.js"></script>
+        <script src="/Content/Scripts/jquery.timepicker.js"></script>
+       <script src="/Content/bootstrap-datepicker.js"></script>         
       
+       <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+
+
+       </asp:ContentPlaceHolder>
   
                     
     </body>

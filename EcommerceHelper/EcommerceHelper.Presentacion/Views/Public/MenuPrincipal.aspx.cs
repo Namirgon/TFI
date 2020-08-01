@@ -43,9 +43,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
             var Current = HttpContext.Current;
             UsuarioEntidad logueadoStatic;
              logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
-            
-            ListaDeDeseoBLL unaListaDeseosBLL = new ListaDeDeseoBLL();
-            ListaDeDeseoEntidad unaListaDeseo = new ListaDeDeseoEntidad();
+
+
+            ItemOrdenDeTrabajoBLL unaListaItemBLL = new ItemOrdenDeTrabajoBLL();
+            ItemOrdenDeTrabajoEntidad unItem = new ItemOrdenDeTrabajoEntidad();
 
             // El detalle está en encontrar el item padre del botón que se presionó
             Button btn = (Button)sender;
@@ -58,10 +59,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
             // Carga la Lista de Deseos
 
             
-                unaListaDeseo.NombreUsuario = logueadoStatic.Nombre;
-                unaListaDeseo.NumeroDocumento = logueadoStatic.NumeroDocumento;
-                unaListaDeseo.IdServicio = IdServ;
-                unaListaDeseosBLL.ListaDeseosInsert(unaListaDeseo);
+                unItem.NombreUsuario = logueadoStatic.Nombre;
+                unItem.NumeroDocumento = logueadoStatic.NumeroDocumento;
+                unItem.IdServicio = IdServ;
+                 unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
+               
 
         }
 

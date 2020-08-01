@@ -23,7 +23,7 @@ namespace EcommerceHelper.DAL
             };
 
 
-            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "[BuscarUsuario]", parameters))
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "BuscarUsuario", parameters))
             {
                 UsuarioEntidad entidad = new UsuarioEntidad();
                 entidad = Mapeador.MapearFirst<UsuarioEntidad>(dt);

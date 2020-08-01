@@ -40,15 +40,6 @@ namespace EcommerceHelper.Presentacion.Shared {
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
         
         /// <summary>
-        /// Control ScriptSection.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptSection;
-        
-        /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace EcommerceHelper.Presentacion.Shared {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        
+        /// <summary>
+        /// Control ScriptSection.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptSection;
     }
 }

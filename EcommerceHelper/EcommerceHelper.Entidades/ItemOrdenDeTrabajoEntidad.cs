@@ -13,15 +13,15 @@ namespace EcommerceHelper.Entidades
 
         public int IdItemOrdenDeTrabajo { get; set; }
 
-        public ServicioEntidad MiServicio { get; set; }
+        public int IdServicio { get; set; }
 
        
 
-        public UsuarioEntidad MiUsuario { get; set; }
+        public string  NombreUsuario { get; set; }
 
-        public UsuarioEntidad MiDNI { get; set; }
+        public int NumeroDocumento { get; set; }
 
-        public DireccionEntidad MiDireccion { get; set; }
+        public int  IdDireccion { get; set; }
         public decimal Precio { get; set; }
 
         public DateTime Fecha { get; set; }

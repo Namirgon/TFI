@@ -16,9 +16,13 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
-        public List<ListaDeDeseoEntidad> DeseoDeServicios;
+
+        public List<ItemOrdenDeTrabajoEntidad> ItemDeServicios;
+        //public List<ListaDeDeseoEntidad> DeseoDeServicios;
+     
         public List<ServicioEntidad> ListaDeServicios = new List<ServicioEntidad>();
-        ListaDeDeseoBLL cargarLista = new ListaDeDeseoBLL();
+        ItemOrdenDeTrabajoBLL cargarLista = new ItemOrdenDeTrabajoBLL();
+        //ListaDeDeseoBLL cargarLista = new ListaDeDeseoBLL();
         ServicioBLL BuscarServicios = new ServicioBLL();
       
         protected void Page_Load(object sender, EventArgs e)
@@ -44,7 +48,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
                 // son la lista de los deseos
-                  DeseoDeServicios= (List<ListaDeDeseoEntidad>)Current.Session["DeseoDeServicios"];
+                ItemDeServicios = (List<ItemOrdenDeTrabajoEntidad>)Current.Session["DeseoDeServicios"];
             }
         }
 
@@ -56,10 +60,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
             int numerodocumento = logueadoStatic.NumeroDocumento;
 
             //lista 1= consulta a la tabla lista de deseos con el numerodocumento los IdServicios
-            DeseoDeServicios = cargarLista.ListaDeseosSelectAllByNumeroDocumento(numerodocumento);
+            ItemDeServicios = cargarLista.ListaItemSelectAllByNumeroDocumento(numerodocumento);
 
             // lista 2 = Con la lista 1 realizar la consulta a la tabla de servicios para traer *
-             foreach ( ListaDeDeseoEntidad s in DeseoDeServicios)
+             foreach ( ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
             {
                 ServicioEntidad _serv = new ServicioEntidad();
                 _serv.IdServicio = s.IdServicio;

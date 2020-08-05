@@ -25,14 +25,9 @@ namespace EcommerceHelper.Entidades
         public int IdServicio { get; set; }
 
 
-        /// <summary>
-        /// Gets or sets the Fechavalue.
-        /// </summary>
-        public DateTime Fecha { get; set; }
+     
 
         public int IdDeseo { get; set; }
-
-        public int IdEstado { get; set; }
 
         #endregion
     }

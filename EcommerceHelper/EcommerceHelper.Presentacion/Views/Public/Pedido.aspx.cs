@@ -18,11 +18,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
         HttpContext Current = HttpContext.Current;
 
         public List<ItemOrdenDeTrabajoEntidad> ItemDeServicios;
-        //public List<ListaDeDeseoEntidad> DeseoDeServicios;
      
         public List<ServicioEntidad> ListaDeServicios = new List<ServicioEntidad>();
         ItemOrdenDeTrabajoBLL cargarLista = new ItemOrdenDeTrabajoBLL();
-        //ListaDeDeseoBLL cargarLista = new ListaDeDeseoBLL();
+       
         ServicioBLL BuscarServicios = new ServicioBLL();
       
         protected void Page_Load(object sender, EventArgs e)
@@ -47,7 +46,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                   ListaDeServicios = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
 
 
-                // son la lista de los deseos
+                // son la lista de los items
                 ItemDeServicios = (List<ItemOrdenDeTrabajoEntidad>)Current.Session["DeseoDeServicios"];
             }
         }
@@ -57,13 +56,14 @@ namespace EcommerceHelper.Presentacion.Views.Public
             
             UsuarioEntidad logueadoStatic;
             logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
-            int numerodocumento = logueadoStatic.NumeroDocumento;
+            //int numerodocumento = logueadoStatic.NumeroDocumento;
+            int numeroIdUsuario = logueadoStatic.IdUsuario;
 
             //lista 1= consulta a la tabla lista de deseos con el numerodocumento los IdServicios
-            ItemDeServicios = cargarLista.ListaItemSelectAllByNumeroDocumento(numerodocumento);
-
+            //ItemDeServicios = cargarLista.ListaItemSelectAllByNumeroDocumento(numerodocumento);
+            ItemDeServicios = cargarLista.ListaItemSelectAllByNumeroIdUsuario(numeroIdUsuario);
             // lista 2 = Con la lista 1 realizar la consulta a la tabla de servicios para traer *
-             foreach ( ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
+            foreach ( ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
             {
                 ServicioEntidad _serv = new ServicioEntidad();
                 _serv.IdServicio = s.IdServicio;
@@ -92,7 +92,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
         [WebMethod]
-        public static void CancelarDeseoDeLaLista(int id)
+        public static void CancelarItemDeLaLista(int id)
         {
 
             var Current = HttpContext.Current;

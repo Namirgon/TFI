@@ -11,11 +11,13 @@ namespace EcommerceHelper.Entidades
         #region properties
         public int IdOrdenDeTrabajo { get; set; }
 
-        public UsuarioEntidad MiUsuario { get; set; }
+        public int IdUsuario { get; set; }
 
 
 
         public DateTime Fecha { get; set; }
+
+        public int IdEstado { get; set; }
 
         #endregion
     }

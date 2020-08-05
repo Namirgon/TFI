@@ -19,9 +19,12 @@ namespace EcommerceHelper.Entidades
 
         public string  NombreUsuario { get; set; }
 
-        public int NumeroDocumento { get; set; }
+        public int IdUsuario { get; set; }
 
         public int  IdDireccion { get; set; }
+
+
+        public int IdOrdenDeTrabajo { get; set; }
         public decimal Precio { get; set; }
 
         public DateTime Fecha { get; set; }

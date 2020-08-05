@@ -20,21 +20,21 @@ namespace EcommerceHelper.DAL
             SqlParameter[] parameters = new SqlParameter[]
             {
                 //new SqlParameter("@IdDeseo", listaDeseo.IdDeseo),
-                new SqlParameter("@NumeroDocumento", listaItemODT.NumeroDocumento),
+                new SqlParameter("@IdUsuario", listaItemODT.IdUsuario),
                 new SqlParameter("@NombreUsuario", listaItemODT.NombreUsuario),
                 new SqlParameter("@IdServicio", listaItemODT.IdServicio),
-             
+                 new SqlParameter("@IdOrdenDeTrabajo", listaItemODT.IdOrdenDeTrabajo),
 
             };
 
             SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaItemInsert", parameters);
         }
 
-        public List<ItemOrdenDeTrabajoEntidad> SelectAllByNumeroDocumento(int NumeroDocumento)
+        public List<ItemOrdenDeTrabajoEntidad> SelectAllByNumeroIdUsuario(int NumeroIdUsuario)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@NumeroDocumento", NumeroDocumento),
+                new SqlParameter("@IdUsuario", NumeroIdUsuario),
 
             };
 
@@ -53,7 +53,7 @@ namespace EcommerceHelper.DAL
         {
             SqlParameter[] parameters = new SqlParameter[]
                 {
-                 new SqlParameter("@NumeroDocumento", listaItem.NumeroDocumento),
+                 new SqlParameter("@NumeroDocumento", listaItem.IdUsuario),
                 new SqlParameter("@IdItemOrdenDeTrabajo", listaItem.IdItemOrdenDeTrabajo),
                 
                 };
@@ -65,7 +65,7 @@ namespace EcommerceHelper.DAL
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@NumeroDocumento", listaItem.NumeroDocumento),
+                new SqlParameter("@NumeroDocumento", listaItem.IdUsuario),
                 new SqlParameter("@NombreUsuario", listaItem.NombreUsuario),
                 new SqlParameter("@IdServicio", listaItem.IdServicio)
             };

@@ -10,6 +10,8 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
+
+    
     public partial class MenuPrincipal : System.Web.UI.Page
     {
 
@@ -40,10 +42,38 @@ namespace EcommerceHelper.Presentacion.Views.Public
         // grabo en BD Lista de Deseos del cliente
         protected void BtnComprar_Click(object sender, EventArgs e)
         {
+
+
             var Current = HttpContext.Current;
             UsuarioEntidad logueadoStatic;
-             logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+         
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
 
+
+            OrdenDeTrabajoEntidad NuevaOrden = new OrdenDeTrabajoEntidad();
+            OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
+
+            OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
+            OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo ;
+
+            int LogueadoId = logueadoStatic.IdUsuario;
+            ExisteOrdenDeTrabajo = EstadoActivo.OrdenDeTrabajoActivas(LogueadoId);
+
+            
+            
+
+            if ( ExisteOrdenDeTrabajo.IdEstado == 0 )
+                
+            {
+                NuevaOrden.IdUsuario = logueadoStatic.IdUsuario;
+                OrdenByIdUsuario.OrdenDeTrabajoInsert(NuevaOrden);
+            }
+            else
+            {
+                ExisteOrdenDeTrabajo= OrdenByIdUsuario.OrdenDeTrabajoActivas(LogueadoId);
+
+
+            }
 
             ItemOrdenDeTrabajoBLL unaListaItemBLL = new ItemOrdenDeTrabajoBLL();
             ItemOrdenDeTrabajoEntidad unItem = new ItemOrdenDeTrabajoEntidad();
@@ -56,14 +86,14 @@ namespace EcommerceHelper.Presentacion.Views.Public
             Label lbl = (Label)item.FindControl("LblIdServicio");
             int IdServ = Int32.Parse(lbl.Text);
 
-            // Carga la Lista de Deseos
+            // Carga la Lista de items
 
-            
-                unItem.NombreUsuario = logueadoStatic.Nombre;
-                unItem.NumeroDocumento = logueadoStatic.NumeroDocumento;
-                unItem.IdServicio = IdServ;
-                 unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
-               
+            unItem.IdOrdenDeTrabajo = ExisteOrdenDeTrabajo.IdOrdenDeTrabajo;
+            unItem.NombreUsuario = logueadoStatic.Nombre;
+            unItem.IdUsuario= logueadoStatic.IdUsuario;
+            unItem.IdServicio = IdServ;
+                
+                unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
 
         }
 

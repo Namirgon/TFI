@@ -49,6 +49,7 @@
     <Compile Include="ListaDeseoDAL.cs" />
     <Compile Include="LocalidadDAL.cs" />
     <Compile Include="NuevaConexion.cs" />
+    <Compile Include="OrdenDeTrabajoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinciaDAL.cs" />
     <Compile Include="ServicioDAL.cs" />

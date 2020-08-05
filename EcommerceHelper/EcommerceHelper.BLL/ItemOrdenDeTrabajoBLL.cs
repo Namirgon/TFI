@@ -28,10 +28,10 @@ namespace EcommerceHelper.BLL
         }
 
 
-        public List<ItemOrdenDeTrabajoEntidad> ListaItemSelectAllByNumeroDocumento(int NumeroDocumento)
+        public List<ItemOrdenDeTrabajoEntidad> ListaItemSelectAllByNumeroIdUsuario(int NumeroIdUsuario)
         {
 
-            return unNuevoItemDAL.SelectAllByNumeroDocumento(NumeroDocumento);
+            return unNuevoItemDAL.SelectAllByNumeroIdUsuario(NumeroIdUsuario);
         }
 
         public int ListaDeItemUpdate(ItemOrdenDeTrabajoEntidad IdItemOrdenDeTrabajo)

@@ -11,13 +11,13 @@ namespace EcommerceHelper.BLL
   public   class ItemOrdenDeTrabajoBLL
     {
 
-        private ItemOrdenDeTrabajoDAL unNuevoItemDAL = new ItemOrdenDeTrabajoDAL();
+        private ItemOrdenDeTrabajoDAL unItemDAL = new ItemOrdenDeTrabajoDAL();
         private ItemOrdenDeTrabajoDAL GestorItem = new ItemOrdenDeTrabajoDAL();
         public int ItemOrdenDeTrabajoInsert(ItemOrdenDeTrabajoEntidad laListaDeseo)
         {
             try
             {
-                unNuevoItemDAL.Insert(laListaDeseo);
+                unItemDAL.Insert(laListaDeseo);
                 return 0;
             }
             catch (Exception ex)
@@ -31,7 +31,14 @@ namespace EcommerceHelper.BLL
         public List<ItemOrdenDeTrabajoEntidad> ListaItemSelectAllByNumeroIdUsuario(int NumeroIdUsuario)
         {
 
-            return unNuevoItemDAL.SelectAllByNumeroIdUsuario(NumeroIdUsuario);
+            return unItemDAL.SelectAllByNumeroIdUsuario(NumeroIdUsuario);
+        }
+
+
+        public List<ItemOrdenDeTrabajoEntidad> ListaItemSelectAllByIdODT(int IdODT)
+        {
+
+            return unItemDAL.SelectIdItemOrdenDeTrabajo(IdODT);
         }
 
         public int ListaDeItemUpdate(ItemOrdenDeTrabajoEntidad IdItemOrdenDeTrabajo)
@@ -49,7 +56,20 @@ namespace EcommerceHelper.BLL
 
 
         }
-    }
+
+        public List<ItemOrdenDeTrabajoEntidad> ListaIdItems(int IdODT)
+        {
+
+            return unItemDAL.SelectIdItem(IdODT);
+        }
+
+        public  void EliminarItem( int IdItem)
+        {
+
+            unItemDAL.EliminarIdItemOrdenDeTrabajo(IdItem);
+        }
 
     }
+
+}
 

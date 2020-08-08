@@ -18,12 +18,12 @@ namespace EcommerceHelper.Presentacion.Views.Public
         HttpContext Current = HttpContext.Current;
 
         public List<ItemOrdenDeTrabajoEntidad> ItemDeServicios;
-     
+
         public List<ServicioEntidad> ListaDeServicios = new List<ServicioEntidad>();
         ItemOrdenDeTrabajoBLL cargarLista = new ItemOrdenDeTrabajoBLL();
-       
+
         ServicioBLL BuscarServicios = new ServicioBLL();
-      
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,51 +32,55 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             string nombre = Session["NomUsuario"].ToString();
 
-            //if (Current.Session["ListaDeServicios"] == null)
-            //    Response.Redirect("MenuPrincipal.aspx");
 
             if (!Page.IsPostBack)
             {
-                CargarDeseos();
-                
+                CargarPedido();
             }
             else
             {
                 // son los pedidos de servicio actuales
-                  ListaDeServicios = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
-
-
+                ListaDeServicios = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
                 // son la lista de los items
                 ItemDeServicios = (List<ItemOrdenDeTrabajoEntidad>)Current.Session["DeseoDeServicios"];
+                // OrdenesdeTrabajo Activas  por el IdUsuario
             }
         }
 
-        public void CargarDeseos()
+        public void CargarPedido()
         {
-            
+
             UsuarioEntidad logueadoStatic;
             logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
-            //int numerodocumento = logueadoStatic.NumeroDocumento;
+            OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
+
+            OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
+            OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo;
+
+
             int numeroIdUsuario = logueadoStatic.IdUsuario;
 
-            //lista 1= consulta a la tabla lista de deseos con el numerodocumento los IdServicios
-            //ItemDeServicios = cargarLista.ListaItemSelectAllByNumeroDocumento(numerodocumento);
-            ItemDeServicios = cargarLista.ListaItemSelectAllByNumeroIdUsuario(numeroIdUsuario);
-            // lista 2 = Con la lista 1 realizar la consulta a la tabla de servicios para traer *
-            foreach ( ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
+            // lista 1 = consulta las ordenes de compras activas por el IdUsuario
+            ExisteOrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
+
+            //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
+            ItemDeServicios = cargarLista.ListaItemSelectAllByIdODT(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);
+
+            // lista 3 = Con la lista 1 realizar la consulta a la tabla de servicios para traer *
+            foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
             {
                 ServicioEntidad _serv = new ServicioEntidad();
                 _serv.IdServicio = s.IdServicio;
 
-                 
+
 
                 ListaDeServicios.Add(BuscarServicios.FindServicio(_serv.IdServicio));
 
             }
-            
-        } 
 
-        protected void btnDatosPersonales(object sender , EventArgs e)
+        }
+
+        protected void btnDatosPersonales(object sender, EventArgs e)
         {
 
             Response.Redirect("DatosPersonales.aspx");
@@ -92,33 +96,86 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
         [WebMethod]
-        public static void CancelarItemDeLaLista(int id)
+        public static void CancelarItemDeLaLista(int id) // llega el IdServicio
         {
 
+            UsuarioEntidad logueadoStatic;
             var Current = HttpContext.Current;
-            //la lista de deseo contiene el detalle del servicio mas dia y horario para el servicio
-            var deseo= (List<ListaDeDeseoEntidad>)Current.Session["DeseoDeServicios"];
-            // la lista de servicios contiene el detalle del servicio propiamente dicho .. titulo, imagen, descripcion y precio
-            var list = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+            OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
 
-            Current.Session["ListaDeServicios"] = list.Where(x => x.IdServicio == id).ToList();
+            OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
+            OrdenDeTrabajoEntidad ExisteOrden = new OrdenDeTrabajoEntidad();
 
-            Current.Session["DeseoDeServicios"] = deseo.Where(x => x.IdServicio != id).ToList();
+            int numeroIdUsuario = logueadoStatic.IdUsuario;
 
-           
+            List<ItemOrdenDeTrabajoEntidad> ItemDeServicio;
+            ItemOrdenDeTrabajoBLL ListaItem = new ItemOrdenDeTrabajoBLL();
+            List<ServicioEntidad> ListaDeServicio = new List<ServicioEntidad>();
+
+            ServicioBLL BuscarServicios = new ServicioBLL();
+
+            // lista 1 = consulta las ordenes de compras activas por el IdUsuario
+            ExisteOrden = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
+
+            //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
+            ItemDeServicio = ListaItem.ListaIdItems (ExisteOrden.IdOrdenDeTrabajo);
 
 
-            foreach (ListaDeDeseoEntidad IdServ in deseo) 
-            {
+            // lista 3 = Con la lista 2 realizar la busqueda del IdServicio que se quiere eliminar
 
 
-               ListaDeDeseoBLL CancelarDeseo = new ListaDeDeseoBLL();
-               CancelarDeseo.ListaDeDeseosUpdate(IdServ);
+            foreach  ( ItemOrdenDeTrabajoEntidad s in ItemDeServicio ){
 
+                id = s.IdServicio;
+                ItemOrdenDeTrabajoEntidad _var = new ItemOrdenDeTrabajoEntidad();
+                _var.IdItemOrdenDeTrabajo = s.IdItemOrdenDeTrabajo;
+
+                ListaItem.EliminarItem(_var.IdItemOrdenDeTrabajo  );
+
+
+                // revisar porque me elimina todos los IdServicios del mismo servicio de la ordendetrabajoactiva
 
             }
-         
-           
+
+            
+            //foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicio)
+            //{
+            //    ServicioEntidad _serv = new ServicioEntidad();
+            //    _serv.IdServicio = s.IdServicio;
+
+
+
+            //    ListaDeServicio.Add(BuscarServicios.FindServicio(_serv.IdServicio));
+
+            //}
+
+
+
+            //var Current = HttpContext.Current;
+            ////la lista de deseo contiene el detalle del servicio mas dia y horario para el servicio
+            //var deseo= (List<ListaDeDeseoEntidad>)Current.Session["DeseoDeServicios"];
+            //// la lista de servicios contiene el detalle del servicio propiamente dicho .. titulo, imagen, descripcion y precio
+            //var list = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
+
+            //Current.Session["ListaDeServicios"] = list.Where(x => x.IdServicio == id).ToList();
+
+            //Current.Session["DeseoDeServicios"] = deseo.Where(x => x.IdServicio != id).ToList();
+
+
+
+
+            //foreach (ListaDeDeseoEntidad IdServ in deseo) 
+            //{
+
+
+            //   ListaDeDeseoBLL CancelarDeseo = new ListaDeDeseoBLL();
+            //   CancelarDeseo.ListaDeDeseosUpdate(IdServ);
+
+
+            //}
+
+
         }
 
 

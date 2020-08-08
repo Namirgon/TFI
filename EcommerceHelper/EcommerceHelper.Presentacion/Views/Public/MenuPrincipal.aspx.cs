@@ -93,7 +93,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             unItem.IdUsuario= logueadoStatic.IdUsuario;
             unItem.IdServicio = IdServ;
                 
-                unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
+            unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
 
         }
 
@@ -101,7 +101,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
     }
 
 
-}   // Fin clase
+}   
 
 
 // FIN CLASE

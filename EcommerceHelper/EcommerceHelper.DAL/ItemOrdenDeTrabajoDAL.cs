@@ -47,6 +47,41 @@ namespace EcommerceHelper.DAL
                 return listaItemEntidad;
             }
         }
+        public List<ItemOrdenDeTrabajoEntidad> SelectIdItemOrdenDeTrabajo(int idOrdenDeTrabajo)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdOrdenDeTrabajo", idOrdenDeTrabajo),
+
+            };
+
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarItemByIdOrdenDeTrabajo", parameters))
+            {
+                List<ItemOrdenDeTrabajoEntidad> listaItemEntidad = new List<ItemOrdenDeTrabajoEntidad>();
+
+                listaItemEntidad = Mapeador.Mapear<ItemOrdenDeTrabajoEntidad>(dt);
+
+                return listaItemEntidad;
+            }
+        }
+
+        public List<ItemOrdenDeTrabajoEntidad> SelectIdItem(int idOrdenDeTrabajo)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdOrdenDeTrabajo", idOrdenDeTrabajo),
+
+            };
+
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarIdItemByIdOrdenDeTrabajo", parameters))
+            {
+                List<ItemOrdenDeTrabajoEntidad> listaItemEntidad = new List<ItemOrdenDeTrabajoEntidad>();
+
+                listaItemEntidad = Mapeador.Mapear<ItemOrdenDeTrabajoEntidad>(dt);
+
+                return listaItemEntidad;
+            }
+        }
 
 
         public void ActualizarFechayHoraListaItem(ItemOrdenDeTrabajoEntidad listaItem)
@@ -80,6 +115,15 @@ namespace EcommerceHelper.DAL
             }
         }
 
+        public void EliminarIdItemOrdenDeTrabajo( int IdItem)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdItemOrdenDeTrabajo", IdItem )
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ItemDelete", parameters);
+        }
 
 
     }

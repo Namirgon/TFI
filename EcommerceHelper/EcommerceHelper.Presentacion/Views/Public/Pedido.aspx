@@ -182,7 +182,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "Pedido.aspx/CancelarDeseoDeLaLista",
+                url: "Pedido.aspx/CancelarItemDeLaLista",
                 data: '{ id: ' + idServicio + '}',
             
                 contentType: "application/json; charset=utf-8",

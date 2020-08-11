@@ -127,11 +127,11 @@
 
  
     <div  class="item-toolbar" runat="server"  >
-  
-           <a href="MisDirecciones.aspx"  class="btn btn-lg btn-default  " runat="server" style="position: fixed; margin-left: 75px; background-color:cadetblue " > Continuar </a>
+        <asp:Button ID="BtnContinuar" runat="server" Text="Continuar" OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
+          <%-- <a   class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " href="MisDirecciones.aspx" > Continuar </a>--%>
                 <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
 
-           </div>
+   </div>
   
     <style>
 

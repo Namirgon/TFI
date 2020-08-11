@@ -37,8 +37,8 @@ namespace EcommerceHelper.BLL
 
         public List<ItemOrdenDeTrabajoEntidad> ListaItemSelectAllByIdODT(int IdODT)
         {
-
             return unItemDAL.SelectIdItemOrdenDeTrabajo(IdODT);
+            
         }
 
         public int ListaDeItemUpdate(ItemOrdenDeTrabajoEntidad IdItemOrdenDeTrabajo)
@@ -57,10 +57,10 @@ namespace EcommerceHelper.BLL
 
         }
 
-        public List<ItemOrdenDeTrabajoEntidad> ListaIdItems(int IdODT)
+        public List< ItemOrdenDeTrabajoEntidad> ListaIdItems(int IdODT)
         {
 
-            return unItemDAL.SelectIdItem(IdODT);
+            return unItemDAL.SelectIdItemOrdenDeTrabajo(IdODT);
         }
 
         public  void EliminarItem( int IdItem)

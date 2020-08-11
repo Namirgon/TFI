@@ -70,7 +70,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
             {
                 ServicioEntidad _serv = new ServicioEntidad();
-                _serv.IdServicio = s.IdServicio;
+                _serv.IdServicio = s._MiServicio .IdServicio;
 
 
 
@@ -118,26 +118,30 @@ namespace EcommerceHelper.Presentacion.Views.Public
             // lista 1 = consulta las ordenes de compras activas por el IdUsuario
             ExisteOrden = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
 
-            //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
+            //lista 2 = consulta a la tabla lista de pedidos con el IdUsuario los IdServicios
             ItemDeServicio = ListaItem.ListaIdItems (ExisteOrden.IdOrdenDeTrabajo);
-
 
             // lista 3 = Con la lista 2 realizar la busqueda del IdServicio que se quiere eliminar
 
+            foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicio)
+   
+            {
 
-            foreach  ( ItemOrdenDeTrabajoEntidad s in ItemDeServicio ){
+                if (id == s._MiServicio .IdServicio   )
+                {
+                    //ItemDeServicio.FindIndex(item =>  s.IdItemOrdenDeTrabajo== item.IdItemOrdenDeTrabajo );
+                    ListaItem.EliminarItem(s.IdItemOrdenDeTrabajo);
+                }
+                else
+                {
 
-                id = s.IdServicio;
-                ItemOrdenDeTrabajoEntidad _var = new ItemOrdenDeTrabajoEntidad();
-                _var.IdItemOrdenDeTrabajo = s.IdItemOrdenDeTrabajo;
-
-                ListaItem.EliminarItem(_var.IdItemOrdenDeTrabajo  );
-
-
+                }
                 // revisar porque me elimina todos los IdServicios del mismo servicio de la ordendetrabajoactiva
-
+               
             }
 
+            
+          
             
             //foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicio)
             //{
@@ -176,6 +180,16 @@ namespace EcommerceHelper.Presentacion.Views.Public
             //}
 
 
+        }
+
+       
+
+        protected void BtnContinuar_Click(object sender, EventArgs e)
+        {
+            UsuarioEntidad logueadoStatic;
+            var Current = HttpContext.Current;
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+            Response.Redirect("MisDirecciones.aspx");
         }
 
 

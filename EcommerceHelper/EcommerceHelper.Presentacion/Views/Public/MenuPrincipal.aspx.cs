@@ -39,39 +39,33 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
         }
-        // grabo en BD Lista de Deseos del cliente
+        // grabo en BD Lista de Pedidos del cliente
         protected void BtnComprar_Click(object sender, EventArgs e)
         {
-
 
             var Current = HttpContext.Current;
             UsuarioEntidad logueadoStatic;
          
             logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
 
-
             OrdenDeTrabajoEntidad NuevaOrden = new OrdenDeTrabajoEntidad();
             OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
 
             OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
-            OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo ;
+            OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo= new OrdenDeTrabajoEntidad();
 
             int LogueadoId = logueadoStatic.IdUsuario;
             ExisteOrdenDeTrabajo = EstadoActivo.OrdenDeTrabajoActivas(LogueadoId);
 
-            
-            
+            if (ExisteOrdenDeTrabajo.IdEstado == 0)
 
-            if ( ExisteOrdenDeTrabajo.IdEstado == 0 )
-                
             {
-                NuevaOrden.IdUsuario = logueadoStatic.IdUsuario;
+                NuevaOrden._MiUsuario.IdUsuario = LogueadoId;
                 OrdenByIdUsuario.OrdenDeTrabajoInsert(NuevaOrden);
             }
             else
             {
-                ExisteOrdenDeTrabajo= OrdenByIdUsuario.OrdenDeTrabajoActivas(LogueadoId);
-
+                ExisteOrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(LogueadoId);
 
             }
 
@@ -88,10 +82,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             // Carga la Lista de items
 
-            unItem.IdOrdenDeTrabajo = ExisteOrdenDeTrabajo.IdOrdenDeTrabajo;
+            unItem._MiOrdenDeTrabajo.IdOrdenDeTrabajo = ExisteOrdenDeTrabajo.IdOrdenDeTrabajo;
             unItem.NombreUsuario = logueadoStatic.Nombre;
-            unItem.IdUsuario= logueadoStatic.IdUsuario;
-            unItem.IdServicio = IdServ;
+            unItem.MiUsuario.IdUsuario= logueadoStatic.IdUsuario;
+            unItem._MiServicio.IdServicio  = IdServ;
                 
             unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
 

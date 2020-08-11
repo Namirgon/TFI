@@ -15,12 +15,11 @@ namespace EcommerceHelper.DAL
 
         public void Insert(OrdenDeTrabajoEntidad listaODT)
         {
-            //ValidationUtility.ValidateArgument("listaOrden", listaODT);
 
             SqlParameter[] parameters = new SqlParameter[]
             {
                
-                new SqlParameter("@IdUsuario", listaODT.IdUsuario),
+                new SqlParameter("@IdUsuario", listaODT._MiUsuario .IdUsuario),
                 new SqlParameter("@Fecha", DateTime.Now),
                 new SqlParameter("@IdEstado", 1),
 
@@ -28,13 +27,14 @@ namespace EcommerceHelper.DAL
             };
 
             SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "OrdenInsert", parameters);
+           
         }
-
+      
         public void FinalizarOrdenDeTrabajo(OrdenDeTrabajoEntidad ListaOrden)
         {
             SqlParameter[] parameters = new SqlParameter[]
                 {
-                new SqlParameter("@IdUsuario", ListaOrden.IdUsuario),
+                new SqlParameter("@IdUsuario", ListaOrden._MiUsuario .IdUsuario),
                 new SqlParameter("@Fecha", ListaOrden.Fecha),
                 new SqlParameter("@IdEstado", 3),
                 };
@@ -51,16 +51,38 @@ namespace EcommerceHelper.DAL
 
             };
 
-            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarOrdenDeTrabajoActiva", parameters))
+            //using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarOrdenDeTrabajoActiva", parameters))
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarOrdenDeTrabajoActiva", parameters))
             {
-                OrdenDeTrabajoEntidad ordenDeTrabajoActiva = new OrdenDeTrabajoEntidad();
+                //OrdenDeTrabajoEntidad ordenDeTrabajoActiva = new OrdenDeTrabajoEntidad();
 
-                ordenDeTrabajoActiva = Mapeador.MapearFirst<OrdenDeTrabajoEntidad>(dt);
+                //ordenDeTrabajoActiva = Mapeador.MapearFirst<OrdenDeTrabajoEntidad>(dt);
 
-                return ordenDeTrabajoActiva;
+                //return ordenDeTrabajoActiva;
+
+
+                OrdenDeTrabajoEntidad OrdenDeTrabajoEntidad = new OrdenDeTrabajoEntidad();
+                OrdenDeTrabajoEntidad = MapearOrdenDeTrabajoEntidad(ds);
+                return OrdenDeTrabajoEntidad;
+
             }
         }
 
+        private OrdenDeTrabajoEntidad MapearOrdenDeTrabajoEntidad(DataSet ds)
+        {
+            OrdenDeTrabajoEntidad UnaOrdenT = new OrdenDeTrabajoEntidad();
 
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                UnaOrdenT.IdOrdenDeTrabajo = (int)row["IdOrdenDeTrabajo"];
+                UnaOrdenT._MiUsuario = new UsuarioEntidad();
+                UnaOrdenT._MiUsuario.IdUsuario = (int)row["IdUsuario"];
+                UnaOrdenT.Fecha = DateTime.Parse(row["Fecha"].ToString());
+                UnaOrdenT.IdEstado = (int)row["IdEstado"];
+
+            }
+            return UnaOrdenT;
+        }
     }
 }

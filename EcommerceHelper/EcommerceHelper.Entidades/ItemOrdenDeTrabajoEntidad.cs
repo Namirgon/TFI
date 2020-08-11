@@ -13,18 +13,45 @@ namespace EcommerceHelper.Entidades
 
         public int IdItemOrdenDeTrabajo { get; set; }
 
-        public int IdServicio { get; set; }
+        public ServicioEntidad _MiServicio = new ServicioEntidad();
 
-       
+        public ServicioEntidad MiServicio
+        {
+            get { return _MiServicio; }
+            set { _MiServicio = value; }
+
+
+        }
 
         public string  NombreUsuario { get; set; }
 
-        public int IdUsuario { get; set; }
+        public UsuarioEntidad _MiUsuario = new UsuarioEntidad();
 
-        public int  IdDireccion { get; set; }
+        public UsuarioEntidad MiUsuario
+        {
+            get { return _MiUsuario; }
+            set { _MiUsuario = value; }
+
+        }
+
+        public DireccionEntidad _MiDireccion = new DireccionEntidad();
+
+        public DireccionEntidad MiDireccion
+        {
+            get { return _MiDireccion; }
+            set { _MiDireccion = value; }
+
+        }
 
 
-        public int IdOrdenDeTrabajo { get; set; }
+        public OrdenDeTrabajoEntidad _MiOrdenDeTrabajo = new OrdenDeTrabajoEntidad();
+
+        public OrdenDeTrabajoEntidad MiOrdenDeTrabajo
+        {
+            get { return _MiOrdenDeTrabajo; }
+            set { _MiOrdenDeTrabajo = value; }
+
+        }
         public decimal Precio { get; set; }
 
         public DateTime Fecha { get; set; }

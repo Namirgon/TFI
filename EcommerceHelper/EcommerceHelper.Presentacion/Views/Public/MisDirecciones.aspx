@@ -13,7 +13,7 @@
       </div>
 
 
-    <asp:GridView ID="GVMisDirecciones" runat="server" cssclass="table table-striped " OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+    <asp:GridView ID="GVMisDirecciones" runat="server" cssclass="table table-striped " OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GVMisDirecciones_RowCommand">
         <Columns>
             <asp:TemplateField>
                 <ItemTemplate>

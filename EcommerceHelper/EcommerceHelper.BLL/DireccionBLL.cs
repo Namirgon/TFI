@@ -18,6 +18,8 @@ namespace EcommerceHelper.BLL
         private ProvinciaDAL GestorProvincia = new ProvinciaDAL();
         private TipoDomicilioDAL GestorTipoDomicilio = new TipoDomicilioDAL();
 
+        private DireccionDAL UnaDireccion = new DireccionDAL();
+
         public List<ProvinciaEntidad> SelectALLProvincias()
         {
             List<ProvinciaEntidad> unasProv = new List<ProvinciaEntidad>();
@@ -37,7 +39,11 @@ namespace EcommerceHelper.BLL
             //return DalDeProvincia.SelectAll();
         }
 
+        public List<DireccionEntidad> ListarDirecciones (int IdUsuario)
+        {
+            return UnaDireccion.ListarDireccionesDAL (IdUsuario);
 
+        }
 
     }
 }

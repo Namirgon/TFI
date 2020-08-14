@@ -135,8 +135,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
                 UnaDireccion.MiLocalidad = new LocalidadEntidad();
                 UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
-                UnaDireccion.MiTipoDireccion = new TipoDireccionEntidad();
-                UnaDireccion.MiTipoDireccion.IdTipoDireccion = Int32.Parse(DDLTipodeDireccion.SelectedValue);
+                UnaDireccion._MiTipoDireccion = new TipoDireccionEntidad();
+                UnaDireccion._MiTipoDireccion.IdTipoDireccion = Int32.Parse(DDLTipodeDireccion.SelectedValue);
 
                 unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
 

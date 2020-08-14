@@ -21,17 +21,35 @@ namespace EcommerceHelper.Entidades
 
         public string Departamento { get; set; }
 
-        public ProvinciaEntidad MiProvincia { get; set; }
+        public ProvinciaEntidad _MiProvincia = new ProvinciaEntidad();
 
-        public int IdProvincia { get; set; }
+        public ProvinciaEntidad MiProvincia
+        {
+            get { return _MiProvincia; }
+            set { _MiProvincia = value; }
 
-        public LocalidadEntidad MiLocalidad { get; set; }
+        }
 
-        public int IdLocalidad { get; set; }
+        public LocalidadEntidad _MiLocalidad = new LocalidadEntidad();
 
-        public TipoDireccionEntidad MiTipoDireccion { get; set; }
+     
+        public LocalidadEntidad MiLocalidad {
+                    
+            get { return _MiLocalidad; }
+            set { _MiLocalidad = value; }
+        }
 
-        public int IdTipoDireccion { get; set; }
+
+        public TipoDireccionEntidad _MiTipoDireccion = new TipoDireccionEntidad();
+
+        public TipoDireccionEntidad MiTipoDireccion
+        {
+            get { return _MiTipoDireccion; }
+
+            set { _MiTipoDireccion = value; }
+
+        }
+
 
 
 

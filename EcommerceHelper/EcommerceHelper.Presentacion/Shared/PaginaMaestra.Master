@@ -4,10 +4,10 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<html xmlns="http://www.w3.org/1999/xhtml" >
 <%--<html>--%>
 
-<head runat="server">
+<head >
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <title></title>
@@ -17,7 +17,7 @@
 <body>
 
     <form id="form1" runat="server">
-         <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
+<%--         <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>--%>
         <header id="header">
 
             <div class="inner">
@@ -27,15 +27,12 @@
                     <a href="../Public/IniciarSesion.aspx">Iniciar Sesion</a>
                     <a href="../Public/NuestrosServicios.aspx">Nuestros Servicios</a>
                     <a href="../Private/IniciarSesionIntranet.aspx">Intranet</a>
-                    <a  >Idioma </a>
-                   
-                         <asp:DropDownList runat="server" style="width:200px;  margin-left:55px">
+                    <a  >Idioma <asp:DropDownList runat="server"   style="width:200px;  margin-left:55px">
                         <asp:ListItem>Español</asp:ListItem>
                         <asp:ListItem>English</asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-
+                       
                     </asp:DropDownList>
-         
+                    </a>
                 </nav>
                    
             </div>

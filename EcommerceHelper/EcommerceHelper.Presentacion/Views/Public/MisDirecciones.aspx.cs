@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.Entidades;
+﻿using EcommerceHelper.BLL;
+using EcommerceHelper.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,21 +29,40 @@ namespace EcommerceHelper.Presentacion.Views.Public
             {
 
 
-                CargarMisDirecciones();
+                CargarDirecciones();
             }
         }
 
-        private void CargarMisDirecciones()
-        {
-            UsuarioEntidad logueadoStatic;
-            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
-            int numerodocumento = logueadoStatic.NumeroDocumento;
-
-
-        }
+        
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        protected void GVMisDirecciones_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+
+        public void CargarDirecciones()
+        {
+
+            UsuarioEntidad logueadoStatic;
+            var Current = HttpContext.Current;
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+            int numeroIdUsuario = logueadoStatic.IdUsuario;
+
+            List<DireccionEntidad> MisDirecciones = new List<DireccionEntidad>();
+            DireccionBLL ListDireccion = new DireccionBLL();
+
+            ListDireccion.ListarDirecciones(numeroIdUsuario);
+
+
+            GVMisDirecciones.DataSource = ListDireccion;
+            GVMisDirecciones.DataBind();
+
 
         }
     }

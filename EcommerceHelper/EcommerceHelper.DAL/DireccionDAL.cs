@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EcommerceHelper.DAL
 {
-   public class DireccionDAL
+    public class DireccionDAL
     {
 
 
@@ -26,7 +26,7 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@Departamento", direccion.Departamento),
                  new SqlParameter("@IdProvincia", direccion.MiProvincia.IdProvincia),
                 new SqlParameter("@IdLocalidad", direccion.MiLocalidad.IdLocalidad),
-                new SqlParameter("@IdTipoDireccion", direccion.MiTipoDireccion.IdTipoDireccion)
+                new SqlParameter("@IdTipoDireccion", direccion._MiTipoDireccion.IdTipoDireccion)
 
             };
 
@@ -35,6 +35,61 @@ namespace EcommerceHelper.DAL
             return valor;
         }
 
+        public List<DireccionEntidad> ListarDireccionesDAL(int Id)
+        {
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdUsuario", Id),
+
+            };
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarDireccionbyIdUsuario", parameters))
+            //using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "DireccionSelectByNumeroDocumento", parameters))
+            {
+                List<DireccionEntidad> ListaMisDirecciones = new List<DireccionEntidad>();
+
+                ListaMisDirecciones = MapearMisDirecciones(ds);
+
+                return ListaMisDirecciones;
+            }
+
+        }
+        public List<DireccionEntidad> MapearMisDirecciones(DataSet ds)
+        {
+
+            List<DireccionEntidad> ListDirecciones = new List<DireccionEntidad>();
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    DireccionEntidad UnaDireccion = new DireccionEntidad();
+
+                    UnaDireccion.IdDireccion = (int)row["IdDireccion"];
+                    UnaDireccion.Calle= row["Calle"].ToString();
+                    UnaDireccion.Numero= (int)row["Numero"];
+                    UnaDireccion.Piso= row["Piso"].ToString();
+                    UnaDireccion.Departamento= row["Departamento"].ToString();
+                    UnaDireccion.MiProvincia = new ProvinciaEntidad();
+                    UnaDireccion.MiProvincia.IdProvincia= (int)row["IdProvincia"];
+                    UnaDireccion.MiLocalidad = new LocalidadEntidad();
+                    UnaDireccion.MiLocalidad.IdLocalidad= (int)row["IdLocalidad"];
+                    UnaDireccion.MiTipoDireccion = new TipoDireccionEntidad();
+                   UnaDireccion.MiTipoDireccion.IdTipoDireccion= (int)row["IdTipoDireccion"];
+
+                    ListDirecciones.Add(UnaDireccion);
+                }
+                return ListDirecciones;
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
+        }
+        
     }
 }
 

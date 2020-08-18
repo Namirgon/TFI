@@ -11,12 +11,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+     
+        
+      <asp:ScriptManager ID="ScriptManager1" runat="server">  
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>
+
+      </asp:ScriptManager>
+    
+      
         <header id="header">
 
             <div class="inner">
@@ -35,11 +37,15 @@
             </div>
         </header>
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+               <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
 
             </asp:ContentPlaceHolder>
+              </div>
+           
         </div>
+            
     </form>
         <div class="container body-content">
     <footer >
@@ -137,6 +143,12 @@ header p {
 
 
         </style>
+   
+    
+    <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+    </asp:ContentPlaceHolder>
+
+    
 
 </body>
 </html>

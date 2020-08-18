@@ -45,6 +45,12 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         }
 
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //required to avoid the runtime error "  
+            //Control 'GridView1' of type 'GridView' must be placed inside a form tag with runat=server."  
+
+        }
 
         public void CargarDirecciones()
         {
@@ -57,10 +63,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
             List<DireccionEntidad> MisDirecciones = new List<DireccionEntidad>();
             DireccionBLL ListDireccion = new DireccionBLL();
 
-            ListDireccion.ListarDirecciones(numeroIdUsuario);
+          MisDirecciones=  ListDireccion.ListarDirecciones(numeroIdUsuario);
 
 
-            GVMisDirecciones.DataSource = ListDireccion;
+            GVMisDirecciones.DataSource = null;
+            GVMisDirecciones.DataSource = MisDirecciones;
             GVMisDirecciones.DataBind();
 
 

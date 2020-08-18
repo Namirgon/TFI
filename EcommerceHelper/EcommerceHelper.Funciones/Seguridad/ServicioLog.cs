@@ -20,7 +20,7 @@ namespace EcommerceHelper.Funciones.Seguridad
             }
 
 
-            public static void CrearLog(Exception exc, string AccionExcepcion, string elUsuario, string elCUIT) //Bitacora Errores
+            public static void CrearLog(Exception exc, string AccionExcepcion, string elUsuario, string elIdUsuario) //Bitacora Errores
             {
                 string MsjExcepciones = ObtenerMsjExcepciones(exc);
 
@@ -28,11 +28,11 @@ namespace EcommerceHelper.Funciones.Seguridad
                 {
                     if (!string.IsNullOrWhiteSpace(elUsuario))
                     {
-                        GrabarLogBD(elUsuario, elCUIT, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
+                        GrabarLogBD(elUsuario, elIdUsuario, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
                     }
                     else
                     {
-                        GrabarLogBD("SIN_USUARIO", elCUIT, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
+                        GrabarLogBD("SIN_USUARIO", elIdUsuario, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
                     }
 
                 }
@@ -42,11 +42,11 @@ namespace EcommerceHelper.Funciones.Seguridad
                     {
                         if (!string.IsNullOrWhiteSpace(elUsuario))
                         {
-                            GrabarLogBD(elUsuario, elCUIT, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
+                            GrabarLogBD(elUsuario, elIdUsuario, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
                         }
                         else
                         {
-                            GrabarLogBD("SIN_USUARIO", elCUIT, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
+                            GrabarLogBD("SIN_USUARIO", elIdUsuario, DateTime.Now, "Error", AccionExcepcion, MsjExcepciones);
                         }
                     }
                     catch (Exception)
@@ -57,12 +57,12 @@ namespace EcommerceHelper.Funciones.Seguridad
             }
 
 
-            public static void CrearLog(string Accion, string Mensaje, string elUsuario, string elNumeroDocumento)//Bitacora Eventos
+            public static void CrearLogEvento(string Accion, string Mensaje, string elUsuario, string elIdUsuario)//Bitacora Eventos
             {
                 if (!string.IsNullOrWhiteSpace(elUsuario))
-                    GrabarLogBD(elUsuario, elNumeroDocumento, DateTime.Now, "Evento", Accion, Mensaje);
+                    GrabarLogBD(elUsuario, elIdUsuario, DateTime.Now, "Evento", Accion, Mensaje);
                 else
-                    GrabarLogBD("SIN_USUARIO", elNumeroDocumento, DateTime.Now, "Evento", Accion, Mensaje);
+                    GrabarLogBD("SIN_USUARIO", elIdUsuario, DateTime.Now, "Evento", Accion, Mensaje);
             }
 
 
@@ -81,14 +81,14 @@ namespace EcommerceHelper.Funciones.Seguridad
                 return LaCadena;
             }
 
-            private static void GrabarLogBD(string elNombreUs, string elNumeroDocumento, DateTime fecha, string tipo, string accionrealizada, string msj)
+            private static void GrabarLogBD(string elNombreUs, string elIdUsuario, DateTime fecha, string tipo, string accionrealizada, string msj)
             {
                 try
                 {
                     SqlParameter[] parameters = new SqlParameter[]
                     {
                     new SqlParameter("@elNombreUs", elNombreUs),
-                    new SqlParameter("@elNumeroDocumento", elNumeroDocumento),
+                    new SqlParameter("@IdUsuario", elIdUsuario),
                     new SqlParameter("@fecha", fecha),
                     new SqlParameter("@tipo", tipo),
                     new SqlParameter("@accionrealizada", accionrealizada),

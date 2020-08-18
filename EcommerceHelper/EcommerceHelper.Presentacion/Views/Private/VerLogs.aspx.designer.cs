@@ -7,63 +7,93 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EcommerceHelper.Presentacion.Shared {
+namespace EcommerceHelper.Presentacion.Views.Private {
     
     
-    public partial class PaginaMaestraCliente {
+    public partial class VerLogs {
         
         /// <summary>
-        /// Control head.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control form1.
+        /// Control idelTIpoLog.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect idelTIpoLog;
         
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control lblNombreUsuario.
+        /// Control elIdFechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl elIdFechaInicio;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control ScriptSection.
+        /// Control elIdFechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptSection;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl elIdFechaFin;
+        
+        /// <summary>
+        /// Control btnFiltrarLogs.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFiltrarLogs;
+        
+        /// <summary>
+        /// Control grillaLogs.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grillaLogs;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new EcommerceHelper.Presentacion.Shared.PaginaMaestraAdministracion Master {
+            get {
+                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestraAdministracion)(base.Master));
+            }
+        }
     }
 }

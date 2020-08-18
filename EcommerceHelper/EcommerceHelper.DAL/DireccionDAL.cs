@@ -72,11 +72,14 @@ namespace EcommerceHelper.DAL
                     UnaDireccion.Piso= row["Piso"].ToString();
                     UnaDireccion.Departamento= row["Departamento"].ToString();
                     UnaDireccion.MiProvincia = new ProvinciaEntidad();
-                    UnaDireccion.MiProvincia.IdProvincia= (int)row["IdProvincia"];
+                    //UnaDireccion.MiProvincia.IdProvincia = (int)row["IdProvincia"];
+                    UnaDireccion.MiProvincia.Descripcion = row["Descripcion"].ToString();
                     UnaDireccion.MiLocalidad = new LocalidadEntidad();
-                    UnaDireccion.MiLocalidad.IdLocalidad= (int)row["IdLocalidad"];
+                    //UnaDireccion.MiLocalidad.IdLocalidad= (int)row["IdLocalidad"];
+                    UnaDireccion.MiLocalidad.Descripcion= row["Descripcion"].ToString();
                     UnaDireccion.MiTipoDireccion = new TipoDireccionEntidad();
-                   UnaDireccion.MiTipoDireccion.IdTipoDireccion= (int)row["IdTipoDireccion"];
+                    //UnaDireccion.MiTipoDireccion.IdTipoDireccion= (int)row["IdTipoDireccion"];
+                    UnaDireccion.MiTipoDireccion.Descripcion  = row["Descripcion"].ToString();
 
                     ListDirecciones.Add(UnaDireccion);
                 }

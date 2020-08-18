@@ -57,7 +57,10 @@
     </footer>
       </div>
  
+       <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
 
+
+       </asp:ContentPlaceHolder>
 
 
 </body>

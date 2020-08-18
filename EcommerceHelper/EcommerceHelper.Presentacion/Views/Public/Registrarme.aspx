@@ -106,6 +106,7 @@
     <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:150px"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Ingrese Departamento" ControlToValidate="txtDepartamento" Font-Bold="True"></asp:RequiredFieldValidator>
     <br /> 
+     <asp:ScriptManager ID="ScriptManger1" runat="Server" />
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
                     <div class="form-group">
@@ -139,6 +140,6 @@
     </div>
    </div>
 
-</div>
+
   
 </asp:Content>

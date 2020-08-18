@@ -107,46 +107,59 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void BtnContinuar_Click(object sender, EventArgs e)
         {
-            var NroUsuario = 0;
-            if (Page.IsValid)
 
+
+            try
             {
-                unUsuario.IdUsuarioTipo = 4; // Usuario Cliente 
-                unUsuario.Email = txtusuario.Text;
-                unUsuario.Password = txtcontrasena.Text;
-                unUsuario.Nombre = txtNombre.Text;
-                unUsuario.Apellido = txtApellido.Text;
-                unUsuario.MiSexo = new SexoEntidad();
-                unUsuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
-                unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
-                unUsuario.MiTelefono = new TipoTelefonoEntidad();
-                unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
-                unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text); //Int32.Parse(txtTelefono.Text);   
+                var NroUsuario = 0;
+                if (Page.IsValid)
+
+                {
+                    unUsuario.IdUsuarioTipo = 4; // Usuario Cliente 
+                    unUsuario.Email = txtusuario.Text;
+                    unUsuario.Password = txtcontrasena.Text;
+                    unUsuario.Nombre = txtNombre.Text;
+                    unUsuario.Apellido = txtApellido.Text;
+                    unUsuario.MiSexo = new SexoEntidad();
+                    unUsuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
+                    unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
+                    unUsuario.MiTelefono = new TipoTelefonoEntidad();
+                    unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
+                    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text); //Int32.Parse(txtTelefono.Text);   
 
 
-                NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
+                    NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
 
-                //Direccion
-                UnaDireccion.Calle = txtCalle.Text;
-                UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
-                UnaDireccion.Piso = txtPiso.Text;
-                UnaDireccion.Departamento = txtDepartamento.Text;
-                UnaDireccion.MiProvincia = new ProvinciaEntidad();
-                UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
-                UnaDireccion.MiLocalidad = new LocalidadEntidad();
-                UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
-                UnaDireccion._MiTipoDireccion = new TipoDireccionEntidad();
-                UnaDireccion._MiTipoDireccion.IdTipoDireccion = Int32.Parse(DDLTipodeDireccion.SelectedValue);
+                    //Direccion
+                    UnaDireccion.Calle = txtCalle.Text;
+                    UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
+                    UnaDireccion.Piso = txtPiso.Text;
+                    UnaDireccion.Departamento = txtDepartamento.Text;
+                    UnaDireccion.MiProvincia = new ProvinciaEntidad();
+                    UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
+                    UnaDireccion.MiLocalidad = new LocalidadEntidad();
+                    UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
+                    UnaDireccion._MiTipoDireccion = new TipoDireccionEntidad();
+                    UnaDireccion._MiTipoDireccion.IdTipoDireccion = Int32.Parse(DDLTipodeDireccion.SelectedValue);
 
-                unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
+                    unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
 
-                limpiarCampos();
-                Response.Redirect("/Views/Public/IniciarSesion.aspx");
+                    limpiarCampos();
+                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEvento("Alta usuario", "Alta usuario: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
+                    Response.Redirect("/Views/Public/IniciarSesion.aspx");
+                }
+                else
+                {
+
+                    
+                }
+
             }
-            else
+            catch(Exception ex)
             {
+                EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLog(ex, "Alta Usuario", unUsuario.Apellido, (unUsuario.IdUsuario).ToString());
+                Response.Redirect("/Shared/Error.aspx");
 
-                Exception ex;
             }
         }
         public void limpiarCampos()

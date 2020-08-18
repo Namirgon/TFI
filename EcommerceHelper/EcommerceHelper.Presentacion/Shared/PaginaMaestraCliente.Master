@@ -28,9 +28,12 @@
  
     <form id="form1" runat="server">
      
-   
+  
+     <asp:ScriptManager ID="ScriptManager1" runat="server"> 
 
-  <%--   <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>--%>
+
+     </asp:ScriptManager>
+
         <header id="header">
 <%--          ----------------------------------------------------  Menu del cliente ---------------------------------------------------------------------%>
             <div class="inner">

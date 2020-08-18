@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestra.Master"  AutoEventWireup="true" CodeBehind="AltaEmpleado.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.AltaEmpleado" %>
-
+﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestraAdministracion.Master"  AutoEventWireup="true" CodeBehind="AltaEmpleado.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.AltaEmpleado" %>
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestraAdministracion.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
      <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
@@ -134,3 +134,4 @@
 </div>
   
 </asp:Content>
+

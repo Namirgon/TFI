@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Entidades.Servicios.Permisos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TFI.Entidades.Servicios.Permisos;
+using Entidades.Servicios.Permisos;
 
 namespace EcommerceHelper.Entidades
 {
@@ -47,14 +48,10 @@ namespace EcommerceHelper.Entidades
 
         public FamiliaEntidad Familia
         {
-            get
-            {
-                return _Familia;
-            }
-            set
-            {
-                _Familia = value;
-            }
+            get { return _Familia; }
+
+            set { _Familia = value; }
+            
         }
 
 

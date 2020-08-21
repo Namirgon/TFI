@@ -147,7 +147,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                     unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
 
                     limpiarCampos();
-                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEvento("Alta Empleado", "Alta Empleado: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
+                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Alta Empleado", "Alta Empleado: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
                     Response.Redirect("/Views/Private/IniciarSesionIntranet.aspx");
                 }
                 else

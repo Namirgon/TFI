@@ -7,6 +7,7 @@ using EcommerceHelper.Entidades;
 using System.Data.SqlClient;
 using System.Data;
 using EcommerceHelper.Funciones.Persistencia;
+using Entidades.Servicios.Permisos;
 
 namespace EcommerceHelper.DAL
 {
@@ -84,5 +85,95 @@ namespace EcommerceHelper.DAL
 
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "DireccionUsuarioInsert", parameters);
         }
+
+        public List<IFamPat> UsuarioTraerPermisos(string elNomUsuario, int elIdUsuario)
+        {
+
+            List<IFamPat> unosPermisos = new List<IFamPat>();
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@elNomUsuario", elNomUsuario),
+                new SqlParameter("@elIdUsuario", elIdUsuario)
+            };
+            SqlParameter[] parameters2 = new SqlParameter[]
+            {
+                new SqlParameter("@elNomUsuario", elNomUsuario),
+                new SqlParameter("@elIdUsuario", elIdUsuario)
+            };
+
+            try
+            {
+                //Traigo las familias
+                using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioTraerFamilias", parameters))
+                {
+                    List<IFamPat> unasFamilias = new List<IFamPat>();
+                    unasFamilias = MapearFamilias(ds);
+
+                    if (unasFamilias != null && unasFamilias.Count > 0)
+                        unosPermisos.AddRange(unasFamilias);
+                }
+                //Traigo las patentes
+                using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioTraerPatentes", parameters2))
+                {
+                    List<IFamPat> unasPatentes = new List<IFamPat>();
+                    unasPatentes = MapearPatentes(ds);
+                    unosPermisos.AddRange(unasPatentes);
+                }
+
+                return unosPermisos;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+
+        public static List<IFamPat> MapearFamilias(DataSet ds)
+        {
+            List<IFamPat> ResElementosFamPat = new List<IFamPat>();
+
+            try
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    IFamPat unaFamilia = new Familia();
+                    unaFamilia.IdIFamPat = (int)row["IdFamilia"];
+                    unaFamilia.NombreIFamPat = row["NombreFamilia"].ToString();
+                    ResElementosFamPat.Add(unaFamilia);
+                }
+                return ResElementosFamPat;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+        public static List<IFamPat> MapearPatentes(DataSet ds)
+        {
+            List<IFamPat> ResElementosFamPat = new List<IFamPat>();
+
+            try
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    IFamPat unaPatente = new Patente();
+                    unaPatente.IdIFamPat = (int)row["IdPatente"];
+                    unaPatente.NombreIFamPat = row["NombrePatente"].ToString();
+                    ResElementosFamPat.Add(unaPatente);
+                }
+                return ResElementosFamPat;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+
     }
 }

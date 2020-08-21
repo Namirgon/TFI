@@ -5,7 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EcommerceHelper.BLL;
+using EcommerceHelper.BLL.Managers;
 using EcommerceHelper.Entidades;
+using EcommerceHelper.BLL.Servicios;
+using EcommerceHelper.Funciones.Seguridad;
 
 
 namespace EcommerceHelper.Presentacion.Views.Public
@@ -13,7 +16,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
     public partial class IniciarSesion : System.Web.UI.Page
     {
 
-        //DAL.NuevaConexion cn = new DAL.NuevaConexion();
+
+
+        BLL.Managers.FamiliaBLL UnManagerFamilia = new BLL.Managers.FamiliaBLL();
+        UsuarioBLL UnServicioFamilia = new UsuarioBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,8 +44,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
             if (usuario != null)
 
             {
+                usuario.Familia = UnManagerFamilia.FamiliaSelectNombreFamiliaByIdUsuario(usuario.IdUsuario);
+                usuario.Permisos = BLLUsuario.UsuarioTraerPermisos(usuario.Apellido, usuario.IdUsuario );
                 Session["NomUsuario"] = usuario.Nombre;
                 Session["Usuario"] = usuario;
+                ServicioLog.CrearLogEventos("Logueo", "Logueo Correcto", usuario.Apellido , (usuario.IdUsuario).ToString() );
                 Response.Redirect("/Views/Public/MenuPrincipal.aspx");
             }
             else
@@ -57,5 +66,5 @@ namespace EcommerceHelper.Presentacion.Views.Public
         }
 
     }
-             }
+}
     

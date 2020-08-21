@@ -19,7 +19,7 @@
   
        </div>
        <br />
-    <div  style="border:groove; background-image:url('../../Content/Image/bannerIntranet.jpg'); background-size:cover">
+    <div  style="border:groove; background-image:url('../../Content/Image/bannerIntranet.jpg'); background-size:cover; height:800px">
      <br />     
    <br />
 
@@ -27,7 +27,7 @@
          <div class="row">
             <div class="col-md-10 col-md-offset-2">
                 <b>
-                    <asp:Label ID="Label2" runat="server" Text=" Logsdelsistema"  ></asp:Label></b>
+                    <asp:Label ID="Label2" runat="server" Text=" Logs del sistema  "  ></asp:Label></b>
                 <select id="idelTIpoLog" runat="server" class="browser-default custom-select form-control ">
                     <option value="Evento">Evento</option>
                     <option value="Error">Error</option>

@@ -145,7 +145,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
 
                     limpiarCampos();
-                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEvento("Alta usuario", "Alta usuario: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
+                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Alta usuario", "Alta usuario: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
                     Response.Redirect("/Views/Public/IniciarSesion.aspx");
                 }
                 else

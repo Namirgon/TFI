@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.Entidades;
+﻿using EcommerceHelper.BLL.Servicios;
+using EcommerceHelper.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace EcommerceHelper.Presentacion.Shared
             {
                 if (usuarioAutenticado.Permisos.Exists(x => x.NombreIFamPat == elPermiso))
                     return true;
-                if (EcommerceHelper.BLL.FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, PermisosPagina))
+                if (FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, PermisosPagina))
                     return true;
                 //return usuarioAutenticado.Permisos.Any(X => X.NombreIFamPat == elPermiso);
             }
@@ -49,7 +50,7 @@ namespace EcommerceHelper.Presentacion.Shared
                         return true;
                 }
 
-                return EcommerceHelper.BLL.FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, losPermisosARevisar);
+                return FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, losPermisosARevisar);
             }
             return false;
 

@@ -313,6 +313,7 @@
     <Content Include="Shared\Error.aspx" />
     <Content Include="Views\Private\AltaEmpleado.aspx" />
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
+    <Content Include="Views\Private\BackUp.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
     <Content Include="Views\Private\VerLogs.aspx" />
@@ -382,6 +383,13 @@
     </Compile>
     <Compile Include="Views\Private\AsignacionDePerfiles.aspx.designer.cs">
       <DependentUpon>AsignacionDePerfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\BackUp.aspx.cs">
+      <DependentUpon>BackUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\BackUp.aspx.designer.cs">
+      <DependentUpon>BackUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\DireccionEmpleado.aspx.cs">
       <DependentUpon>DireccionEmpleado.aspx</DependentUpon>
@@ -529,6 +537,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Files\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EcommerceHelper.BLL\EcommerceHelper.BLL.csproj">

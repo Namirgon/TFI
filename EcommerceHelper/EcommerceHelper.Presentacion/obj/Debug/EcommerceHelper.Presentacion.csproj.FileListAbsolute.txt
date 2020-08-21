@@ -400,6 +400,7 @@ C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CopyComplete
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.dll
 C:\Users\natal\Desktop\TFI-master (1)\TFI-master\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.ReaderWriter.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll.config
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\EcommerceHelper.Presentacion.pdb
@@ -440,7 +441,6 @@ C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\rosl
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Security.Principal.Windows.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.ValueTuple.dll
-C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.ReaderWriter.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\roslyn\System.Xml.XPath.XDocument.dll

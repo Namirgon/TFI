@@ -57,7 +57,7 @@ namespace EcommerceHelper.Funciones.Seguridad
             }
 
 
-            public static void CrearLogEvento(string Accion, string Mensaje, string elUsuario, string elIdUsuario)//Bitacora Eventos
+            public static void CrearLogEventos(string Accion, string Mensaje, string elUsuario, string elIdUsuario)//Bitacora Eventos
             {
                 if (!string.IsNullOrWhiteSpace(elUsuario))
                     GrabarLogBD(elUsuario, elIdUsuario, DateTime.Now, "Evento", Accion, Mensaje);

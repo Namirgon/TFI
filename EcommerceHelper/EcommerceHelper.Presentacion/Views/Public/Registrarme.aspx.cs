@@ -181,6 +181,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
             txtrepetircontrasena.Text = string.Empty;
         }
 
+        protected void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

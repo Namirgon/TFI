@@ -27,7 +27,7 @@
          <div class="row">
             <div class="col-md-10 col-md-offset-2">
                 <b>
-                    <asp:Label ID="Label2" runat="server" Text=" Logs del sistema  "  ></asp:Label></b>
+                    <asp:Label ID="Label2" runat="server" Text=" Logs del sistema  "  style="color:aliceblue ; font-size: 20px; margin-left:30px"  ></asp:Label></b>
                 <select id="idelTIpoLog" runat="server" class="browser-default custom-select form-control ">
                     <option value="Evento">Evento</option>
                     <option value="Error">Error</option>
@@ -37,12 +37,12 @@
                 <div class="form-inline">
 
                     <b>
-                        <asp:Label ID="Label3" runat="server" Text=" Desde "> </asp:Label></b>
+                        <asp:Label ID="Label3" runat="server" Text=" Desde "  style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px" > </asp:Label></b>
 
                     <input runat="server" type="date" name="nFechaInicio" id="elIdFechaInicio" class="hasDatepicker form-control " required="required" />
 
                     <b>
-                        <asp:Label ID="Label4" runat="server" Text=" Hasta "> </asp:Label></b>
+                        <asp:Label ID="Label4" runat="server" Text=" Hasta " style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px"> </asp:Label></b>
 
                     <input runat="server" type="date" name="nFechaFin" id="elIdFechaFin" class="hasDatepicker form-control " required="required" />
                     <asp:Button ID="btnFiltrarLogs" runat="server" Text=" Buscar " CssClass="form-control btn-success" OnClick="btnFiltrarLogs_Click" />

@@ -250,6 +250,7 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\Files\bk228.bak" />
     <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
@@ -316,6 +317,7 @@
     <Content Include="Views\Private\BackUp.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
+    <Content Include="Views\Private\Restaurar.aspx" />
     <Content Include="Views\Private\VerLogs.aspx" />
     <Content Include="Views\Public\DatosPersonales.aspx" />
     <Content Include="Views\Public\FormaDePago.aspx" />
@@ -404,6 +406,13 @@
     </Compile>
     <Compile Include="Views\Private\IniciarSesionIntranet.aspx.designer.cs">
       <DependentUpon>IniciarSesionIntranet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\Restaurar.aspx.cs">
+      <DependentUpon>Restaurar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\Restaurar.aspx.designer.cs">
+      <DependentUpon>Restaurar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\VerLogs.aspx.cs">
       <DependentUpon>VerLogs.aspx</DependentUpon>
@@ -537,7 +546,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Files\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EcommerceHelper.BLL\EcommerceHelper.BLL.csproj">

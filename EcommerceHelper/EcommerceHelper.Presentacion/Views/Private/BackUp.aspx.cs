@@ -90,6 +90,9 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         }
 
-
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }

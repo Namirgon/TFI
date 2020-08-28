@@ -97,11 +97,14 @@ namespace EcommerceHelper.Presentacion.Views.Private
             catch (Exception es)
             {
                 ServicioLog.CrearLog(es, "Restaurar", usuarioentidad.Apellido , (usuarioentidad.IdUsuario).ToString());               
-                Response.Redirect("../../Shared/Errores.aspx");
+                Response.Redirect("../../Shared/Error.aspx");
             }
 
         }
 
-
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }

@@ -36,6 +36,7 @@
                      <asp:UpdatePanel ID="up1" runat="server">
                          <ContentTemplate>
                              <asp:Button ID="btnUpload" runat="server" Text="Backup " Mensaje=" EstaSeguro " OnClientClick='return confirm(this.getAttribute("Mensaje"))' OnClick="btnUpload_Click1" class="btn btn-primary col-md-2" style="margin-left:110px" />
+                             <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" />
                          </ContentTemplate>
                          <Triggers>
                              <asp:PostBackTrigger ControlID="btnUpload" />

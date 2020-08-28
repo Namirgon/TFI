@@ -37,6 +37,7 @@
                              <br />
                              <br />
                              <asp:Button ID="btnUpload" runat="server" Text=" Restaurar " Mensaje=" EstaSeguro " OnClientClick='return confirm(this.getAttribute("Mensaje"))' OnClick="btnUpload_Click" class="btn btn-primary col-md-2" style="margin-left:70px" />
+                              <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" />
                              <br />
                              <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
                          </ContentTemplate>

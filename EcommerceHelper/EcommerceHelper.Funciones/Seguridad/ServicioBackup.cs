@@ -65,7 +65,7 @@ namespace EcommerceHelper.Funciones.Seguridad
                 if (!string.IsNullOrWhiteSpace(Nombre) && !string.IsNullOrWhiteSpace(Ubicacion))
                 {
                     string stringPararProcesos = "DECLARE @ProcessId varchar(4) " + Environment.NewLine + "DECLARE CurrentProcesses SCROLL CURSOR FOR" + Environment.NewLine +
-                "select spid from sysprocesses where dbid = (select dbid from sysdatabases where name = 'ECommerce' ) order by spid " + Environment.NewLine +
+                "select spid from sysprocesses where dbid = (select dbid from sysdatabases where name = 'HelperDataBase' ) order by spid " + Environment.NewLine +
                 "FOR READ ONLY" + Environment.NewLine + "OPEN CurrentProcesses" + Environment.NewLine + "FETCH NEXT FROM CurrentProcesses INTO @ProcessId" +
                 Environment.NewLine + "WHILE @@FETCH_STATUS <> -1" + Environment.NewLine + "BEGIN" + Environment.NewLine + "	Exec ('KILL ' +  @ProcessId)" +
                 Environment.NewLine + "	FETCH NEXT FROM CurrentProcesses INTO @ProcessId" + Environment.NewLine + "                    End" + Environment.NewLine +
@@ -73,7 +73,9 @@ namespace EcommerceHelper.Funciones.Seguridad
 
                     string stringRestaurar = "RESTORE DATABASE " + Nombre + " FROM DISK = '" + Ubicacion + "' WITH REPLACE, RECOVERY";
 
-                   
+                    //string stringRestaurar = "RESTORE DATABASE " + Nombre + " FROM DISK = '" + Ubicacion + "' WITH MOVE, RECOVERY";
+
+
                     SqlClientUtility.ExecuteNonQueryRestaurar(CommandType.Text, stringPararProcesos);
                     SqlClientUtility.ExecuteNonQueryRestaurar(CommandType.Text, stringRestaurar);
                    

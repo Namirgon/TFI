@@ -20,12 +20,51 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         BLL.Managers.FamiliaBLL UnManagerFamilia = new BLL.Managers.FamiliaBLL();
         UsuarioBLL UnServicioFamilia = new UsuarioBLL();
+        private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
 
+        private IdiomaEntidad idioma;
         protected void Page_Load(object sender, EventArgs e)
         {
+            idioma = new IdiomaEntidad();
+            if (!IsPostBack)
+            {
+                idioma = (IdiomaEntidad)Session["Idioma"];
+                if (idioma == null)
+                {
+                    idioma = new IdiomaEntidad();
+                    idioma.Descripcion = "es";
+                    Session["Idioma"] = idioma;
+                }
+            }
+            else
+            {
+                idioma.Descripcion = Maestra.obtenerIdiomaCombo();
+                Session["Idioma"] = idioma;
+            }
 
+            DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
+            if (lblIdioma != null)
+            {
+                lblIdioma.SelectedValue = idioma.Descripcion;
+            }
+            usuarioentidad = (UsuarioEntidad)Session["Usuario"];
 
         }
+        protected T FindControlFromMaster<T>(string name) where T : Control
+        {
+            MasterPage master = this.Master;
+            while (master != null)
+            {
+                T control = master.FindControl(name) as T;
+                if (control != null)
+                    return control;
+
+                master = master.Master;
+            }
+            return null;
+        }
+
+       
         public void RealizarLogueo(string elUsuario, string laClave)
         {
             UsuarioEntidad usuario = new UsuarioEntidad();

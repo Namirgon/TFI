@@ -34,13 +34,13 @@
       <table  class="table-bordered col-md-12" id="tlbPedido" style="width:70%; margin-left:160px; " > <%--tabla de los servicios deseados--%>
         <thead>
             <tr> <%--// tr filas--%>
-                <th class="text-center" id="txtImagen"> </th>
-                <th class="text-center" id="txtTitulo"> Titulo</th> <%--th encabezados--%>
-                <th class="text-center" id="txtDescripcion">Descripcion</th>
-                <th class="text-center" id="txtPrecio">Precio</th>
-                <th class="text-center" id="txtFecha">Fecha</th>
-                <th class="text-center" id="txtHorario">Horario</th>
-                <th class="text-center" id="txtEliminar">Eliminar</th>
+                <th class="text-center" id="txtImagen"><asp:Label ID="lblImagen" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Imagen %>"></asp:Label> </th>
+                <th class="text-center" id="txtTitulo"> <asp:Label ID="lblTitulo" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Titulo %>"></asp:Label></th> <%--th encabezados--%>
+                <th class="text-center" id="txtDescripcion"><asp:Label ID="lblDescripcion" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Descripcion %>"></asp:Label></th>
+                <th class="text-center" id="txtPrecio"><asp:Label ID="lblPrecio" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Precio %>"></asp:Label></th>
+                <th class="text-center" id="txtFecha"><asp:Label ID="lblFecha" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Fecha %>"></asp:Label></th>
+                <th class="text-center" id="txtHorario"><asp:Label ID="lblHorario" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Horario %>"></asp:Label></th>
+                <th class="text-center" id="txtEliminar"><asp:Label ID="lblEliminar" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Eliminar %>"></asp:Label></th>
                 <th></th>
                
             </tr>
@@ -93,7 +93,7 @@
                                      </td>
 
                                      <td class="text-center"  style="width: 80px">
-                                         <button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="fEliminarDeseo(this)" class="btn-default " title="Eliminar" >Eliminar</button>
+                                         <button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="fEliminarDeseo(this)" class="btn-default "  title="<%$Resources:Global, Eliminar %>"> ></button>
                                          <%--<input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo()" clientidmode="static" runat="server" />--%>
                                           
                                      </td>
@@ -127,7 +127,7 @@
 
  
     <div  class="item-toolbar" runat="server"  >
-        <asp:Button ID="BtnContinuar" runat="server" Text="Continuar" OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
+        <asp:Button ID="BtnContinuar" runat="server" Text="<%$Resources:Global, Continuar %>"> OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
           <%-- <a   class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " href="MisDirecciones.aspx" > Continuar </a>--%>
                 <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
 

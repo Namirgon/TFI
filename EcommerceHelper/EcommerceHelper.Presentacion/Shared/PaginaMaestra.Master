@@ -24,13 +24,14 @@
                 <a href="Default.aspx" class="logo">Helper</a>
                 
                 <nav id="nav">
-                    <a href="../Public/IniciarSesion.aspx">Iniciar Sesion</a>
-                    <a href="../Public/NuestrosServicios.aspx">Nuestros Servicios</a>
-                    <a href="../Private/IniciarSesionIntranet.aspx">Intranet</a>
-                    <a  >Idioma <asp:DropDownList runat="server"   style="width:200px;  margin-left:55px">
-                        <asp:ListItem>Español</asp:ListItem>
-                        <asp:ListItem>English</asp:ListItem>
+                      <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="lblIniciarSesion" runat="server"  Text="<%$Resources:Global, IniciarSesion  %>"></asp:Label></a>
+                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="lblCerrarSesion" runat="server"  Text="<%$Resources:Global, NuestrosServicios  %>"></asp:Label></a>
+                    
+                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="lblIntranet" runat="server" Text="<%$Resources:Global, Intranet  %>"></asp:Label></a>
+                    <a  ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" CssClass="form-control"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
                        
+                                    <asp:ListItem Text="<%$Resources:Global, Espanol %>" Value="es" />
+                                    <asp:ListItem Text="<%$Resources:Global, Ingles %>" Value="en-us" />
                     </asp:DropDownList>
                     </a>
                 </nav>

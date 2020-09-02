@@ -19,5 +19,9 @@ namespace EcommerceHelper.Entidades
 
         public string Texto { get; set; }
         #endregion
+
+
+       
+
     }
 }

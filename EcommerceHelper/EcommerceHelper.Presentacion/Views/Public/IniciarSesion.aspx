@@ -17,7 +17,8 @@
    <br />
    <br />     
    <br />
-   <h2  style="margin-left:30px">Iniciar Sesion</h2>
+<asp:Label ID="lblIniciarSesion" runat="server" style="margin-left:30px" Text="<%$Resources:Global, IniciarSesion %>"></asp:Label>
+  
    <br />
    <br />     
    <br />
@@ -27,25 +28,26 @@
    <br />
    <br />
   
-       <asp:Label ID="EtiquetaEmail" runat="server" Text="Usuario" visible="true"  style=" margin-left:100px">Usuario</asp:Label>
+       <asp:Label ID="EtiquetaEmail" runat="server" Text="<%$Resources:Global, Usuario %>" visible="true"  style=" margin-left:100px"></asp:Label>
        <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Email del Usuario" ControlToValidate="TXTEmail"></asp:RequiredFieldValidator>
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
  
    <br />
      <br />
-    <asp:Label ID="EtiquetaPassword2" runat="server" Text="Password"  style=" margin-left:100px">Password</asp:Label>
+    <asp:Label ID="EtiquetaPassword2" runat="server" Text="<%$Resources:Global, Password %>" style=" margin-left:100px"></asp:Label>
     <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:60px"></asp:TextBox> 
     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese Clave" ControlToValidate="TXTPassword"></asp:RequiredFieldValidator>
     
    <br />
   
    <br />
-   <asp:Button style="margin-left:200px " ID="BtnAceptar" runat="server" Text="Aceptar"  Width="150px" OnClick="Button1_Click" />
-   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px"  PostBackUrl ="~/Views/Public/Default.aspx" />
+   <asp:Button style="margin-left:200px " ID="BtnAceptar" runat="server" Text="<%$Resources:Global, Aceptar %>"  Width="150px" OnClick="Button1_Click" />
+   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text="<%$Resources:Global, Cancelar %>" Width="150px"  PostBackUrl ="~/Views/Public/Default.aspx" />
    <br />
    <br />
-      <p style="margin-left:100px; "><a style="color:brown" href="Registrarme.aspx">Registrarme</a></p>
+<asp:Label ID="lblRegistrarme" runat="server"  style="margin-left:100px; " Text="<%$Resources:Global, Registrarme %>">><a style="color:brown" href="Registrarme.aspx"></a></asp:Label>
+     
    <br />
     </div>
    </div>

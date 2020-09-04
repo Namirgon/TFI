@@ -121,10 +121,10 @@
     <value>Ok</value>
   </data>
   <data name="AgregadoAlCarrito" xml:space="preserve">
-    <value>Added To Cart</value>
+    <value>add to cart</value>
   </data>
   <data name="Calle" xml:space="preserve">
-    <value>Street</value>
+    <value>street</value>
   </data>
   <data name="Cancelar" xml:space="preserve">
     <value>Cancel</value>
@@ -145,7 +145,7 @@
     <value>Description</value>
   </data>
   <data name="Direccion" xml:space="preserve">
-    <value>Address</value>
+    <value>Adress</value>
   </data>
   <data name="Eliminar" xml:space="preserve">
     <value>Delete</value>
@@ -166,13 +166,13 @@
     <value>English</value>
   </data>
   <data name="IniciarSesion" xml:space="preserve">
-    <value>Login</value>
+    <value>Log in</value>
   </data>
   <data name="Intranet" xml:space="preserve">
     <value>Intranet</value>
   </data>
   <data name="IrAPedidos" xml:space="preserve">
-    <value>Go to orders</value>
+    <value>Go To Orders</value>
   </data>
   <data name="Localidad" xml:space="preserve">
     <value>Location</value>
@@ -181,7 +181,7 @@
     <value>My data</value>
   </data>
   <data name="NuestrosServicios" xml:space="preserve">
-    <value>Our services</value>
+    <value>Nuestros Servicios</value>
   </data>
   <data name="Numero" xml:space="preserve">
     <value>Number</value>

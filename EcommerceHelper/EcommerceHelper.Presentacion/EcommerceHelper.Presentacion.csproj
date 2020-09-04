@@ -340,15 +340,18 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="App_GlobalResources\Global.en.designer.cs">
+      <DependentUpon>Global.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_GlobalResources\Global.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Global.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Global.en.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Global.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -583,16 +586,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\Global.en.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Global.en.designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_LocalResources\PaginaMaestra.Master.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\PaginaMaestra.Master.En.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Global.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.en.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

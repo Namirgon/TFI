@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Threading;
 
 namespace EcommerceHelper.Presentacion.Shared
 {
@@ -23,7 +24,7 @@ namespace EcommerceHelper.Presentacion.Shared
         {
 
 
-            if (!this.IsPostBack)
+            if (!IsPostBack)
             {
                 if (ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
                 {

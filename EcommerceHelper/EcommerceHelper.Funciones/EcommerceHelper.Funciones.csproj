@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache.cs" />
+    <Compile Include="IdiomaManager.cs" />
+    <Compile Include="MultiIdiomaManager.cs" />
     <Compile Include="Persistencia\Mapeador.cs" />
     <Compile Include="Persistencia\SqlClientUtility.cs" />
     <Compile Include="Persistencia\ValidationUtility.cs" />

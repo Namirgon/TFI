@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Globalization;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
@@ -14,6 +15,21 @@ namespace EcommerceHelper.Presentacion.Views.Public
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
         private IdiomaEntidad idioma;
+
+
+        protected T FindControlFromMaster<T>(string name) where T : Control
+        {
+            MasterPage master = this.Master;
+            while (master != null)
+            {
+                T control = master.FindControl(name) as T;
+                if (control != null)
+                    return control;
+
+                master = master.Master;
+            }
+            return null;
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,19 +68,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         }
 
-        protected T FindControlFromMaster<T>(string name) where T : Control
-        {
-            MasterPage master = this.Master;
-            while (master != null)
-            {
-                T control = master.FindControl(name) as T;
-                if (control != null)
-                    return control;
-
-                master = master.Master;
-            }
-            return null;
-        }
+       
 
 
         //protected void Page_Load(object sender, EventArgs e)

@@ -94,7 +94,7 @@
                           
                          
                          <button type="button" ID="btnpedidos"  class="btn btn-warning" style="width: 200px;"><asp:Label ID="Label3" runat="server" Text="<%$Resources:Global, IrAPedidos %>">><a href="Pedido.aspx" style="text-decoration:none"></a></asp:Label></button>
-                            <asp:Button ID="BtnSeguirComprando" runat="server"  Text="<%$Resources:Global, SeguirComprando %>"> class="btn" style="width: 200px; background-color: black; color: #fff;" data-dismiss="modal" />
+                            <asp:Button ID="BtnSeguirComprando" runat="server"  Text="<%$Resources:Global, SeguirComprando %>" class="btn" style="width: 200px; background-color: black; color: #fff;" data-dismiss="modal" ></asp:Button>
 
                         </div>
                     </div>
@@ -103,7 +103,7 @@
     </div>
            <%--        --------------------------------------------------- fin display de carrito de compra -------------------------------------------%>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="ScriptSection" ID="Scripts"  runat="server">
+<asp:Content ContentPlaceHolderID="ScriptSection" ID="Scripts" ClientIDMode="Static"  runat="server">
      <script>
         OcultarBreadcrumb();
 

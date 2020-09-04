@@ -42,7 +42,8 @@
                 <nav id="nav">
                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="lblIniciarSesion" runat="server"  Text="<%$Resources:Global, MisDatos  %>"></asp:Label></a>
-                    <a href="../Public/Default.aspx"> <asp:Label ID="lblCerrarSesion" runat="server"  Text="<%$Resources:Global, CerrarSesion  %>"></asp:Label></a>
+                    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="<%$Resources:Global, CerrarSesion  %>"></asp:LinkButton>
+                      
                     <a href="../Public/Pedido.aspx"><asp:Label runat="server" Text="<%$Resources:Global, Pedido %>"></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
                      <%--<a  ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true"   style="width:200px;  margin-left:55px">
                        

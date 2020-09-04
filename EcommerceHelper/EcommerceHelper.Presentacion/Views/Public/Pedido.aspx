@@ -93,7 +93,7 @@
                                      </td>
 
                                      <td class="text-center"  style="width: 80px">
-                                         <button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="fEliminarDeseo(this)" class="btn-default "  title="<%$Resources:Global, Eliminar %>"> ></button>
+                                         <button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" onclick="fEliminarDeseo(this)" class="btn-default "  title="<%$Resources:Global, Eliminar %>"> </button>
                                          <%--<input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo()" clientidmode="static" runat="server" />--%>
                                           
                                      </td>

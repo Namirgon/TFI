@@ -9,12 +9,17 @@ using EcommerceHelper.BLL.Managers;
 using EcommerceHelper.Entidades;
 using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.Funciones.Seguridad;
+using System.Globalization;
+using System.Threading;
+using System.Web.Services;
 
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class IniciarSesion : System.Web.UI.Page
-    {
+    public partial class IniciarSesion : BasePage
+
+        
+        {
 
 
 

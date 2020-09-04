@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-
+using System.Linq;
 using System.Threading;
 using System.Web;
-using System.Web.UI;
 
-namespace EcommerceHelper.Presentacion.App_Code
+namespace EcommerceHelper.Presentacion
 {
-    public class BasePage : System.Web.UI.Page
+    public class BasePage: System.Web.UI.Page
     {
+
 
         protected override void InitializeCulture()
         {
@@ -22,7 +22,7 @@ namespace EcommerceHelper.Presentacion.App_Code
                 language = new IdiomaEntidad();
                 language.Descripcion = "es";
             }
-            
+
             //Check if PostBack is caused by Language DropDownList.
             if (Request.Form["__EVENTTARGET"] != null && Request.Form["__EVENTTARGET"].Contains("ddlIdioma"))
             {

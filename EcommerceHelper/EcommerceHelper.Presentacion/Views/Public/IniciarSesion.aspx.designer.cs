@@ -101,15 +101,7 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnCancelar;
-        
-        /// <summary>
-        /// Control lblRegistrarme.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegistrarme;
+
 
         public new EcommerceHelper.Presentacion.Shared.PaginaMaestra Maestra
         {
@@ -118,6 +110,14 @@ namespace EcommerceHelper.Presentacion.Views.Public {
                 return ((EcommerceHelper.Presentacion.Shared.PaginaMaestra)(base.Master));
             }
         }
+
+        /// <summary>
+        /// Control lblRegistrarme.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistrarme;
     }
 }
-

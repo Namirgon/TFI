@@ -17,7 +17,7 @@
    <br />
    <br />     
    <br />
-<asp:Label ID="lblIniciarSesion" runat="server" style="margin-left:30px" Text="<%$Resources:Global, IniciarSesion %>"></asp:Label>
+<asp:Label ID="lblIniciarSesion" runat="server" style="margin-left:30px; font-size:24px" Text="<%$Resources:Global, IniciarSesion %>"></asp:Label>
   
    <br />
    <br />     

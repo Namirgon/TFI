@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Registrarme : System.Web.UI.Page
+    public partial class Registrarme : BasePage
     {
         private SexoBLL unManagerSexo = new SexoBLL();
         public List<SexoEntidad> unSexo = new List<SexoEntidad>();

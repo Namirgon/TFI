@@ -14,7 +14,7 @@
    <br />
    <br />     
 
-    <asp:Label ID="LblNuestrosServicios" runat="server"  style="margin-left:30px; margin-top:30px" Text="<%$Resources:Global, NuestrosServicios %>"></asp:Label>
+    <asp:Label ID="LblNuestrosServicios" runat="server"  style="margin-left:30px; margin-top:30px; font-size:24px" Text="<%$Resources:Global, NuestrosServicios %>"></asp:Label>
   
    <br />     
    <br />

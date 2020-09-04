@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : BasePage
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;

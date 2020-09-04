@@ -11,7 +11,7 @@ using System.Web.Services;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Pedido : System.Web.UI.Page
+    public partial class Pedido : BasePage 
     {
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();

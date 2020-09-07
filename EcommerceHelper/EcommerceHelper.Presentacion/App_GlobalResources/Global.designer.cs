@@ -115,6 +115,96 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contactanos.
+        /// </summary>
+        internal static string Contactanos {
+            get {
+                return ResourceManager.GetString("Contactanos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Quieres conocer nuestros servicios  y todo lo que Helper te puede ofrecer?.
+        /// </summary>
+        internal static string Contactanos1 {
+            get {
+                return ResourceManager.GetString("Contactanos1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Limpieza Interior.
+        /// </summary>
+        internal static string Contactanos2 {
+            get {
+                return ResourceManager.GetString("Contactanos2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Limpieza Exterior.
+        /// </summary>
+        internal static string Contactanos3 {
+            get {
+                return ResourceManager.GetString("Contactanos3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Limpieza de Tapizados y Alfombras.
+        /// </summary>
+        internal static string Contactanos4 {
+            get {
+                return ResourceManager.GetString("Contactanos4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Limpieza de Cortinas , Ventanales y mucho mas!|.
+        /// </summary>
+        internal static string Contactanos5 {
+            get {
+                return ResourceManager.GetString("Contactanos5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Arma un plan a tu medida.
+        /// </summary>
+        internal static string Contactanos6 {
+            get {
+                return ResourceManager.GetString("Contactanos6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contacto.
+        /// </summary>
+        internal static string Contacto {
+            get {
+                return ResourceManager.GetString("Contacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contacto 0237- 4641111.
+        /// </summary>
+        internal static string Contacto1 {
+            get {
+                return ResourceManager.GetString("Contacto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Direccion: Av. Siempreviva 742 - Sprinfield.
+        /// </summary>
+        internal static string Contacto2 {
+            get {
+                return ResourceManager.GetString("Contacto2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Continuar.
         /// </summary>
         internal static string Continuar {
@@ -345,6 +435,42 @@ namespace Resources {
         internal static string SeguirComprando {
             get {
                 return ResourceManager.GetString("SeguirComprando", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Servicios.
+        /// </summary>
+        internal static string Servicios {
+            get {
+                return ResourceManager.GetString("Servicios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Somos una empresa de Servicio Domestico que quiere ayudarte a simplificarte la vida!.
+        /// </summary>
+        internal static string Servicios1 {
+            get {
+                return ResourceManager.GetString("Servicios1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contamos con peronal capacitado en multiples tareas, puntuales, de confianza y con amplia experiencia..
+        /// </summary>
+        internal static string Servicios2 {
+            get {
+                return ResourceManager.GetString("Servicios2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a En Helper ofrecemos diferentes servicios de limpieza domestica. Incluyendo servicios de interior como dormitorios, cocinas, comedores, living, playroom, etc. Exterior, quinchos, patios entre otros..
+        /// </summary>
+        internal static string Servicios3 {
+            get {
+                return ResourceManager.GetString("Servicios3", resourceCulture);
             }
         }
         

@@ -135,6 +135,36 @@
   <data name="Comprar" xml:space="preserve">
     <value>Buy</value>
   </data>
+  <data name="Contactanos" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="Contactanos1" xml:space="preserve">
+    <value>Do you want to know our services and everything that Helper can offer you?</value>
+  </data>
+  <data name="Contactanos2" xml:space="preserve">
+    <value>Interior Cleaning</value>
+  </data>
+  <data name="Contactanos3" xml:space="preserve">
+    <value>Limpieza Exterior</value>
+  </data>
+  <data name="Contactanos4" xml:space="preserve">
+    <value>Upholstery and Carpet Cleaning</value>
+  </data>
+  <data name="Contactanos5" xml:space="preserve">
+    <value>Cleaning of Curtains, Windows and much more!</value>
+  </data>
+  <data name="Contactanos6" xml:space="preserve">
+    <value>Create a plan to suit you</value>
+  </data>
+  <data name="Contacto" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Contacto1" xml:space="preserve">
+    <value>Contact Phone  0237- 4641111</value>
+  </data>
+  <data name="Contacto2" xml:space="preserve">
+    <value>Adress Av. Evergreen 742 - Sprinfield</value>
+  </data>
   <data name="Continuar" xml:space="preserve">
     <value>Next</value>
   </data>
@@ -212,6 +242,18 @@
   </data>
   <data name="SeguirComprando" xml:space="preserve">
     <value>Keep buying</value>
+  </data>
+  <data name="Servicios" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Servicios1" xml:space="preserve">
+    <value>We are a Domestic Service company that wants to help you simplify your life!</value>
+  </data>
+  <data name="Servicios2" xml:space="preserve">
+    <value>We have personnel trained in multiple tasks, punctual, trustworthy and with extensive experience.</value>
+  </data>
+  <data name="Servicios3" xml:space="preserve">
+    <value>At Helper we offer different domestic cleaning services. Including interior services such as bedrooms, kitchens, dining rooms, living room, playroom, etc. Exterior, barbecue areas, patios among others.</value>
   </data>
   <data name="Titulo" xml:space="preserve">
     <value>Title</value>

@@ -52,10 +52,10 @@
     <div class="text-center">
 
        
-                  <asp:Label ID="ldlDefaultCentroUno" runat="server" " Text="<%$Resources:Global, DefaultCentroUno %>"></asp:Label>
+                  <asp:Label ID="ldlDefaultCentroUno" runat="server"  Text="<%$Resources:Global, DefaultCentroUno %>"></asp:Label>
          
             <br />
-              <asp:Label ID="ldlDefaultCentroDos" runat="server" " Text="<%$Resources:Global, DefaultCentroDos %>"></asp:Label>
+                 <asp:Label ID="ldlDefaultCentroDos" runat="server"  Text="<%$Resources:Global, DefaultCentroDos %>"></asp:Label>
            
         
 
@@ -67,38 +67,49 @@
     <div class="row" style="background-image: url('../../Content/Image/banner-curso-degrade.png')">
         <div class="col-md-4">
             <br />
+                      
             <br />
-            <h2 class="lead" style="margin-left: 15px">Servicios</h2>
+            <asp:Label ID="lblServicios" style="margin-left: 15px; font-size:24px"  runat="server" Text="<%$Resources:Global, Servicios %>"></asp:Label>
+            
+            <br />
 
             <br />
             <p style="margin-left: 15px">
-                Somos una empresa de Servicio Domestico que quiere ayudarte a simplificarte la vida!
+                 <asp:Label ID="LblServicios1" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Servicios1 %>"></asp:Label>
+            
+               
                 <br />
-                Contamos con peronal capacitado en multiples tareas, puntuales, de confianza y con amplia experiencia.
+                <asp:Label ID="lblServicios2" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Servicios2 %>"></asp:Label>
+            
+              
             </p>
 
             <p style="margin-left: 15px">
-                En Helper ofrecemos diferentes servicios de limpieza domestica. Incluyendo servicios de interior como dormitorios, cocinas, comedores, living, playroom, etc. Exterior, quinchos, patios entre otros.
-            limpieza de ventanales, alfombras, limpieza en seco.
+                  <asp:Label ID="lblServicios3" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Servicios3 %>"></asp:Label>
+          
             </p>
         </div>
 
         <div class="col-md-4">
             <br />
             <br />
-            <h2 class="lead">Contratanos</h2>
+              <asp:Label ID="lblContactanos" style="margin-left: 15px; font-size:24px"  runat="server" Text="<%$Resources:Global, Contactanos %>"></asp:Label>
             <br />
-            <p>Quieres conocer nuestros servicios  y todo lo que Helper te puede ofrecer?   </p>
-
+              <asp:Label ID="lblContactanos1" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contactanos1 %>"></asp:Label>
+            
             <p>
-                Limpieza Interior<br />
-                Limpieza Exterior<br />
-                Limpieza de Tapizados y Alfombras<br />
-                Limpieza de Cortinas , Ventanales y mucho mas!<br />
-                Arma un plan a tu medida<br />
+              <asp:Label ID="lblContactanos2" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contactanos2 %>"></asp:Label> <br />
+                 <asp:Label ID="lblContactanos3" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contactanos3 %>"></asp:Label> <br />
+                 <asp:Label ID="lblContactanos4" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contactanos4 %>"></asp:Label> <br />
+                 <asp:Label ID="lblContactanos5" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contactanos5 %>"></asp:Label> <br />
+                 <asp:Label ID="lblContactanos6" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contactanos6 %>"></asp:Label> <br />
+              <br />
+             <br />
+          
             </p>
             <br />
-            <p><a class="btn btn-secondary" href="NuestrosServicios.aspx">Comprar</a></p>
+            <asp:LinkButton ID="btnComprar" runat="server" CssClass="btn-group-lg" OnClick="btnComprar_Click" text="<%$Resources:Global, Comprar %>"></asp:LinkButton>
+            <%--<p><a class="btn btn-secondary" href="NuestrosServicios.aspx" ></a></p>--%>
             <br />
             <br />
 
@@ -106,12 +117,16 @@
         <div class="col-md-4">
             <br />
             <br />
-            <h2 class="lead">Contacto</h2>
+                          <asp:Label ID="lblContacto" style="margin-left: 15px; font-size:24px"  runat="server" Text="<%$Resources:Global, Contacto %>"></asp:Label>
+           
             <br />
             <p>
-                Contacto 0237- 4641111
+                      <asp:Label ID="lblContacto1" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contacto1 %>"></asp:Label>
+              
                 <br />
-                Direccion: Av. Siempreviva 742 - Sprinfield
+                <asp:Label ID="lblContacto2" style="margin-left: 15px; font-size:16px"  runat="server" Text="<%$Resources:Global, Contacto2 %>"></asp:Label>
+              
+               
                 <br />
                 Email : contacto@helper.com
                 <br />

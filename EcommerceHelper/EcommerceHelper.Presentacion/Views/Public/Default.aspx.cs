@@ -54,7 +54,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             }
             else
             {
-                idioma.Descripcion = Master.obtenerIdiomaCombo();
+                idioma.Descripcion =  Master.obtenerIdiomaCombo();
                 Session["Idioma"] = idioma;
             }
 
@@ -68,7 +68,12 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         }
 
-       
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NuestrosServicios.aspx");
+        }
+
+
 
 
         //protected void Page_Load(object sender, EventArgs e)

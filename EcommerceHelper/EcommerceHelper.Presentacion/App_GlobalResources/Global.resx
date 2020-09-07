@@ -135,6 +135,36 @@
   <data name="Comprar" xml:space="preserve">
     <value>Comprar</value>
   </data>
+  <data name="Contactanos" xml:space="preserve">
+    <value>Contactanos</value>
+  </data>
+  <data name="Contactanos1" xml:space="preserve">
+    <value>Quieres conocer nuestros servicios  y todo lo que Helper te puede ofrecer?</value>
+  </data>
+  <data name="Contactanos2" xml:space="preserve">
+    <value>Limpieza Interior</value>
+  </data>
+  <data name="Contactanos3" xml:space="preserve">
+    <value>Limpieza Exterior</value>
+  </data>
+  <data name="Contactanos4" xml:space="preserve">
+    <value>Limpieza de Tapizados y Alfombras</value>
+  </data>
+  <data name="Contactanos5" xml:space="preserve">
+    <value>Limpieza de Cortinas , Ventanales y mucho mas!|</value>
+  </data>
+  <data name="Contactanos6" xml:space="preserve">
+    <value>Arma un plan a tu medida</value>
+  </data>
+  <data name="Contacto" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
+  <data name="Contacto1" xml:space="preserve">
+    <value>Contacto 0237- 4641111</value>
+  </data>
+  <data name="Contacto2" xml:space="preserve">
+    <value>Direccion: Av. Siempreviva 742 - Sprinfield</value>
+  </data>
   <data name="Continuar" xml:space="preserve">
     <value>Continuar</value>
   </data>
@@ -212,6 +242,18 @@
   </data>
   <data name="SeguirComprando" xml:space="preserve">
     <value>Seguir Comprando</value>
+  </data>
+  <data name="Servicios" xml:space="preserve">
+    <value>Servicios</value>
+  </data>
+  <data name="Servicios1" xml:space="preserve">
+    <value>Somos una empresa de Servicio Domestico que quiere ayudarte a simplificarte la vida!</value>
+  </data>
+  <data name="Servicios2" xml:space="preserve">
+    <value>Contamos con peronal capacitado en multiples tareas, puntuales, de confianza y con amplia experiencia.</value>
+  </data>
+  <data name="Servicios3" xml:space="preserve">
+    <value>En Helper ofrecemos diferentes servicios de limpieza domestica. Incluyendo servicios de interior como dormitorios, cocinas, comedores, living, playroom, etc. Exterior, quinchos, patios entre otros.</value>
   </data>
   <data name="Titulo" xml:space="preserve">
     <value>Titulo</value>

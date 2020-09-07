@@ -51,11 +51,13 @@
     </div>
     <div class="text-center">
 
-        <p class="lead">
-            Somos una empresa de Servicio Domestico que quiere ayudarte a simplificarte la vida!
+       
+                  <asp:Label ID="ldlDefaultCentroUno" runat="server" " Text="<%$Resources:Global, DefaultCentroUno %>"></asp:Label>
+         
             <br />
-            Contamos con peronal capacitado en multiples tareas, puntuales, de confianza y con amplia experiencia.
-        </p>
+              <asp:Label ID="ldlDefaultCentroDos" runat="server" " Text="<%$Resources:Global, DefaultCentroDos %>"></asp:Label>
+           
+        
 
     </div>
 

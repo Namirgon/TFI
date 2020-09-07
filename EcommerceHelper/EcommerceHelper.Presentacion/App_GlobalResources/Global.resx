@@ -138,6 +138,12 @@
   <data name="Continuar" xml:space="preserve">
     <value>Continuar</value>
   </data>
+  <data name="DefaultCentroDos" xml:space="preserve">
+    <value>Contamos con peronal capacitado en multiples tareas, puntuales, de confianza y con amplia experiencia.</value>
+  </data>
+  <data name="DefaultCentroUno" xml:space="preserve">
+    <value>Somos una empresa de Servicio Domestico que quiere ayudarte a simplificarte la vida!</value>
+  </data>
   <data name="Departamento" xml:space="preserve">
     <value>Departamento</value>
   </data>

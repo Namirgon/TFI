@@ -12,7 +12,7 @@ using EcommerceHelper.Funciones.Seguridad;
 using System.Globalization;
 using System.Threading;
 using System.Web.Services;
-
+using EcommerceHelper.Presentacion.Shared;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
@@ -28,6 +28,21 @@ namespace EcommerceHelper.Presentacion.Views.Public
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
 
         private IdiomaEntidad idioma;
+
+
+        protected T FindControlFromMaster<T>(string name) where T : Control
+        {
+            MasterPage master = this.Master;
+            while (master != null)
+            {
+                T control = master.FindControl(name) as T;
+                if (control != null)
+                    return control;
+
+                master = master.Master;
+            }
+            return null;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             idioma = new IdiomaEntidad();
@@ -43,7 +58,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             }
             else
             {
-                idioma.Descripcion = Maestra.obtenerIdiomaCombo();
+                idioma.Descripcion = Master.obtenerIdiomaCombo();
                 Session["Idioma"] = idioma;
             }
 
@@ -55,19 +70,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             usuarioentidad = (UsuarioEntidad)Session["Usuario"];
 
         }
-        protected T FindControlFromMaster<T>(string name) where T : Control
-        {
-            MasterPage master = this.Master;
-            while (master != null)
-            {
-                T control = master.FindControl(name) as T;
-                if (control != null)
-                    return control;
-
-                master = master.Master;
-            }
-            return null;
-        }
+       
 
        
         public void RealizarLogueo(string elUsuario, string laClave)
@@ -109,6 +112,15 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         }
 
+        protected void lblRegistrarme_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registrarme.aspx");
+        }
+
+        protected void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }
     

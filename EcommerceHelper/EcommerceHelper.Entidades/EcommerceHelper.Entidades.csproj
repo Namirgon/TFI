@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseEntidad.cs" />
     <Compile Include="BitacoraEntidad.cs" />
     <Compile Include="ComprobanteEntidad.cs" />
     <Compile Include="DetalleComprobanteEntidad.cs" />
@@ -58,6 +59,11 @@
     <Compile Include="ProvinciaEntidad.cs" />
     <Compile Include="ReciboEntidad.cs" />
     <Compile Include="ServicioEntidad.cs" />
+    <Compile Include="Servicios\DigitoVerificador\DigitoVerificadorH.cs" />
+    <Compile Include="Servicios\DigitoVerificador\DVGReflection.cs" />
+    <Compile Include="Servicios\DigitoVerificador\DVV.cs" />
+    <Compile Include="Servicios\Encriptacion\Encriptador.cs" />
+    <Compile Include="Servicios\Encriptacion\EncriptarSHA256.cs" />
     <Compile Include="Servicios\Permisos\Familia.cs" />
     <Compile Include="Servicios\Permisos\IFamPat.cs" />
     <Compile Include="Servicios\Permisos\Patente.cs" />
@@ -72,5 +78,6 @@
     <Compile Include="TipoUsuarioEntidad.cs" />
     <Compile Include="UsuarioEntidad.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

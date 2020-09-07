@@ -124,6 +124,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contamos con peronal capacitado en multiples tareas, puntuales, de confianza y con amplia experiencia..
+        /// </summary>
+        internal static string DefaultCentroDos {
+            get {
+                return ResourceManager.GetString("DefaultCentroDos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Somos una empresa de Servicio Domestico que quiere ayudarte a simplificarte la vida!.
+        /// </summary>
+        internal static string DefaultCentroUno {
+            get {
+                return ResourceManager.GetString("DefaultCentroUno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Departamento.
         /// </summary>
         internal static string Departamento {

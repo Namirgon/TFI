@@ -138,6 +138,12 @@
   <data name="Continuar" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="DefaultCentroDos" xml:space="preserve">
+    <value>We have personnel trained in multiple tasks, punctual, trustworthy and with extensive experience.</value>
+  </data>
+  <data name="DefaultCentroUno" xml:space="preserve">
+    <value>We are a Domestic Service company that wants to help you simplify your life!</value>
+  </data>
   <data name="Departamento" xml:space="preserve">
     <value>Department</value>
   </data>

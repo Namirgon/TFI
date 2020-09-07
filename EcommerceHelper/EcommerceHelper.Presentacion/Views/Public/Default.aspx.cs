@@ -54,7 +54,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             }
             else
             {
-                idioma.Descripcion = Maestra.obtenerIdiomaCombo();
+                idioma.Descripcion = Master.obtenerIdiomaCombo();
                 Session["Idioma"] = idioma;
             }
 

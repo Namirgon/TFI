@@ -7,20 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EcommerceHelper.Presentacion.Views.Public
-{
-
-
-    public partial class Default
-    {
-
-
-        public new EcommerceHelper.Presentacion.Shared.PaginaMaestra Maestra
-        {
-            get
-            {
-                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestra)(base.Master));
-            }
-        }
+namespace EcommerceHelper.Presentacion.Views.Public {
+    
+    
+    public partial class Default {
     }
 }

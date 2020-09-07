@@ -43,13 +43,17 @@
   
    <br />
    <asp:Button style="margin-left:200px " ID="BtnAceptar" runat="server" Text="<%$Resources:Global, Aceptar %>"  Width="150px" OnClick="Button1_Click" />
-   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text="<%$Resources:Global, Cancelar %>" Width="150px"  PostBackUrl ="~/Views/Public/Default.aspx" />
+   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text="<%$Resources:Global, Cancelar %>" Width="150px" OnClick="BtnCancelar_Click" />
    <br />
    <br />
-<asp:Label ID="lblRegistrarme" runat="server"  style="margin-left:100px; " Text="<%$Resources:Global, Registrarme %>">><a style="color:brown" href="Registrarme.aspx"></a></asp:Label>
+   
+
      
    <br />
     </div>
+
+
+        <asp:LinkButton ID="registrarme" runat="server" style="margin-left:100px; font-size:18px " Text="<%$Resources:Global, Registrarme %> " OnClick="lblRegistrarme_Click"></asp:LinkButton>
    </div>
 
 </div>

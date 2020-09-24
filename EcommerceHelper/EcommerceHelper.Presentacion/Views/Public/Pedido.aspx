@@ -34,6 +34,8 @@
       <table  class="table-bordered col-md-12" id="tlbPedido" style="width:70%; margin-left:160px; " > <%--tabla de los servicios deseados--%>
         <thead>
             <tr> <%--// tr filas--%>
+                <asp:HiddenField ID="idServicio" Value="0" runat="server" /> <%--id del servicio escondido para poder borrarlo--%>
+
                 <th class="text-center" id="txtImagen"><asp:Label ID="lblImagen" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Imagen %>"></asp:Label> </th>
                 <th class="text-center" id="txtTitulo"> <asp:Label ID="lblTitulo" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Titulo %>"></asp:Label></th> <%--th encabezados--%>
                 <th class="text-center" id="txtDescripcion"><asp:Label ID="lblDescripcion" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Descripcion %>"></asp:Label></th>

@@ -40,37 +40,6 @@ namespace EcommerceHelper.BLL
             return nuevo;
         }
 
-        //public List<Entidades.ServicioEntidad> FindAllByTituloServicio(string TituloServicio)
-        //{
-
-        //    //_coreMoneda = new MonedaCore();
-        //    //var cotizacion = _coreMoneda.Select(idMoneda);
-        //    var retornaServicios = new List<ServicioEntidad>();
-        //    var lista = _ServicioDal.
-        //    //if (cotizacion.Cotizacion > 1)
-        //    //{
-        //    //    foreach (ServicioEntidad p in lista)
-        //    //    {
-        //    //        ServicioEntidad nuevo = new ServicioEntidad();
-        //    //        nuevo = p;
-        //    //        nuevo.PrecioUnitario = System.Decimal.Round(p.PrecioUnitario / cotizacion.Cotizacion, 2);
-        //    //        retornaServicios.Add(nuevo);
-
-        //    //    }
-        //    //}
-        //    //else
-        //        //foreach (ServicioEntidad p in lista)
-        //        //{
-        //        //    ServicioEntidad nuevo = new ServicioEntidad();
-        //        //    nuevo = p;
-        //        //    nuevo.Precio = System.Decimal.Round(p.PrecioUnitario * cotizacion.Cotizacion, 2);
-        //        //    retornaServicios.Add(nuevo);
-
-        //        //}
-
-        //    return retornaServicios;
-        //}
-
 
     }
 }

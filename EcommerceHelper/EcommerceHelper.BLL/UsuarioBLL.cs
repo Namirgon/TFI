@@ -39,6 +39,25 @@ namespace EcommerceHelper.BLL
 
 
         }
+
+        public List< UsuarioEntidad> GenerarCadenaDvTablaEntera() 
+        {
+            try
+            {
+                return _DalUsuario.SelectAllUsuariosDVH();
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;
+
+            }
+
+        }
+
+
+
         public List<ProvinciaEntidad> SelectALLProvincias()
         {
             DireccionBLL ManagerDireccion = new DireccionBLL();
@@ -107,6 +126,8 @@ namespace EcommerceHelper.BLL
                 throw ex;
             }
         }
+
+
     }
 
 }

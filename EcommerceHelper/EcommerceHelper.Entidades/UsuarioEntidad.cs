@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades.Servicios.Permisos;
+using EcommerceHelper.Entidades.Servicios;
 
 namespace EcommerceHelper.Entidades
 {
@@ -38,6 +39,7 @@ namespace EcommerceHelper.Entidades
         public int NumeroTelefono { get; set; }
 
         public int IdUsuarioTipo { get; set; }
+        public DigitoVerificadorH DVH { get; set; }
 
         #endregion
 

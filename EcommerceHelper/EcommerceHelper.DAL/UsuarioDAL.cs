@@ -8,11 +8,14 @@ using System.Data.SqlClient;
 using System.Data;
 using EcommerceHelper.Funciones.Persistencia;
 using Entidades.Servicios.Permisos;
+using System.Data.Common;
 
 namespace EcommerceHelper.DAL
 {
     public class UsuarioDAL
     {
+        UsuarioEntidad Usuario = new UsuarioEntidad();
+
         public UsuarioEntidad BuscarUsuario(string Email, string Password)
         {
             SqlParameter[] parameters = new SqlParameter[]
@@ -170,6 +173,18 @@ namespace EcommerceHelper.DAL
             catch (Exception es)
             {
                 throw;
+            }
+        }
+
+      
+        public List<UsuarioEntidad> SelectAllUsuariosDVH()
+        {
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioLeerDVH"))
+            {
+                List<UsuarioEntidad> AllUsuariosDVH = new List<UsuarioEntidad>();
+                AllUsuariosDVH = Mapeador.Mapear<UsuarioEntidad>(dt);
+
+                return AllUsuariosDVH;
             }
         }
 

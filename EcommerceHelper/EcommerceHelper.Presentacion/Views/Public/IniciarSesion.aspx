@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="IniciarSesion.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Public.IniciarSesion" %>
+
+
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <%-- 
      <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />

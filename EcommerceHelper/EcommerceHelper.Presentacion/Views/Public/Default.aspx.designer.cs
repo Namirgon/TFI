@@ -164,5 +164,17 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblContacto2;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new EcommerceHelper.Presentacion.Shared.PaginaMaestra Master {
+            get {
+                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestra)(base.Master));
+            }
+        }
     }
 }

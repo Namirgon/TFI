@@ -70,9 +70,9 @@
 </html>
 <style>
 
-.header p {
- position: relative;
- margin: 0 0 1.5em 0;
+* {
+ margin: 0px;
+padding: 0px;
  
  }
 #header {
@@ -102,8 +102,6 @@
     padding: 0 2em;
     color: #ffffff;
     text-decoration: none;
-    /*text-decoration: none;
-    text-transform: uppercase;*/
     font-weight: 700;
     font-size: .85em;
     
@@ -155,8 +153,5 @@ header p {
     text-transform: none;
     font-weight: normal;
 }
-
-
-
-        </style>
+</style>
 

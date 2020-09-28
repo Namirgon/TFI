@@ -86,9 +86,5 @@ namespace EcommerceHelper.Presentacion.Shared
             Response.Redirect("/Views/Public/Default.aspx");
         }
 
-        protected void btnCerrarSesion_Click1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

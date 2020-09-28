@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.Entidades;
+﻿using EcommerceHelper.BLL;
+using EcommerceHelper.Entidades;
 using EcommerceHelper.Funciones.Seguridad;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EcommerceHelper.BLL.Servicios;
 
 namespace EcommerceHelper.Presentacion.Shared
 {
@@ -14,13 +16,20 @@ namespace EcommerceHelper.Presentacion.Shared
 
         private HttpContext Current = HttpContext.Current;
 
-        UsuarioEntidad usuario = new UsuarioEntidad();
+       
+      
+        public UsuarioEntidad usuario { get; set; }
+        private IdiomaEntidad idioma;
+        private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            usuario = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
             try
             {
                 string nombre = Session["NomUsuario"].ToString();
-                lblNombreUsuario.Text = " Hola " + nombre;
+                lblNombreUsuario.Text = "  Hola " + nombre;
 
             }
             catch (Exception ex)
@@ -28,7 +37,49 @@ namespace EcommerceHelper.Presentacion.Shared
 
                 Response.Redirect("/Views/Public/Default.aspx");
             }
+
         }
+
+
+        public bool Autenticar(string elPermiso)
+        {
+            UsuarioEntidad usuarioAutenticado = new UsuarioEntidad();
+            usuarioAutenticado = (UsuarioEntidad)Current.Session["Usuario"];
+
+            string[] PermisosPagina = { elPermiso };
+
+            if (usuarioAutenticado != null)
+            {
+                if (usuarioAutenticado.Permisos.Exists(x => x.NombreIFamPat == elPermiso))
+                    return true;
+                if (FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, PermisosPagina))
+                    return true;
+                //return usuarioAutenticado.Permisos.Any(X => X.NombreIFamPat == elPermiso);
+            }
+            return false;
+
+        }
+        public bool Autenticar(string[] losPermisosARevisar)
+        {
+            UsuarioEntidad usuarioAutenticado = new UsuarioEntidad();
+            usuarioAutenticado = (UsuarioEntidad)Current.Session["Usuario"];
+
+
+            if (usuarioAutenticado != null)
+            {
+                foreach (string unTag in losPermisosARevisar)
+                {
+                    if (usuarioAutenticado.Permisos.Exists(x => x.NombreIFamPat == unTag))
+                        return true;
+                }
+
+                return FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, losPermisosARevisar);
+            }
+            return false;
+
+        }
+
+
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -39,7 +90,7 @@ namespace EcommerceHelper.Presentacion.Shared
             else
                 ServicioLog.CrearLogEventos("Deslogueo", "Deslogueo Correcto", "", (usuario.IdUsuario).ToString());
             Session.Abandon();
-            Response.Redirect("/Views/Public/Default.aspx");
+            Response.Redirect("../Public/Default.aspx");
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Shared/PaginaMaestraAdministracion.Master" AutoEventWireup="true" CodeBehind="AsignacionDePerfiles.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.AsignacionDePerfilesaspx" %>
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestraAdministracion.Master" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
      <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />

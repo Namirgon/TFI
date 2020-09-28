@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="DireccionEmpleado.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.DireccionEmpleado" %>
- 
+ <%@ MasterType VirtualPath="~/Shared/PaginaMaestraAdministracion.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  

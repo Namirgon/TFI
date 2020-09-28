@@ -1,14 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="NuestrosServicios.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Public.NuestrosServicios" %>
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
-     <link rel="stylesheet" href="../../Content/css/font-awesome.min.css" />
+    
      <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="../../Content/css/bootstrap.css" />
-     <script src="../../Content/Scripts/modernizr-2.6.2.js"></script>
     
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
 
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+    <br />
+   <br />  
+    <br />
+   <br />  
     
  <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />

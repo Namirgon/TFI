@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestraAdministracion.Master" AutoEventWireup="true" CodeBehind="BackUp.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.BackUp" %>
-
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestraAdministracion.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

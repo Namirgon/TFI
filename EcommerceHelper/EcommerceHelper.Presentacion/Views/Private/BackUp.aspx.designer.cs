@@ -56,5 +56,17 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new EcommerceHelper.Presentacion.Shared.PaginaMaestraAdministracion Master {
+            get {
+                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestraAdministracion)(base.Master));
+            }
+        }
     }
 }

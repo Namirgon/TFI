@@ -1,8 +1,12 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestraAdministracion.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestraAdministracion" %>
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
+<%--<!DOCTYPE html>
 
-<!DOCTYPE html>
+<html>--%>
 
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -19,23 +23,43 @@
       </asp:ScriptManager>
     
       
-        <header id="header">
+        <div id="header">
 
             <div class="inner">
-                <a href="Default.aspx" class="logo">Helper</a>
-                
+                <a href="../public/Default.aspx" class="logo">Helper</a>
+             
                 <nav id="nav">
-                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
-                     <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="<%$Resources:Global, CerrarSesion  %>"></asp:LinkButton>
-                     <a href="../Public/IniciarSesion.aspx"> Comercial</a>
-                    <a href="../Public/NuestrosServicios.aspx">RRHH</a>
-                    <a href="../Public/NuestrosServicios.aspx">Seguridad</a>
+                     <ul class="nav">
+                 <li>    <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="medium" ></asp:Label> <%--// poner nombre del Usuario--%></li>
+                 <li>    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="<%$Resources:Global, CerrarSesion  %>"></asp:LinkButton></li>
                     
-         
+                 <li style="font-size:18px; margin-right: 20px">RRHH
+                            <ul>
+                                <li><a href="../Private/AltaEmpleado.aspx"> Alta Empleado</a></li>
+                                <li><a href="../Private/AsignacionDePerfiles.aspx">Asignacion de Perfiles</a></li>
+                            </ul>
+                 </li>
+
+                 <li style="font-size:18px; margin-left:20px">Seguridad
+                            <ul>
+                                <li><a href="../Private/BackUp.aspx"> Respaldar</a></li>
+                                <li><a href="../Private/Restaurar.aspx"> Restaurar BD</a></li>
+                                <li><a href="../Private/VerLogs.aspx"> Bitacora</a></li>
+                                 <li><a href="../Private/Idioma.aspx"> Idioma</a></li>
+                            </ul>
+                </li>
+                         <li style="font-size:18px; margin-left:20px">Comercial
+                            <ul>
+                                <li><a>Comprobantes</a></li>
+                                <li><a>Estadisticas</a></li>
+                            </ul> 
+                        </li>
+                    </ul>
+                  
                 </nav>
                    
             </div>
-        </header>
+        </div>
         <div>
                <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -57,11 +81,22 @@
         
     </footer>
       </div>
-          <style>
+  
+   
+    
+    <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+    </asp:ContentPlaceHolder>
 
-.header p {
- position: relative;
- margin: 0 0 1.5em 0;
+    
+
+</body>
+</html>
+<style type="text/css">
+
+* {
+ padding: 0px;
+ margin: 0px;
+ 
  }
 #header {
     background: #1c1c1c;
@@ -75,31 +110,36 @@
     top: 0;
     width: 100%;
     z-index: 10001;
+  
+
 }
 
-    header p {
-        position: relative;
-        margin: 0 0 1.5em 0;
-    }
+
+ul,  ol, li {
+
+   list-style: none;
+
+}
+
+.nav > li{
+
+    float:left;
+
+}
+
 #header a {
     transition: color 0.2s ease-in-out;
     display: inline-block;
     padding: 0 2em;
     color: #ffffff;
-    font-size:30px;
-    /*text-decoration: none;
-    text-transform: uppercase;*/
-    font-weight: 700;
-    font-size: .85em;
+    text-decoration: none;
+   
 }
 
- #header nav a {
-        font-size:18px;
-        color:antiquewhite;
-    }
     #header .inner {
         max-width: 65em;
         width: calc(100% - 6em);
+    
         margin: 0 auto;
         position: relative;
     }
@@ -109,16 +149,47 @@
     #header .inner {
         max-width: 90%;
         width: 90%;
+        text-align:left;
+     
     }
 }
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+    }
 
+   .nav li a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+        background-color:#1c1c1c;
+        text-decoration:none;
+        padding: 10px  15px;
+        display:block;
+        width:180px;
 
+    }
+   .nav li ul{
+
+       display:none;
+       position:absolute;
+       min-width:100px;
+   }
+
+   .nav li:hover > ul{
+
+ display:block;
+
+   }
 header p {
     color: #717171;
-    font-size:25px;
-  
 }
 
+.nav li a:hover{
+    background-color:#717171;
+
+}
 #nav {
     display: inline-block;
 }
@@ -127,6 +198,7 @@ header p {
 #header .logo {
     font-family: 'Pacifico', cursive;
     display: inline-block;
+    text-align:center;
     height: inherit;
     left: 0;
     line-height: inherit;
@@ -135,7 +207,7 @@ header p {
     position: absolute;
     top: 0;
     color: antiquewhite;
-    font-size: 35px;
+    font-size: 1.75em;
     text-transform: none;
     font-weight: normal;
 }
@@ -143,12 +215,3 @@ header p {
 
 
         </style>
-   
-    
-    <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
-    </asp:ContentPlaceHolder>
-
-    
-
-</body>
-</html>

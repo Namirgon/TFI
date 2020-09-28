@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="IniciarSesionIntranet.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.IniciarSesionIntranet" %>
+
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
-     <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="../../Content/css/bootstrap.css" />
-
+    
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

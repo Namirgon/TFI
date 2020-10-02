@@ -56,20 +56,20 @@ namespace EcommerceHelper.BLL
 
         }
 
-
+        
 
         public List<ProvinciaEntidad> SelectALLProvincias()
         {
             DireccionBLL ManagerDireccion = new DireccionBLL();
             return ManagerDireccion.SelectALLProvincias();
-            //return DalDeProvincia.SelectAll();
+
         }
 
         public List<SexoEntidad> SelectALLSexos()
         {
             SexoBLL ManagerSexo = new SexoBLL();
             return ManagerSexo.SelectALLSexos();
-            //return DalDeProvincia.SelectAll();
+
         }
 
 

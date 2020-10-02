@@ -15,14 +15,23 @@ namespace EcommerceHelper.Entidades.Servicios
 
         }
 
-        public override int Id { get; set; }
+        public override int IdDVV { get; set; }
 
-        public static string getDigitoEncriptado(object unObjeto)
+       
+        public static string CarlcularDigitoUsuario(UsuarioEntidad unUsuario)
         {
-            string digitoAEncriptar = DVGReflection.GetDVH(unObjeto);
-            EncriptarSHA256 e = new EncriptarSHA256(digitoAEncriptar);
-            string digitoEncriptado = e.Hashear();
-            return digitoEncriptado;
+
+            string cadena = unUsuario.Nombre + unUsuario.Apellido+unUsuario.NumeroDocumento+unUsuario.Email+unUsuario.Password+unUsuario.NumeroTelefono;
+            double resultado=0;
+
+            foreach ( char  c in cadena)
+            {
+
+                resultado += char.GetNumericValue(c);
+
+            }
+
+            return resultado.ToString();
         }
 
     }

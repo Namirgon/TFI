@@ -53,12 +53,13 @@
 
      
    <br />
-    </div>
+   
+</div>
+</div>
 
-
+    <div>
         <asp:LinkButton ID="registrarme" runat="server" style="margin-left:100px; font-size:18px " Text="<%$Resources:Global, Registrarme %> " OnClick="lblRegistrarme_Click"></asp:LinkButton>
    </div>
 
-</div>
   
 </asp:Content>

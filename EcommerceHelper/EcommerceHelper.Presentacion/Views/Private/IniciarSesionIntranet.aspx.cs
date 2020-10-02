@@ -1,5 +1,6 @@
 ﻿using EcommerceHelper.BLL;
 using EcommerceHelper.Entidades;
+using EcommerceHelper.Funciones.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         private IdiomaEntidad idioma;
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
-
+        BLL.Managers.FamiliaBLL UnManagerFamilia = new BLL.Managers.FamiliaBLL();
 
         protected T FindControlFromMaster<T>(string name) where T : Control
         {
@@ -68,24 +69,31 @@ namespace EcommerceHelper.Presentacion.Views.Private
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        { 
+        {
 
-         UsuarioBLL BLLUsuario = new UsuarioBLL();
-         UsuarioEntidad usuario = new UsuarioEntidad();
-         usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
+            UsuarioBLL BLLUsuario = new UsuarioBLL();
+            UsuarioEntidad usuario = new UsuarioEntidad();
+            usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
 
             if (usuario != null)
 
             {
+
+                usuario.Familia = UnManagerFamilia.FamiliaSelectNombreFamiliaByIdUsuario(usuario.IdUsuario);
+                usuario.Permisos = BLLUsuario.UsuarioTraerPermisos(usuario.Apellido, usuario.IdUsuario);
                 Session["NomUsuario"] = usuario.Nombre;
+                Session["Usuario"] = usuario;
+                ServicioLog.CrearLogEventos("Logueo", "Logueo Correcto", usuario.Apellido, (usuario.IdUsuario).ToString());
+
                 Response.Redirect("/Views/Private/MenuAdministracion.aspx");
             }
             else
             {
+
                 Response.Write("<script>alert('usuario o clave incorrecta')</script>");
                 limpiarCampos();
-}
-        }
+            }
+        }    
 
         public void limpiarCampos()
         {

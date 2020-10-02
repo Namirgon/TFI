@@ -51,16 +51,9 @@ namespace EcommerceHelper.DAL
 
             };
 
-            //using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarOrdenDeTrabajoActiva", parameters))
             using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarOrdenDeTrabajoActiva", parameters))
             {
-                //OrdenDeTrabajoEntidad ordenDeTrabajoActiva = new OrdenDeTrabajoEntidad();
-
-                //ordenDeTrabajoActiva = Mapeador.MapearFirst<OrdenDeTrabajoEntidad>(dt);
-
-                //return ordenDeTrabajoActiva;
-
-
+               
                 OrdenDeTrabajoEntidad OrdenDeTrabajoEntidad = new OrdenDeTrabajoEntidad();
                 OrdenDeTrabajoEntidad = MapearOrdenDeTrabajoEntidad(ds);
                 return OrdenDeTrabajoEntidad;

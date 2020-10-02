@@ -15,7 +15,7 @@ namespace EcommerceHelper.Entidades.Servicios
             valorInicial = _valorInicial;
         }
 
-        public override int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override int IdDVV { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public override string Hashear()
         {

@@ -174,6 +174,23 @@ namespace EcommerceHelper.BLL
         }
 
 
+        public int RegistrarIdioma(IdiomaEntidad idioma)
+        {
+            try
+            {
+                _dal.Insert(idioma);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
+
+
     }
 }
     

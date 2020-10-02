@@ -16,9 +16,6 @@ namespace EcommerceHelper.DAL
 
         #region Methods
 
-        /// <summary>
-        /// Saves a record to the Lenguaje table.
-        /// </summary>
         public void Insert(IdiomaEntidad lenguaje)
         {
             ValidationUtility.ValidateArgument("lenguaje", lenguaje);
@@ -31,9 +28,6 @@ namespace EcommerceHelper.DAL
             lenguaje.IdIdioma = (int)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "IdiomaInsert", parameters);
         }
 
-        /// <summary>
-        /// Updates a record in the Lenguaje table.
-        /// </summary>
         public void Update(IdiomaEntidad lenguaje)
         {
             ValidationUtility.ValidateArgument("lenguaje", lenguaje);
@@ -47,9 +41,6 @@ namespace EcommerceHelper.DAL
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "IdiomaUpdate", parameters);
         }
 
-        /// <summary>
-        /// Deletes a record from the Lenguaje table by its primary key.
-        /// </summary>
         public void Delete(int idIdioma)
         {
             SqlParameter[] parameters = new SqlParameter[]
@@ -60,9 +51,7 @@ namespace EcommerceHelper.DAL
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "IdiomaDelete", parameters);
         }
 
-        /// <summary>
-        /// Selects a single record from the Lenguaje table.
-        /// </summary>
+    
         public IdiomaEntidad Select(int idIdioma)
         {
             SqlParameter[] parameters = new SqlParameter[]
@@ -81,9 +70,6 @@ namespace EcommerceHelper.DAL
         }
 
 
-        /// <summary>
-        /// Selects all records from the Lenguaje table.
-        /// </summary>
         public List<IdiomaEntidad> SelectAll()
         {
             using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "IdiomaSelectAll"))

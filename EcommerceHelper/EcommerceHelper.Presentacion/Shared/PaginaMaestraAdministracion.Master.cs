@@ -89,6 +89,7 @@ namespace EcommerceHelper.Presentacion.Shared
                 ServicioLog.CrearLogEventos("Deslogueo", "Deslogueo Correcto", usuario.Apellido, (usuario.IdUsuario).ToString());
             else
                 ServicioLog.CrearLogEventos("Deslogueo", "Deslogueo Correcto", "", (usuario.IdUsuario).ToString());
+            Session["Usuario"] = null;
             Session.Abandon();
             Response.Redirect("../Public/Default.aspx");
         }

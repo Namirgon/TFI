@@ -86,7 +86,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
         {
             UsuarioBLL BLLUsuario = new UsuarioBLL();
             UsuarioEntidad usuario = new UsuarioEntidad();
-            usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
+
+            usuario.Password = ServicioSecurizacion.AplicarHash(TXTPassword.Text);
+            usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, usuario.Password);
             BLLUsuario.GenerarCadenaDvTablaEntera();
 
             if (usuario != null)

@@ -9,7 +9,7 @@ namespace EcommerceHelper.Entidades.Servicios
    public  class DVGReflection: BaseEntidad 
     {
 
-        public override int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override int IdDVV { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public static string GetDVH(object entity)
 

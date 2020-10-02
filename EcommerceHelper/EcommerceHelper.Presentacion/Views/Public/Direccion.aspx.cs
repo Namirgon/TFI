@@ -11,7 +11,7 @@ using System.Text;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Direccion : System.Web.UI.Page
+    public partial class Direccion : BasePage
     {
         private UsuarioBLL unManagerUsuario = new UsuarioBLL();
         public List<ProvinciaEntidad> unasProvincias = new List<ProvinciaEntidad>();

@@ -48,6 +48,7 @@
     <Compile Include="FamiliaDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />
     <Compile Include="MultiIdiomaDAL.cs" />
+    <Compile Include="Servicios\DVVDAL.cs" />
     <Compile Include="Servicios\FamiliaDAL.cs" />
     <Compile Include="ItemOrdenDeTrabajoDAL.cs" />
     <Compile Include="ListaDeseoDAL.cs" />

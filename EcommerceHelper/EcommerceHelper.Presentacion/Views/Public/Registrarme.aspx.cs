@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Web.UI;
 using System.Text;
 using System.Web.UI.WebControls;
+using EcommerceHelper.Funciones.Seguridad;
+using EcommerceHelper.Entidades.Servicios;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
@@ -27,7 +29,6 @@ namespace EcommerceHelper.Presentacion.Views.Public
         private DireccionBLL UnManagerDireccion = new DireccionBLL();
         private UsuarioBLL unManagerUsuario = new UsuarioBLL();
 
-        //private UsuarioBLL unManagerUsuario = new UsuarioBLL();
         public List<ProvinciaEntidad> unasProvincias = new List<ProvinciaEntidad>();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -117,7 +118,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 {
                     unUsuario.IdUsuarioTipo = 4; // Usuario Cliente 
                     unUsuario.Email = txtusuario.Text;
-                    unUsuario.Password = txtcontrasena.Text;
+                    unUsuario.Password =ServicioSecurizacion.AplicarHash( txtcontrasena.Text);
                     unUsuario.Nombre = txtNombre.Text;
                     unUsuario.Apellido = txtApellido.Text;
                     unUsuario.MiSexo = new SexoEntidad();
@@ -125,7 +126,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
                     unUsuario.MiTelefono = new TipoTelefonoEntidad();
                     unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
-                    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text); //Int32.Parse(txtTelefono.Text);   
+                    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
+
+                    //object obj = ;
+                    //string unDVH= 
+                    unUsuario.DVH = int.Parse (DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
 
 
                     NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);

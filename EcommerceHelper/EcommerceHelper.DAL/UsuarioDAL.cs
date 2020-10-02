@@ -66,6 +66,7 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@Password", usuario.Password),
                 new SqlParameter("@IdTipoTelefono", usuario.MiTelefono.IdTipoTelefono),
                 new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
+                 new SqlParameter("@DVH", usuario.DVH),
             };
 
             var Resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioInsert", parameters);

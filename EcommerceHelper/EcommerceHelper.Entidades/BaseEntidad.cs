@@ -9,7 +9,7 @@ namespace EcommerceHelper.Entidades
 {
     public abstract class BaseEntidad : INotifyPropertyChanged
     {
-        public abstract int Id { get; set; }
+        public abstract int IdDVV { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

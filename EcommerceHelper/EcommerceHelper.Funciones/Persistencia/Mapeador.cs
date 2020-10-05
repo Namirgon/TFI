@@ -78,9 +78,6 @@ namespace EcommerceHelper.Funciones.Persistencia
         {
             List<T> ListaResultado = Activator.CreateInstance<List<T>>();
 
-            //CON ESTA LINEA ANDABA EL MAPEADOR
-            //var Propiedades = typeof(T).GetProperties().ToList();
-            //var Propiedades = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             Type unTipo = typeof(T);
 
             foreach (var row in unDataSet.Tables[0].Rows)

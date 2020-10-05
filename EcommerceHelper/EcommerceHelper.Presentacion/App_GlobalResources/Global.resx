@@ -237,6 +237,9 @@
   <data name="Provincia" xml:space="preserve">
     <value>Provincia</value>
   </data>
+  <data name="RecuperarContraseña" xml:space="preserve">
+    <value>Recuperar Contraseña</value>
+  </data>
   <data name="Registrarme" xml:space="preserve">
     <value>Registrarme</value>
   </data>

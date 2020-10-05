@@ -33,14 +33,14 @@
   
        <asp:Label ID="EtiquetaEmail" runat="server" Text="<%$Resources:Global, Usuario %>" visible="true"  style=" margin-left:100px"></asp:Label>
        <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
-       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Email del Usuario" ControlToValidate="TXTEmail"></asp:RequiredFieldValidator>
+       <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Email del Usuario" ControlToValidate="TXTEmail"></asp:RequiredFieldValidator>--%>
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
  
    <br />
      <br />
     <asp:Label ID="EtiquetaPassword2" runat="server" Text="<%$Resources:Global, Password %>" style=" margin-left:100px"></asp:Label>
     <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:60px"></asp:TextBox> 
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese Clave" ControlToValidate="TXTPassword"></asp:RequiredFieldValidator>
+    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese Clave" ControlToValidate="TXTPassword"></asp:RequiredFieldValidator>--%>
     
    <br />
   
@@ -60,6 +60,8 @@
     <div>
         <asp:LinkButton ID="registrarme" runat="server" style="margin-left:100px; font-size:18px " Text="<%$Resources:Global, Registrarme %> " OnClick="lblRegistrarme_Click"></asp:LinkButton>
    </div>
-
+     <div>
+        <asp:LinkButton ID="recuperarContrasena" runat="server" style="margin-left:100px; font-size:18px " Text="<%$Resources:Global, RecuperarContraseña %> " OnClick="recuperarContrasena_Click"></asp:LinkButton>
+   </div>
   
 </asp:Content>

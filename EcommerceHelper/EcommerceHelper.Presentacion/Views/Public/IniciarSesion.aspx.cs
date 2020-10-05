@@ -89,7 +89,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             usuario.Password = ServicioSecurizacion.AplicarHash(TXTPassword.Text);
             usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, usuario.Password);
-            BLLUsuario.GenerarCadenaDvTablaEntera();
+            //BLLUsuario.GenerarCadenaDvTablaEntera();
 
             if (usuario != null)
 
@@ -123,6 +123,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
         protected void BtnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");
+        }
+
+        protected void recuperarContrasena_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecuperarContrasena.aspx");
         }
     }
 }

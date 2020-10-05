@@ -39,7 +39,7 @@ namespace EcommerceHelper.Entidades
         public int NumeroTelefono { get; set; }
 
         public int IdUsuarioTipo { get; set; }
-        public float  DVH { get; set; }
+        public int  DVH { get; set; }
 
         #endregion
 
@@ -49,7 +49,7 @@ namespace EcommerceHelper.Entidades
         //    DVH = new DigitoVerificadorH();
         //}
 
-        public List<ListaDeDeseoEntidad> misDeseos { get; set; }
+        //public List<ListaDeDeseoEntidad> misDeseos { get; set; }
        
 
         private FamiliaEntidad _Familia = new FamiliaEntidad();

@@ -40,11 +40,53 @@ namespace EcommerceHelper.BLL
 
         }
 
+
+        public UsuarioEntidad  BuscarMail(string Email)
+        {
+
+            try
+            {
+              
+                    return _DalUsuario.BuscarEmail(Email);
+       
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;   
+
+            }
+
+
+        }
+
+        public UsuarioEntidad ActualizarPassword(string Email, string nuevaPassword)
+        {
+
+            try
+            {
+
+                return _DalUsuario.ActualizarPassword(Email, nuevaPassword);
+
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;
+
+            }
+
+
+        }
+
+
         public List< UsuarioEntidad> GenerarCadenaDvTablaEntera() 
         {
             try
             {
-                return _DalUsuario.SelectAllUsuariosDVH();
+                return _DalUsuario.SelectAllUsuarios();
             }
             catch (Exception ex)
             {
@@ -119,7 +161,6 @@ namespace EcommerceHelper.BLL
                 var id = _DalDireccion.Insert(direccion);
                 direccion.IdDireccion = id;
                 _DalUsuario.UsuarioDireccionCrear(direccion, elUsuario);
-                //  _DalUsuario.UsuarioDireccionActualizar(direccion, elUsuario);
             }
             catch (Exception ex)
             {

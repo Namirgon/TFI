@@ -7,6 +7,8 @@ using System.Text;
 using System.Web.UI.WebControls;
 using EcommerceHelper.Funciones.Seguridad;
 using EcommerceHelper.Entidades.Servicios;
+using EcommerceHelper.DAL.Servicios;
+using EcommerceHelper.BLL.Servicios;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
@@ -128,8 +130,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
                     unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
 
-                    //object obj = ;
-                    //string unDVH= 
+               
                     unUsuario.DVH = int.Parse (DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
 
 
@@ -151,11 +152,15 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
                     limpiarCampos();
                     EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Alta usuario", "Alta usuario: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
+
+                    DVVBLL managerDVV = new DVVBLL();
+
+                    managerDVV.InsertarDVV("DVV","Usuario");
                     Response.Redirect("/Views/Public/IniciarSesion.aspx");
                 }
                 else
                 {
-
+                   
                     
                 }
 

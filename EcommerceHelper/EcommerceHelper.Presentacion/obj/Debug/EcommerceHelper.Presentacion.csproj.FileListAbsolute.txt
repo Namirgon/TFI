@@ -483,3 +483,4 @@ C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debu
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.csproj.CopyComplete
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.dll
 C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\obj\Debug\EcommerceHelper.Presentacion.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Presentacion\bin\SimpleCrypto.dll

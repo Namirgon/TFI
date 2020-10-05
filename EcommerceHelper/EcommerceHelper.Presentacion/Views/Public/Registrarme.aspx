@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-     <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="../../Content/css/bootstrap.css" />
+  <%--   <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="../../Content/css/bootstrap.css" />--%>
 
 
 </asp:Content>

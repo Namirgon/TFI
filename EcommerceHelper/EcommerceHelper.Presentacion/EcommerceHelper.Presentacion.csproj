@@ -51,6 +51,9 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -334,6 +337,7 @@
     <Content Include="Views\Public\NuestrosServicios.aspx" />
     <Content Include="Views\Public\Pedido.aspx" />
     <Content Include="Views\Public\Presupuesto.aspx" />
+    <Content Include="Views\Public\RecuperarContrasena.aspx" />
     <Content Include="Views\Public\Registrarme.aspx" />
     <Content Include="Views\Public\Resumen.aspx" />
     <Content Include="Views\Public\TusServicios.aspx" />
@@ -534,6 +538,13 @@
     </Compile>
     <Compile Include="Views\Public\Presupuesto.aspx.designer.cs">
       <DependentUpon>Presupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\RecuperarContrasena.aspx.cs">
+      <DependentUpon>RecuperarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\RecuperarContrasena.aspx.designer.cs">
+      <DependentUpon>RecuperarContrasena.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\Registrarme.aspx.cs">
       <DependentUpon>Registrarme.aspx</DependentUpon>

@@ -421,6 +421,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Recuperar Contraseña.
+        /// </summary>
+        internal static string RecuperarContraseña {
+            get {
+                return ResourceManager.GetString("RecuperarContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Registrarme.
         /// </summary>
         internal static string Registrarme {

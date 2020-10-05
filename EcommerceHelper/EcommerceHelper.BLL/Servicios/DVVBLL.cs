@@ -1,5 +1,6 @@
 ﻿using EcommerceHelper.DAL;
 using EcommerceHelper.DAL.Servicios;
+using EcommerceHelper.Entidades;
 using EcommerceHelper.Entidades.Servicios;
 using System;
 using System.Collections.Generic;
@@ -29,13 +30,21 @@ namespace EcommerceHelper.BLL.Servicios
         {
             UsuarioDAL DVHTotal = new UsuarioDAL();
             DVV varDVV = new DVV();
+     
 
+            List<UsuarioEntidad> variable = DVHTotal.SelectAllUsuarios();
 
-            string variable = (DVHTotal.SelectAllUsuariosDVH()).ToString();
+            float SumaDVH = 0;
 
+            foreach (UsuarioEntidad item in variable)
+            {
+                SumaDVH += item.DVH;
+            }
+
+           
             varDVV.tabla = Tabla;
-            varDVV.dvv = variable;
-
+            varDVV.dvv = (SumaDVH).ToString();
+        
 
             
 

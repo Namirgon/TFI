@@ -22,7 +22,8 @@ namespace EcommerceHelper.Entidades
         public string NombreFamilia { get; set; }
 
         /// <summary>
-        /// Gets or sets the FecBaja value.
+        /// Gets or sets the 
+        /// value.
         /// </summary>
         //public DateTime? FecBaja { get; set; }
 

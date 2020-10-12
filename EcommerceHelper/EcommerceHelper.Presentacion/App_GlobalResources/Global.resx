@@ -123,6 +123,9 @@
   <data name="AgregadoAlCarrito" xml:space="preserve">
     <value>Agregado Al Carrito</value>
   </data>
+  <data name="Asignados" xml:space="preserve">
+    <value>Asignados</value>
+  </data>
   <data name="Calle" xml:space="preserve">
     <value>Calle</value>
   </data>
@@ -183,6 +186,9 @@
   <data name="Direccion" xml:space="preserve">
     <value>Direccion</value>
   </data>
+  <data name="Disponibles" xml:space="preserve">
+    <value>Disponibles</value>
+  </data>
   <data name="Eliminar" xml:space="preserve">
     <value>Eliminar</value>
   </data>
@@ -191,6 +197,9 @@
   </data>
   <data name="Fecha" xml:space="preserve">
     <value>Fecha</value>
+  </data>
+  <data name="GestiondePermisos" xml:space="preserve">
+    <value>Gestion de Permisos</value>
   </data>
   <data name="Horario" xml:space="preserve">
     <value>Horario</value>
@@ -227,6 +236,9 @@
   </data>
   <data name="Pedido" xml:space="preserve">
     <value>Pedido</value>
+  </data>
+  <data name="Permisos" xml:space="preserve">
+    <value>Permisos</value>
   </data>
   <data name="Piso" xml:space="preserve">
     <value>Piso</value>

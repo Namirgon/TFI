@@ -109,6 +109,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\miEstilo.css" />
     <Content Include="Content\css\Site.css" />
+    <Content Include="Content\EstilosPermisos.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Image\banner-curso-degrade.png" />
@@ -320,6 +321,7 @@
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
     <Content Include="Views\Private\BackUp.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
+    <Content Include="Views\Private\GestionDePermisos.aspx" />
     <Content Include="Views\Private\Idioma.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
     <Content Include="Views\Private\MenuAdministracion.aspx" />
@@ -419,6 +421,13 @@
     </Compile>
     <Compile Include="Views\Private\DireccionEmpleado.aspx.designer.cs">
       <DependentUpon>DireccionEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\GestionDePermisos.aspx.cs">
+      <DependentUpon>GestionDePermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\GestionDePermisos.aspx.designer.cs">
+      <DependentUpon>GestionDePermisos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\Idioma.aspx.cs">
       <DependentUpon>Idioma.aspx</DependentUpon>

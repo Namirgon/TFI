@@ -138,20 +138,20 @@ namespace EcommerceHelper.DAL
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "DireccionUsuarioInsert", parameters);
         }
 
-        public List<IFamPat> UsuarioTraerPermisos(string elNomUsuario, int elIdUsuario)
+        public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
         {
 
             List<IFamPat> unosPermisos = new List<IFamPat>();
 
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@elNomUsuario", elNomUsuario),
-                new SqlParameter("@elIdUsuario", elIdUsuario)
+                new SqlParameter("@Email", email ),
+                new SqlParameter("@IdUsuario", IdUsuario)
             };
             SqlParameter[] parameters2 = new SqlParameter[]
             {
-                new SqlParameter("@elNomUsuario", elNomUsuario),
-                new SqlParameter("@elIdUsuario", elIdUsuario)
+                new SqlParameter("@Email", email ),
+                new SqlParameter("@IdUsuario", IdUsuario)
             };
 
             try
@@ -287,6 +287,127 @@ namespace EcommerceHelper.DAL
             }
 
         }
+
+        public bool UsuarioAgregarPermisos(List<IFamPat> PerAgregar, string Email)
+        {
+            try
+            {
+                foreach (IFamPat unPermiso in PerAgregar)
+                {
+                    if (unPermiso.CantHijos > 0)
+                        UsuarioAgregarFamilia(unPermiso as Familia, Email);
+                    else
+                        UsuarioAgregarPatente(unPermiso as Patente, Email);
+                }
+                return true;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+        public void UsuarioAgregarFamilia(Familia unaFamilia, string Email)
+        {
+            try
+            {
+                SqlParameter[] parametersFam = new SqlParameter[]
+                {
+                    new SqlParameter("@IdFamilia", unaFamilia.IdIFamPat),
+                    new SqlParameter("@Email", Email),
+              
+                };
+
+                SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioAgregarFamilia", parametersFam);
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+        public void UsuarioAgregarPatente(Patente unaPatente, string Email)
+        {
+            try
+            {
+                SqlParameter[] parametersPat = new SqlParameter[]
+                {
+                    new SqlParameter("@IdPatente", unaPatente.IdIFamPat),
+                    new SqlParameter("@Email", Email),
+                   
+                };
+
+                SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioAgregarPatente", parametersPat);
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+        public bool UsuarioQuitarPermisos(List<IFamPat> PerQuitar, string Email)
+        {
+            try
+            {
+                foreach (IFamPat unPermiso in PerQuitar)
+                {
+                    if (unPermiso.CantHijos > 0)
+                        UsuarioQuitarFamilia(unPermiso as Familia, Email);
+                    else
+                        UsuarioQuitarPatente(unPermiso as Patente, Email);
+                }
+
+                return true;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+        public void UsuarioQuitarFamilia(Familia unaFamilia, string Email)
+        {
+            try
+            {
+                SqlParameter[] parametersFam = new SqlParameter[]
+                {
+                    new SqlParameter("@IdFamilia", unaFamilia.IdIFamPat),
+                    new SqlParameter("@NombreUsuario", Email),
+                  
+                };
+
+                SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioQuitarFamilia", parametersFam);
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+        public void UsuarioQuitarPatente(Patente unaPatente, string Email)
+        {
+            try
+            {
+                SqlParameter[] parametersPat = new SqlParameter[]
+                {
+                    new SqlParameter("@IdPatente", unaPatente.IdIFamPat),
+                    new SqlParameter("@NombreUsuario", Email),
+                   
+                };
+
+                SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioQuitarPatente", parametersPat);
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+
 
 
     }

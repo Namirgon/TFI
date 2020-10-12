@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Private
 {
-    public partial class IniciarSesionIntranet : System.Web.UI.Page
+    public partial class IniciarSesionIntranet : BasePage
     {
 
         private IdiomaEntidad idioma;
@@ -80,7 +80,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             {
 
                 usuario.Familia = UnManagerFamilia.FamiliaSelectNombreFamiliaByIdUsuario(usuario.IdUsuario);
-                usuario.Permisos = BLLUsuario.UsuarioTraerPermisos(usuario.Apellido, usuario.IdUsuario);
+                usuario.Permisos = BLLUsuario.UsuarioTraerPermisos(usuario.Email, usuario.IdUsuario);
                 Session["NomUsuario"] = usuario.Nombre;
                 Session["Usuario"] = usuario;
                 ServicioLog.CrearLogEventos("Logueo", "Logueo Correcto", usuario.Apellido, (usuario.IdUsuario).ToString());

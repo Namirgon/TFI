@@ -46,6 +46,7 @@
                                 <li><a href="../Private/Restaurar.aspx"> Restaurar BD</a></li>
                                 <li><a href="../Private/VerLogs.aspx"> Bitacora</a></li>
                                  <li><a href="../Private/Idioma.aspx"> Idioma</a></li>
+                                <li><a href="../Private/GestionDePermisos.aspx"> Gestion de Permisos</a></li>
                             </ul>
                 </li>
                          <li style="font-size:18px; margin-left:20px">Comercial
@@ -54,6 +55,16 @@
                                 <li><a>Estadisticas</a></li>
                             </ul> 
                         </li>
+                         <li>
+                          <a ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" CssClass="form-control"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                       
+                                    <asp:ListItem Text="<%$Resources:Global, Espanol %>" Value="es" />
+                                    <asp:ListItem Text="<%$Resources:Global, Ingles %>" Value="en-us" />
+                             </asp:DropDownList>
+                           </a>
+
+                         </li>
+                         
                     </ul>
                   
                 </nav>

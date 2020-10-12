@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EcommerceHelper.BLL.Servicios;
+using System.Globalization;
 
 namespace EcommerceHelper.Presentacion.Shared
 {
@@ -37,6 +38,25 @@ namespace EcommerceHelper.Presentacion.Shared
 
                 Response.Redirect("/Views/Public/Default.aspx");
             }
+
+
+            if (!IsPostBack)
+            {
+                if (ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
+                {
+                    ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name).Selected = true;
+                }
+                if (idioma == null)
+                {
+                    Session["Idioma"] = obtenerIdiomaCombo();
+                }
+            }
+
+        }
+
+        public PaginaMaestraAdministracion()
+        {
+            idioma = new IdiomaEntidad();
 
         }
 
@@ -79,7 +99,13 @@ namespace EcommerceHelper.Presentacion.Shared
 
         }
 
+        public string obtenerIdiomaCombo()
+        {
+            var val = (ddlIdioma.SelectedItem.Value);
+            var val2 = ddlIdioma.SelectedValue;
+            return (val2);
 
+        }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {

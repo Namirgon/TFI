@@ -130,7 +130,7 @@ namespace EcommerceHelper.BLL
 
         }
 
-        public List<IFamPat> UsuarioTraerPermisos(string elNomUsuario, int elIdUsuario)
+        public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
         {
 
             Servicios.FamiliaBLL ManagerFamilia = new Servicios.FamiliaBLL();
@@ -139,7 +139,7 @@ namespace EcommerceHelper.BLL
             {
                 List<IFamPat> unasFamilias;
                 //Primero traigo los permisos directos que tiene usuario (Familias y Patentes)
-                unasFamilias = _DalUsuario.UsuarioTraerPermisos(elNomUsuario, elIdUsuario);
+                unasFamilias = _DalUsuario.UsuarioTraerPermisos(email , IdUsuario);
                 //Segundo veo si aquellos permisos (1), tienen subpermisos (Familias y/o Patentes) y los agrego. La variable unasFamilias se modifica en las funciones de la BLL y DAL directamente.
                 ManagerFamilia.FamiliaTraerSubPermisos(unasFamilias);
                 return unasFamilias;
@@ -147,7 +147,7 @@ namespace EcommerceHelper.BLL
             }
             catch (Exception es)
             {
-                ServicioLog.CrearLog(es, "UsuarioTraerPermisos", elNomUsuario,  (elIdUsuario).ToString());
+                ServicioLog.CrearLog(es, "UsuarioTraerPermisos", email ,  (IdUsuario).ToString());
                 throw;
             }
         }
@@ -169,6 +169,24 @@ namespace EcommerceHelper.BLL
         }
 
 
+        public bool UsuarioModificarPermisos(List<IFamPat> PerAgregar, List<IFamPat> PerQuitar, string email)
+        {
+            try
+            {
+                if (PerAgregar.Count > 0)
+                    _DalUsuario.UsuarioAgregarPermisos(PerAgregar, email);
+                if (PerQuitar.Count > 0)
+                    _DalUsuario.UsuarioQuitarPermisos(PerQuitar, email);
+                return true;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
     }
+
+
 
 }

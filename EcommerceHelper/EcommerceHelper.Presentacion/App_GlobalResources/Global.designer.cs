@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Asignados.
+        /// </summary>
+        internal static string Asignados {
+            get {
+                return ResourceManager.GetString("Asignados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Calle.
         /// </summary>
         internal static string Calle {
@@ -259,6 +268,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Disponibles.
+        /// </summary>
+        internal static string Disponibles {
+            get {
+                return ResourceManager.GetString("Disponibles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Eliminar.
         /// </summary>
         internal static string Eliminar {
@@ -282,6 +300,15 @@ namespace Resources {
         internal static string Fecha {
             get {
                 return ResourceManager.GetString("Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gestion de Permisos.
+        /// </summary>
+        internal static string GestiondePermisos {
+            get {
+                return ResourceManager.GetString("GestiondePermisos", resourceCulture);
             }
         }
         
@@ -390,6 +417,15 @@ namespace Resources {
         internal static string Pedido {
             get {
                 return ResourceManager.GetString("Pedido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Permisos.
+        /// </summary>
+        internal static string Permisos {
+            get {
+                return ResourceManager.GetString("Permisos", resourceCulture);
             }
         }
         

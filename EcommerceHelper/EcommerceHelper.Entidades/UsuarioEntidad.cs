@@ -43,13 +43,7 @@ namespace EcommerceHelper.Entidades
 
         #endregion
 
-        //public UsuarioEntidad()
-        //{
-
-        //    DVH = new DigitoVerificadorH();
-        //}
-
-        //public List<ListaDeDeseoEntidad> misDeseos { get; set; }
+        
        
 
         private FamiliaEntidad _Familia = new FamiliaEntidad();

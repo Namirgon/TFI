@@ -91,6 +91,21 @@ namespace EcommerceHelper.BLL.Managers
                 throw;
             }
         }
+
+
+        public bool FamiliaCrear(IFamPat nuevaFamilia)
+        {
+            try
+            {
+                if (unaFamiliaDAL.FamiliaCrear(nuevaFamilia))
+                    return true;
+                return false;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
         public bool FamiliaEliminar(int IdFamilia)
         {
             try
@@ -104,6 +119,110 @@ namespace EcommerceHelper.BLL.Managers
                 throw;
             }
         }
+        public Familia FamiliaBuscar(string NombreIFamPat)
+        {
+            try
+            {
+                return unaFamiliaDAL.FamiliaBuscar(NombreIFamPat);
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+        public bool FamiliaModificar(IFamPat AModifFamilia, List<IFamPat> FamQuitarMod, List<IFamPat> FamAgregarMod)
+        {
+            try
+            {
+                if (unaFamiliaDAL.FamiliaModificar(AModifFamilia, FamQuitarMod, FamAgregarMod))
+                    return true;
+                return false;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+        public void FamiliaUnaTraerSubPermisos(IFamPat unaFamilia)
+        {
+            try
+            {
+                //Reviso si tiene subpermisos para agregarselos
+                unaFamiliaDAL.FamiliaTraerFamiliasHijas(unaFamilia);
+            }
+            catch (Exception es)
+            {
+                ServicioLog.CrearLog(es, "FamiliaUnaTraerSubPermisos", "", "");
+                throw;
+            }
+        }
+
+        public static bool BuscarPermiso(List<IFamPat> PermisosVer, string[] unTagControl)
+        {
+            foreach (var unTag in unTagControl)
+            {
+                foreach (IFamPat unPermiso in PermisosVer)
+                {
+                    if (unPermiso.CantHijos > 0)
+                    {
+                        if (BuscarSubPermisos((unPermiso as Familia).ElementosFamPat, unTag))
+                            return true;
+                    }
+                    else
+                        if (unPermiso.NombreIFamPat == unTag)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+
+        public static bool BuscarSubPermisos(List<IFamPat> PermisosVer, string unTagControl)
+        {
+            bool Res = false;
+            foreach (IFamPat unPer in PermisosVer)
+            {
+                if (unPer.CantHijos > 0)
+                {
+                    if (BuscarSubPermisos((unPer as Familia).ElementosFamPat, unTagControl))
+                    {
+                        Res = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    if (unPer.NombreIFamPat == unTagControl)
+                    {
+                        Res = true;
+                        break;
+                    }
+                }
+            }
+            return Res;
+        }
+
+
+
+        public void UsuarioFamiliaInsert(UsuarioEntidad unUsuario)
+        {
+            unaFamiliaDAL.UsuarioFamiliaInsert(unUsuario);
+        }
+
+
+
+
+        public void UsuarioUpdatePermisosFamilia(UsuarioEntidad elUsuario)
+        {
+            unaFamiliaDAL.UsuarioUpdatePermisosFamilia(elUsuario);
+        }
+
+
+
+
 
     }
 }

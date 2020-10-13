@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.BLL.Servicios;
+﻿using EcommerceHelper.BLL.Managers;
+using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.Entidades;
 using EcommerceHelper.Funciones.Seguridad;
 using System;

@@ -58,7 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioBLL.cs" />
     <Compile Include="Servicios\DVVBLL.cs" />
-    <Compile Include="Servicios\FamiliaBLL.cs" />
     <Compile Include="SexoBLL.cs" />
     <Compile Include="TipoDomicilioBLL.cs" />
     <Compile Include="TipoTelefonoBLL.cs" />

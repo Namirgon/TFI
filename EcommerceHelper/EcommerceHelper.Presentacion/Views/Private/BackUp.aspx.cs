@@ -39,8 +39,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             try
             {
-                //string fecha = DateTime.Now.ToString("yyyy-MM-dd h-mm tt").Trim() + ".bak";
-                //string nombre = "BKPGenloysBD-" + fecha;
+              
                 if (!string.IsNullOrWhiteSpace(txtNombreArchivo.Text))
                 {
                     string nombre = txtNombreArchivo.Text.Trim() + ".bak";
@@ -56,7 +55,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                         Current.Response.AppendHeader("Content-Disposition", "attachment; " + "filename=" + nombre + "");
                         Current.Response.TransmitFile(Server.MapPath(@"../../Content/Files/" + nombre));
                         Current.Response.Flush();
-                        //Current.Response.End();  //Causa Exception
+                       
                         Current.Response.SuppressContent = true;
                         Current.ApplicationInstance.CompleteRequest();
                     }
@@ -64,7 +63,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                     {
                         ServicioLog.CrearLogEventos("Backup", "Backup fallido", usuarioentidad.Apellido ,(usuarioentidad.IdUsuario).ToString());
                         sb.Append(@"<script type='text/javascript'>");
-                        //sb.Append("$('#currentdetail').modal('show');");
+                      
                         sb.Append("alert('No pudo realizarse el backup');");
                         sb.Append(@"</script>");
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
@@ -74,7 +73,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 else
                 {
                     sb.Append(@"<script type='text/javascript'>");
-                    //sb.Append("$('#currentdetail').modal('show');");
+                  
                     sb.Append("alert('Complete el campo Nombre');");
                     sb.Append(@"</script>");
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(),

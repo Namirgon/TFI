@@ -280,19 +280,206 @@ namespace EcommerceHelper.Presentacion.Views.Private
             }
         }
 
-        protected void treeTodos_SelectedNodeChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         protected void btnAltaFamilia_Click(object sender, EventArgs e)
         {
+
+            IFamPat nuevaFamilia = new Familia();
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                sb.Append(@"<script type='text/javascript'>");
+                sb.Append("alert('Debe ingresar un nombre para la Familia a crear');");
+                sb.Append(@"</script>");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                           "AltaFaltaNom", sb.ToString(), false);
+            }
+            else
+            {
+                //Verificar que quede al menos un permiso asignado
+                if (LisAuxAsig == null || LisAuxAsig.Count == 0)
+                {
+                    sb.Append(@"<script type='text/javascript'>");
+                    sb.Append("alert('Por favor revisar que la Familia posea al menos una patente asignada');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                               "AltaNoPatentes", sb.ToString(), false);
+                }
+                else
+                {
+                    if (LisAuxAsig != null && LisAuxAsig.Count == 1 && LisAuxAsig.First().CantHijos > 0)
+                    {
+                        sb.Append(@"<script type='text/javascript'>");
+                        sb.Append("alert('La Familia a crear no puede contener solamente una familia');");
+                        sb.Append(@"</script>");
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                   "AltaUnaFamilia", sb.ToString(), false);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            //FamiliaBuscar en BD lo reemplazo por una consulta en Linq
+                            if (PermisosTodos.Any(X => X.NombreIFamPat.ToLower() == txtName.Text.ToLower()))
+                            {
+                                sb.Append(@"<script type='text/javascript'>");
+                                sb.Append("alert('Ya existe una Familia con el nombre ingresado');");
+                                sb.Append(@"</script>");
+                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                           "ExisteNombreFamilia", sb.ToString(), false);
+                            }
+                            else
+                            {
+                                nuevaFamilia.NombreIFamPat = txtName.Text;
+                                (nuevaFamilia as Familia).ElementosFamPat = LisAuxAsig;
+
+                                if (ManagerFamilia.FamiliaCrear(nuevaFamilia))
+                                {
+                                   ServicioLog.CrearLogEventos("Crear Familia", "Familia " + txtName.Text + " creada correctamente", usuarioentidad.Apellido, usuarioentidad.IdUsuario.ToString());
+
+                                    PermisosTodos = ManagerFamilia.PermisosTraerTodos();
+                                    PermisosCbo = PermisosTodos.Where(X => X.CantHijos > 0).ToList();
+                                    Familia FamAux = new Familia();
+                                    FamAux.IdIFamPat = -1;
+                                    FamAux.NombreIFamPat = "";
+                                    PermisosCbo.Insert(0, FamAux);
+                                    cboFamilia.Items.Clear();
+                                    cboFamilia.DataSource = null;
+                                    cboFamilia.DataSource = PermisosCbo;
+                                    cboFamilia.DataTextField = "NombreIFamPat";
+                                    cboFamilia.DataValueField = "IdIFamPat";
+                                    cboFamilia.DataBind();
+
+                                    //ListarPermisos(PermisosTodos, treeTodos);
+                                    txtName.Text = "";
+                                    cboFamilia.SelectedIndex = (cboFamilia.Items.Count - 1);
+                                    //treeTodos.CollapseAll();
+
+                                    sb.Append(@"<script type='text/javascript'>");
+                                    sb.Append("alert('Familia creada correctamente');");
+                                    sb.Append(@"</script>");
+                                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                               "CrearFamiliaOK", sb.ToString(), false);
+                                }
+                            }
+                        }
+                        catch (Exception es)
+                        {
+                            ServicioLog.CrearLog(es, "GestionPermisos - btnCrear_Click", usuarioentidad.Apellido, usuarioentidad.IdUsuario.ToString() );
+                            Response.Redirect("../../Shared/Error.aspx");
+                        }
+                    }
+                }
+            }
 
         }
 
         protected void btnModificarFamilia_Click(object sender, EventArgs e)
         {
+            IFamPat AModifFamilia = new Familia();
+            List<IFamPat> FamQuitarMod = new List<IFamPat>();
+            List<IFamPat> FamAgregarMod = new List<IFamPat>();
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                sb.Append(@"<script type='text/javascript'>");
+             
+                sb.Append("alert('Debe ingresar un nombre para la Familia a modificar');");
+                sb.Append(@"</script>");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                           "ModifFaltaNom", sb.ToString(), false);
+            }
+            else
+            {
+                //Verificar que quede al menos un permiso asignado
+                if (LisAuxAsig.Count == 0)
+                {
+                    sb.Append(@"<script type='text/javascript'>");
+                   
+                    sb.Append("alert('Por favor revisar que la Familia posea al menos una patente asignada');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                               "ModifNoPatentes", sb.ToString(), false);
+                }
+                else
+                {
+                    if (LisAuxAsig.Count == 1 && LisAuxAsig.First().CantHijos > 0)
+                    {
+                        sb.Append(@"<script type='text/javascript'>");
+                      
+                        sb.Append("alert('La Familia no puede contener solamente una familia');");
+                        sb.Append(@"</script>");
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                   "ModifUnaFamilia", sb.ToString(), false);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            //Verificar que no existe una Familia con el nombre ingresado en la modificacion
+                            Familia FamAux2 = null;
+                            if (cboFamilia.SelectedItem.Text != txtName.Text)
+                                FamAux2 = ManagerFamilia.FamiliaBuscar(txtName.Text);
+                            if (FamAux2 != null && FamAux2.IdIFamPat > 0)
+                            {
+                                sb.Append(@"<script type='text/javascript'>");
+                   
+                                sb.Append("alert('Ya existe una Familia con el nombre ingresado');");
+                                sb.Append(@"</script>");
+                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                           "ModifUnaFamilia", sb.ToString(), false);
+                            }
+                            else
+                            {
+                                AModifFamilia.IdIFamPat = Int32.Parse(cboFamilia.SelectedItem.Value);
+                                AModifFamilia.NombreIFamPat = txtName.Text;
+
+                                LisAuxAsigBKP = (List<IFamPat>)Current.Session["LisAuxAsigBKP"];
+                                FamQuitarMod = LisAuxAsigBKP.Where(d => !LisAuxAsig.Any(a => a.NombreIFamPat == d.NombreIFamPat)).ToList();
+                                FamAgregarMod = LisAuxAsig.Where(d => !LisAuxAsigBKP.Any(a => a.NombreIFamPat == d.NombreIFamPat)).ToList();
+
+                                if (ManagerFamilia.FamiliaModificar(AModifFamilia, FamQuitarMod, FamAgregarMod))
+                                {
+                                    int Seleccionado = cboFamilia.SelectedIndex;
+                                    PermisosTodos = ManagerFamilia.PermisosTraerTodos();
+                                    PermisosCbo = PermisosTodos.Where(X => X.CantHijos > 0).ToList();
+                                    Familia FamAux = new Familia();
+                                    FamAux.IdIFamPat = -1;
+                                    FamAux.NombreIFamPat = "";
+                                    PermisosCbo.Insert(0, FamAux);
+                                    cboFamilia.Items.Clear();
+                                    cboFamilia.DataSource = null;
+                                    cboFamilia.DataSource = PermisosCbo;
+                                    cboFamilia.DataTextField = "NombreIFamPat";
+                                    cboFamilia.DataValueField = "IdIFamPat";
+                                    cboFamilia.DataBind();
+
+                                   
+                                    cboFamilia.SelectedIndex = Seleccionado;
+                                    LisAuxAsigBKP = LisAuxAsig.ToList();
+                                    Current.Session["LisAuxAsigBKP"] = LisAuxAsigBKP;
+
+                                    ServicioLog.CrearLogEventos("Modificar Familia", "Familia " + cboFamilia.SelectedItem.Text + " modificada correctamente", usuarioentidad.Apellido, usuarioentidad.IdUsuario.ToString());
+                                   
+                                    sb.Append(@"<script type='text/javascript'>");
+                                    sb.Append("alert('Familia modificada correctamente');");
+                                    sb.Append(@"</script>");
+                                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                               "CrearOK", sb.ToString(), false);
+                                }
+                            }
+                        }
+                        catch (Exception es)
+                        {
+                            ServicioLog.CrearLog(es, "frmFamiliaGestion - btnModificar_Click", usuarioentidad.Apellido  , usuarioentidad.IdUsuario.ToString());
+                            Response.Redirect("../../Shared/Error.aspx");
+                        }
+                    }
+                }
+            }
         }
 
         protected void btnEliminarFamilia_Click(object sender, EventArgs e)
@@ -376,12 +563,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
                                 ServicioLog.CrearLogEventos("Eliminar Familia", "Familia " + FamiliaLog + " eliminada correctamente", usuarioentidad.Apellido, usuarioentidad.IdUsuario.ToString());
                                 treeAsignados.CollapseAll();
                                 treeDisponibles.CollapseAll();
-                                sb.Append(@"<script type='text/javascript'>");
+                                //sb.Append(@"<script type='text/javascript'>");
                                
-                                sb.Append("alert('Familia eliminada correctamente');");
-                                sb.Append(@"</script>");
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
-                                           "EliminarOK", sb.ToString(), false);
+                                //sb.Append("alert('Familia eliminada correctamente');");
+                                //sb.Append(@"</script>");
+                                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                //           "EliminarOK", sb.ToString(), false);
                             }
                         }
                     }
@@ -399,7 +586,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             }
             catch (Exception es)
             {
-                ServicioLog.CrearLog(es, "GestionPermisos - Eliminar Familia", usuarioentidad.Apellido, usuarioentidad.IdUsuario.ToString());
+                ServicioLog.CrearLog(es, "GestionPermisos - Eliminar Familia", usuarioentidad.Apellido, usuarioentidad.Nombre);
                 Response.Redirect("../Shared/Error.aspx");
             }
         }

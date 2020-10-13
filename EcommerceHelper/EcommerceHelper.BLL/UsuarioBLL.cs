@@ -4,6 +4,7 @@ using EcommerceHelper.DAL;
 using System.Collections.Generic;
 using Entidades.Servicios.Permisos;
 using EcommerceHelper.Funciones.Seguridad;
+using EcommerceHelper.BLL.Managers;
 
 namespace EcommerceHelper.BLL
 {
@@ -133,7 +134,7 @@ namespace EcommerceHelper.BLL
         public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
         {
 
-            Servicios.FamiliaBLL ManagerFamilia = new Servicios.FamiliaBLL();
+            FamiliaBLL ManagerFamilia = new FamiliaBLL();
 
             try
             {

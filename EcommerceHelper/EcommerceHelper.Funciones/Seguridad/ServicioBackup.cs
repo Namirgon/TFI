@@ -21,13 +21,13 @@ namespace EcommerceHelper.Funciones.Seguridad
             UsuarioEntidad usuarioAutenticado = new UsuarioEntidad();
             HttpContext Current = HttpContext.Current;
 
-            //Destino = Destino + "\\" + Nombre + ".bak";
+           
 
             SqlParameter[] parameters = new SqlParameter[]
             {
-                //new SqlParameter("@Nombre", Nombre),
+                
                 new SqlParameter("@Destino", ruta),
-                //new SqlParameter("@Obser", Obser)
+                
             };
 
 

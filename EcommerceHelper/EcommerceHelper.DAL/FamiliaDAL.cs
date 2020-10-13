@@ -14,74 +14,6 @@ namespace EcommerceHelper.DAL
 {
   public  class FamiliaDAL
     {
-
-        #region Methods
-
-        /// <summary>
-        /// Saves a record to the Familia table.
-        /// </summary>
-        public void Insert(FamiliaEntidad familia)
-        {
-            ValidationUtility.ValidateArgument("familia", familia);
-
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@NombreFamilia", familia.NombreFamilia)
-            };
-
-            familia.IdFamilia = (FamiliaEntidad.PermisoFamilia)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaInsert", parameters);
-        }
-
-        /// <summary>
-        /// Updates a record in the Familia table.
-        /// </summary>
-        public void Update(FamiliaEntidad familia)
-        {
-            ValidationUtility.ValidateArgument("familia", familia);
-
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@IdFamilia", familia.IdFamilia),
-                new SqlParameter("@NombreFamilia", familia.NombreFamilia)
-            };
-
-            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaUpdate", parameters);
-        }
-
-        /// <summary>
-        /// Deletes a record from the Familia table by its primary key.
-        /// </summary>
-        public void Delete(int idFamilia)
-        {
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@IdFamilia", idFamilia)
-            };
-
-            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaDelete", parameters);
-        }
-
-        /// <summary>
-        /// Selects a single record from the Familia table.
-        /// </summary>
-        public FamiliaEntidad Select(int idFamilia)
-        {
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@IdFamilia", idFamilia)
-            };
-
-            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaSelect", parameters))
-            {
-                FamiliaEntidad FamiliaEntidad = new FamiliaEntidad();
-
-                FamiliaEntidad = Mapeador.MapearFirst<FamiliaEntidad>(dt);
-
-                return FamiliaEntidad;
-            }
-        }
-
-
         public List<FamiliaEntidad> SelectAll()
         {
             using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaSelectAll"))
@@ -91,6 +23,188 @@ namespace EcommerceHelper.DAL
                 familiaEntidadList = Mapeador.Mapear<FamiliaEntidad>(dt);
 
                 return familiaEntidadList;
+            }
+        }
+
+        public void UsuarioFamiliaInsert(UsuarioEntidad unUsuario)
+        {
+            ValidationUtility.ValidateArgument("unUsuario", unUsuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+               
+                new SqlParameter("@Email", unUsuario.Email),
+                new SqlParameter("@IdFamilia", unUsuario.Permisos[0].IdIFamPat)
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioFamiliaInsert", parameters);
+        }
+
+        public bool FamiliaCrear(IFamPat nuevaFamilia)
+        {
+            SqlParameter[] parametersFamCrear = new SqlParameter[]
+            {
+                new SqlParameter("@NombreFamilia", nuevaFamilia.NombreIFamPat)
+            };
+
+            try
+            {
+                var Resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaCrear", parametersFamCrear);
+                int IdFamRes = Decimal.ToInt32(Resultado);
+                nuevaFamilia.IdIFamPat = IdFamRes;
+
+                if (nuevaFamilia.CantHijos > 0)
+                {
+                    foreach (IFamPat unPermiso in (nuevaFamilia as Familia).ElementosFamPat)
+                    {
+                        //Asociar Familia con Familia
+                        if (unPermiso.CantHijos > 0)
+                        {
+                            SqlParameter[] parametersRelFamFam = new SqlParameter[]
+                            {
+                            new SqlParameter("@IdFamiliaPadre", nuevaFamilia.IdIFamPat),
+                            new SqlParameter("@IdFamiliaHijo", unPermiso.IdIFamPat)
+                            };
+
+                            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaFamiliaAsociar", parametersRelFamFam);
+                        }
+                        //Asociar Familia con Patente
+                        else
+                        {
+                            SqlParameter[] parametersRelFamPat = new SqlParameter[]
+                            {
+                            new SqlParameter("@IdFamilia", nuevaFamilia.IdIFamPat),
+                            new SqlParameter("@IdPatente", unPermiso.IdIFamPat)
+                            };
+
+                            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaPatenteAsociar", parametersRelFamPat);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+        public Familia FamiliaBuscar(string NombreIFamPat)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@NombreFamilia", NombreIFamPat)
+            };
+
+            try
+            {
+                using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaBuscar", parameters))
+                {
+                    Familia unaFam = new Familia();
+                    unaFam = MapearFamiliaUno(ds);
+                    return unaFam;
+                }
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+        public static Familia MapearFamiliaUno(DataSet ds)
+        {
+            Familia unaFamilia = new Familia();
+
+            try
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    unaFamilia.IdIFamPat = (int)row["IdFamilia"];
+                    unaFamilia.NombreIFamPat = row["NombreFamilia"].ToString();
+                }
+                return unaFamilia;
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+
+        public bool FamiliaModificar(IFamPat AModifFamilia, List<IFamPat> FamQuitarMod, List<IFamPat> FamAgregarMod)
+        {
+            SqlParameter[] parametersFamModif = new SqlParameter[]
+            {
+                new SqlParameter("@NombreFamilia", AModifFamilia.NombreIFamPat),
+                new SqlParameter("@IdFamilia", AModifFamilia.IdIFamPat)
+            };
+
+            try
+            {
+                SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaModificar", parametersFamModif);
+
+                //Quitar Permisos
+                if (FamQuitarMod.Count > 0)
+                {
+                    foreach (IFamPat unPermiso in FamQuitarMod)
+                    {
+                        //Quitar Familia
+                        if (unPermiso.CantHijos > 0)
+                        {
+                            SqlParameter[] parametersFamQuitar = new SqlParameter[]
+                            {
+                            new SqlParameter("@IdFamiliaPadre", AModifFamilia.IdIFamPat),
+                            new SqlParameter("@IdFamiliaHijo", unPermiso.IdIFamPat)
+                            };
+
+                            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaFamiliaDesasociar", parametersFamQuitar);
+                        }
+                        //Quitar Patente
+                        else
+                        {
+                            SqlParameter[] parametersPatQuitar = new SqlParameter[]
+                            {
+                            new SqlParameter("@IdFamilia", AModifFamilia.IdIFamPat),
+                            new SqlParameter("@IdPatente", unPermiso.IdIFamPat)
+                            };
+
+                            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaPatenteDesasociar", parametersPatQuitar);
+                        }
+
+                    }
+                }
+                //Agregar Permisos
+                if (FamAgregarMod.Count > 0)
+                {
+                    foreach (IFamPat unPermiso in FamAgregarMod)
+                    {
+                        //Agregar Familia
+                        if (unPermiso.CantHijos > 0)
+                        {
+                            SqlParameter[] parametersFamAgregar = new SqlParameter[]
+                            {
+                            new SqlParameter("@IdFamiliaPadre", AModifFamilia.IdIFamPat),
+                            new SqlParameter("@IdFamiliaHijo", unPermiso.IdIFamPat)
+                            };
+
+                            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaFamiliaAsociar", parametersFamAgregar);
+                        }
+                        //Agregar Patente
+                        else
+                        {
+                            SqlParameter[] parametersPatAgregar = new SqlParameter[]
+                            {
+                            new SqlParameter("@IdFamilia", AModifFamilia.IdIFamPat),
+                            new SqlParameter("@IdPatente", unPermiso.IdIFamPat)
+                            };
+
+                            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaPatenteAsociar", parametersPatAgregar);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception es)
+            {
+                throw;
             }
         }
 
@@ -309,7 +423,7 @@ namespace EcommerceHelper.DAL
                 {
                     new SqlParameter("@IdFamilia", IdFamilia)
                 };
-                SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaEliminar", parametersFam);
+                SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaDelete", parametersFam);
                 return true;
             }
             catch (Exception es)
@@ -318,9 +432,79 @@ namespace EcommerceHelper.DAL
             }
         }
 
+        public void UsuarioUpdatePermisosFamilia(UsuarioEntidad Usuario)
+        {
+            ValidationUtility.ValidateArgument("elUsuario", Usuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+               
+                new SqlParameter("@Email", Usuario.Email),
+                new SqlParameter("@IdFamilia", Usuario.Permisos[0].IdIFamPat)
+
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioUpdatePermisosFamilia", parameters);
+        }
 
 
-        #endregion
+        public void Insert(FamiliaEntidad familia)
+        {
+            ValidationUtility.ValidateArgument("familia", familia);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@NombreFamilia", familia.NombreFamilia)
+            };
+
+            familia.IdFamilia = (FamiliaEntidad.PermisoFamilia)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaInsert", parameters);
+        }
+
+
+        public void Update(FamiliaEntidad familia)
+        {
+            ValidationUtility.ValidateArgument("familia", familia);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdFamilia", familia.IdFamilia),
+                new SqlParameter("@NombreFamilia", familia.NombreFamilia)
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaUpdate", parameters);
+        }
+
+
+        public void Delete(int idFamilia)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdFamilia", idFamilia)
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaDelete", parameters);
+        }
+
+
+        public FamiliaEntidad Select(int idFamilia)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdFamilia", idFamilia)
+            };
+
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaSelect", parameters))
+            {
+                FamiliaEntidad FamiliaEntidad = new FamiliaEntidad();
+
+                FamiliaEntidad = Mapeador.MapearFirst<FamiliaEntidad>(dt);
+
+                return FamiliaEntidad;
+            }
+        }
+
+
+
     }
 }
 

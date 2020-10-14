@@ -83,11 +83,11 @@ namespace EcommerceHelper.BLL
         }
 
 
-        public List< UsuarioEntidad> GenerarCadenaDvTablaEntera() 
+        public List< UsuarioEntidad> GenerarCadenaDVHTablaEntera() 
         {
             try
             {
-                return _DalUsuario.SelectAllUsuarios();
+                return _DalUsuario.SelectAllUsuaariosParaDVH();
             }
             catch (Exception ex)
             {

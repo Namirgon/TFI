@@ -357,11 +357,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
                                     cboFamilia.SelectedIndex = (cboFamilia.Items.Count - 1);
                                     //treeTodos.CollapseAll();
 
-                                    sb.Append(@"<script type='text/javascript'>");
-                                    sb.Append("alert('Familia creada correctamente');");
-                                    sb.Append(@"</script>");
-                                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
-                                               "CrearFamiliaOK", sb.ToString(), false);
+                                    //sb.Append(@"<script type='text/javascript'>");
+                                    //sb.Append("alert('Familia creada correctamente');");
+                                    //sb.Append(@"</script>");
+                                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                    //           "CrearFamiliaOK", sb.ToString(), false);
                                 }
                             }
                         }
@@ -464,11 +464,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                                     ServicioLog.CrearLogEventos("Modificar Familia", "Familia " + cboFamilia.SelectedItem.Text + " modificada correctamente", usuarioentidad.Apellido, usuarioentidad.IdUsuario.ToString());
                                    
-                                    sb.Append(@"<script type='text/javascript'>");
-                                    sb.Append("alert('Familia modificada correctamente');");
-                                    sb.Append(@"</script>");
-                                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
-                                               "CrearOK", sb.ToString(), false);
+                                    //sb.Append(@"<script type='text/javascript'>");
+                                    //sb.Append("alert('Familia modificada correctamente');");
+                                    //sb.Append(@"</script>");
+                                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                    //           "CrearOK", sb.ToString(), false);
                                 }
                             }
                         }

@@ -9,6 +9,8 @@ using System.Data;
 using EcommerceHelper.Funciones.Persistencia;
 using Entidades.Servicios.Permisos;
 using System.Data.Common;
+using EcommerceHelper.Entidades.Servicios;
+using EcommerceHelper.DAL.Servicios;
 
 namespace EcommerceHelper.DAL
 {
@@ -225,21 +227,64 @@ namespace EcommerceHelper.DAL
             }
         }
 
-      
+
         public List<UsuarioEntidad> SelectAllUsuarios()
         {
             using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioLeerDVH"))
             {
 
-                List<UsuarioEntidad> AllUsuarios = new List<UsuarioEntidad>();
+                List<UsuarioEntidad> AllUsuariosDVH = new List<UsuarioEntidad>();
+
+
+
+                AllUsuariosDVH = MapearUsuario(dt);
+
+                return AllUsuariosDVH;
+            }
+
+        }
+        public List<UsuarioEntidad> SelectAllUsuaariosParaDVH()
+        {
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioLeerParaDVH"))
+            {
+
+                List<UsuarioEntidad> AllUsuariosDVH = new List<UsuarioEntidad>();
 
                
 
-                AllUsuarios = MapearUsuario(dt);
+                AllUsuariosDVH = MapearUsuarioDVH(dt);
 
-                return AllUsuarios;
+                return AllUsuariosDVH;
             }
            
+        }
+
+        public List<UsuarioEntidad> MapearUsuarioDVH(DataSet ds)
+        {
+
+            List<UsuarioEntidad> ListUsuarios = new List<UsuarioEntidad>();
+           
+           
+            foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    UsuarioEntidad unUsuario = new UsuarioEntidad();
+
+                    unUsuario.IdUsuario = (int)row["IdUsuario"];
+                    unUsuario.Nombre = row["Nombre"].ToString();
+                    unUsuario.Apellido = row["Apellido"].ToString();
+                    unUsuario.NumeroDocumento = (int)row["NumeroDocumento"];
+                    unUsuario.Email = row["Email"].ToString();
+                    unUsuario.Password = row["Password"].ToString();
+                    unUsuario.NumeroTelefono = (int)row["NumeroTelefono"];
+                  
+
+
+                    ListUsuarios.Add(unUsuario);
+                }
+
+            return ListUsuarios;
+            
+
         }
 
         public List<UsuarioEntidad> MapearUsuario(DataSet ds)

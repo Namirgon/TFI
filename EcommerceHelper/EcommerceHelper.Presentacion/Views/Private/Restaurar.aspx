@@ -38,7 +38,9 @@
                              <asp:FileUpload ID="fileUpload" runat="server" style="margin-left:30px; margin-right:30px" />
                              <br />
                              <br />
-                             <asp:Button ID="btnUpload" runat="server" Text=" Restaurar " Mensaje=" EstaSeguro " OnClientClick='return confirm(this.getAttribute("Mensaje"))' OnClick="btnUpload_Click" class="btn btn-primary col-md-2" style="margin-left:70px" />
+                             <%--<asp:Button ID="Button1" runat="server" Text=" Restaurar " Mensaje=" EstaSeguro " OnClientClick='return confirm(this.getAttribute("Mensaje"))' OnClick="btnUpload_Click" class="btn btn-primary col-md-2" style="margin-left:70px" />--%>
+
+                             <asp:Button ID="btnUpload" runat="server" Text=" Restaurar "  OnClick="btnUpload_Click" class="btn btn-primary col-md-2" style="margin-left:70px" />
                               <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" />
                              <br />
                              <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>

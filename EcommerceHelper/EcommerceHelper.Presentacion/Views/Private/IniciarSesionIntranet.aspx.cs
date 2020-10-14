@@ -1,5 +1,7 @@
 ﻿using EcommerceHelper.BLL;
+using EcommerceHelper.DAL.Servicios;
 using EcommerceHelper.Entidades;
+using EcommerceHelper.Entidades.Servicios;
 using EcommerceHelper.Funciones.Seguridad;
 using System;
 using System.Collections.Generic;
@@ -73,26 +75,64 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             UsuarioBLL BLLUsuario = new UsuarioBLL();
             UsuarioEntidad usuario = new UsuarioEntidad();
-            usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
+            List<string> LisDVHs = new List<string>();
+            var VerificarIntegridad = BLLUsuario.GenerarCadenaDVHTablaEntera();
 
-            if (usuario != null)
-
+            foreach (var Usuario in VerificarIntegridad)
             {
 
-                usuario.Familia = UnManagerFamilia.FamiliaSelectNombreFamiliaByIdUsuario(usuario.IdUsuario);
-                usuario.Permisos = BLLUsuario.UsuarioTraerPermisos(usuario.Email, usuario.IdUsuario);
-                Session["NomUsuario"] = usuario.Nombre;
-                Session["Usuario"] = usuario;
-                ServicioLog.CrearLogEventos("Logueo", "Logueo Correcto", usuario.Apellido, (usuario.IdUsuario).ToString());
+                LisDVHs.Add(DigitoVerificadorH.CarlcularDigitoUsuario(Usuario)); //en la lista esta cada uno de los horizontales calculados nuevamente
 
-                Response.Redirect("/Views/Private/MenuAdministracion.aspx");
+
             }
-            else
+            Double Acum = 0;
+            foreach (var valor in LisDVHs) //por cada valor en la lista de cada digito horizontal lo voy sumando para obtener el vertical
             {
-
-                Response.Write("<script>alert('usuario o clave incorrecta')</script>");
-                limpiarCampos();
+                Acum += Convert.ToDouble(valor);
             }
+
+            DVV SumaDVV = DVVDAL.SelectTablaUsuario();
+
+            double DVVBD = Convert.ToDouble(SumaDVV.dvv); //traigo el digito vertical de la base
+
+            if (Acum == DVVBD)
+            {
+                usuario = BLLUsuario.IniciarSesion(TXTEmail.Text, TXTPassword.Text);
+
+                if (usuario != null)
+
+                {
+
+                    usuario.Familia = UnManagerFamilia.FamiliaSelectNombreFamiliaByIdUsuario(usuario.IdUsuario);
+                    usuario.Permisos = BLLUsuario.UsuarioTraerPermisos(usuario.Email, usuario.IdUsuario);
+                    Session["NomUsuario"] = usuario.Nombre;
+                    Session["Usuario"] = usuario;
+                    ServicioLog.CrearLogEventos("Logueo", "Logueo Correcto", usuario.Apellido, (usuario.IdUsuario).ToString());
+
+                    Response.Redirect("/Views/Private/MenuAdministracion.aspx");
+                }
+                else
+                {
+
+                    Response.Write("<script>alert('usuario o clave incorrecta')</script>");
+                    limpiarCampos();
+                }
+            }
+            else if (Acum!=DVVBD)
+            {
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append(@"<script type='text/javascript'>");
+                sb.Append("alert('La Base de datos se encuentra corrupta, comuniquese con su Administrador');");
+                sb.Append(@"</script>");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                           "AgregarClickMsj1", sb.ToString(), false);
+           
+            }
+
+          
+          
+
+            
         }    
 
         public void limpiarCampos()

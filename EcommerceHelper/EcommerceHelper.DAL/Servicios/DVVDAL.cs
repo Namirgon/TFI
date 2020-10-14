@@ -29,26 +29,46 @@ namespace EcommerceHelper.DAL.Servicios
 
         }
 
-        public DVV SelectByTabla(string tabla)
+        public    DVV  SelectByTabla( string Tabla )
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
 
-                new SqlParameter("@Tabla", tabla)
+                new SqlParameter("@Tabla", Tabla)
             };
 
             using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectByTabla", parameters))
             {
 
-                DVV Producto = new DVV();
+                DVV ValorDVVUsuario = new DVV();
 
-                Producto = MapearMuchos(dt).First();
+                ValorDVVUsuario = MapearMuchos(dt).First();
 
-                return Producto;
+                return ValorDVVUsuario;
             }
         }
 
-        private List<DVV> MapearMuchos(DataSet ds)
+
+        public static DVV   SelectTablaUsuario()
+        {
+        //    SqlParameter[] parameters = new SqlParameter[]
+        //    {
+
+        //        new SqlParameter("@Tabla", Usuario)
+        //    };
+
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectTablaUsuario"))
+            {
+
+                DVV ValorDVVUsuario = new DVV();
+
+                ValorDVVUsuario = MapearMuchos(dt).First();
+
+                return ValorDVVUsuario;
+            }
+        }
+
+        private static List<DVV> MapearMuchos(DataSet ds)
         {
             List<DVV> ResUnosItem = new List<DVV>();
 

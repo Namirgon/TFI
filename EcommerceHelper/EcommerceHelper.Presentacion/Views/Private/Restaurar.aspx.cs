@@ -72,7 +72,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                             ServicioLog.CrearLogEventos("Restaurar", "Restauración realizada correctamente", usuarioentidad.Apellido ,(usuarioentidad.IdUsuario).ToString());
                             Session.Abandon();
                           
-                            Response.Redirect("/views/Public/Default.aspx", false);
+                            Response.Redirect("/views/Private/MenuAdministracion.aspx", false);
                         }
                     }
                     else

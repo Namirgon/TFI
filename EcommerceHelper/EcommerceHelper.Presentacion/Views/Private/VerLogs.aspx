@@ -14,6 +14,8 @@
 
    <br />     
    <br />
+    <br />     
+   <br />
    <h3 style="margin-left:30px; margin-top:30px">Ver Logs</h3>
    <br />
   
@@ -45,7 +47,7 @@
                         <asp:Label ID="Label4" runat="server" Text=" Hasta " style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px"> </asp:Label></b>
 
                     <input runat="server" type="date" name="nFechaFin" id="elIdFechaFin" class="hasDatepicker form-control " required="required" />
-                    <asp:Button ID="btnFiltrarLogs" runat="server" Text=" Buscar " CssClass="form-control btn-success" OnClick="btnFiltrarLogs_Click" />
+                    <asp:Button ID="btnFiltrarLogs" runat="server" Text=" Buscar " class="btn btn-primary " OnClick="btnFiltrarLogs_Click" Width="163px" />
 
                 </div>
 
@@ -56,26 +58,37 @@
             <div class="col-md-10 col-md-offset-2">
                 <label for="grillaLogs"></label>
     <center>
-      <asp:GridView ID="grillaLogs"  runat="server" AllowPaging="true" Width="800px" OnPageIndexChanging="grillaLogs_PageIndexChanging"  PageSize="10" AutoGenerateColumns="false">
+      <asp:GridView ID="grillaLogs"  cssclass="table table-striped " runat="server" AllowPaging="True" Width="800px" OnPageIndexChanging="grillaLogs_PageIndexChanging" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                     <Columns>
                         <asp:BoundField DataField="IdBitacoraLog" HeaderText=" IdBitacora"  Visible="false" />
-                        <asp:BoundField DataField="IdUsuario" HeaderText="IdUsuario" HeaderStyle-CssClass="bg-primary" />
-                        <asp:BoundField DataField="NombreUsuario" HeaderText=" NombreUsuario " HeaderStyle-CssClass="bg-primary" />
-                        <asp:BoundField DataField="Fecha" HeaderText="Fecha " HeaderStyle-CssClass="bg-primary" />
-                        <asp:BoundField DataField="TipoLog" HeaderText="Tipo" HeaderStyle-CssClass="bg-primary" />
-                        <asp:BoundField DataField="Accion" HeaderText=" Accion " HeaderStyle-CssClass="bg-primary" />
-                        <asp:BoundField DataField="Mensaje" HeaderText=" Mensaje " HeaderStyle-CssClass="bg-primary" />
+                        <asp:BoundField DataField="IdUsuario" HeaderText="IdUsuario" HeaderStyle-CssClass="bg-primary" Visible="false" >
+                        <HeaderStyle CssClass="bg-primary"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="NombreUsuario" HeaderText=" NombreUsuario " HeaderStyle-CssClass="bg-primary" >
+                        <HeaderStyle CssClass="bg-primary"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Fecha" HeaderText="Fecha " HeaderStyle-CssClass="bg-primary" >
+                        <HeaderStyle CssClass="bg-primary"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="TipoLog" HeaderText="Tipo" HeaderStyle-CssClass="bg-primary" >
+                        <HeaderStyle CssClass="bg-primary"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Accion" HeaderText=" Accion " HeaderStyle-CssClass="bg-primary" >
+                        <HeaderStyle CssClass="bg-primary"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Mensaje" HeaderText=" Mensaje " HeaderStyle-CssClass="bg-primary" >
+                        <HeaderStyle CssClass="bg-primary"></HeaderStyle>
+                        </asp:BoundField>
                     </Columns>
-                    <EditRowStyle BackColor="#999999" />
-                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
                 </asp:GridView>
 
                 <br />

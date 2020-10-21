@@ -25,7 +25,9 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@Descripcion", lenguaje.Descripcion)
             };
 
-            lenguaje.IdIdioma = (int)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "IdiomaInsert", parameters);
+            var resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "IdiomaInsert", parameters);
+            int IdIdiomaRes = decimal.ToInt32(resultado);
+            lenguaje.IdIdioma = IdIdiomaRes;
         }
 
         public void Update(IdiomaEntidad lenguaje)

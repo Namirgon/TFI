@@ -28,7 +28,7 @@
    <br />
    <br />
    <br />
-   <p style="margin-left:300px; color:white">Ingrese DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <input placeholder="Numero de DNI" style="width:350px; margin-left:50px"> &nbsp;&nbsp;<label> muestra nombre del empleado</label></p> 
+   <p style="margin-left:300px; color:white">Ingrese DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <input Placeholder="Numero de DNI" style="width:350px; margin-left:50px"/> &nbsp;&nbsp;<label> muestra nombre del empleado</label></p> 
    <br />
     <p style="margin-left:300px; color:white">Seleccione Perfil  <asp:DropDownList runat="server"  style="width:350px; margin-left:50px">
                         <asp:ListItem>Perfil</asp:ListItem>

@@ -40,6 +40,48 @@ namespace EcommerceHelper.BLL
             return nuevo;
         }
 
+        public int RegistrarServicio(ServicioEntidad servicio)
+        {
+            try
+            {
+                GestorServicios .Insert(servicio);
+                return 0;
 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+        public int ModificarServicio(ServicioEntidad servicio)
+        {
+            try
+            {
+                GestorServicios.Update(servicio );
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+        public int EliminarServicio(int IdServicio)
+        {
+            try
+            {
+                GestorServicios.Delete(IdServicio);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
     }
 }

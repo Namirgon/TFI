@@ -112,6 +112,7 @@
     <Content Include="Content\EstilosPermisos.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Image\ images.png" />
     <Content Include="Content\Image\banner-curso-degrade.png" />
     <Content Include="Content\Image\banner.jpg" />
     <Content Include="Content\Image\banner2.jpg" />
@@ -323,6 +324,8 @@
     <Content Include="Views\Private\BackUp.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\GestionDePermisos.aspx" />
+    <Content Include="Views\Private\GestionEmpleado.aspx" />
+    <Content Include="Views\Private\GestorServicios.aspx" />
     <Content Include="Views\Private\Idioma.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
     <Content Include="Views\Private\MenuAdministracion.aspx" />
@@ -429,6 +432,20 @@
     </Compile>
     <Compile Include="Views\Private\GestionDePermisos.aspx.designer.cs">
       <DependentUpon>GestionDePermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\GestionEmpleado.aspx.cs">
+      <DependentUpon>GestionEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\GestionEmpleado.aspx.designer.cs">
+      <DependentUpon>GestionEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\GestorServicios.aspx.cs">
+      <DependentUpon>GestorServicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\GestorServicios.aspx.designer.cs">
+      <DependentUpon>GestorServicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\Idioma.aspx.cs">
       <DependentUpon>Idioma.aspx</DependentUpon>

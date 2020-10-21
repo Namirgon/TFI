@@ -9,8 +9,12 @@
    <br />
    <br />     
    <br />
+   <br />     
+   <br />
+   <br />     
+   <br />
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2" style="margin-left:100px">
                 <h2 class="page-header">
                     <asp:Label ID="Label1" runat="server" Text=" Restaurar "> </asp:Label>
                 </h2>
@@ -28,20 +32,19 @@
 
       <div class="form-group col-md-8 col-md-offset-2">
             <label class="control-label"  style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right:30px;"  >Nombre</label>
-                <input id="txtNombreBD" name="txtNombreBD" type="text" placeholder="Nombre Base de Datos" class="form-control input-md col-md-8" required="required">
+            <input id="txtNombreBD" name="txtNombreBD" type="text" Placeholder="Nombre Base de Datos" class="form-control " />
 
           <br />
-            <br />
-                 <div>
-                     <asp:UpdatePanel ID="up1" runat="server">
+          <br />
+                 <div style="margin-left:100px">
+                     <asp:UpdatePanel ID="up1" runat="server" >
                          <ContentTemplate>
                              <asp:FileUpload ID="fileUpload" runat="server" style="margin-left:30px; margin-right:30px" />
                              <br />
                              <br />
-                             <%--<asp:Button ID="Button1" runat="server" Text=" Restaurar " Mensaje=" EstaSeguro " OnClientClick='return confirm(this.getAttribute("Mensaje"))' OnClick="btnUpload_Click" class="btn btn-primary col-md-2" style="margin-left:70px" />--%>
-
-                             <asp:Button ID="btnUpload" runat="server" Text=" Restaurar "  OnClick="btnUpload_Click" class="btn btn-primary col-md-2" style="margin-left:70px" />
-                              <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" />
+                           
+                             <asp:Button ID="btnUpload" runat="server" Text=" Restaurar "  OnClick="btnUpload_Click" class="btn btn-primary" style="margin-left:60px" Width="161px" />
+                              <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:40px" class="btn btn-primary " Width="162px" />
                              <br />
                              <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
                          </ContentTemplate>

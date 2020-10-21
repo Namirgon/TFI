@@ -10,13 +10,14 @@ using System.Web.UI.WebControls;
 namespace EcommerceHelper.Presentacion.Views.Private
 {
 
-   
+
     public partial class Idioma : BasePage
     {
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
         IdiomaBLL GestorIdioma = new IdiomaBLL();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,6 +34,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
             }
 
         }
+        public void CargarGrilla()
+        {
+
+            GVGrilla.DataSource = GestorIdioma.FindAll();
+            GVGrilla.DataBind();
+        }
 
         protected void BtnAltaIdioma_Click(object sender, EventArgs e)
         {
@@ -44,9 +51,9 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 unIdioma.IdIdioma = 1;
                 unIdioma.Descripcion = txtIdioma.Text;
                 GestorIdioma.RegistrarIdioma(unIdioma);
-              
-                CargarGrilla();
                 LimpiarTextos();
+                CargarGrilla();
+               
 
             }
             catch (Exception ex)
@@ -61,18 +68,87 @@ namespace EcommerceHelper.Presentacion.Views.Private
         public void LimpiarTextos()
         {
             txtIdioma.Text = string.Empty;
-            
+        
+
+
         }
         protected void GVGrilla_RowCommand(object sender, GridViewCommandEventArgs e)
+
         {
-           
+            int id = Int32.Parse(GVGrilla.Rows[Int32.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+
+
+            IdiomaEntidad idioma;
+            idioma = GestorIdioma.Find(id);
+            switch (e.CommandName)
+            {
+
+                case "btnModificar":
+                    {
+                        hid.Value = idioma.IdIdioma.ToString();  
+                        txtIdioma.Text =idioma.Descripcion;
+
+                        break;
+                    }
+                case "btnEliminar":
+
+                    {
+
+                        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+                        if (idioma.Descripcion == "Ingles" | idioma.Descripcion == "Español")
+                        {
+                            sb.Append(@"<script type='text/javascript'>");
+                            sb.Append("alert('No se puede Eliminar Idioma');");
+                            sb.Append(@"</script>");
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                                       "CrearOK", sb.ToString(), false);
+                            CargarGrilla();
+                        }
+                        else
+                        {
+                            GestorIdioma.EliminarIdioma(id);
+                            CargarGrilla();
+                            LimpiarTextos();
+                        }
+
+                        break;
+                    }
+            }
+
         }
 
-        public void CargarGrilla()
+       
+
+   
+
+        protected void btnGuardarModificacion_Click(object sender, EventArgs e)
         {
 
-            GVGrilla.DataSource = GestorIdioma.FindAll();
-            GVGrilla.DataBind();
+            try
+            {
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+                if (txtIdioma.Text == "Ingles" | txtIdioma.Text == "Español")
+                {
+                    sb.Append(@"<script type='text/javascript'>");
+                    sb.Append("alert('No se puede modificar Idioma');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
+                               "CrearOK", sb.ToString(), false);
+                }
+                else
+                {
+                    IdiomaEntidad unIdioma = new IdiomaEntidad();
+                    unIdioma.IdIdioma = Int32.Parse(hid.Value);
+                    unIdioma.Descripcion = txtIdioma.Text;
+
+                    GestorIdioma.ModificarIdioma(unIdioma);
+                    LimpiarTextos();
+                    CargarGrilla();
+                }
+            }
+            catch { }
         }
     }
 }

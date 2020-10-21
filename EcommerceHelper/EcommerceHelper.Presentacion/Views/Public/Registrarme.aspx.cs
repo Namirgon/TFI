@@ -118,7 +118,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 if (Page.IsValid)
 
                 {
-                    unUsuario.IdUsuarioTipo = 4; // Usuario Cliente 
+                    unUsuario.IdTipoUsuario  = 4; // Usuario Cliente 
                     unUsuario.Email = txtusuario.Text;
                     unUsuario.Password =ServicioSecurizacion.AplicarHash( txtcontrasena.Text);
                     unUsuario.Nombre = txtNombre.Text;
@@ -128,6 +128,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
                     unUsuario.MiTelefono = new TipoTelefonoEntidad();
                     unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
+                    unUsuario.MiDocumento = new TipoDeDocumentoEntidad();
+                    unUsuario.MiDocumento.IdTipoDeDocumento = 1;
                     unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
 
                
@@ -156,7 +158,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     DVVBLL managerDVV = new DVVBLL();
 
                     managerDVV.InsertarDVV("DVV","Usuario");
-                    Response.Redirect("/Views/Public/IniciarSesion.aspx");
+                    Response.Redirect("../Public/IniciarSesion.aspx");
                 }
                 else
                 {

@@ -10,7 +10,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    
+   
+         <link href="/Content/EstilosPermisos.css" rel="stylesheet"  />
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
+         
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -36,6 +41,7 @@
                  <li style="font-size:18px; margin-right: 20px">RRHH
                             <ul>
                                 <li><a href="../Private/AltaEmpleado.aspx"> Alta Empleado</a></li>
+                                 <li><a href="../Private/GestionEmpleado.aspx"> BM Empleado</a></li>
                                 <li><a href="../Private/AsignacionDePerfiles.aspx">Asignacion de Perfiles</a></li>
                             </ul>
                  </li>
@@ -45,12 +51,13 @@
                                 <li><a href="../Private/BackUp.aspx"> Respaldar</a></li>
                                 <li><a href="../Private/Restaurar.aspx"> Restaurar BD</a></li>
                                 <li><a href="../Private/VerLogs.aspx"> Bitacora</a></li>
-                                 <li><a href="../Private/Idioma.aspx"> Idioma</a></li>
-                                <li><a href="../Private/GestionDePermisos.aspx"> Gestion de Permisos</a></li>
+                                 <li><a href="../Private/Idioma.aspx"> ABM Idioma</a></li>
+                                <li><a href="../Private/GestionDePermisos.aspx"> ABM Permisos</a></li>
                             </ul>
                 </li>
                          <li style="font-size:18px; margin-left:20px">Comercial
                             <ul>
+                                <li><a href="../Private/GestorServicios.aspx">ABM Servicios</a></li>
                                 <li><a>Comprobantes</a></li>
                                 <li><a>Estadisticas</a></li>
                             </ul> 

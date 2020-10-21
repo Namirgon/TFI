@@ -3,7 +3,7 @@
 <%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
-    
+    <link href="../../Content/EstilosPermisos.css" rel="Stylesheet" />
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -17,7 +17,7 @@
 
    <br />     
    <br />
-   <h2  style="margin-left:30px">Iniciar Sesion Intranet</h2>
+   <h2  style="margin-left:30px">Iniciar Sesión Intranet</h2>
    <br />
    <br />     
    <br />
@@ -29,7 +29,7 @@
     <br />
   
        <asp:Label ID="EtiquetaEmail" runat="server" Text="Usuario" visible="true"  style=" margin-left:200px; color:aliceblue">Usuario</asp:Label>
-       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
+       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:70px"></asp:TextBox>  
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
    <br />
      <br />
@@ -41,7 +41,7 @@
   
    <br />
 
-       <asp:Button style="margin-left:250px " ID="BtnAceptar" runat="server" Text="Aceptar"  Width="150px" OnClick="Button1_Click" />
+       <asp:Button style="margin-left:320px " ID="BtnAceptar" runat="server" Text="Aceptar"  Width="150px" OnClick="Button1_Click" />
    <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar" Width="150px" PostBackUrl ="~/Views/Public/Default.aspx" />
    <br />
    <br />

@@ -73,6 +73,48 @@ namespace EcommerceHelper.DAL
 
 
 
+        public void Insert(ServicioEntidad servicio)
+        {
+            ValidationUtility.ValidateArgument("servicio", servicio);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                 new SqlParameter("@Titulo", servicio.Titulo ),
+                 new SqlParameter("@Descripcion", servicio .Descripcion),
+                 new SqlParameter("@Precio", servicio.Precio),
+                  new SqlParameter("@URLimagen", servicio.URLimagen )
+            };
+
+            var resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ServicioInsert", parameters);
+            int IdServicioRes = decimal.ToInt32(resultado);
+            servicio.IdServicio = IdServicioRes;
+        }
+
+        public void Update(ServicioEntidad servicio)
+        {
+            ValidationUtility.ValidateArgument("servicio", servicio);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {     new SqlParameter("@IdServicio", servicio.IdServicio),
+                 new SqlParameter("@Titulo", servicio.Titulo ),
+                 new SqlParameter("@Descripcion", servicio .Descripcion),
+                 new SqlParameter("@Precio", servicio.Precio),
+                  new SqlParameter("@URLimagen", servicio.URLimagen )
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ServicioUpdata", parameters);
+        }
+
+        public void Delete(int idServicio)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdServicio", idServicio )
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ServicioDelete", parameters);
+        }
+
 
 
 

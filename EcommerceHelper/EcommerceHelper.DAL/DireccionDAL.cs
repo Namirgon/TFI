@@ -35,6 +35,28 @@ namespace EcommerceHelper.DAL
             return valor;
         }
 
+        public int UpdateDireccionEmpleado(DireccionEntidad direccion, UsuarioEntidad usuario)
+        {
+            ValidationUtility.ValidateArgument("direccion", direccion);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                 new SqlParameter("@IdUsuario", usuario.NumeroDocumento ),
+                new SqlParameter("@Calle", direccion.Calle),
+                new SqlParameter("@Numero", direccion.Numero),
+                new SqlParameter("@Piso", direccion.Piso),
+                new SqlParameter("@Departamento", direccion.Departamento),
+                 new SqlParameter("@IdProvincia", direccion.MiProvincia.IdProvincia),
+                new SqlParameter("@IdLocalidad", direccion.MiLocalidad.IdLocalidad),
+                
+
+            };
+
+            var valor = Convert.ToInt32(SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDireccionEmpleado", parameters));
+
+            return valor;
+        }
+
         public List<DireccionEntidad> ListarDireccionesDAL(int Id)
         {
 

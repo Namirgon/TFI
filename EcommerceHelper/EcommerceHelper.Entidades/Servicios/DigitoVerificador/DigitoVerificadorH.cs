@@ -9,6 +9,7 @@ namespace EcommerceHelper.Entidades.Servicios
     public class DigitoVerificadorH : BaseEntidad
     {
         public string DVH { get; set; }
+      
         public DigitoVerificadorH()
 
         {
@@ -21,7 +22,7 @@ namespace EcommerceHelper.Entidades.Servicios
         public static string CarlcularDigitoUsuario(UsuarioEntidad unUsuario)
         {
 
-            string cadena = unUsuario.IdUsuario+ unUsuario.Nombre + unUsuario.Apellido+unUsuario.NumeroDocumento+unUsuario.Email+unUsuario.Password+unUsuario.NumeroTelefono;
+            string cadena =  unUsuario.Nombre + unUsuario.Apellido + unUsuario.NumeroDocumento + unUsuario.Email + unUsuario.Password + unUsuario.NumeroTelefono;
             double resultado=0;
 
             foreach ( char  c in cadena)
@@ -34,5 +35,6 @@ namespace EcommerceHelper.Entidades.Servicios
             return resultado.ToString();
         }
 
+       
     }
 }

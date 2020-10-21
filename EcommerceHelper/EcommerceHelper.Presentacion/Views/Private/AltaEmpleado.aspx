@@ -2,10 +2,7 @@
 <%@ MasterType VirtualPath="~/Shared/PaginaMaestraAdministracion.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-     <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="../../Content/css/bootstrap.css" />
-
-
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
@@ -37,7 +34,7 @@
     <br />
     <div class="form-group">
  <asp:Label ID="lblContrasena" runat="server" for="txtcontrasena" style="margin-left:100px;color:white; font-size:15px">Contraseña</asp:Label>
- <asp:TextBox  ID="txtcontrasena" runat="server" type="Password" style="width:400px; margin-left:177px"></asp:TextBox>
+ <asp:TextBox  ID="txtcontrasena" runat="server" type="Password" style="width:400px; margin-left:183px"></asp:TextBox>
  <asp:RequiredFieldValidator ID="RequiredFieldValidatorF" runat="server" ErrorMessage="Ingrese Contraseña" ControlToValidate="txtcontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
      <br />
      <br />
@@ -45,7 +42,7 @@
 
     <div class="form-group">
  <asp:Label ID="lblrcontrasena" runat="server" for="txtrepetircontrasena" style="margin-left:102px;color:white; font-size:15px">Reingresar Contraseña</asp:Label>
- <asp:TextBox  ID="txtrepetircontrasena" runat="server" type="Password" style="width:400px; margin-left:100px"></asp:TextBox>
+ <asp:TextBox  ID="txtrepetircontrasena" runat="server" type="Password" style="width:400px; margin-left:110px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Reingrese la Constraseña" ControlToValidate="txtrepetircontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
         </div>
      <br />
@@ -63,17 +60,17 @@
    
    <br />
     <br />
-    <asp:Label ID="lblSexo" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" > Sexo</asp:Label>
-    <asp:DropDownList runat="server" ID="ddSexo" AutoPostBack="true" style="width:400px; margin-left:225px"> </asp:DropDownList>
+    <asp:Label ID="lblSexo" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" > Genero</asp:Label>
+    <asp:DropDownList runat="server" ID="ddSexo" AutoPostBack="true" style="width:400px; margin-left:355px" CssClass="form-control"> </asp:DropDownList>
     <br />
    <br />
     <asp:Label ID="lblDNI" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px">DNI</asp:Label> 
-    <asp:TextBox ID="txtDNI" style="width:400px; margin-left:230px" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtDNI" style="width:400px; margin-left:220px" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese DNI" ControlToValidate="txtDNI" Font-Bold="True"></asp:RequiredFieldValidator>
    <br />
     <br />
     <asp:Label ID="lblTipoTelefono" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px">Tipo de Telefono</asp:Label> 
-    <asp:DropDownList runat="server" ID="ddTipoTelefono" AutoPostBack="true" style="width:400px; margin-left:145px">  </asp:DropDownList>     
+    <asp:DropDownList runat="server" ID="ddTipoTelefono" AutoPostBack="true" style="width:400px; margin-left:355px" CssClass="form-control">  </asp:DropDownList>     
         <br />
                                                                                                                                     
    <br />
@@ -85,7 +82,7 @@
    <br />
 
      <asp:Label ID="lblCalle" runat="server" Text="Calle" style="margin-left:100px; color:white; font-size:15px">Calle</asp:Label>
-    <asp:TextBox ID="txtCalle" runat="server" style="width:400px; margin-left:225px"></asp:TextBox>
+    <asp:TextBox ID="txtCalle" runat="server" style="width:400px; margin-left:220px"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Ingrese Calle" Font-Bold="True" ControlToValidate="txtCalle"></asp:RequiredFieldValidator>
      <br />
    <br />
@@ -100,7 +97,7 @@
     <br />
      <br />
     <asp:Label ID="LblDepartamento" runat="server" style="margin-left:100px; color:white; font-size:15px" Text="Label">Departamento</asp:Label>
-    <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:157px"></asp:TextBox>
+    <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:167px"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Ingrese Departamento" ControlToValidate="txtDepartamento" Font-Bold="True"></asp:RequiredFieldValidator>
     <br /> 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -108,20 +105,20 @@
                     <div class="form-group">
                   <br /> 
                   <asp:Label ID="lblProvincia" For="ddProvincia" style="margin-left:100px; color:white; font-size:15px" runat="server" Text="Provincia"></asp:Label>  
-                <asp:DropDownList ID="ddProvincia" runat="server" ClientIDMode="static"    Width="400px" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="True" style="margin-left:190px">
+                <asp:DropDownList ID="ddProvincia" runat="server" ClientIDMode="static" CssClass="form-control"   Width="400px" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="True" style="margin-left:360px">
                   </asp:DropDownList> </div>
                         
                   <br />
              <div class="form-group">
                   <asp:Label ID="lblLocalidad" for="ddLocalidad" style="margin-left:100px; color:white; font-size:15px" runat="server" Text="Localidad"></asp:Label>
-                  <asp:DropDownList ID="ddLocalidad" runat="server" Width="400px" ClientIDMode="static" style="margin-left:190px" >
+                  <asp:DropDownList ID="ddLocalidad" runat="server" Width="400px" ClientIDMode="static" style="margin-left:360px"  CssClass="form-control">
                   </asp:DropDownList>
                  </div>
          </ContentTemplate>
     </asp:UpdatePanel>
     <br />
     <asp:Label ID="Label2" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px">Tipo de Direccion</asp:Label> 
-    <asp:DropDownList runat="server" ID="DDLTipodeDireccion" AutoPostBack="true" style="width:400px; margin-left:137px">  </asp:DropDownList>     
+    <asp:DropDownList runat="server" ID="DDLTipodeDireccion" AutoPostBack="true" style="width:400px; margin-left:357px" CssClass="form-control">  </asp:DropDownList>     
         <br />
     <br />
    <asp:Button style="margin-left:250px " ID="BtnContinuar" runat="server" Text="Confirmar"  Width="150px"  OnClick="BtnContinuar_Click"/>

@@ -1,5 +1,7 @@
 ﻿using EcommerceHelper.BLL;
+using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.Entidades;
+using EcommerceHelper.Entidades.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +30,6 @@ namespace EcommerceHelper.Presentacion.Views.Private
         private DireccionBLL UnManagerDireccion = new DireccionBLL();
         private UsuarioBLL unManagerUsuario = new UsuarioBLL();
 
-        //private UsuarioBLL unManagerUsuario = new UsuarioBLL();
         public List<ProvinciaEntidad> unasProvincias = new List<ProvinciaEntidad>();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -117,7 +118,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 if (Page.IsValid)
 
                 {
-                    unUsuario.IdUsuarioTipo = 4; // Usuario Cliente 
+                    unUsuario.IdTipoUsuario = 3; // Usuario Empleado
                     unUsuario.Email = txtusuario.Text;
                     unUsuario.Password = txtcontrasena.Text;
                     unUsuario.Nombre = txtNombre.Text;
@@ -127,8 +128,8 @@ namespace EcommerceHelper.Presentacion.Views.Private
                     unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
                     unUsuario.MiTelefono = new TipoTelefonoEntidad();
                     unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
-                    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text); //Int32.Parse(txtTelefono.Text);   
-
+                    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text); //Int32.Parse(txtTelefono.Text); 
+                    unUsuario.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
 
                     NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
 
@@ -148,6 +149,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                     limpiarCampos();
                     EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Alta Empleado", "Alta Empleado: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
+
+                    DVVBLL managerDVV = new DVVBLL();
+
+                    managerDVV.InsertarDVV("DVV", "Usuario");
+                   
                     Response.Redirect("/Views/Private/IniciarSesionIntranet.aspx");
                 }
                 else

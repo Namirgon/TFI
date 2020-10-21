@@ -178,7 +178,22 @@ namespace EcommerceHelper.BLL
         {
             try
             {
-                _dal.Insert(idioma);
+             _dal.Insert(idioma);
+                return 0;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+        public int ModificarIdioma(IdiomaEntidad idioma)
+        {
+            try
+            {
+                _dal.Update(idioma);
                 return 0;
             }
             catch (Exception ex)
@@ -189,7 +204,20 @@ namespace EcommerceHelper.BLL
 
         }
 
+        public int EliminarIdioma(int  idioma)
+        {
+            try
+            {
+                _dal.Delete(idioma);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+
+        }
 
     }
 }

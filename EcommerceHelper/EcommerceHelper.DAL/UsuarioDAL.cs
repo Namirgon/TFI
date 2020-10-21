@@ -105,13 +105,12 @@ namespace EcommerceHelper.DAL
             SqlParameter[] parameters = new SqlParameter[]
             {
 
-                new SqlParameter("@IdTipoUsuario", usuario.IdUsuarioTipo),
+                new SqlParameter("@IdTipoUsuario", usuario.IdTipoUsuario),
                 new SqlParameter("@Nombre", usuario.Nombre),
                 new SqlParameter("@Apellido", usuario.Apellido),
-                //new SqlParameter("@IdTipoDocumento", usuario.MiDocumento.IdTipoDeDocumento),
+                new SqlParameter("@IdTipoDeDocumento",usuario.MiDocumento.IdTipoDeDocumento),
                 new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
                 new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
-              //  new SqlParameter("@IdDireccion", usuario.MiDireccion),
                 new SqlParameter("@Email", usuario.Email),
                 new SqlParameter("@Password", usuario.Password),
                 new SqlParameter("@IdTipoTelefono", usuario.MiTelefono.IdTipoTelefono),
@@ -138,6 +137,28 @@ namespace EcommerceHelper.DAL
             };
 
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "DireccionUsuarioInsert", parameters);
+        }
+
+        public void UpdateDatosEmpleado(UsuarioEntidad usuario)
+        {
+            ValidationUtility.ValidateArgument("usuario", usuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+
+                new SqlParameter("@IdUsuario", usuario.IdUsuario),
+                new SqlParameter("@Nombre", usuario.Nombre),
+                new SqlParameter("@Apellido", usuario.Apellido),
+                new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
+                new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
+                new SqlParameter("@Email", usuario.Email),
+                new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
+               
+            };
+
+            var Resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDatosEmpleado", parameters);
+            int IdUsuarioRes = Decimal.ToInt32(Resultado);
+            usuario.IdUsuario = IdUsuarioRes;
         }
 
         public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
@@ -228,6 +249,7 @@ namespace EcommerceHelper.DAL
         }
 
 
+
         public List<UsuarioEntidad> SelectAllUsuarios()
         {
             using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioLeerDVH"))
@@ -259,6 +281,75 @@ namespace EcommerceHelper.DAL
            
         }
 
+        public List<UsuarioEntidad> SelectAllEmpleados()
+        {
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectEmpleado"))
+            {
+
+                List<UsuarioEntidad> AllEmpleados = new List<UsuarioEntidad>();
+
+
+
+                AllEmpleados = MapearUsuarioEmpleado(dt);
+
+                return AllEmpleados;
+            }
+
+        }
+
+
+        public List<UsuarioEntidad> MapearUsuarioEmpleado(DataSet ds)
+        {
+
+            List<UsuarioEntidad> ListUsuarios = new List<UsuarioEntidad>();
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    UsuarioEntidad unUsuario = new UsuarioEntidad();
+
+                    unUsuario.IdUsuario = (int)row["IdUsuario"];                   
+                    unUsuario.Nombre = row["Nombre"].ToString();
+                    unUsuario.Apellido = row["Apellido"].ToString();                  
+                    unUsuario.NumeroDocumento = (int)row["NumeroDocumento"];
+                    unUsuario.NumeroTelefono = (int)row["NumeroTelefono"];
+                    unUsuario.MiSexo = new SexoEntidad();
+                    unUsuario.MiSexo.IdSexo = (int)row["IdSexo"];
+                    unUsuario.Email = row["Email"].ToString();
+                    unUsuario.MiDireccion = new List<DireccionEntidad> ();
+
+                   
+                    {
+
+                        DireccionEntidad d = new DireccionEntidad();
+
+                        d.Calle = row["Calle"].ToString();
+                        d.Numero = (int)row["Numero"];
+                        d.Piso = row["Piso"].ToString();
+                        d.Departamento = row["Departamento"].ToString();
+                        d.MiProvincia = new ProvinciaEntidad();
+                        d.MiProvincia.IdProvincia = (int)row["IdProvincia"];
+
+                        d.MiLocalidad = new LocalidadEntidad();
+                        d.MiLocalidad.IdLocalidad = (int)row["IdLocalidad"];
+
+
+                        unUsuario.MiDireccion.Add(d);
+
+                    }
+                    ListUsuarios.Add(unUsuario);
+                }
+                return ListUsuarios;
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
+        }
         public List<UsuarioEntidad> MapearUsuarioDVH(DataSet ds)
         {
 
@@ -287,6 +378,7 @@ namespace EcommerceHelper.DAL
 
         }
 
+
         public List<UsuarioEntidad> MapearUsuario(DataSet ds)
         {
 
@@ -305,9 +397,6 @@ namespace EcommerceHelper.DAL
                    
                     unUsuario.Nombre = row["Nombre"].ToString();
                     unUsuario.Apellido = row["Apellido"].ToString();
-                    //unUsuario.MiDocumento = new TipoDeDocumentoEntidad();
-                    //unUsuario.MiDocumento.IdTipoDeDocumento = (int)row["IdTipoDeDocumento"];
-
                     unUsuario.NumeroDocumento = (int)row["NumeroDocumento"];
                     unUsuario.MiSexo = new SexoEntidad();
                     unUsuario.MiSexo.IdSexo = (int)row["IdSexo"];
@@ -333,6 +422,72 @@ namespace EcommerceHelper.DAL
 
         }
 
+
+        public UsuarioEntidad Select(int id)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdUsuario", id),
+
+            };
+
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectUsuarioByIDUsuario", parameters))
+            {
+                UsuarioEntidad EmpleadoSelect = new UsuarioEntidad();
+
+                EmpleadoSelect = MapearUnUsuario(dt);
+
+                return EmpleadoSelect;
+            }
+        }
+        public UsuarioEntidad MapearUnUsuario(DataSet ds)
+        {
+            UsuarioEntidad unUsuario = new UsuarioEntidad();
+
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                  
+                    unUsuario.Nombre = row["Nombre"].ToString();
+                    unUsuario.Apellido = row["Apellido"].ToString();
+                    unUsuario.NumeroDocumento = (int)row["NumeroDocumento"];
+                    unUsuario.MiSexo = new SexoEntidad();
+                    unUsuario.MiSexo.IdSexo = (int)row["IdSexo"];
+                    unUsuario.Email = row["Email"].ToString();
+                    unUsuario.NumeroTelefono = (int)row["NumeroTelefono"];
+
+                    unUsuario.MiDireccion = new List<DireccionEntidad>();
+
+                    {
+
+                        DireccionEntidad d = new DireccionEntidad();
+
+                        d.Calle = row["Calle"].ToString();
+                        d.Numero = (int)row["Numero"];
+                        d.Piso = row["Piso"].ToString();
+                        d.Departamento = row["Departamento"].ToString();
+                        d.MiProvincia = new ProvinciaEntidad();
+                        d.MiProvincia.IdProvincia = (int)row["IdProvincia"];
+                        d.MiLocalidad = new LocalidadEntidad();
+                        d.MiLocalidad.IdLocalidad = (int)row["IdLocalidad"];
+
+                        unUsuario.MiDireccion.Add(d);
+
+                    }
+
+                }
+                return unUsuario;
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
+        }
         public bool UsuarioAgregarPermisos(List<IFamPat> PerAgregar, string Email)
         {
             try

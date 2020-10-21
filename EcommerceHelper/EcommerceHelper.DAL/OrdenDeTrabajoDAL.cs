@@ -69,8 +69,8 @@ namespace EcommerceHelper.DAL
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 UnaOrdenT.IdOrdenDeTrabajo = (int)row["IdOrdenDeTrabajo"];
-                UnaOrdenT._MiUsuario = new UsuarioEntidad();
-                UnaOrdenT._MiUsuario.IdUsuario = (int)row["IdUsuario"];
+                UnaOrdenT.MiUsuario = new UsuarioEntidad();
+                UnaOrdenT.MiUsuario.IdUsuario = (int)row["IdUsuario"];
                 UnaOrdenT.Fecha = DateTime.Parse(row["Fecha"].ToString());
                 UnaOrdenT.IdEstado = (int)row["IdEstado"];
 

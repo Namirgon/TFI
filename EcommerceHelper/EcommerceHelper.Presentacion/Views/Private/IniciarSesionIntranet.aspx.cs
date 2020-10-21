@@ -1,4 +1,5 @@
 ﻿using EcommerceHelper.BLL;
+using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.DAL.Servicios;
 using EcommerceHelper.Entidades;
 using EcommerceHelper.Entidades.Servicios;
@@ -75,22 +76,30 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             UsuarioBLL BLLUsuario = new UsuarioBLL();
             UsuarioEntidad usuario = new UsuarioEntidad();
+
+
             List<string> LisDVHs = new List<string>();
+
             var VerificarIntegridad = BLLUsuario.GenerarCadenaDVHTablaEntera();
 
-            foreach (var Usuario in VerificarIntegridad)
+            foreach (var Usuario  in  VerificarIntegridad )
             {
 
-                LisDVHs.Add(DigitoVerificadorH.CarlcularDigitoUsuario(Usuario)); //en la lista esta cada uno de los horizontales calculados nuevamente
+                LisDVHs.Add(DigitoVerificadorH.CarlcularDigitoUsuario(Usuario)); // en la lista esta cada uno de los horizontales calculados nuevamente
+
 
 
             }
             Double Acum = 0;
-            foreach (var valor in LisDVHs) //por cada valor en la lista de cada digito horizontal lo voy sumando para obtener el vertical
+       
+            foreach (var valor in LisDVHs) // por cada valor en la lista de cada digito horizontal lo voy sumando para obtener el vertical
             {
                 Acum += Convert.ToDouble(valor);
             }
 
+           
+            //Acum = DVHBLL.ConsultarDVH();
+           
             DVV SumaDVV = DVVDAL.SelectTablaUsuario();
 
             double DVVBD = Convert.ToDouble(SumaDVV.dvv); //traigo el digito vertical de la base

@@ -43,6 +43,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 if (!string.IsNullOrWhiteSpace(txtNombreArchivo.Text))
                 {
                     string nombre = txtNombreArchivo.Text.Trim() + ".bak";
+                  
                     string ruta = Server.MapPath(@"../../Content/Files/" + nombre);
                     if (File.Exists(ruta))
                     {
@@ -52,9 +53,9 @@ namespace EcommerceHelper.Presentacion.Views.Private
                     {
                         ServicioLog.CrearLogEventos("Backup", "Backup realizado correctamente", usuarioentidad.Apellido ,(usuarioentidad.IdUsuario).ToString());
                         Current.Response.ContentType = "application/octet-stream";
-                        //Current.Response.AppendHeader("Content-Disposition", "attachment; " + "filename="  + nombre +"" );
+                      
                         Current.Response.AppendHeader("Content-Disposition", "attachment; filename=\" "+nombre );
-                        //Current.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + nombre +"\"");
+                    
                         Current.Response.TransmitFile(Server.MapPath(@"../../Content/Files/" + nombre));
                         Current.Response.Flush();
                        

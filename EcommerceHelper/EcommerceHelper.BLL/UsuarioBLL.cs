@@ -115,7 +115,12 @@ namespace EcommerceHelper.BLL
 
         }
 
+        public List<UsuarioEntidad> SelectALLEmpleados()
+        {
 
+            return _DalUsuario.SelectAllEmpleados();
+
+        }
         public int RegistrarUsuario(UsuarioEntidad usuario)
         {
             try
@@ -185,6 +190,37 @@ namespace EcommerceHelper.BLL
                 throw;
             }
         }
+
+        public UsuarioEntidad Select(int Id)
+        {
+            return _DalUsuario.Select(Id);
+
+        }
+
+        public void UpdateDatosEmpleado(UsuarioEntidad UnUsuario)
+        {
+            // falta re calcular el DVH
+           _DalUsuario.UpdateDatosEmpleado(UnUsuario);
+
+
+        }
+
+        public void UpdateDireccionEmpleado(DireccionEntidad direccion, UsuarioEntidad elUsuario)
+        {
+            try
+            {
+                var id = _DalDireccion.UpdateDireccionEmpleado(direccion,elUsuario);
+               
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+      
+
+
 
     }
 

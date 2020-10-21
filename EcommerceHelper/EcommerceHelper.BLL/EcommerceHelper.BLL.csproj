@@ -57,6 +57,7 @@
     <Compile Include="OrdenDeTrabajoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioBLL.cs" />
+    <Compile Include="Servicios\DVHBLL.cs" />
     <Compile Include="Servicios\DVVBLL.cs" />
     <Compile Include="SexoBLL.cs" />
     <Compile Include="TipoDomicilioBLL.cs" />

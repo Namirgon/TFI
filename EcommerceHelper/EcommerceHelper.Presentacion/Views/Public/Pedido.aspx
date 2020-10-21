@@ -95,8 +95,8 @@
                                      </td>
 
                                      <td class="text-center"  style="width: 80px">
-                                         <button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" onclick="fEliminarDeseo(this)" class="btn-default "  title="<%$Resources:Global, Eliminar %>"> </button>
-                                         <%--<input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo()" clientidmode="static" runat="server" />--%>
+                                         <%--<button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" onclick="fEliminarDeseo(this)" class="btn-default "  title="<%$Resources:Global, Eliminar %>"> </button>--%>
+                                   <input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo()" clientidmode="static" runat="server" />
                                           
                                      </td>
 
@@ -129,7 +129,7 @@
 
  
     <div  class="item-toolbar" runat="server"  >
-        <asp:Button ID="BtnContinuar" runat="server" Text="<%$Resources:Global, Continuar %>"> OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
+        <asp:Button ID="BtnContinuar" runat="server" Text="<%$Resources:Global, Continuar %>" OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
           <%-- <a   class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " href="MisDirecciones.aspx" > Continuar </a>--%>
                 <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
 

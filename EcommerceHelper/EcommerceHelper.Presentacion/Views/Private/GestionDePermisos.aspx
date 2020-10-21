@@ -32,11 +32,10 @@
    <br />
    <br />
      <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" style="margin-left:180px">
                 <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-                <div class="col-md-2">
-                </div>
+            
             <div class="col-md-4">
                 <asp:DropDownList ID="cboFamilia" runat="server" AutoPostBack="true" OnSelectedIndexChanged="cboFamilia_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
 
@@ -46,9 +45,9 @@
     <br />
     <br />
           <div class="row">  
-             <div class="col-md-4">
-                  <asp:Label ID="lbldisponibles" class="page-header" runat="server" Text="<%$Resources:Global, Disponibles %>"></asp:Label> <br />
-                <div style="margin-left:180px"> <br />
+             <div class="col-md-4" style="margin-left:100px">
+                  <asp:Label ID="lbldisponibles" class="miLabel"  runat="server" Text="<%$Resources:Global, Disponibles %>"></asp:Label> <br />
+                <div style="margin-left:70px"> <br />
                 <asp:UpdatePanel ID="upTreeDisp" runat="server" UpdateMode="Conditional" >
                     <ContentTemplate>
                         <asp:TreeView ID="treeDisponibles" runat="server" SelectedNodeStyle-CssClass="bg-success"></asp:TreeView>
@@ -83,17 +82,17 @@
     <br />
       <div class="row">
    
-            <div class="col-md-2"  >
+            <div class="col-md-2"  style="margin-left:160px" >
             
-                <asp:Button ID="btnAgregar" runat="server" Text="Agregar Patente" OnClick="btnAgregar_Click"   CssClass="btn btn-primary" />
+                <asp:Button ID="btnAgregar" runat="server" Text="Agregar Patente" OnClick="btnAgregar_Click"   CssClass="btn btn-primary " />
            
             </div>
             <div class="col-md-4">
             </div>
 
-            <div class="col-md-2" >
+            <div class="col-md-2"  >
            
-                <asp:Button ID="btnQuitar" runat="server" Text="Quitar Patente" OnClick="btnQuitar_Click" style=" float:left;" CssClass="btn btn-primary" />
+                <asp:Button ID="btnQuitar" runat="server" Text="Quitar Patente" OnClick="btnQuitar_Click" style=" float:left;" CssClass="btn btn-primary " />
            
             </div>
 
@@ -101,13 +100,13 @@
 
 
         <hr />
-        <div class="row" style="align-content: center;">
+        <div class="row" style="align-content: center; margin-left:300px">
       
-            <asp:Button ID="btnAltaFamilia" runat="server" Text="Crear Familia" OnClick="btnAltaFamilia_Click" CssClass="btn btn-primary btn-lg" />
+            <asp:Button ID="btnAltaFamilia" runat="server" Text="Crear Familia" OnClick="btnAltaFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2" />
        
-            <asp:Button ID="btnModificarFamilia" runat="server" Text="Modificar Familia" OnClick="btnModificarFamilia_Click" CssClass="btn btn-primary btn-lg"  />
+            <asp:Button ID="btnModificarFamilia" runat="server" Text="Modificar Familia" OnClick="btnModificarFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2"  />
         
-            <asp:Button ID="btnEliminarFamilia" runat="server" Text="Eliminar Familia" OnClick="btnEliminarFamilia_Click" CssClass="btn btn-primary btn-lg" />
+            <asp:Button ID="btnEliminarFamilia" runat="server" Text="Eliminar Familia" OnClick="btnEliminarFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2" />
    
         </div>
         <hr />

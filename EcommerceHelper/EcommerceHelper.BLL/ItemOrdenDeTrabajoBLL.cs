@@ -54,7 +54,11 @@ namespace EcommerceHelper.BLL
             return unItemDAL.SelectIdItemOrdenDeTrabajo(IdODT);
             
         }
+        public List<ItemOrdenDeTrabajoEntidad> ResumenDeCompra(int IdODT)
+        {
+            return unItemDAL.ResumenDeComprabyIdODT(IdODT);
 
+        }
         public int ListaDeItemUpdate(int Id, DateTime fecha, DateTime hora)
         {
 

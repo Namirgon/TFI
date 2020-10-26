@@ -45,7 +45,7 @@
                             
                         <%--<a runat="server" href='<%#Eval("IdServicio")%>'><img src='/Content/Image/<%# Eval("URLImagen")%>' class="img-responsive col-md-12" id="IdServicio" /></a>--%>
                           <asp:Label ID="LblIdServicio" runat="server" Text='<%#Eval("IdServicio")%>' Visible="false"></asp:Label>
-                            <a runat="server"><img src='/Content/Image/<%# Eval("URLImagen")%>' class="img-responsive col-md-12" /></a>
+                            <a runat="server"><img src='<%# Eval("URLImagen")%>' class="img-responsive col-md-12" /></a>
                            
                              <%--<h3><%# Eval("Descripcion")%></h3>--%>
                             <asp:Label ID="lblDescripcion" runat="server" Text='<%# Eval("Descripcion")%>' Font-Size="20px"></asp:Label>

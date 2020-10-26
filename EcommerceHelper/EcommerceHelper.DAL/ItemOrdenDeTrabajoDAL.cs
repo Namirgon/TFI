@@ -22,14 +22,26 @@ namespace EcommerceHelper.DAL
                 //new SqlParameter("@IdDeseo", listaDeseo.IdDeseo),
                 new SqlParameter("@IdUsuario", listaItemODT.MiUsuario.IdUsuario),
                 new SqlParameter("@NombreUsuario", listaItemODT.NombreUsuario),
-                new SqlParameter("@IdServicio", listaItemODT._MiServicio.IdServicio ),
+                new SqlParameter("@IdServicio", listaItemODT.MiServicio.IdServicio ),
                  new SqlParameter("@IdOrdenDeTrabajo", listaItemODT._MiOrdenDeTrabajo.IdOrdenDeTrabajo),
+                 new SqlParameter("@Precio", listaItemODT.Precio)
 
             };
 
             SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaItemInsert", parameters);
         }
 
+        public void InsertIdDireccion(int IdDir, int IdItem)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+           {
+
+                new SqlParameter("@IdItemOrdenDeTrabajo", IdItem),
+                new SqlParameter("@IdDireccion", IdDir)
+            };
+
+            SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ItemIdDireccionInsert", parameters);
+        }
         public List<ItemOrdenDeTrabajoEntidad> SelectAllByNumeroIdUsuario(int NumeroIdUsuario)
         {
             SqlParameter[] parameters = new SqlParameter[]
@@ -54,19 +66,51 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@IdOrdenDeTrabajo", idOrdenDeTrabajo),
 
             };
-            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarItemByIdOrdenDeTrabajo2", parameters))
-            //using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarItemByIdOrdenDeTrabajo", parameters))
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarItemByIdOrdenDeTrabajo", parameters))
             {
-                //List<ItemOrdenDeTrabajoEntidad> listaItemEntidad = new List<ItemOrdenDeTrabajoEntidad>();
-
-                //listaItemEntidad = Mapeador.Mapear<ItemOrdenDeTrabajoEntidad>(dt);
-
-                //return listaItemEntidad;
+               
                 List<ItemOrdenDeTrabajoEntidad> ItemOrdenDeTrabajoEntidad = new List<ItemOrdenDeTrabajoEntidad>();
-                ItemOrdenDeTrabajoEntidad = MapeadorMuchosItemOrdenDeTrabajoEntidad(ds);
+                ItemOrdenDeTrabajoEntidad = MapeadorMuchosItemservicio(ds);
                 return ItemOrdenDeTrabajoEntidad;
             }
         }
+
+        private List<ItemOrdenDeTrabajoEntidad> MapeadorMuchosItemservicio(DataSet ds)
+        {
+
+            List<ItemOrdenDeTrabajoEntidad> ListaItemOT = new List<ItemOrdenDeTrabajoEntidad>();
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ItemOrdenDeTrabajoEntidad UnaItemOT = new ItemOrdenDeTrabajoEntidad();
+
+                    UnaItemOT.IdItemOrdenDeTrabajo = (int)row["IdItemOrdenDeTrabajo"];
+                    
+                    UnaItemOT._MiServicio = new ServicioEntidad();
+                    UnaItemOT._MiServicio.Titulo = row["Titulo"].ToString();
+                    //UnaItemOT._MiServicio = new ServicioEntidad();
+                    UnaItemOT._MiServicio.Descripcion = row["Descripcion"].ToString();
+                    //UnaItemOT._MiServicio = new ServicioEntidad();
+                    UnaItemOT._MiServicio.Precio = (decimal)row["Precio"];
+                    //UnaItemOT._MiServicio = new ServicioEntidad();
+                    UnaItemOT._MiServicio.URLimagen = row["URLimagen"].ToString();
+
+
+                    ListaItemOT.Add(UnaItemOT);
+                }
+
+                return ListaItemOT;
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
 
         public List <ItemOrdenDeTrabajoEntidad> SelectIdItem(int idOrdenDeTrabajo)
         {
@@ -76,14 +120,8 @@ namespace EcommerceHelper.DAL
 
             };
 
-            //using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarIdItemByIdOrdenDeTrabajo", parameters))
             using (DataSet ds= SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarIdItemByIdOrdenDeTrabajo", parameters))
             {
-             //List<  ItemOrdenDeTrabajoEntidad >listaItemEntidad = new List<ItemOrdenDeTrabajoEntidad> ();
-
-             //   listaItemEntidad = Mapeador.Mapear<ItemOrdenDeTrabajoEntidad>(dt);
-
-             //   return listaItemEntidad;
 
                 List<  ItemOrdenDeTrabajoEntidad > ItemOrdenDeTrabajoEntidad = new List<ItemOrdenDeTrabajoEntidad> ();
                 ItemOrdenDeTrabajoEntidad = MapeadorListaItemOrdenDeTrabajoEntidad(ds);
@@ -152,16 +190,9 @@ namespace EcommerceHelper.DAL
                     UnaItemOT.MiUsuario.IdUsuario = (int)row["IdUsuario"];
                     UnaItemOT.NombreUsuario = row["NombreUsuario"].ToString();
                     UnaItemOT._MiServicio = new ServicioEntidad();
+                    
                     UnaItemOT._MiServicio.IdServicio = (int)row["IdServicio"];
-                    //if (row["IdDireccion"] != null)
-                    //    UnaItemOT.MiDireccion = new DireccionEntidad();
-                    //UnaItemOT.MiDireccion.IdDireccion = (int)row["IdDireccion"];
-                    //if (row["Precio"] != null)
-                    //    UnaItemOT.Precio = (decimal)row["Precio"];
-                    //if (row["Fecha"].ToString() != null)
-                    //    UnaItemOT.Fecha = DateTime.Parse(row["Fecha"].ToString());
-                    //if (row["Hora"].ToString() != null)
-                    //    UnaItemOT.Hora = DateTime.Parse(row["Hora"].ToString());
+               
 
 
 
@@ -177,13 +208,15 @@ namespace EcommerceHelper.DAL
             }
         }
 
-        public void ActualizarFechayHoraListaItem(ItemOrdenDeTrabajoEntidad listaItem)
+        public void ActualizarFechayHoraListaItem(int Id, DateTime fecha, DateTime hora)
         {
             SqlParameter[] parameters = new SqlParameter[]
                 {
-                 new SqlParameter("@NumeroDocumento", listaItem.MiUsuario.IdUsuario),
-                new SqlParameter("@IdItemOrdenDeTrabajo", listaItem.IdItemOrdenDeTrabajo),
-                
+           
+                new SqlParameter("@IdItemOrdenDeTrabajo",Id),
+                new SqlParameter("@Fecha", fecha),
+                new SqlParameter("@Hora", hora)
+
                 };
 
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaDeItemUpDate", parameters);
@@ -230,7 +263,7 @@ namespace EcommerceHelper.DAL
                 UnaItemOT._MiServicio = new ServicioEntidad();
                 UnaItemOT._MiServicio.IdServicio= (int)row["IdServicio"];
                 UnaItemOT.MiDireccion = new DireccionEntidad();
-                UnaItemOT.MiDireccion.IdDireccion= (int)row["IdDireccion"];
+                UnaItemOT._MiDireccion.IdDireccion= (int)row["IdDireccion"];
                 UnaItemOT.Precio= (decimal )row["Precio"];
                 UnaItemOT.Fecha= DateTime.Parse(row["Fecha"].ToString());
                 UnaItemOT.Hora= DateTime.Parse(row["Hora"].ToString());
@@ -252,6 +285,42 @@ namespace EcommerceHelper.DAL
 
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ItemDelete", parameters);
         }
+        public ItemOrdenDeTrabajoEntidad Select(int idItem) /*quede aca!!*/
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdItemOrdenDeTrabajo", idItem)
+            };
+
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ItemSelect", parameters))
+            {
+                ItemOrdenDeTrabajoEntidad itemEntidad = new ItemOrdenDeTrabajoEntidad();
+
+                itemEntidad = MapeadorItem(dt);
+
+                return itemEntidad ;
+            }
+        }
+        private ItemOrdenDeTrabajoEntidad MapeadorItem(DataSet ds)
+        {
+
+            ItemOrdenDeTrabajoEntidad UnaItemOT = new ItemOrdenDeTrabajoEntidad();
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+
+                UnaItemOT.IdItemOrdenDeTrabajo = (int)row["IdItemOrdenDeTrabajo"];
+                UnaItemOT.MiUsuario = new UsuarioEntidad();
+                UnaItemOT.MiUsuario.IdUsuario = (int)row["IdUsuario"];
+                UnaItemOT._MiServicio = new ServicioEntidad();
+                UnaItemOT._MiServicio.IdServicio = (int)row["IdServicio"];
+                
+
+            }
+
+            return UnaItemOT;
+        }
+
 
 
     }

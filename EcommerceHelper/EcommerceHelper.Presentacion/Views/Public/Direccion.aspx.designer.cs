@@ -175,13 +175,31 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList ddLocalidad;
         
         /// <summary>
-        /// Control Button1.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control DDLTipodeDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLTipodeDireccion;
+        
+        /// <summary>
+        /// Control btnNuevaDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNuevaDireccion;
         
         /// <summary>
         /// Control Button2.
@@ -198,9 +216,9 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         /// <remarks>
         /// Propiedad generada automáticamente.
         /// </remarks>
-        public new EcommerceHelper.Presentacion.Shared.PaginaMaestra Master {
+        public new EcommerceHelper.Presentacion.Shared.PaginaMaestraCliente Master {
             get {
-                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestra)(base.Master));
+                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestraCliente)(base.Master));
             }
         }
     }

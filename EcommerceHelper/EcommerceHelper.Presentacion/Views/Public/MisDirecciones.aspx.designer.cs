@@ -20,5 +20,35 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GVMisDirecciones;
+        
+        /// <summary>
+        /// Control linkAltaDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton linkAltaDireccion;
+        
+        /// <summary>
+        /// Control BtnContinuar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BtnContinuar;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new EcommerceHelper.Presentacion.Shared.PaginaMaestraCliente Master {
+            get {
+                return ((EcommerceHelper.Presentacion.Shared.PaginaMaestraCliente)(base.Master));
+            }
+        }
     }
 }

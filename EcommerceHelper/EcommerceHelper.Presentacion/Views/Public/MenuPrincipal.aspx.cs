@@ -18,7 +18,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         List<ServicioEntidad> unServicios = new List<ServicioEntidad>();
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
-        
+        ServicioBLL gestorServicio = new ServicioBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -86,8 +86,14 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 unItem.MiOrdenDeTrabajo.IdOrdenDeTrabajo = OrdenDeTrabajoEntidad.IdOrdenDeTrabajo;
                 unItem.NombreUsuario = logueadoStatic.Nombre;
                 unItem.MiUsuario.IdUsuario = logueadoStatic.IdUsuario;
-                unItem.MiServicio = new ServicioEntidad();
-                unItem.MiServicio.IdServicio = IdServ;
+                //unItem._MiServicio = new ServicioEntidad();
+                //unItem._MiServicio.IdServicio = IdServ;
+
+                ServicioEntidad unServicio;
+                 unServicio=  gestorServicio.FindServicio(IdServ);
+                unItem._MiServicio = new ServicioEntidad();
+                unItem.Precio = unServicio.Precio;
+                unItem._MiServicio.IdServicio = unServicio.IdServicio;
 
                 unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
 

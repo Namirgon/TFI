@@ -8,11 +8,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using EcommerceHelper.BLL;
 using System.Web.Services;
+using System.Globalization;
+using System.Runtime;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
     public partial class Pedido : BasePage 
     {
+       
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
@@ -20,7 +23,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         public List<ItemOrdenDeTrabajoEntidad> ItemDeServicios;
 
         public List<ServicioEntidad> ListaDeServicios = new List<ServicioEntidad>();
-        ItemOrdenDeTrabajoBLL cargarLista = new ItemOrdenDeTrabajoBLL();
+        ItemOrdenDeTrabajoBLL GestorItemODT = new ItemOrdenDeTrabajoBLL();
 
         ServicioBLL BuscarServicios = new ServicioBLL();
 
@@ -36,6 +39,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
             if (!Page.IsPostBack)
             {
                 CargarPedido();
+                
+             
             }
             else
             {
@@ -56,152 +61,132 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
             OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo;
-
-
+          
             int numeroIdUsuario = logueadoStatic.IdUsuario;
 
             // lista 1 = consulta las ordenes de compras activas por el IdUsuario
             ExisteOrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
 
             //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
-            ItemDeServicios = cargarLista.ListaItemSelectAllByIdODT(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);
+            ItemDeServicios = GestorItemODT.ListaItemSelectAllByIdODT(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);          
 
-            // lista 3 = Con la lista 1 realizar la consulta a la tabla de servicios para traer *
-            foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicios)
-            {
-                ServicioEntidad _serv = new ServicioEntidad();
-                _serv.IdServicio = s._MiServicio .IdServicio;
-
-
-
-                ListaDeServicios.Add(BuscarServicios.FindServicio(_serv.IdServicio));
-
-            }
-
+            GVPedido.DataSource = ItemDeServicios;
+            GVPedido.DataBind();
+          
         }
 
         protected void btnDatosPersonales(object sender, EventArgs e)
         {
-
             Response.Redirect("DatosPersonales.aspx");
         }
 
-        //public static void DeleteItem(int id)
-        //{
-        //    var Current = HttpContext.Current;
-        //    var list = (List<ListaDeDeseoEntidad>)Current.Session["usuario"];
-        //    Current.Session["usuario"] = list.Where(x => x.IdDeseo != id).ToList();
-
-        //}
-
+       
 
         [WebMethod]
-        public static void CancelarItemDeLaLista(int id) // llega el IdServicio
-        {
 
-            UsuarioEntidad logueadoStatic;
-            var Current = HttpContext.Current;
-            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
-            OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
-
-            OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
-            OrdenDeTrabajoEntidad ExisteOrden = new OrdenDeTrabajoEntidad();
-
-            int numeroIdUsuario = logueadoStatic.IdUsuario;
-
-            List<ItemOrdenDeTrabajoEntidad> ItemDeServicio;
-            ItemOrdenDeTrabajoBLL ListaItem = new ItemOrdenDeTrabajoBLL();
-            List<ServicioEntidad> ListaDeServicio = new List<ServicioEntidad>();
-
-            ServicioBLL BuscarServicios = new ServicioBLL();
-
-            // lista 1 = consulta las ordenes de compras activas por el IdUsuario
-            ExisteOrden = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
-
-            //lista 2 = consulta a la tabla lista de pedidos con el IdUsuario los IdServicios
-            ItemDeServicio = ListaItem.ListaIdItems (ExisteOrden.IdOrdenDeTrabajo);
-
-            // lista 3 = Con la lista 2 realizar la busqueda del IdServicio que se quiere eliminar
-
-            foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicio)
-   
-            {
-
-                if (id == s._MiServicio .IdServicio   )
-                {
-                    //ItemDeServicio.FindIndex(item =>  s.IdItemOrdenDeTrabajo== item.IdItemOrdenDeTrabajo );
-                    ListaItem.EliminarItem(s.IdItemOrdenDeTrabajo);
-                }
-                else
-                {
-
-                }
-                // revisar porque me elimina todos los IdServicios del mismo servicio de la ordendetrabajoactiva
-               
-            }
-
-            
-          
-            
-            //foreach (ItemOrdenDeTrabajoEntidad s in ItemDeServicio)
-            //{
-            //    ServicioEntidad _serv = new ServicioEntidad();
-            //    _serv.IdServicio = s.IdServicio;
-
-
-
-            //    ListaDeServicio.Add(BuscarServicios.FindServicio(_serv.IdServicio));
-
-            //}
-
-
-
-            //var Current = HttpContext.Current;
-            ////la lista de deseo contiene el detalle del servicio mas dia y horario para el servicio
-            //var deseo= (List<ListaDeDeseoEntidad>)Current.Session["DeseoDeServicios"];
-            //// la lista de servicios contiene el detalle del servicio propiamente dicho .. titulo, imagen, descripcion y precio
-            //var list = (List<ServicioEntidad>)Current.Session["ListaDeServicios"];
-
-            //Current.Session["ListaDeServicios"] = list.Where(x => x.IdServicio == id).ToList();
-
-            //Current.Session["DeseoDeServicios"] = deseo.Where(x => x.IdServicio != id).ToList();
-
-
-
-
-            //foreach (ListaDeDeseoEntidad IdServ in deseo) 
-            //{
-
-
-            //   ListaDeDeseoBLL CancelarDeseo = new ListaDeDeseoBLL();
-            //   CancelarDeseo.ListaDeDeseosUpdate(IdServ);
-
-
-            //}
-
-
-        }
 
        
 
         protected void BtnContinuar_Click(object sender, EventArgs e)
         {
+
             UsuarioEntidad logueadoStatic;
             var Current = HttpContext.Current;
             logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+
+            int  IdUsuario = logueadoStatic.IdUsuario;
+
             Response.Redirect("MisDirecciones.aspx");
         }
 
+        protected void GVPedido_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int id = Int32.Parse(GVPedido.Rows[Int32.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+
+            UsuarioEntidad logueadoStatic;
+            var Current = HttpContext.Current;
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+
+            int IdUsuario = logueadoStatic.IdUsuario;
+
+            ItemOrdenDeTrabajoEntidad unItem;
+            unItem = GestorItemODT.Find(id);
+            switch (e.CommandName)
+            {
+
+                case "btnConfirmar":
+                    {
 
 
+                        id = unItem.IdItemOrdenDeTrabajo;
+                        string fecha = Request.Form["DatePickerFecha"];
+                        string hora = Request.Form["DatePickerTime"];
 
+                        //unItem.IdItemOrdenDeTrabajo = IdUsuario;
+                       unItem.Fecha = DateTime.Parse(fecha);
+                        unItem.Hora = DateTime.Parse(hora);
 
+                        DateTime t = new DateTime();
 
+                        if (!  DateTime.TryParse(hora, out t))
+                        {
 
+                            t = Convert.ToDateTime(hora, CultureInfo.GetCultureInfo("en-Us").DateTimeFormat);
 
+                        }
 
-        //Script order defined in master page
+                        DateTime d = new DateTime();
+                        if (!DateTime.TryParse(fecha, out d))
 
+                        {
+                            d = Convert.ToDateTime(fecha, CultureInfo.GetCultureInfo("en-Us").DateTimeFormat);
+                            //d = DateTime.ParseExact(fecha, " dd/mm/yyyy", CultureInfo.InvariantCulture);
+                        }
+                                
+                        GestorItemODT.ListaDeItemUpdate(id, d, t);
 
+                        break;
+                    }
+                case "btnEliminar":
+
+                    {
+
+                            GestorItemODT.EliminarItem(id);
+                            CargarPedido();
+                            
+                        
+
+                        break;
+                    }
+            }
+
+        }
+
+        protected void GVPedido_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            Image img = new Image();
+            img.ImageUrl = e.Row.Cells[4].Text;
+            img.Attributes.Add("width", "90%");
+        
+            e.Row.Cells[4].Controls.Add(img);
+        }
+
+        protected void GVPedido_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+        }
+
+        private void BindGrid()
+        {
+           
+        }
+        protected void GVPedido_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+           
+        }
+
+        protected void GVPedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

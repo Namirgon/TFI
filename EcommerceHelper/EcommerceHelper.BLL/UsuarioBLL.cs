@@ -218,8 +218,12 @@ namespace EcommerceHelper.BLL
             }
         }
 
-      
 
+        public void EliminarDireccion(int IdDireccion, int IdUsuario)
+        {
+
+            _DalDireccion.EliminarDireccion(IdDireccion, IdUsuario);
+        }
 
 
     }

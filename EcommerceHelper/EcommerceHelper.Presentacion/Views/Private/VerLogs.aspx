@@ -67,7 +67,7 @@
                         <asp:BoundField DataField="NombreUsuario" HeaderText=" NombreUsuario " HeaderStyle-CssClass="bg-primary" >
                         <HeaderStyle CssClass="bg-primary"></HeaderStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="Fecha" HeaderText="Fecha " HeaderStyle-CssClass="bg-primary" >
+                        <asp:BoundField DataField="Fecha" HeaderText="Fecha " HeaderStyle-CssClass="bg-primary" DataFormatString="{0:d}" >
                         <HeaderStyle CssClass="bg-primary"></HeaderStyle>
                         </asp:BoundField>
                         <asp:BoundField DataField="TipoLog" HeaderText="Tipo" HeaderStyle-CssClass="bg-primary" >

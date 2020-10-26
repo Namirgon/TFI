@@ -4,7 +4,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-    
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+     <script src = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type = "text / javascript"> </script>
+    <link   href = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel = "Stylesheet" type = "text / css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -17,122 +19,89 @@
    <br />
       </div>
 
-   <%-- ----------------------  Tabla deseos Titulo - Descripcion - Precio  - Fecha - Horario - Eliminar  - Total --------------------------%>
+   <%-- ----------------------  Tabla deseos Titulo - Descripcion - Precio  - Fecha - Horario - Eliminar  - Confirmar --------------------------%>
     <br />     
     <br />
     <br />     
     <br />
 
+  <center>
    
+    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowUpdating="GVPedido_RowUpdating" OnRowDataBound="GVPedido_RowDataBound"  OnRowEditing="GVPedido_RowEditing" AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged">
+        <Columns>
+            <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo" >
+            <HeaderStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="MiServicio.Titulo" HeaderText="Titulo" SortExpression="Titulo" >
+            <HeaderStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="MiServicio.Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" >
+            <HeaderStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="MiServicio.Precio" HeaderText="Precio" SortExpression="Precio" >
+            <HeaderStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="MiServicio.URLimagen" HeaderText="Imagen"  >
+            </asp:BoundField>
+            <asp:TemplateField HeaderText="Fecha">
+                <ItemTemplate >
+              <%--    <asp:Calendar ID="MiCalendario" runat="server" style="display:flex; color:#000000; width:120px"  ></asp:Calendar>--%>
 
-   
-      <div id="test" runat="server">
-             <% if (ListaDeServicios != null && ListaDeServicios.Any())
-                        {
-            %>
-
-      <table  class="table-bordered col-md-12" id="tlbPedido" style="width:70%; margin-left:160px; " > <%--tabla de los servicios deseados--%>
-        <thead>
-            <tr> <%--// tr filas--%>
-                <asp:HiddenField ID="idServicio" Value="0" runat="server" /> <%--id del servicio escondido para poder borrarlo--%>
-
-                <th class="text-center" id="txtImagen"><asp:Label ID="lblImagen" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Imagen %>"></asp:Label> </th>
-                <th class="text-center" id="txtTitulo"> <asp:Label ID="lblTitulo" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Titulo %>"></asp:Label></th> <%--th encabezados--%>
-                <th class="text-center" id="txtDescripcion"><asp:Label ID="lblDescripcion" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Descripcion %>"></asp:Label></th>
-                <th class="text-center" id="txtPrecio"><asp:Label ID="lblPrecio" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Precio %>"></asp:Label></th>
-                <th class="text-center" id="txtFecha"><asp:Label ID="lblFecha" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Fecha %>"></asp:Label></th>
-                <th class="text-center" id="txtHorario"><asp:Label ID="lblHorario" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Horario %>"></asp:Label></th>
-                <th class="text-center" id="txtEliminar"><asp:Label ID="lblEliminar" runat="server" Font-Bold="true" class="control-label col-xs-2" Text="<%$Resources:Global, Eliminar %>"></asp:Label></th>
-                <th></th>
-               
-            </tr>
-      
-       </thead>
-
-                          <tbody>
-                               <% foreach (var s in ListaDeServicios)
-                        {
-                               %>
-                                    <tr class="<%= s.IdServicio%>">
-
-                                      <td class="text-center" style="padding: 7px;">
-                                         
-                                        <div class="img-thumbnail img-thumbnail-cart">
-                                             <img class="img-responsive" src="/Content/Image/<%= s.URLimagen%>" style="vertical-align: middle;" />
-                                        </div>
-                                      </td>
-                                      <td class="Text-center">
-                                         <h4><%=s.Titulo%></h4>
-                                     
-                                      </td>
-                                      <td class="Text-center">
-                                          <h4><%=s.Descripcion%></h4>
-                                            
-                                      </td>
-                                      <td class="text-center" style="width: 80px">
-                                         <p><span> $ </span>  <span><%= s.Precio %></span>
-                                         </p>
-                                     </td>
-                                      <td>
-                                          <%--fecha--%>
-                                     
-                                         
-                                          <div class="dates" style="display:flex; color:#000000; width:120px">
-    
-                                         <input type="text"  class="form-control" id="usr1"  placeholder="YYYY-MM-DD" autocomplete="off" style="width:120px;background-color:#ffffff; align-self:center " >
-                                         </div>
-                                            
-                                       </td>
-                                     <td>
-                                  <%--   horario--%>
-                                         <div class='times' style="display:flex; color:#000000; width:110px">
+                 <div class="dates" style="display:flex; color:#000000; width:120px">
+                    <input type="text"  class="form-control" id="usr1"  placeholder="YYYY-MM-DD" autocomplete="off" name="DatePickerFecha" style="width:120px;background-color:#ffffff; align-self:center " >
+                     </div>
+                  
+                </ItemTemplate>
 
 
-                                             <input  type="text"  id="disableTimeRangesExample"  class="form-control" style="width:110px;background-color:#ffffff; align-self:center "/>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Hora">
+                <ItemTemplate >
+           
+                    <div class='times' style="display:flex; color:#000000; width:110px">
+
+                    <input  type="text"   id="disableTimeRangesExample"  class="form-control" name="DatePickerTime" style="width:110px;background-color:#ffffff; align-self:center "/>
                                        
-                                         </div>
-                                        
-                                     </td>
-
-                                     <td class="text-center"  style="width: 80px">
-                                         <%--<button   id="putEliminarDeseo" data-s="<%=s.IdServicio %>" onclick="fEliminarDeseo(this)" class="btn-default "  title="<%$Resources:Global, Eliminar %>"> </button>--%>
-                                   <input  type="button" data-s="<%=s.IdServicio %>" value="Eliminar" onclick="EliminarDeseo()" clientidmode="static" runat="server" />
-                                          
-                                     </td>
-
-                                <%
-                                  } %>
-                         </tbody>
-
-      </table>
-
-          
-              <%
-                } %>
+                      </div>
+                    </ItemTemplate>
 
 
-          
-
-
-           &nbsp;</div>
-
+            </asp:TemplateField>
+   
+            
+            <asp:ButtonField CommandName="btnConfirmar"  Text="Confirmar" ButtonType="Button" ControlStyle-ForeColor="White"  ControlStyle-BackColor="Green" />
+            <asp:ButtonField CommandName="btnEliminar" Text="Eliminar" ButtonType="Button " ControlStyle-BackColor="Red"  ControlStyle-ForeColor="White" />
+        </Columns>
+        <FooterStyle BackColor="White" ForeColor="#000066" />
+        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+        <RowStyle ForeColor="#000066" />
+        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#007DBB" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#00547E" />
+    </asp:GridView>
+        </center>
     <br />
     <br />
     <br />
 
     
   
-       <%-- ---------------------- Fin de Tabla deseos Titulo - Descripcion - Precio  - Fecha - Horario - Eliminar  - Total --------------------------%>
+       <%-- ---------------------- Fin de Tabla deseos Titulo - Descripcion - Precio  - Fecha - Horario - Eliminar  - Confirmar --------------------------%>
 
             
 
 
  
-    <div  class="item-toolbar" runat="server"  >
+    <div  class="item-toolbar" runat="server"  style="margin-left:160px" >
         <asp:Button ID="BtnContinuar" runat="server" Text="<%$Resources:Global, Continuar %>" OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
-          <%-- <a   class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " href="MisDirecciones.aspx" > Continuar </a>--%>
-                <%--<input type="button" id="footer" class="btn btn-lg btn-warning pull-right btn-caja" runat="server" onclick="btnDatosPersonales"  value="Continuar" />--%>
-
+      
    </div>
   
     <style>
@@ -175,9 +144,18 @@
 
   </script>
 
-<script type="text/javascript">
+<%--<script type="text/javascript">
 
-     function fEliminarDeseo(laPagina) {
+    $(function () {
+        $("[id $= txtFecha]").datepicker({
+
+            showOn: 'boton',
+            buttonImageOnly: verdadero,
+            buttonImage: 'https://jqueryui.com/resources/demos/datepicker/images/calendar.gif'
+        });
+    });
+       
+     function EliminarDeseo(laPagina) {
        
           var control = $(laPagina);
            var idServicio = control.data('s');  /*el idServicio viene del data-s*/
@@ -197,83 +175,7 @@
         
     };
       
-       //$(function EliminarDeseo() {
-       //     $('#EliminarDeseo').click(function() {
 
-       //         var ValorId = $('IdServicio').val();
-           
-       //    $.ajax({
-       //        type: "POST",
-       //        url: "Pedido.aspx/CancelarDeseoDeLaLista" ,
-       //        data: '{ id: ' + ValorId + '}',
-       //          //data: '{ id: ' + $(this).data('s') +'}',
-       //        contentType: "application/json; charset=utf-8",
-       //        dataType: "json",
-       //         success: OnSuccess,
-       //         error: function (result) {
-       //         alert("Error" + result);
-       //    }
-       //        });
-       // });
+</script>--%>
 
-       //});
-
-</script>
-
-
-<%--      //$(function () {
-      //     //$('#basicExample').timepicker();
-
-      //          $('#datetimepicker3').datetimepicker({
-      //              format: 'LT'
-      //          });
-      //});
-     
-      //  $('.delete-cart').click(function () {
-      //      $.ajax({
-      //          type: "POST",
-      //          url: "Pedido.aspx/DeleteItem",
-      //          data: '{ id: ' + $(this).data('s') + '}',
-      //          contentType: "application/json; charset=utf-8",
-      //          dataType: "json",
-      //          error: function (xhr, status, error) {
-      //              alert(error);
-      //          },
-      //          success: function () {
-      //              app.reload();
-
-      //          }
-      //    });
---%>
-
-   <%-- <script type="text/javascript">
-          jQuery('#fecha').datepicker({  //datatimepicker2 fecha
-
-        onGenerate: function (ct) {
-            jQuery(this).find('.xdsoft_date')
-                .toggleClass('xdsoft_disabled');
-
-        },
-        dateFormat: "dd/mm/yy",
-        minDate: '-1970/01/2',
-        maxDate: '+1970/01/2',
-        timepicker: false,
-        datepicker: true,
-        beforeshowday: $.datepicker.noWeekends,
-        noWeekends: true,
-
-    });
-
-    $('#hora').timepicker({
-        'minTime': '9:00pm',
-        'maxTime': '12:00pm',
-        //'step': 30,
-        'showDuration': true,
-        'timeFormat': 'H:i',
-        'disableTimeRanges': [
-            ['09:00', '12:01'],
-            ['12:01', '18:01']]//unavailableTime
-    });--%>
-  
-  
 </asp:Content>

@@ -37,7 +37,7 @@
 
  
            <asp:Label ID="lbIdioma" runat="server" Text="Idioma"  style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px" ></asp:Label>
-           <asp:TextBox ID="txtIdioma" runat="server"  style="width:400px; margin-left:35px; margin-right:40px" placeholder="ingrese Idioma"></asp:TextBox> 
+           <asp:TextBox ID="txtIdioma" runat="server"  style="width:400px;  margin-left:35px; margin-right:40px" placeholder="ingrese Idioma"></asp:TextBox> 
            &nbsp;&nbsp; 
            <asp:Button ID="BtnAltaIdioma" runat="server" Text="Alta" OnClick="BtnAltaIdioma_Click" class="btn btn-primary btn-lg" Width="167px" />
            &nbsp;

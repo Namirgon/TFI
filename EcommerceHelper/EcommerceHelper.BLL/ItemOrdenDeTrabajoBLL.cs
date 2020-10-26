@@ -27,6 +27,20 @@ namespace EcommerceHelper.BLL
 
         }
 
+        public int InsertDireccion(int idDir, int idItem)
+        {
+
+            try
+            {
+                unItemDAL.InsertIdDireccion(idDir, idItem);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
 
         public List<ItemOrdenDeTrabajoEntidad> ListaItemSelectAllByNumeroIdUsuario(int NumeroIdUsuario)
         {
@@ -41,12 +55,12 @@ namespace EcommerceHelper.BLL
             
         }
 
-        public int ListaDeItemUpdate(ItemOrdenDeTrabajoEntidad IdItemOrdenDeTrabajo)
+        public int ListaDeItemUpdate(int Id, DateTime fecha, DateTime hora)
         {
 
             try
             {
-                GestorItem.ActualizarFechayHoraListaItem(IdItemOrdenDeTrabajo);
+                GestorItem.ActualizarFechayHoraListaItem(Id, fecha,hora);
                 return 0;
             }
             catch (Exception ex)
@@ -57,16 +71,20 @@ namespace EcommerceHelper.BLL
 
         }
 
-        public List< ItemOrdenDeTrabajoEntidad> ListaIdItems(int IdODT)
+        public List< ItemOrdenDeTrabajoEntidad> ListaIdItems(int IdIODT)
         {
 
-            return unItemDAL.SelectIdItemOrdenDeTrabajo(IdODT);
+            return unItemDAL.SelectIdItemOrdenDeTrabajo(IdIODT);
         }
 
         public  void EliminarItem( int IdItem)
         {
 
             unItemDAL.EliminarIdItemOrdenDeTrabajo(IdItem);
+        }
+        public ItemOrdenDeTrabajoEntidad Find(int idItem)
+        {
+            return unItemDAL.Select(idItem);
         }
 
     }

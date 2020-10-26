@@ -334,7 +334,7 @@
     <Content Include="Views\Public\DatosPersonales.aspx" />
     <Content Include="Views\Public\FormaDePago.aspx" />
     <Content Include="Views\Public\MenuPrincipal.aspx" />
-    <Content Include="Views\Public\MiDireccion.aspx" />
+    <Content Include="Views\Public\ResumenCompra.aspx" />
     <Content Include="Views\Public\MisDirecciones.aspx" />
     <Content Include="Views\Public\Pago.aspx" />
     <Content Include="Views\Public\Default.aspx" />
@@ -503,12 +503,12 @@
     <Compile Include="Views\Public\MenuPrincipal.aspx.designer.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Public\MiDireccion.aspx.cs">
-      <DependentUpon>MiDireccion.aspx</DependentUpon>
+    <Compile Include="Views\Public\ResumenCompra.aspx.cs">
+      <DependentUpon>ResumenCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Public\MiDireccion.aspx.designer.cs">
-      <DependentUpon>MiDireccion.aspx</DependentUpon>
+    <Compile Include="Views\Public\ResumenCompra.aspx.designer.cs">
+      <DependentUpon>ResumenCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\MisDirecciones.aspx.cs">
       <DependentUpon>MisDirecciones.aspx</DependentUpon>

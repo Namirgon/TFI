@@ -43,6 +43,58 @@ namespace EcommerceHelper.Presentacion.Views.Public
         protected void GVMisDirecciones_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
+            int id = Int32.Parse(GVMisDirecciones.Rows[Int32.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+
+            UsuarioEntidad logueadoStatic;
+            var Current = HttpContext.Current;
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+
+            int IdUsuario = logueadoStatic.IdUsuario;
+
+            OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
+            OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
+            ItemOrdenDeTrabajoBLL GestorItemODT = new ItemOrdenDeTrabajoBLL();
+            OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo;
+            List<ItemOrdenDeTrabajoEntidad> ItemsIdItem;
+           
+
+            // lista 1 = consulta las ordenes de compras activas por el IdUsuario
+            ExisteOrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(IdUsuario);
+
+            //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
+            ItemsIdItem = GestorItemODT.ListaItemSelectAllByIdODT(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);
+
+            switch (e.CommandName)
+            {
+
+                case "btnConfirmar":
+                    {
+                        foreach (ItemOrdenDeTrabajoEntidad item in ItemsIdItem)
+                        {
+
+                            int idItem = item.IdItemOrdenDeTrabajo;
+
+
+                            item.MiDireccion = new DireccionEntidad();
+                            item.MiDireccion.IdDireccion= id;
+
+                            GestorItemODT.InsertDireccion(id, idItem);
+                        }
+
+                        break;
+                    }
+                case "btnEliminar":
+
+                    {
+
+                        UsuarioBLL gestorUsuario = new UsuarioBLL();
+
+                        gestorUsuario.EliminarDireccion(id, IdUsuario);
+                        CargarDirecciones();
+                        break;
+                    }
+            }
+
         }
 
         public override void VerifyRenderingInServerForm(Control control)
@@ -63,7 +115,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             List<DireccionEntidad> MisDirecciones = new List<DireccionEntidad>();
             DireccionBLL ListDireccion = new DireccionBLL();
 
-          MisDirecciones=  ListDireccion.ListarDirecciones(numeroIdUsuario);
+            MisDirecciones=  ListDireccion.ListarDirecciones(numeroIdUsuario);
 
 
             GVMisDirecciones.DataSource = null;
@@ -72,5 +124,28 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
         }
+
+
+
+       
+        protected void linkAltaDireccion_Click(object sender, EventArgs e)
+        {
+            UsuarioEntidad logueadoStatic;
+            var Current = HttpContext.Current;
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+            Response.Redirect("Direccion.aspx");
+        }
+
+        protected void chbItem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BtnContinuar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ResumenCompra.aspx");
+        }
+
+            
     }
 }

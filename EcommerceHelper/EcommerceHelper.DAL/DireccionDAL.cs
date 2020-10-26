@@ -57,6 +57,20 @@ namespace EcommerceHelper.DAL
             return valor;
         }
 
+        public int EliminarDireccion( int IdDireccion, int IdUsuario)
+        {
+
+            SqlParameter[] parameters = new SqlParameter[]
+           {
+                 new SqlParameter("@IdUsuario", IdUsuario ),
+                 new SqlParameter("@IdDireccion", IdDireccion)
+           };
+
+            var valor = Convert.ToInt32(SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "EliminarDIreccion", parameters));
+
+            return valor;
+        }
+
         public List<DireccionEntidad> ListarDireccionesDAL(int Id)
         {
 
@@ -93,15 +107,12 @@ namespace EcommerceHelper.DAL
                     UnaDireccion.Numero= (int)row["Numero"];
                     UnaDireccion.Piso= row["Piso"].ToString();
                     UnaDireccion.Departamento= row["Departamento"].ToString();
-                    UnaDireccion.MiProvincia = new ProvinciaEntidad();
-                    //UnaDireccion.MiProvincia.IdProvincia = (int)row["IdProvincia"];
-                    UnaDireccion.MiProvincia.Descripcion = row["Descripcion"].ToString();
-                    UnaDireccion.MiLocalidad = new LocalidadEntidad();
-                    //UnaDireccion.MiLocalidad.IdLocalidad= (int)row["IdLocalidad"];
-                    UnaDireccion.MiLocalidad.Descripcion= row["Descripcion"].ToString();
-                    UnaDireccion.MiTipoDireccion = new TipoDireccionEntidad();
-                    //UnaDireccion.MiTipoDireccion.IdTipoDireccion= (int)row["IdTipoDireccion"];
-                    UnaDireccion.MiTipoDireccion.Descripcion  = row["Descripcion"].ToString();
+                    UnaDireccion._MiProvincia = new ProvinciaEntidad();
+                    UnaDireccion._MiProvincia.Descripcion = row["desProvincia"].ToString();
+                    UnaDireccion._MiLocalidad = new LocalidadEntidad();
+                    UnaDireccion._MiLocalidad.Descripcion = row["desLocalidad"].ToString();               
+                    UnaDireccion._MiTipoDireccion = new TipoDireccionEntidad();
+                    UnaDireccion._MiTipoDireccion.Descripcion  = row["desTipoDireccion"].ToString();
 
                     ListDirecciones.Add(UnaDireccion);
                 }

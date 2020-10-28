@@ -18,9 +18,6 @@ namespace EcommerceHelper.Entidades
 
         public DateTime Fecha { get; set; }
 
-        public string Detalle { get; set; }
-
-
         public FormaDePagoEntidad MiFormaDePago { get; set; }
 
         public decimal Importe { get; set; }

@@ -4,14 +4,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceHelper.Presentacion", "EcommerceHelper.Presentacion\EcommerceHelper.Presentacion.csproj", "{0EE63906-34D9-42BE-9CC1-A634D3AC2317}"
+	ProjectSection(ProjectDependencies) = postProject
+		{279AECFB-E884-4933-B517-1BE99741EE4D} = {279AECFB-E884-4933-B517-1BE99741EE4D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceHelper.Entidades", "EcommerceHelper.Entidades\EcommerceHelper.Entidades.csproj", "{DCB3530F-F9C0-4AA7-950C-400C14299F9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceHelper.DAL", "EcommerceHelper.DAL\EcommerceHelper.DAL.csproj", "{B6231E3F-B1D0-4FC8-B6AC-D142F7EC4803}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceHelper.BLL", "EcommerceHelper.BLL\EcommerceHelper.BLL.csproj", "{826C6B51-4FD3-4598-87B9-AA13F91684D6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{279AECFB-E884-4933-B517-1BE99741EE4D} = {279AECFB-E884-4933-B517-1BE99741EE4D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceHelper.Funciones", "EcommerceHelper.Funciones\EcommerceHelper.Funciones.csproj", "{ED87AD9E-9EE5-49E8-8F20-BE35ACC4C02E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTar", "WebServiceTar\WebServiceTar.csproj", "{279AECFB-E884-4933-B517-1BE99741EE4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,10 @@ Global
 		{ED87AD9E-9EE5-49E8-8F20-BE35ACC4C02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED87AD9E-9EE5-49E8-8F20-BE35ACC4C02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED87AD9E-9EE5-49E8-8F20-BE35ACC4C02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279AECFB-E884-4933-B517-1BE99741EE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279AECFB-E884-4933-B517-1BE99741EE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279AECFB-E884-4933-B517-1BE99741EE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279AECFB-E884-4933-B517-1BE99741EE4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

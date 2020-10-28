@@ -34,12 +34,11 @@ namespace EcommerceHelper.DAL
         {
             SqlParameter[] parameters = new SqlParameter[]
                 {
-                new SqlParameter("@IdUsuario", ListaOrden._MiUsuario .IdUsuario),
-                new SqlParameter("@Fecha", ListaOrden.Fecha),
+                new SqlParameter("@IdOrdenDeTrabajo", ListaOrden.IdOrdenDeTrabajo),
                 new SqlParameter("@IdEstado", 3),
                 };
 
-            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaDeDeseosUpDate", parameters);
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FinalizarOrdenDeTrabajo", parameters);
         }
 
 

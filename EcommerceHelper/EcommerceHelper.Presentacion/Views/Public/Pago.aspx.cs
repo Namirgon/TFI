@@ -71,8 +71,49 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                 case "btnSeleccionar":
                     {
+                        UsuarioEntidad logueadoStatic;
+                        logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+                        OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
 
-                        Response.Write("<script>alert('Pago Exitoso')</script>");
+                        OrdenDeTrabajoBLL EstadoActivo = new OrdenDeTrabajoBLL();
+                        OrdenDeTrabajoEntidad OrdenDeTrabajo;
+
+                        int numeroIdUsuario = logueadoStatic.IdUsuario;
+
+                        // lista 1 = consulta las ordenes de compras activas por el IdUsuario
+                        OrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
+
+
+                        // Ingreso estado Finalizado / cerrado Orden de Trabajo
+                         EstadoActivo.OrdenDeTrabajoUpdate(OrdenDeTrabajo );
+
+                        ReciboBLL GestorRecibo = new ReciboBLL();
+                        ReciboEntidad elPago = new ReciboEntidad();
+                        List<ItemOrdenDeTrabajoEntidad> ItemServicios;
+                        ItemOrdenDeTrabajoBLL GestorItemODT = new ItemOrdenDeTrabajoBLL();
+
+                        //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
+                        ItemServicios = GestorItemODT.ResumenDeCompra(OrdenDeTrabajo.IdOrdenDeTrabajo);
+
+                        decimal suma = 0;
+                        foreach (ItemOrdenDeTrabajoEntidad item in ItemServicios)
+                        {
+
+                            suma += item.Precio;
+
+
+                        }
+
+                        elPago.MiOrdenDeTrabajo = new OrdenDeTrabajoEntidad();
+                        elPago.MiOrdenDeTrabajo.IdOrdenDeTrabajo = OrdenDeTrabajo.IdOrdenDeTrabajo;
+                        elPago.MiFormaDePago = new FormaDePagoEntidad();
+                        elPago.MiFormaDePago.IdFormaDePago = 2;
+                        elPago.Importe = suma;
+                        
+                        GestorRecibo.RegistrarPago(elPago);
+                        GestorRecibo.PagarOrdenDeTrabajo(unaTarjeta.NumeroTarjeta.ToString(), unaTarjeta.CodigoSeguridad, suma);
+
+                        //Response.Write("<script>alert('Pago Exitoso')</script>");
                         break;
                     }
                

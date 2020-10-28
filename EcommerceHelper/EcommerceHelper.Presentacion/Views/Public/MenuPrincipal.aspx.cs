@@ -62,6 +62,37 @@ namespace EcommerceHelper.Presentacion.Views.Public
             {
                 OrdenDeTrabajoEntidad._MiUsuario.IdUsuario = LogueadoId;
                 GestorODT.OrdenDeTrabajoInsert(OrdenDeTrabajoEntidad);
+
+                OrdenDeTrabajoEntidad = GestorODT.OrdenDeTrabajoActivas(LogueadoId);
+                
+                ItemOrdenDeTrabajoBLL unaListaItemBLL = new ItemOrdenDeTrabajoBLL();
+                ItemOrdenDeTrabajoEntidad unItem = new ItemOrdenDeTrabajoEntidad();
+
+                // El detalle está en encontrar el item padre del botón que se presionó
+                Button btn = (Button)sender;
+                RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+
+                // Buscamos el control en ese item 
+                Label lbl = (Label)item.FindControl("LblIdServicio");
+                int IdServ = Int32.Parse(lbl.Text);
+
+                // Carga la Lista de items
+
+                unItem.MiOrdenDeTrabajo = new OrdenDeTrabajoEntidad();
+                unItem.MiOrdenDeTrabajo.IdOrdenDeTrabajo = OrdenDeTrabajoEntidad.IdOrdenDeTrabajo;
+                unItem.NombreUsuario = logueadoStatic.Nombre;
+                unItem.MiUsuario.IdUsuario = logueadoStatic.IdUsuario;
+                //unItem._MiServicio = new ServicioEntidad();
+                //unItem._MiServicio.IdServicio = IdServ;
+
+                ServicioEntidad unServicio;
+                unServicio = gestorServicio.FindServicio(IdServ);
+                unItem._MiServicio = new ServicioEntidad();
+                unItem.Precio = unServicio.Precio;
+                unItem._MiServicio.IdServicio = unServicio.IdServicio;
+
+                unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
+
             }
             else
             {

@@ -38,6 +38,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,8 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\SWTarjeta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="IdiomaBLL.cs" />
     <Compile Include="Managers\FamiliaBLL.cs" />
+    <Compile Include="ReciboBLL.cs" />
     <Compile Include="Servicios\BitacoraBLL.cs" />
     <Compile Include="DireccionBLL.cs" />
     <Compile Include="Helpers\ConfigSection.cs" />
@@ -81,11 +88,38 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SWTarjeta\SWTarjeta.wsdl" />
+    <None Include="Connected Services\SWTarjeta\SWTarjeta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SWTarjeta\SWTarjeta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SWTarjeta\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SWTarjeta\SWTarjeta.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SWTarjeta\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SWTarjeta\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SWTarjeta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

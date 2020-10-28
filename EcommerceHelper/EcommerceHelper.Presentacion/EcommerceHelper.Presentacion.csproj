@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +55,8 @@
     <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -92,6 +95,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\WSPago\WebServiceTar.disco" />
+    <None Include="Connected Services\WSPago\configuration91.svcinfo" />
+    <None Include="Connected Services\WSPago\configuration.svcinfo" />
+    <None Include="Connected Services\WSPago\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker.js" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -258,6 +268,13 @@
     <Content Include="Content\Files\bk228.bak" />
     <Content Include="Content\Files\pruebadosmillo.bak" />
     <Content Include="Content\Files\prueba389.bak" />
+    <None Include="Connected Services\WSPago\WebServiceTar.wsdl" />
+    <None Include="Connected Services\WSPago\WebServiceTar.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSPago\WebServiceTar1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
@@ -365,6 +382,11 @@
     </Compile>
     <Compile Include="App_Code\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connected Services\WSPago\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -658,6 +680,12 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Global.en.designer.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSPago\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

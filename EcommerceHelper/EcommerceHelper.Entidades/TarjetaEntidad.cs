@@ -12,13 +12,13 @@ namespace EcommerceHelper.Entidades
 
         public int IdTarjeta { get; set; }
 
-        public UsuarioEntidad  MiUsuario { get; set; }
+        public int  IdUsuario { get; set; }
 
         public TipoTarjetaEntidad  MiTipoTarjeta { get; set;  }
 
         public string NombreTitular { get; set; }
 
-        public int NumeroTarjeta { get; set; }
+        public Int64 NumeroTarjeta { get; set; }
 
         public DateTime FechaVencimiento { get; set; }
 

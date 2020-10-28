@@ -106,8 +106,8 @@
     <br />  
     
     
-   <asp:Button style="margin-left:500px " ID="Button1" runat="server" Text="Pagar"  Width="150px"  PostBackUrl ="~/Views/Public/Pago.aspx" />
-   <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar" Width="150px"  PostBackUrl ="~/Views/Public/Default.aspx" />
+   <asp:Button style="margin-left:500px " ID="Button1" runat="server" Text="Pagar"  Width="150px" CssClass="btn btn-primary"  PostBackUrl ="~/Views/Public/Pago.aspx" />
+   <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar" Width="150px" CssClass="btn btn-primary "  PostBackUrl ="~/Views/Public/Default.aspx" />
    <br />
    <br />
  </div>

@@ -331,6 +331,7 @@
     <Content Include="Views\Private\MenuAdministracion.aspx" />
     <Content Include="Views\Private\Restaurar.aspx" />
     <Content Include="Views\Private\VerLogs.aspx" />
+    <Content Include="Views\Public\ABMTarjetasDeCredito.aspx" />
     <Content Include="Views\Public\DatosPersonales.aspx" />
     <Content Include="Views\Public\FormaDePago.aspx" />
     <Content Include="Views\Public\MenuPrincipal.aspx" />
@@ -481,6 +482,13 @@
     </Compile>
     <Compile Include="Views\Private\VerLogs.aspx.designer.cs">
       <DependentUpon>VerLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Public\ABMTarjetasDeCredito.aspx.cs">
+      <DependentUpon>ABMTarjetasDeCredito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Public\ABMTarjetasDeCredito.aspx.designer.cs">
+      <DependentUpon>ABMTarjetasDeCredito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Public\DatosPersonales.aspx.cs">
       <DependentUpon>DatosPersonales.aspx</DependentUpon>

@@ -59,7 +59,9 @@
     <Compile Include="ProvinciaDAL.cs" />
     <Compile Include="ServicioDAL.cs" />
     <Compile Include="SexoDAL.cs" />
+    <Compile Include="TarjetaDAL.cs" />
     <Compile Include="TipoDomicilioDAL.cs" />
+    <Compile Include="TipoTarjetaDAL.cs" />
     <Compile Include="TipoTelefonoDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>

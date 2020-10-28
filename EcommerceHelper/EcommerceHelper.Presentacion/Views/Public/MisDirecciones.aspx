@@ -4,9 +4,10 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../../Content/EstilosPermisos.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ScriptSection" runat="server">
- <%--   <asp:ScriptManager runat="server"></asp:ScriptManager>--%>
+
      <br />
     <br />
      <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
@@ -64,7 +65,7 @@
                  
 
       </div>
-    <div style="margin-left:260px">
+    <div style="margin-left:175px">
         <asp:LinkButton ID="linkAltaDireccion" OnClick="linkAltaDireccion_Click" runat="server" CssClass="btn btn-primary"  >Agregar Direccion</asp:LinkButton>
       
         <asp:LinkButton ID="BtnContinuar" OnClick="BtnContinuar_Click" runat="server"  CssClass="btn btn-primary" Width="214px" >Ver Resumen de Compra</asp:LinkButton>

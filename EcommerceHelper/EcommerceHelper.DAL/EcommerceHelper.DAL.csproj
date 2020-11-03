@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitacoraDAL.cs" />
+    <Compile Include="ComprobanteDAL.cs" />
     <Compile Include="ConexionSqlServer.cs" />
+    <Compile Include="DetalleComprobanteDAL.cs" />
     <Compile Include="DireccionDAL.cs" />
     <Compile Include="FamiliaDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />

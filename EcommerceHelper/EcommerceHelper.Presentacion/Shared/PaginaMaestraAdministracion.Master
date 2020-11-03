@@ -58,7 +58,7 @@
                          <li style="font-size:18px; margin-left:20px">Comercial
                             <ul>
                                 <li><a href="../Private/GestorServicios.aspx">ABM Servicios</a></li>
-                                <li><a>Comprobantes</a></li>
+                                <li><a href="../Private/Facturacion.aspx">Facturacion</a></li>
                                 <li><a>Estadisticas</a></li>
                             </ul> 
                         </li>

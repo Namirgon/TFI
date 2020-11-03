@@ -13,7 +13,7 @@ namespace EcommerceHelper.BLL
 
         public bool PagarOrdenDeTrabajo(string elNroTarjeta, int elCodSeg, decimal elMonto)
         {
-            using (SWTarjeta.ServicioPagoClient unServicioPago = new SWTarjeta.ServicioPagoClient())
+            using (SWTarjeta .ServicioPagoClient unServicioPago = new SWTarjeta.ServicioPagoClient())
             {
                 return unServicioPago.ProcesarPago(elNroTarjeta, elMonto);
             }

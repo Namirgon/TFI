@@ -66,9 +66,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             TarjetaEntidad unaTarjeta;
             unaTarjeta = GestorTarjeta.Find(id);
+            int NumeroComprobante = 0;
             switch (e.CommandName)
             {
-
+               
                 case "btnSeleccionar":
                     {
                         UsuarioEntidad logueadoStatic;
@@ -90,6 +91,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                         ReciboBLL GestorRecibo = new ReciboBLL();
                         ReciboEntidad elPago = new ReciboEntidad();
                         List<ItemOrdenDeTrabajoEntidad> ItemServicios;
+                        List<ItemOrdenDeTrabajoEntidad> ItemServicios2;
                         ItemOrdenDeTrabajoBLL GestorItemODT = new ItemOrdenDeTrabajoBLL();
 
                         //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
@@ -104,6 +106,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                         }
 
+                        // Items que conforman el comprobante del pago. Recibo
                         elPago.MiOrdenDeTrabajo = new OrdenDeTrabajoEntidad();
                         elPago.MiOrdenDeTrabajo.IdOrdenDeTrabajo = OrdenDeTrabajo.IdOrdenDeTrabajo;
                         elPago.MiFormaDePago = new FormaDePagoEntidad();
@@ -111,13 +114,68 @@ namespace EcommerceHelper.Presentacion.Views.Private
                         elPago.Importe = suma;
                         
                         GestorRecibo.RegistrarPago(elPago);
+
+                        // WebServices que a traves de un ramdon simula el rechazo o aceptacion del pago
                         GestorRecibo.PagarOrdenDeTrabajo(unaTarjeta.NumeroTarjeta.ToString(), unaTarjeta.CodigoSeguridad, suma);
 
-                        //Response.Write("<script>alert('Pago Exitoso')</script>");
+                        // Genera comprobante de tipo Factura = 1 , Sucursal General Rodriguez = 1 , Fecha = hoy
+
+                        
+                        ComprobanteEntidad NuevoComprobante = new ComprobanteEntidad();
+
+                        NuevoComprobante.MiTipoComprobante = new TipoComprobanteEntidad();
+                        NuevoComprobante.MiTipoComprobante.IdTipoComprobante = 1;
+                        NuevoComprobante.MiSucursal = new SucursalEntidad();
+                        NuevoComprobante.MiSucursal.IdSucursal = 1;
+                        NuevoComprobante.MiOrdenDeTrabajo = new OrdenDeTrabajoEntidad();
+                        NuevoComprobante.MiOrdenDeTrabajo.IdOrdenDeTrabajo = OrdenDeTrabajo.IdOrdenDeTrabajo;
+                        NuevoComprobante.Fecha =  DateTime.Now.Date;
+
+                        ComprobanteBLL GestorComprobante = new ComprobanteBLL();
+
+                        NumeroComprobante=  GestorComprobante.RegistrarComprobante(NuevoComprobante);
+
+
+                        //lista  = consulta a la tabla lista de deseos con el IdOrdenDeTrabajo
+                        ItemServicios2 = GestorItemODT.ListaItemSelectAllByIdODT2(OrdenDeTrabajo.IdOrdenDeTrabajo);
+
+
+                        // Genera por cada Item un detalle comprobante de tipo Factura = 1 , Sucursal General Rodriguez = 1 
+
+                        foreach (ItemOrdenDeTrabajoEntidad item in ItemServicios2)
+                        {
+                            int SucursalGralRod = 1;
+                            int CompFactura = 1;
+
+
+                            DetalleComprobanteEntidad NuevoDetalleComprobante = new DetalleComprobanteEntidad();
+
+                            NuevoDetalleComprobante.MiComprobante = new ComprobanteEntidad();
+                            NuevoDetalleComprobante.MiComprobante.IdComprobante = NuevoComprobante.IdComprobante;
+                            NuevoComprobante.MiTipoComprobante = new TipoComprobanteEntidad();
+                            NuevoComprobante.MiTipoComprobante.IdTipoComprobante = CompFactura;
+                            NuevoComprobante.MiSucursal = new SucursalEntidad();
+                            NuevoComprobante.MiSucursal.IdSucursal = SucursalGralRod;
+                            NuevoDetalleComprobante.MiServicio = new ServicioEntidad();
+                            NuevoDetalleComprobante.MiServicio.IdServicio = item.MiServicio.IdServicio ;
+                            NuevoDetalleComprobante.PrecioUnitario = item.Precio;
+
+                            GestorComprobante.RegistrarDetalle(NuevoDetalleComprobante);
+
+                        }
+
+
+                        Response.Write("<script>alert('Pago Exitoso !! Felicitaciones!! ')</script>");
+
                         break;
                     }
-               
+                       
             }
+
+            //Response.Write("<script>alert('El paso fue rechazado, intente nuevamente ')</script>");
+
         }
+
+
     }
 }

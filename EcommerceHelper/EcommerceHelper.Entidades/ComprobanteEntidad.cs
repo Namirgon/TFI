@@ -11,7 +11,7 @@ namespace EcommerceHelper.Entidades
         #region properties
         public int IdComprobante { get; set; }
 
-        public TipoComprobanteEntidad MiComprobante { get; set; }
+        public TipoComprobanteEntidad MiTipoComprobante { get; set; }
 
         public SucursalEntidad MiSucursal { get; set; }
 

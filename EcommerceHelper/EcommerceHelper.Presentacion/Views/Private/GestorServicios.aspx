@@ -71,9 +71,9 @@
    <br />
      <br />
 </div>
+    <center>
 
-
-     <asp:GridView ID="GrillaServicios" runat="server" OnRowCommand ="GrillaServicios_RowCommand" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+     <asp:GridView ID="GrillaServicios" runat="server" Width="1000px" OnRowCommand ="GrillaServicios_RowCommand" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GrillaServicios_RowDataBound">
          <AlternatingRowStyle BackColor="White" />
          <Columns>
              <asp:BoundField DataField="IdServicio" HeaderText="IdServicio" SortExpression="IdServicio" />
@@ -81,8 +81,8 @@
              <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripción" />
              <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
              <asp:BoundField DataField="URLimagen" HeaderText="URLimagen" SortExpression="URLimagen" />
-             <asp:ButtonField CommandName="btnModificar" Text="Modificar" />
-             <asp:ButtonField CommandName="btnEliminar" Text="Eliminar" />
+             <asp:ButtonField CommandName="btnModificar" Text="Modificar" ButtonType="Button" ControlStyle-ForeColor="White"  ControlStyle-BackColor="Green"  />
+             <asp:ButtonField CommandName="btnEliminar" Text="Eliminar" ButtonType="Button" ControlStyle-ForeColor="White"  ControlStyle-BackColor="Red"  />
          </Columns>
          <EditRowStyle BackColor="#2461BF" />
          <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -95,6 +95,7 @@
          <SortedDescendingCellStyle BackColor="#E9EBEF" />
          <SortedDescendingHeaderStyle BackColor="#4870BE" />
      </asp:GridView>
+        </center>
      <br />
       <br />
       <br />

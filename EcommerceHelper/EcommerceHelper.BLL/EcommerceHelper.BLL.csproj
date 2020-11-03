@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComprobanteBLL.cs" />
     <Compile Include="Connected Services\SWTarjeta\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,9 +89,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
     <None Include="Connected Services\SWTarjeta\SWTarjeta.wsdl" />
     <None Include="Connected Services\SWTarjeta\SWTarjeta.xsd">
       <SubType>Designer</SubType>

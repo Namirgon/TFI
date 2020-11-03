@@ -61,6 +61,11 @@ namespace EcommerceHelper.Funciones.Persistencia
             }
         }
 
+        public static void ExecuteNonQuery(string connectionStringName, object storedProcedure, string v, SqlParameter[] parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DataSet ExecuteDataSet(string connectionStringName, CommandType commandType, string commandText, params SqlParameter[] parameters)
         {
             DataSet result;

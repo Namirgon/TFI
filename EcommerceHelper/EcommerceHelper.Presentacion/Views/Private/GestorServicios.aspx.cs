@@ -164,5 +164,15 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             }
         }
+
+        protected void GrillaServicios_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+             Image img = new Image();
+                img.ImageUrl = e.Row.Cells[4].Text;
+                img.Attributes.Add("width", "50%");
+
+                e.Row.Cells[4].Controls.Add(img);
+            
+        }
     }
 }

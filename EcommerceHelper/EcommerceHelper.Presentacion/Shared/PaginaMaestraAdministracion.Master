@@ -59,7 +59,8 @@
                             <ul>
                                 <li><a href="../Private/GestorServicios.aspx">ABM Servicios</a></li>
                                 <li><a href="../Private/Facturacion.aspx">Facturacion</a></li>
-                                <li><a>Estadisticas</a></li>
+                                <li><a href="../Private/NotaDeCredito.aspx">Nota De Credito</a></li>
+                                 <li><a href="../Private/NotaDeDebito.aspx">Nota De Debito</a></li>
                             </ul> 
                         </li>
                          <li>

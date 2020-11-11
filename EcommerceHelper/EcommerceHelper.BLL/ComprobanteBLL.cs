@@ -34,5 +34,24 @@ namespace EcommerceHelper.BLL
             _DalDetalleComprobante.Insert(unDetalleComprobante);
         }
 
+        public List<ComprobanteEntidad> FindAllFacturas()
+        {
+            return _DalComprobante.SelectAllFacturas();
+        }
+
+        public ComprobanteEntidad FindComprobante(int id)
+        {
+            return _DalComprobante.Select(id);
+        }
+        public List<ComprobanteEntidad> FindAllNC()
+        {
+            return _DalComprobante.SelectAllNC();
+        }
+
+        public List<ComprobanteEntidad> FindAllND()
+        {
+            return _DalComprobante.SelectAllND();
+        }
+
     }
 }

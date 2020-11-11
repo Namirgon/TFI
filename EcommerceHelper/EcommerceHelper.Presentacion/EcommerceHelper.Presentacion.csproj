@@ -347,6 +347,8 @@
     <Content Include="Views\Private\Idioma.aspx" />
     <Content Include="Views\Private\IniciarSesionIntranet.aspx" />
     <Content Include="Views\Private\MenuAdministracion.aspx" />
+    <Content Include="Views\Private\NotaDeCredito.aspx" />
+    <Content Include="Views\Private\NotaDeDebito.aspx" />
     <Content Include="Views\Private\Restaurar.aspx" />
     <Content Include="Views\Private\VerLogs.aspx" />
     <Content Include="Views\Public\ABMTarjetasDeCredito.aspx" />
@@ -498,6 +500,20 @@
     </Compile>
     <Compile Include="Views\Private\MenuAdministracion.aspx.designer.cs">
       <DependentUpon>MenuAdministracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\NotaDeCredito.aspx.cs">
+      <DependentUpon>NotaDeCredito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\NotaDeCredito.aspx.designer.cs">
+      <DependentUpon>NotaDeCredito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\NotaDeDebito.aspx.cs">
+      <DependentUpon>NotaDeDebito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\NotaDeDebito.aspx.designer.cs">
+      <DependentUpon>NotaDeDebito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\Restaurar.aspx.cs">
       <DependentUpon>Restaurar.aspx</DependentUpon>

@@ -14,6 +14,10 @@ namespace EcommerceHelper.Entidades
 
 
         public string Descripcion { get; set; }
+
+
+
+     
         #endregion
     }
 }

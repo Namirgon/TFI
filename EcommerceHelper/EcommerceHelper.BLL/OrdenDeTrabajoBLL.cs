@@ -11,13 +11,13 @@ namespace EcommerceHelper.BLL
   public  class OrdenDeTrabajoBLL
     {
 
-        private OrdenDeTrabajoDAL unaListaODTDAL = new OrdenDeTrabajoDAL();
+    
         private OrdenDeTrabajoDAL GestorOrdenDeTrabajo = new OrdenDeTrabajoDAL();
         public int OrdenDeTrabajoInsert(OrdenDeTrabajoEntidad UnaOrden)
         {
             try
             {
-                unaListaODTDAL.Insert(UnaOrden);
+                GestorOrdenDeTrabajo.Insert(UnaOrden);
                 return 0;
             }
             catch (Exception ex)
@@ -27,7 +27,10 @@ namespace EcommerceHelper.BLL
 
         }
 
-
+        public OrdenDeTrabajoEntidad SelectODT(int id)
+        {
+            return GestorOrdenDeTrabajo.Select(id);
+        }
         public int OrdenDeTrabajoUpdate(OrdenDeTrabajoEntidad unaOrden)
         {
 
@@ -48,7 +51,7 @@ namespace EcommerceHelper.BLL
         public  OrdenDeTrabajoEntidad OrdenDeTrabajoActivas(int IdUsuario)
         {
 
-            return unaListaODTDAL.SelectActivasByIdUsuario(IdUsuario);
+            return GestorOrdenDeTrabajo.SelectActivasByIdUsuario(IdUsuario);
 
         }
     }

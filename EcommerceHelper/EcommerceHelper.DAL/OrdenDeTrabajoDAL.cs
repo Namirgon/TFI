@@ -76,5 +76,22 @@ namespace EcommerceHelper.DAL
             }
             return UnaOrdenT;
         }
+
+        public OrdenDeTrabajoEntidad Select(int IdOrdenDeTrabajo)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdOrdenDeTrabajo", IdOrdenDeTrabajo)
+            };
+
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarIdItemByIdOrdenDeTrabajo", parameters))
+            {
+                OrdenDeTrabajoEntidad ordenDeTrabajo = new OrdenDeTrabajoEntidad();
+
+                ordenDeTrabajo = Mapeador.MapearFirst<OrdenDeTrabajoEntidad>(dt);
+
+                return ordenDeTrabajo;
+            }
+        }
     }
 }

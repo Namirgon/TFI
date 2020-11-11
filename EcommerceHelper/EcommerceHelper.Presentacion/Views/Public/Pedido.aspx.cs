@@ -122,7 +122,6 @@ namespace EcommerceHelper.Presentacion.Views.Public
                         string fecha = Request.Form["DatePickerFecha"];
                         string hora = Request.Form["DatePickerTime"];
 
-                        //unItem.IdItemOrdenDeTrabajo = IdUsuario;
                        unItem.Fecha = DateTime.Parse(fecha);
                         unItem.Hora = DateTime.Parse(hora);
 

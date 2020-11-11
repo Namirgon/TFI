@@ -20,18 +20,21 @@ namespace EcommerceHelper.Presentacion.Shared
         private UsuarioBLL _manager;
         private HttpContext Current = HttpContext.Current;
         public UsuarioEntidad usuario { get; set; }
-        private IdiomaEntidad idioma;
+        private List< IdiomaEntidad > idiomaEntidad;
+        IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
+        IdiomaBLL gestorIdioma = new IdiomaBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
 
             if (!IsPostBack)
             {
+
                 if (ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
                 {
                     ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name).Selected = true;
                 }
-                if (idioma == null)
+                if (idiomaEntidad == null)
                 {
                     Session["Idioma"] = obtenerIdiomaCombo();
                 }
@@ -40,16 +43,18 @@ namespace EcommerceHelper.Presentacion.Shared
 
         public string obtenerIdiomaCombo()
         {
-            var val = (ddlIdioma.SelectedItem.Value);
+            var val = ddlIdioma.SelectedItem.Value;
             var val2 = ddlIdioma.SelectedValue;
-            return (val2);
+
+            return val2;
 
         }
+
 
         public PaginaMaestra()
         {
 
-            idioma = new IdiomaEntidad();
+           IdiomaEntidad Unidioma = new IdiomaEntidad();
 
         }
         public bool Autenticar(string elPermiso)

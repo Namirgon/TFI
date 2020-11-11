@@ -24,10 +24,9 @@
             <div class="inner">
                 <a href="Default.aspx" class="logo">Helper</a>
                 
-                <nav id="nav">
-                      <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="lblIniciarSesion" runat="server"  Text="<%$Resources:Global, IniciarSesion  %>"></asp:Label></a>
+                    <nav id="nav">
+                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="lblIniciarSesion"  runat="server"  Text="<%$Resources:Global, IniciarSesion  %>"></asp:Label></a>
                     <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="lblCerrarSesion" runat="server"  Text="<%$Resources:Global, NuestrosServicios  %>"></asp:Label></a>
-<%--                      <a href="../Views/Public/Registrarme.aspx"><asp:Label ID="lblRegistrarme" runat="server" Text="<%$Resources:Global, Registrarme  %>"></asp:Label></a>--%>
                   
                     <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="lblIntranet" runat="server" Text="<%$Resources:Global, Intranet  %>"></asp:Label></a>
                    

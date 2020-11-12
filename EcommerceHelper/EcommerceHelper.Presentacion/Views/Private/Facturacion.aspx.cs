@@ -23,12 +23,19 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             string nombre = Session["NomUsuario"].ToString();
 
+            
 
             if (!Page.IsPostBack)
             {
                 CargarGrillaFactura();
 
 
+            }
+            // nombre de la patente de la pagina
+            string[] unosPermisosTest = new string[] { "Facturacion" };
+            if (UsuarioEntidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
             }
         }
 

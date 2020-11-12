@@ -45,6 +45,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
             //idioma = new IdiomaEntidad();
             //if (!IsPostBack)
             //{
@@ -70,9 +72,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
             //usuarioentidad = (UsuarioEntidad)Session["Usuario"];
 
         }
-       
 
-       
+
+
         public void RealizarLogueo(string elUsuario, string laClave)
         {
             UsuarioEntidad usuario = new UsuarioEntidad();

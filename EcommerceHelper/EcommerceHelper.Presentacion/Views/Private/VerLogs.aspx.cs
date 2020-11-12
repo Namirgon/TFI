@@ -32,6 +32,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
 
             }
+            string[] unosPermisosTest = new string[] { "Bitacora" };
+            if (UsuarioEntidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
 
         }
         protected void grillaLogs_PageIndexChanging(object sender, GridViewPageEventArgs e)

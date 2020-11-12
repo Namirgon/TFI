@@ -24,6 +24,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
         UsuarioEntidad usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // nombre de la patente de la pagina
+            string[] unosPermisosTest = new string[] { "GestionEmpleado" };
+            if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
             if (!Page.IsPostBack)
             {
                 cargarSexo();

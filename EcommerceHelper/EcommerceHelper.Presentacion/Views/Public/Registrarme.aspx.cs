@@ -120,7 +120,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 if (Page.IsValid)
 
                 {
-                    unUsuario.IdTipoUsuario  = 4; // Usuario Cliente 
+                    //unUsuario.Familia = new FamiliaEntidad();
+                    //unUsuario.Familia.IdFamilia = FamiliaEntidad.PermisoFamilia.Cliente;
+                    unUsuario.MiUsuario = new TipoUsuarioEntidad();
+                    unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
                     unUsuario.Email = txtusuario.Text;
                     unUsuario.Password =ServicioSecurizacion.AplicarHash( txtcontrasena.Text);
                     unUsuario.Nombre = txtNombre.Text;

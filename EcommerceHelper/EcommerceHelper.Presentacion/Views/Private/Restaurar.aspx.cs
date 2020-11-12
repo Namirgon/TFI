@@ -28,6 +28,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
 
             }
+            string[] unosPermisosTest = new string[] { "Restaurar" };
+            if (usuarioentidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)

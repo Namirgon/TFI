@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Private
 {
-    public partial class GestionDePermisos : BasePage
+    public partial class GestionDePermisos : System.Web.UI.Page
     {
 
         FamiliaBLL ManagerFamilia = new FamiliaBLL();
@@ -99,7 +99,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 LisAuxAsig = new List<IFamPat>();
                 LisAuxAsig = (List<IFamPat>)Current.Session["PermisosAsig"];
             }
-
+            string[] unosPermisosTest = new string[] { "GestionPermisos" };
+            if (usuarioentidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
         }
 
         public void ListarPermisos(List<IFamPat> PermisosVer, TreeView treePermisos)

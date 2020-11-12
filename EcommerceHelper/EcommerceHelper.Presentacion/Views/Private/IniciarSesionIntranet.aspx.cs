@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Private
 {
-    public partial class IniciarSesionIntranet : BasePage
+    public partial class IniciarSesionIntranet : System.Web.UI.Page
     {
 
         private IdiomaEntidad idioma;
@@ -36,6 +36,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            
             idioma = new IdiomaEntidad();
             if (!IsPostBack)
             {

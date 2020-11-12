@@ -11,7 +11,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 {
 
 
-    public partial class Idioma : BasePage
+    public partial class Idioma : System.Web.UI.Page
     {
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
@@ -31,6 +31,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
 
                 CargarGrilla();
+            }
+            string[] unosPermisosTest = new string[] { "GestionIdioma" };
+            if (usuarioentidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
             }
 
         }

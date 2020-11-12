@@ -34,6 +34,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var Current = HttpContext.Current;
+            unUsuario = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
+
+            string nombre = Session["NomUsuario"].ToString();
+
             if (!Page.IsPostBack)
             {
                 cargarSexo();
@@ -41,6 +46,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 cargarProvincias();
                 cargarLocalidades();
                 cargarTipodeDireccion();
+            }
+            string[] unosPermisosTest = new string[] { "AltaEmpleado" };
+            if (unUsuario == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
             }
         }
 
@@ -118,7 +128,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 if (Page.IsValid)
 
                 {
-                    unUsuario.IdTipoUsuario = 3; // Usuario Empleado
+
+                    //unUsuario.Familia = new FamiliaEntidad();
+                    //unUsuario.Familia.IdFamilia  = FamiliaEntidad.PermisoFamilia.Empleado; // Usuario Empleado
+                    unUsuario.MiUsuario = new TipoUsuarioEntidad();
+                    unUsuario.MiUsuario.IdTipoUsuario = 3;
                     unUsuario.Email = txtusuario.Text;
                     unUsuario.Password = txtcontrasena.Text;
                     unUsuario.Nombre = txtNombre.Text;
@@ -154,7 +168,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                     managerDVV.InsertarDVV("DVV", "Usuario");
                    
-                    Response.Redirect("/Views/Private/IniciarSesionIntranet.aspx");
+                    Response.Redirect("../Private/IniciarSesionIntranet.aspx");
                 }
                 else
                 {
@@ -170,6 +184,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             {
                 EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLog(ex, "Alta Empleado", unUsuario.Apellido, (unUsuario.IdUsuario).ToString());
+               
                 Response.Redirect("/Shared/Error.aspx");
 
             }

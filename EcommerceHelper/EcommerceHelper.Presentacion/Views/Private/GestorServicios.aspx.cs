@@ -12,8 +12,16 @@ namespace EcommerceHelper.Presentacion.Views.Private
     public partial class GestorServicios : System.Web.UI.Page
     {
         ServicioBLL ServicioBLL = new ServicioBLL();
+        UsuarioEntidad usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // nombre de la patente de la pagina
+            string[] unosPermisosTest = new string[] { "GestionServicios" };
+            if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
+
             Cargargrilla();
         }
 

@@ -23,6 +23,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             string nombre = Session["NomUsuario"].ToString();
 
+            // nombre de la patente de la pagina
+            string[] unosPermisosTest = new string[] { "NotaDeDebito" };
+            if (UsuarioEntidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
 
             if (!Page.IsPostBack)
             {

@@ -30,6 +30,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                 
             }
+            string[] unosPermisosTest = new string[] { "BackUp" };
+            if (usuarioentidad == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
+            }
         }
 
         protected void btnUpload_Click1(object sender, EventArgs e)

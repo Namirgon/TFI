@@ -106,13 +106,15 @@ namespace EcommerceHelper.DAL
             {
 
                 new SqlParameter("@IdTipoUsuario", usuario.IdTipoUsuario),
+                 new SqlParameter("@Email", usuario.Email),
+                new SqlParameter("@Password", usuario.Password),
                 new SqlParameter("@Nombre", usuario.Nombre),
                 new SqlParameter("@Apellido", usuario.Apellido),
-                new SqlParameter("@IdTipoDeDocumento",usuario.MiDocumento.IdTipoDeDocumento),
+                 new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
+                //new SqlParameter("@IdTipoDeDocumento",usuario.MiDocumento.IdTipoDeDocumento),
                 new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
-                new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
-                new SqlParameter("@Email", usuario.Email),
-                new SqlParameter("@Password", usuario.Password),
+               
+               
                 new SqlParameter("@IdTipoTelefono", usuario.MiTelefono.IdTipoTelefono),
                 new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
                  new SqlParameter("@DVH", usuario.DVH),

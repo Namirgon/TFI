@@ -9,33 +9,37 @@
 
 <head >
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    
+  
+  
     <title></title>
+    
    
       <asp:ContentPlaceHolder ID="head" runat="server">
+         
     </asp:ContentPlaceHolder>
 </head>
 <body>
 
     <form id="form1" runat="server">
-<%--         <asp:ScriptManager ID="ScriptManager1" runat="server">  </asp:ScriptManager>--%>
-        <header id="header">
 
+        <header id="header">
+          
             <div class="inner">
                 <a href="Default.aspx" class="logo">Helper</a>
                 
                     <nav id="nav">
-                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="lblIniciarSesion"  runat="server"  Text="<%$Resources:Global, IniciarSesion  %>"></asp:Label></a>
-                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="lblCerrarSesion" runat="server"  Text="<%$Resources:Global, NuestrosServicios  %>"></asp:Label></a>
+                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="IniciarSesion"  runat="server" text="Iniciar Sesión" ></asp:Label></a>
+                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="NuestrosServicios" runat="server"  text="Nuestros Servicios"></asp:Label></a>
                   
-                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="lblIntranet" runat="server" Text="<%$Resources:Global, Intranet  %>"></asp:Label></a>
+                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="Intranet" runat="server"  Text="Intranet"></asp:Label></a>
                    
-                     <a  ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" CssClass="form-control"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                     <div id="google_translate_element" style="float:right; margin-left: 10px; margin-top: 20px;"></div>
+                    <%-- <a  ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" CssClass="form-control"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
                        
-                                    <asp:ListItem Text="<%$Resources:Global, Espanol %>" Value="es" />
-                                    <asp:ListItem Text="<%$Resources:Global, Ingles %>" Value="en-us" />
+                                   <%-- <asp:ListItem  Text="Espanol"  Value="es" />
+                                    <asp:ListItem Text=" Ingles"  Value="en-us" />
                     </asp:DropDownList>
-                    </a>
+                    </a>--%>
                 </nav>
                    
             </div>
@@ -67,11 +71,12 @@
 
 
 </body>
-    
-</html>
-<style>
+  
+</html>  
 
-* {
+<style type="text/css">
+
+body{
  margin: 0px;
 padding: 0px;
  
@@ -154,5 +159,28 @@ header p {
     text-transform: none;
     font-weight: normal;
 }
-</style>
+
+ .goog-logo-link {
+  display: none !important;
+  }
+
+                    .goog-te-gadget {
+                        height: 28px !important;
+                        overflow: hidden;
+                    }
+
+                    .goog-text-highlight {
+                        background: none !important;
+                        box-shadow: none !important;
+                    }
+       </style>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 

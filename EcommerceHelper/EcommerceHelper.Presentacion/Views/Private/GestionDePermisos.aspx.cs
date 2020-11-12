@@ -59,7 +59,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             {
                 // crear ddl de idioma en master page administracion 
 
-                idioma.Descripcion = Master.obtenerIdiomaCombo();
+                //idioma.Descripcion = Master.obtenerIdiomaCombo();
                 Session["Idioma"] = idioma;
             }
 

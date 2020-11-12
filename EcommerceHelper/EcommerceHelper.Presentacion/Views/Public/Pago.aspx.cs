@@ -11,7 +11,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 {
 
    
-    public partial class Pago : BasePage
+    public partial class Pago : System.Web.UI.Page
     {
         TarjetaBLL GestorTarjeta = new TarjetaBLL();
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();

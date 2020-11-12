@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class NuestrosServicios : BasePage
+    public partial class NuestrosServicios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,11 +1,91 @@
 ﻿
 body {
-    margin: 0
+     margin: 0px;
+    padding: 0px;
 }
-	 
 
-input  {
-    
+
+
+
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+
+header p {
+    position: relative;
+    margin: 0 0 1.5em 0;
+}
+
+#header a {
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .85em;
+}
+
+#header .inner {
+    max-width: 65em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+    position: relative;
+}
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+        text-align: left;
+    }
+}
+
+#header nav a {
+    font-size: 18px;
+    color: antiquewhite;
+    text-align: right;
+}
+
+header p {
+    color: #717171;
+}
+
+#nav {
+    display: inline-block;
+}
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    text-align: left;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: antiquewhite;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+
+input {
     border: 2px solid #aaa;
     border-radius: 4px;
     margin: 8px 0;
@@ -13,7 +93,6 @@ input  {
     padding: 8px;
     box-sizing: border-box;
     transition: 0.3s;
-    
 }
 .dropdownlist {
     width: 400px;

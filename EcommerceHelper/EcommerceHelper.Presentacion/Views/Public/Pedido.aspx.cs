@@ -13,7 +13,7 @@ using System.Runtime;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Pedido : BasePage 
+    public partial class Pedido : System.Web.UI.Page
     {
        
 

@@ -12,7 +12,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 {
 
     
-    public partial class MenuPrincipal : BasePage
+    public partial class MenuPrincipal : System.Web.UI.Page
     {
 
         List<ServicioEntidad> unServicios = new List<ServicioEntidad>();

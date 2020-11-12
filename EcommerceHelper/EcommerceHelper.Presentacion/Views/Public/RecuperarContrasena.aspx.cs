@@ -14,7 +14,7 @@ using System.Net.Mail;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class RecuperarContrasena : BasePage
+    public partial class RecuperarContrasena : System.Web.UI.Page
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         UsuarioBLL GestorUsuario = new UsuarioBLL();
@@ -47,7 +47,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             }
             else
             {
-                idioma.Descripcion = Master.obtenerIdiomaCombo();
+                //idioma.Descripcion = Master.obtenerIdiomaCombo();
                 Session["Idioma"] = idioma;
             }
 

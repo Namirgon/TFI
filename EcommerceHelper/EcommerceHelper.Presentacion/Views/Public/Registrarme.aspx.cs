@@ -12,8 +12,10 @@ using EcommerceHelper.BLL.Servicios;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Registrarme : BasePage
+    public partial class Registrarme : System.Web.UI.Page
     {
+
+    
         private SexoBLL unManagerSexo = new SexoBLL();
         public List<SexoEntidad> unSexo = new List<SexoEntidad>();
 

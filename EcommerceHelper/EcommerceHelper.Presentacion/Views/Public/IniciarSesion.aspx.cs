@@ -16,10 +16,10 @@ using EcommerceHelper.Presentacion.Shared;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class IniciarSesion : BasePage
+    public partial class IniciarSesion : System.Web.UI.Page
 
-        
-        {
+
+    {
 
 
 
@@ -45,29 +45,29 @@ namespace EcommerceHelper.Presentacion.Views.Public
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            idioma = new IdiomaEntidad();
-            if (!IsPostBack)
-            {
-                idioma = (IdiomaEntidad)Session["Idioma"];
-                if (idioma == null)
-                {
-                    idioma = new IdiomaEntidad();
-                    idioma.Descripcion = "es";
-                    Session["Idioma"] = idioma;
-                }
-            }
-            else
-            {
-                idioma.Descripcion = Master.obtenerIdiomaCombo();
-                Session["Idioma"] = idioma;
-            }
+            //idioma = new IdiomaEntidad();
+            //if (!IsPostBack)
+            //{
+            //    idioma = (IdiomaEntidad)Session["Idioma"];
+            //    if (idioma == null)
+            //    {
+            //        idioma = new IdiomaEntidad();
+            //        idioma.Descripcion = "es";
+            //        Session["Idioma"] = idioma;
+            //    }
+            //}
+            //else
+            //{
+            //    //idioma.Descripcion = Master.obtenerIdiomaCombo();
+            //    Session["Idioma"] = idioma;
+            //}
 
-            DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
-            if (lblIdioma != null)
-            {
-                lblIdioma.SelectedValue = idioma.Descripcion;
-            }
-            usuarioentidad = (UsuarioEntidad)Session["Usuario"];
+            //DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
+            //if (lblIdioma != null)
+            //{
+            //    lblIdioma.SelectedValue = idioma.Descripcion;
+            //}
+            //usuarioentidad = (UsuarioEntidad)Session["Usuario"];
 
         }
        

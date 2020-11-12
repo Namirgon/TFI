@@ -31,40 +31,31 @@ namespace EcommerceHelper.Presentacion.Shared {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lblIniciarSesion.
+        /// Control IniciarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIniciarSesion;
+        protected global::System.Web.UI.WebControls.Label IniciarSesion;
         
         /// <summary>
-        /// Control lblCerrarSesion.
+        /// Control NuestrosServicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCerrarSesion;
+        protected global::System.Web.UI.WebControls.Label NuestrosServicios;
         
         /// <summary>
-        /// Control lblIntranet.
+        /// Control Intranet.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIntranet;
-        
-        /// <summary>
-        /// Control ddlIdioma.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIdioma;
+        protected global::System.Web.UI.WebControls.Label Intranet;
         
         /// <summary>
         /// Control ContentPlaceHolder1.

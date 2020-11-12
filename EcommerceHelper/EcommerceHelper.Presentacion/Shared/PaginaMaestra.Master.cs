@@ -30,26 +30,45 @@ namespace EcommerceHelper.Presentacion.Shared
             if (!IsPostBack)
             {
 
-                if (ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
-                {
-                    ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name).Selected = true;
-                }
-                if (idiomaEntidad == null)
-                {
-                    Session["Idioma"] = obtenerIdiomaCombo();
-                }
+                //if (ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
+                //{
+                //    ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name).Selected = true;
+                //}
+                //if (idiomaEntidad == null)
+                //{
+                //    Session["Idioma"] = 1;
+                //    //gestorIdioma.FindControlsByLenguaje(1);
+                //}
+                //else
+                //{
+
+                //    obtenerIdiomaCombo();
+                //}
             }
         }
 
-        public string obtenerIdiomaCombo()
-        {
-            var val = ddlIdioma.SelectedItem.Value;
-            var val2 = ddlIdioma.SelectedValue;
+        //public string obtenerIdiomaCombo()
+        //{
+        //    ddlIdioma.DataSource = null;
+        //    idiomaEntidad = gestorIdioma.FindAll();
+        //    ddlIdioma.DataTextField = "IdIdioma";
+        //    ddlIdioma.DataTextField = "Descripcion";
 
-            return val2;
+        //    ddlIdioma.DataBind();
 
-        }
+        //    //var val = ddlIdioma.SelectedItem.Value;
+        //    //var val2 = ddlIdioma.SelectedValue;
 
+        //    //return val2;
+        //    return  ddlIdioma.SelectedValue;
+
+        //}
+
+        //protected string translate(string key)
+        //{
+
+        //    PaginaMaestra
+        //}
 
         public PaginaMaestra()
         {

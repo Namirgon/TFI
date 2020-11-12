@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Threading;
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Default : BasePage
+    public partial class Default : System.Web.UI.Page
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
@@ -55,7 +55,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             }
             else
             {
-                idioma.Descripcion =  Master.obtenerIdiomaCombo();
+                //idioma.Descripcion =  Master.obtenerIdiomaCombo();
                 Session["Idioma"] = idioma;
             }
 

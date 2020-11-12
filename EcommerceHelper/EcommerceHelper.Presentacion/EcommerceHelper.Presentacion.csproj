@@ -373,6 +373,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\IIdiomaObserver.cs" />
     <Compile Include="App_GlobalResources\Global.en.designer.cs">
       <DependentUpon>Global.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Private
 {
-    public partial class MiDireccion : BasePage
+    public partial class MiDireccion : System.Web.UI.Page
     {
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();

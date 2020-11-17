@@ -16,7 +16,7 @@
    <br />
    <br />     
    <br />
-<asp:Label ID="lblIniciarSesion" runat="server" style="margin-left:30px; font-size:24px" Text="<%$Resources:Global, IniciarSesion %>"></asp:Label>
+<asp:Label ID="lblIniciarSesion" ClientIDMode="Static"  runat="server" style="margin-left:30px; font-size:24px" Text="<%$Resources:Global, IniciarSesion %>"></asp:Label>
   
    <br />
    <br />     
@@ -28,7 +28,7 @@
    <br />
   
        <asp:Label ID="EtiquetaEmail" runat="server" Text="<%$Resources:Global, Usuario %>" visible="true"  style=" margin-left:100px"></asp:Label>
-       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:75px"></asp:TextBox>  
+       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:70px"></asp:TextBox>  
        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
  
   <br />

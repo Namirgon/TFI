@@ -26,8 +26,9 @@
     <br />
 
   <center>
-   
-    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowUpdating="GVPedido_RowUpdating" OnRowDataBound="GVPedido_RowDataBound"  OnRowEditing="GVPedido_RowEditing" AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged">
+
+ 
+    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowUpdating="GVPedido_RowUpdating" OnRowDataBound="GVPedido_RowDataBound"  OnRowEditing="GVPedido_RowEditing" AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged" OnDataBound="GVPedido_DataBound">
         <Columns>
             <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo" >
             <HeaderStyle HorizontalAlign="Center" />
@@ -49,10 +50,12 @@
             </asp:BoundField>
             <asp:TemplateField HeaderText="Fecha">
                 <ItemTemplate >
-              <%--    <asp:Calendar ID="MiCalendario" runat="server" style="display:flex; color:#000000; width:120px"  ></asp:Calendar>--%>
 
                  <div class="dates" style="display:flex; color:#000000; width:120px">
-                    <input type="text"  class="form-control" id="usr1"  placeholder="YYYY-MM-DD" autocomplete="off" name="DatePickerFecha" style="width:120px;background-color:#ffffff; align-self:center " >
+                   
+<%--                    <input type="text"  class="form-control" id ="<% Response.Write("usr" + (this.Controls.Count).ToString()); %>"  placeholder="YYYY-MM-DD" autocomplete="off" name="DatePickerFecha" style="width:120px;background-color:#ffffff; align-self:center " >--%>
+
+
                      </div>
                   
                 </ItemTemplate>
@@ -64,7 +67,7 @@
            
                     <div class='times' style="display:flex; color:#000000; width:110px">
 
-                    <input  type="text"   id="disableTimeRangesExample"  class="form-control" name="DatePickerTime" style="width:110px;background-color:#ffffff; align-self:center "/>
+                    <%--<input  type="text"   id="disableTimeRangesExample"  class="form-control" name="DatePickerTime" style="width:110px;background-color:#ffffff; align-self:center "/>--%>
                                        
                       </div>
                     </ItemTemplate>

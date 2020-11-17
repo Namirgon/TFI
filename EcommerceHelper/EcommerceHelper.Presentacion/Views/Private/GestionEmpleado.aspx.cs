@@ -24,12 +24,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
         UsuarioEntidad usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
-            // nombre de la patente de la pagina
-            string[] unosPermisosTest = new string[] { "GestionEmpleado" };
-            if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
-            {
-                Response.Redirect("../Public/Default.aspx");
-            }
+            var Current = HttpContext.Current;
+            usuario = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
+
+          
             if (!Page.IsPostBack)
             {
                 cargarSexo();
@@ -39,6 +37,13 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 //CargarGrillaEmpleado();
 
 
+            }
+            string nombre = Session["NomUsuario"].ToString();
+            // nombre de la patente de la pagina
+            string[] unosPermisosTest = new string[] { "GestionEmpleado" };
+            if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
+            {
+                Response.Redirect("../Public/Default.aspx");
             }
         }
         public void cargarProvincias(int? elIndice = null)

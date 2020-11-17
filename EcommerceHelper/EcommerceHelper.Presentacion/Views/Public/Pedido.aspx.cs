@@ -118,16 +118,19 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     {
 
 
-                        id = unItem.IdItemOrdenDeTrabajo;
-                        string fecha = Request.Form["DatePickerFecha"];
-                        string hora = Request.Form["DatePickerTime"];
+                         id = unItem.IdItemOrdenDeTrabajo;
+                        string idinput = Request.Form["id"];
+                         string fecha = Request.Form["fecha"];
+                         string hora = Request.Form["hora"];
 
-                       unItem.Fecha = DateTime.Parse(fecha);
-                        unItem.Hora = DateTime.Parse(hora);
+                         unItem.Fecha = DateTime.Parse(fecha);
+                         unItem.Hora = DateTime.Parse(hora);
+
+
 
                         DateTime t = new DateTime();
 
-                        if (!  DateTime.TryParse(hora, out t))
+                        if (!DateTime.TryParse(hora, out t))
                         {
 
                             t = Convert.ToDateTime(hora, CultureInfo.GetCultureInfo("en-Us").DateTimeFormat);
@@ -139,9 +142,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
                         {
                             d = Convert.ToDateTime(fecha, CultureInfo.GetCultureInfo("en-Us").DateTimeFormat);
-                            //d = DateTime.ParseExact(fecha, " dd/mm/yyyy", CultureInfo.InvariantCulture);
+                           
                         }
-                                
+
                         GestorItemODT.ListaDeItemUpdate(id, d, t);
 
                         break;
@@ -163,11 +166,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void GVPedido_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            Image img = new Image();
-            img.ImageUrl = e.Row.Cells[4].Text;
-            img.Attributes.Add("width", "90%");
-        
-            e.Row.Cells[4].Controls.Add(img);
+            
         }
 
         protected void GVPedido_RowEditing(object sender, GridViewEditEventArgs e)
@@ -187,5 +186,33 @@ namespace EcommerceHelper.Presentacion.Views.Public
         {
 
         }
+
+        protected void GVPedido_DataBound(object sender, EventArgs e)
+        {
+            GVPedido.HeaderRow.Cells[0].Visible = false;
+            
+
+            foreach(GridViewRow row in GVPedido.Rows)
+            {
+                row.Cells[0].Visible = false;
+                Image img = new Image();
+                img.ImageUrl = row.Cells[4].Text;
+                img.Attributes.Add("width", "90%");
+
+                row.Cells[4].Controls.Add(img);
+
+
+
+                //     < input type = "text"  class="form-control"   placeholder="YYYY-MM-DD" autocomplete="off" name="DatePickerFecha" style=\"width:120px;background-color:#ffffff; align-self:center \">"
+                LiteralControl txtFecha = new LiteralControl("<input type=\"date\" id=\"usr"+row.Cells[0].Text+ "\" name=\"fecha\">");
+
+                row.Cells[5].Controls.Add(txtFecha);
+                LiteralControl txtHora = new LiteralControl("<input type=\"time\" id=\"usr" + row.Cells[0].Text + "\" name=\"hora\">");
+
+                row.Cells[6].Controls.Add(txtHora);
+
+
+            }
+}
     }
 }

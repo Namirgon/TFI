@@ -23,7 +23,7 @@
     <br />
     <br />  
     <center>
-    <asp:GridView ID="GVMisDirecciones" runat="server" Width="800px"   cssclass="table table-striped "    OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GVMisDirecciones_RowCommand" AutoGenerateColumns="False">
+    <asp:GridView ID="GVMisDirecciones" runat="server" Width="800px"   cssclass="table table-striped "    OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GVMisDirecciones_RowCommand" AutoGenerateColumns="False" OnDataBound="GVMisDirecciones_DataBound">
         <Columns>
           
             <asp:BoundField DataField="IdDireccion" HeaderText="IdDireccion" />
@@ -65,7 +65,7 @@
                  
 
       </div>
-    <div style="margin-left:175px">
+    <div style="margin-left:200px">
         <asp:LinkButton ID="linkAltaDireccion" OnClick="linkAltaDireccion_Click" runat="server" CssClass="btn btn-primary"  >Agregar Direccion</asp:LinkButton>
       
         <asp:LinkButton ID="BtnContinuar" OnClick="BtnContinuar_Click" runat="server"  CssClass="btn btn-primary" Width="214px" >Ver Resumen de Compra</asp:LinkButton>

@@ -25,22 +25,27 @@
     <br />     
     <br />
 
+      <%-- <span id="lblmensaje"  visible="false"></span>--%>
+        <asp:Label ID="lblMensaje" runat="server" Visible="false" Text="Label" ClientIDMode="Static"   style="color:white; font-size:20px" ></asp:Label> <br /><br />
   <center>
-
+   
+           
+     
+  
  
     <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowUpdating="GVPedido_RowUpdating" OnRowDataBound="GVPedido_RowDataBound"  OnRowEditing="GVPedido_RowEditing" AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged" OnDataBound="GVPedido_DataBound">
         <Columns>
-            <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo" >
+            <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo"  >
             <HeaderStyle HorizontalAlign="Center" />
             <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
-            <asp:BoundField DataField="MiServicio.Titulo" HeaderText="Titulo" SortExpression="Titulo" >
-            <HeaderStyle HorizontalAlign="Center" />
+            <asp:BoundField DataField="MiServicio.Titulo" HeaderText="Titulo" SortExpression="Titulo"   >
+            <HeaderStyle HorizontalAlign="Center" CssClass="Center" />
             <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
             <asp:BoundField DataField="MiServicio.Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" >
             <HeaderStyle HorizontalAlign="Center" />
-            <ItemStyle HorizontalAlign="Center" />
+            <ItemStyle HorizontalAlign="Center"  />
             </asp:BoundField>
             <asp:BoundField DataField="MiServicio.Precio" HeaderText="Precio" SortExpression="Precio" >
             <HeaderStyle HorizontalAlign="Center" />
@@ -48,7 +53,8 @@
             </asp:BoundField>
             <asp:BoundField DataField="MiServicio.URLimagen" HeaderText="Imagen"  >
             </asp:BoundField>
-            <asp:TemplateField HeaderText="Fecha">
+            <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign = "Center">
+
                 <ItemTemplate >
 
                  <div class="dates" style="display:flex; color:#000000; width:120px">
@@ -59,6 +65,11 @@
                      </div>
                   
                 </ItemTemplate>
+
+
+                <HeaderStyle HorizontalAlign="Center" />
+
+<ItemStyle HorizontalAlign="Center"></ItemStyle>
 
 
             </asp:TemplateField>
@@ -76,8 +87,14 @@
             </asp:TemplateField>
    
             
-            <asp:ButtonField CommandName="btnConfirmar"  Text="Confirmar" ButtonType="Button" ControlStyle-ForeColor="White"  ControlStyle-BackColor="Green" />
-            <asp:ButtonField CommandName="btnEliminar" Text="Eliminar" ButtonType="Button " ControlStyle-BackColor="Red"  ControlStyle-ForeColor="White" />
+            <asp:BoundField HeaderText="Cantidad">
+            <HeaderStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+   
+            
+            <asp:ButtonField CommandName="btnEliminar" Text="Eliminar" ButtonType="Button " ControlStyle-BackColor="Red"  ControlStyle-ForeColor="White" >
+<ControlStyle BackColor="Red" ForeColor="White"></ControlStyle>
+            </asp:ButtonField>
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#000066" />
         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -103,8 +120,8 @@
 
  
     <div  class="item-toolbar" runat="server"  style="margin-left:160px" >
-        <asp:Button ID="BtnContinuar" runat="server" Text="<%$Resources:Global, Continuar %>" OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
-      
+        <asp:Button ID="BtnContinuar" runat="server" Text=" Continuar " ClientIDMode="Static"  OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
+    <asp:Button ID="btnIrADirecciones" runat="server" Text="Seleccionar Dirección" OnClick="btnIrADirecciones_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 275px; background-color:cadetblue " />     
    </div>
   
     <style>

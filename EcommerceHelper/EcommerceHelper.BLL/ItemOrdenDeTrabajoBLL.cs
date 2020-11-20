@@ -65,12 +65,12 @@ namespace EcommerceHelper.BLL
             return unItemDAL.ResumenDeComprabyIdODT(IdODT);
 
         }
-        public int ListaDeItemUpdate(int Id, DateTime fecha, DateTime hora)
+        public int ListaDeItemUpdate(int Id, DateTime fecha, DateTime hora, int Cantidad)
         {
 
             try
             {
-                GestorItem.ActualizarFechayHoraListaItem(Id, fecha,hora);
+                GestorItem.ActualizarFechayHoraListaItem(Id, fecha,hora, Cantidad);
                 return 0;
             }
             catch (Exception ex)

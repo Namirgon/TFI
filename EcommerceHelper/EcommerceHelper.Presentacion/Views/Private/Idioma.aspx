@@ -50,7 +50,7 @@
           <br />
 
 
-         <asp:GridView ID="GVGrilla" runat="server" AutoGenerateColumns="False" ViewStateMode="Enabled" OnRowCommand="GVGrilla_RowCommand"  cssclass="table table-striped " Width="400px" >
+         <asp:GridView ID="GVGrilla" runat="server" AutoGenerateColumns="False" ViewStateMode="Enabled" OnRowCommand="GVGrilla_RowCommand" OnDataBound="GVGrilla_DataBound"  cssclass="table table-striped " Width="400px" >
             <Columns>
   
                   <asp:BoundField DataField="IdIdioma" HeaderText="IdIdioma"  ></asp:BoundField>

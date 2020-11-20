@@ -15,9 +15,7 @@
     <link href="../Content/bootstrap-datetimepicker.css" rel="stylesheet" />
 
     <link href="../Script/Thirdparty/Autocomplete/jquery-ui.css" rel="stylesheet" />
-   <%-- <link href="../Content/css/bootstrap.css" rel="stylesheet" />
-     />--%>
-   
+ 
     <asp:ContentPlaceHolder ID="head" runat="server">
   
        
@@ -41,26 +39,17 @@
                 
                 <nav id="nav">
                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
-                   <%--    <ul>
-                    <li style="font-size:18px; margin-right: 20px">Mis Datos
-                            <ul>
-                                <li><a href="../Views/Public/ABMTarjetasDeCredito.aspx"> Mis Tarjetas</a></li>
-                                 <li><a href="../Views/Public/MisDirecciones.aspx"> Mis Direcciones</a></li>
-                                <li><a href="../Private/AsignacionDePerfiles.aspx">Mis Compras</a></li>
-                            </ul>
-                   </li>
-                             </ul>--%>
-                 <a href="../Public/MisDirecciones.aspx"> <asp:Label ID="lblIniciarSesion" runat="server"  Text="<%$Resources:Global, MisDatos  %>"></asp:Label></a>
-                    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="<%$Resources:Global, CerrarSesion  %>"></asp:LinkButton>
+                 
+              <%--<a href="../Public/MisDirecciones.aspx"> <asp:Label ID="lblIniciarSesion" runat="server"  Text=" MisDatos" ClientIDMode="Static"></asp:Label></a>--%>
+                    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text=" CerrarSesion" ClientIDMode="Static"></asp:LinkButton>
                       
-                    <a href="../Public/Pedido.aspx"><asp:Label runat="server" Text="<%$Resources:Global, Pedido %>"></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                     <%--<a  ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true"   style="width:200px;  margin-left:55px">
-                       
-                                    <asp:ListItem Text="<%$Resources:Global, Espanol %>" Value="es" />
-                                    <asp:ListItem Text="<%$Resources:Global, Ingles %>" Value="en-us" />
-                    </asp:DropDownList>
-                    </a>--%>
-                <div id="google_translate_element" style="float:right; margin-left: 10px; margin-top: 20px;"></div>
+                    <a href="../Public/Pedido.aspx"><asp:Label runat="server" Text=" Pedido" ClientIDMode="Static"></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    
+                
+                     <a>
+                <asp:DropDownList ID="ddlidioma" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlidioma_SelectedIndexChanged1"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                                    
+                </asp:DropDownList></a>
                 </nav>
             </div>
     <%------------------------------------------------------ fin del Menu del cliente ---------------------------------------------------------------------%>

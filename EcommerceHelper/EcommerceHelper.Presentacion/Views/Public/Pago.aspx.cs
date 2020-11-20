@@ -176,6 +176,13 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         }
 
-
+        protected void GVTarjetas_DataBound(object sender, EventArgs e)
+        {
+            GVTarjetas.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GVTarjetas.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
+        }
     }
 }

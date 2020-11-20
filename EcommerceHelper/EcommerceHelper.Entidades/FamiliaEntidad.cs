@@ -12,9 +12,9 @@ namespace EcommerceHelper.Entidades
         /// <summary>
         /// Gets or sets the IdFamilia value.
         /// </summary>
-        public PermisoFamilia IdFamilia { get; set; }
+       // public PermisoFamilia IdFamilia { get; set; }
 
-
+        public int IdFamilia { get; set; }
 
         /// <summary>
         /// Gets or sets the NombreFamilia value.
@@ -28,10 +28,10 @@ namespace EcommerceHelper.Entidades
         //public DateTime? FecBaja { get; set; }
 
 
-        public enum PermisoFamilia : int
-        {
-            Publico = 1, Cliente = 2, Empleado = 3, Admin = 4
-        }
+        //public enum PermisoFamilia : int
+        //{
+        //    Publico= 1, Cliente = 2, Empleado = 3, Admin = 4
+        //}
 
         #endregion
     }

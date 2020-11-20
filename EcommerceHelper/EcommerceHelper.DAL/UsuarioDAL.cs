@@ -152,15 +152,18 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@Nombre", usuario.Nombre),
                 new SqlParameter("@Apellido", usuario.Apellido),
                 new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
+                new SqlParameter("@IdTipoUsuario", usuario.MiUsuario.IdTipoUsuario ),
                 new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
                 new SqlParameter("@Email", usuario.Email),
                 new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
-               
-            };
+               new SqlParameter("@DVH", usuario.DVH)
 
-            var Resultado = (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDatosEmpleado", parameters);
-            int IdUsuarioRes = Decimal.ToInt32(Resultado);
-            usuario.IdUsuario = IdUsuarioRes;
+        };
+
+            SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDatosEmpleado", parameters);
+           // var Resultado =(decimal)
+            //int IdUsuarioRes = Decimal.ToInt32(Resultado);
+            //usuario.IdUsuario = IdUsuarioRes;
         }
 
         public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
@@ -452,7 +455,7 @@ namespace EcommerceHelper.DAL
 
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                  
+                    unUsuario.IdUsuario = (int)row["IdUsuario"];
                     unUsuario.Nombre = row["Nombre"].ToString();
                     unUsuario.Apellido = row["Apellido"].ToString();
                     unUsuario.NumeroDocumento = (int)row["NumeroDocumento"];

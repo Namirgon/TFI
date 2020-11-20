@@ -14,7 +14,7 @@
    <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />
    <br />    
-       <asp:Label ID="LblNuestrosServicios" runat="server"  style="margin-left:30px; margin-top:30px; font-size:24px" Text="<%$Resources:Global, NuestrosServicios %>"></asp:Label>
+       <asp:Label ID="LblNuestrosServicios" runat="server"  style="margin-left:30px; margin-top:30px; font-size:24px" Text=" NuestrosServicios" ClientIDMode="Static"></asp:Label>
  
    <br />     
    <br />
@@ -31,33 +31,31 @@
         <ItemTemplate>
             <div  class="col-sm-4 col-lg-4 col-md-4" runat="server">
                 <div class="thumbnail" style="text-align: center;" runat="server">
-              <%--  <li>--%>
+            
                    <div >
                        <br />
                        <br />
                        <br />
                         <div class="caption" runat="server">     
 
-                            <%--<h2><%# Eval("Titulo")%></h2>--%>
+                      
                             <asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo")%> ' Font-Size="25px"></asp:Label>
                         
                             <br />
                             
-                        <%--<a runat="server" href='<%#Eval("IdServicio")%>'><img src='/Content/Image/<%# Eval("URLImagen")%>' class="img-responsive col-md-12" id="IdServicio" /></a>--%>
+                    
                           <asp:Label ID="LblIdServicio" runat="server" Text='<%#Eval("IdServicio")%>' Visible="false"></asp:Label>
                             <a runat="server"><img src='<%# Eval("URLImagen")%>' class="img-responsive col-md-12" /></a>
                            
-                             <%--<h3><%# Eval("Descripcion")%></h3>--%>
+                         
                             <asp:Label ID="lblDescripcion" runat="server" Text='<%# Eval("Descripcion")%>' Font-Size="20px"></asp:Label>
                            
-                        <%--<strong><p style="font-size:larger;">$<span><%# Eval("Precio")%></span></strong></p></div>--%>
                       <p style="font-size:larger;">$ <asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("Precio")%>' Font-Size="25px"></asp:Label></p>
 
                         </div>
                          <div class="item-toolbar">
-                             <asp:Button ID="BtnComprar" runat="server" Text="<%$Resources:Global, Comprar %>"  data-target="#mdl_servicio_agregado" data-toggle="modal" onclick="BtnComprar_Click"  class="btn btn-primary btn-lg" UseSubmitBehavior="false"/>
+                             <asp:Button ID="BtnComprar" runat="server" Text=" Comprar" ClientIDMode="Static"  data-target="#mdl_servicio_agregado" data-toggle="modal" onclick="BtnComprar_Click"  class="btn btn-primary btn-lg" UseSubmitBehavior="false"/>
 
-                            <%--<Button type="button" runat="server"  data-target="#mdl_servicio_agregado" data-toggle="modal"   class="btn btn-primary btn-lg "   ID="BtnComprar"  onclick="BtnComprar_Click"  >Comprar</Button>--%>
                            
                          </div>
                    </div>
@@ -86,15 +84,15 @@
                     <div class="modal-body text-center"> <%--Cuerpo de la ventana--%>
                        
                         
-                         <h4 style="color: black;"><asp:Label ID="Label2" runat="server"  Text="<%$Resources:Global, AgregadoAlCarrito %>"><%# Eval("Titulo")%></asp:Label></h4>
+                         <h4 style="color: black;"><asp:Label ID="Label2" runat="server"  Text=" AgregadoAlCarrito" ClientIDMode="Static"><%# Eval("Titulo")%></asp:Label></h4>
                    
                     </div>
                     <div class="modal-footer">
                         <div class="text-center">
                           
                          
-                         <button type="button" ID="btnpedidos"  class="btn btn-warning" style="width: 200px;"><asp:Label ID="Label3" runat="server" Text="<%$Resources:Global, IrAPedidos %>">><a href="Pedido.aspx" style="text-decoration:none"></a></asp:Label></button>
-                            <asp:Button ID="BtnSeguirComprando" runat="server"  Text="<%$Resources:Global, SeguirComprando %>" class="btn" style="width: 200px; background-color: black; color: #fff;" data-dismiss="modal" ></asp:Button>
+                         <button type="button" ID="btnpedidos"  class="btn btn-warning" style="width: 200px;"><asp:Label ID="Label3" runat="server" Text=" IrAPedidos " ClientIDMode="Static">><a href="Pedido.aspx" style="text-decoration:none"></a></asp:Label></button>
+                            <asp:Button ID="BtnSeguirComprando" runat="server"  Text=" SeguirComprando" ClientIDMode="Static" class="btn" style="width: 200px; background-color: black; color: #fff;" data-dismiss="modal" ></asp:Button>
 
                         </div>
                     </div>

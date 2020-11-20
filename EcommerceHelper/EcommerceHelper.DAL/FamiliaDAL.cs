@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EcommerceHelper.DAL
+
+
 {
   public  class FamiliaDAL
     {
@@ -26,6 +28,18 @@ namespace EcommerceHelper.DAL
             }
         }
 
+        public void  UsuarioFamiliaUpdate(int UnUsuario, int UnaFamilia)
+        {
+            SqlParameter[] parameters = new SqlParameter[]{
+
+                new SqlParameter("@IdFamilia", UnaFamilia),
+                new SqlParameter("IdUsuario", UnUsuario)
+            };
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaUsuarioUpdate", parameters);
+
+
+
+        }
         public void UsuarioFamiliaInsert(UsuarioEntidad unUsuario)
         {
             ValidationUtility.ValidateArgument("unUsuario", unUsuario);
@@ -457,7 +471,10 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@NombreFamilia", familia.NombreFamilia)
             };
 
-            familia.IdFamilia = (FamiliaEntidad.PermisoFamilia)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaInsert", parameters);
+          //  familia.IdFamilia = (FamiliaEntidad.PermisoFamilia)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaInsert", parameters);
+            var Resultado= (decimal)SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaInsert", parameters);
+            int IdFamilia = Decimal.ToInt32(Resultado);
+            familia.IdFamilia = IdFamilia;
         }
 
 

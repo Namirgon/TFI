@@ -97,7 +97,12 @@ namespace EcommerceHelper.DAL
                     UnaItemOT._MiServicio.Precio = (decimal)row["Precio"];
                     //UnaItemOT._MiServicio = new ServicioEntidad();
                     UnaItemOT._MiServicio.URLimagen = row["URLimagen"].ToString();
-
+                    //if (row["Fecha"].ToString() != "")
+                    //   UnaItemOT.Fecha = DateTime.Parse(row["Fecha"].ToString());
+                    //if (row["Hora"].ToString() != "")
+                    //    UnaItemOT.Hora = DateTime.Parse(row["Hora"].ToString());
+                    //if (row["Cantidad"].ToString() != "")
+                    //    UnaItemOT.Cantidad = int.Parse(row["Cantidad"].ToString());
 
                     ListaItemOT.Add(UnaItemOT);
                 }
@@ -205,14 +210,15 @@ namespace EcommerceHelper.DAL
             }
         }
 
-        public void ActualizarFechayHoraListaItem(int Id, DateTime fecha, DateTime hora)
+        public void ActualizarFechayHoraListaItem(int Id, DateTime fecha, DateTime hora, int cantidad)
         {
             SqlParameter[] parameters = new SqlParameter[]
                 {
            
                 new SqlParameter("@IdItemOrdenDeTrabajo",Id),
                 new SqlParameter("@Fecha", fecha),
-                new SqlParameter("@Hora", hora)
+                new SqlParameter("@Hora", hora),
+                new SqlParameter("@Cantidad", cantidad)
 
                 };
 
@@ -304,6 +310,7 @@ namespace EcommerceHelper.DAL
                    if  (row["Hora"].ToString()!="")
                     UnaItemOT.Hora = DateTime.Parse(row["Hora"].ToString());
                     UnaItemOT.Precio = (decimal)row["Precio"];
+                    UnaItemOT.Cantidad= (int)row["Cantidad"];
 
                     ListaItemOT.Add(UnaItemOT);
                 }

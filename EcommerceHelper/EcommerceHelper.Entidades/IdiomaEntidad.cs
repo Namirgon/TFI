@@ -15,9 +15,15 @@ namespace EcommerceHelper.Entidades
 
         public string Descripcion { get; set; }
 
+       // public bool ElIdiomaDefault { get; set; }
+
+        //public static IdiomaEntidad unIdiomaDefault;
+        //public static List<MultiIdiomaEntidad> _EtiquetasCompartidas;
+        //public static int unIdiomaActual;
+        //public enum EnumIdioma
+        //{ Español = 1, English = 2 };
 
 
-     
         #endregion
     }
 }

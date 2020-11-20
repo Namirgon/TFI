@@ -75,7 +75,7 @@
           <br />
 
 
-         <asp:GridView ID="GVTarjetas" runat="server" AutoGenerateColumns="False" ViewStateMode="Enabled" OnRowCommand="GVTarjetas_RowCommand"  cssclass="table table-striped " Width="400px" >
+         <asp:GridView ID="GVTarjetas" runat="server" AutoGenerateColumns="False" ViewStateMode="Enabled" OnRowCommand="GVTarjetas_RowCommand" OnDataBound="GVTarjetas_DataBound"  cssclass="table table-striped " Width="400px" >
             <Columns>
   
                   <asp:BoundField DataField="IdTarjeta" HeaderText="IdTarjeta" />

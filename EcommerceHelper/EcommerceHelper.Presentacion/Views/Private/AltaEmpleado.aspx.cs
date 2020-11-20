@@ -210,7 +210,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
             txtrepetircontrasena.Text = string.Empty;
         }
 
-
+        protected void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuAdministracion.aspx");
+        }
     }
 
 

@@ -9,13 +9,20 @@ using System.Web.UI.WebControls;
 using System.Globalization;
 
 using System.Threading;
+using EcommerceHelper.BLL.Servicios;
+using EcommerceHelper.BLL;
+
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page , IObservador
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
-        private IdiomaEntidad idioma;
+        private List<object> ListaResultado = new List<object>(); //xxxxx
+        IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
+
+        List<MultiIdiomaEntidad> Traducciones   = new List<MultiIdiomaEntidad>(); // xxxxx
+
 
 
         protected T FindControlFromMaster<T>(string name) where T : Control
@@ -34,60 +41,129 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //usuarioentidad = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
-
-            //string nombre = Session["NomUsuario"].ToString();
-
-
-            //if (usuarioentidad == null)
-            //    Response.Redirect("Default.aspx");
-
-            idioma = new IdiomaEntidad();
+               
+            var Current = HttpContext.Current;
+            EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
+          
             if (!IsPostBack)
             {
-                idioma = (IdiomaEntidad)Session["Idioma"];
-                if (idioma == null)
-                {
-                    idioma = new IdiomaEntidad();
-                    idioma.Descripcion = "es";
-                    Session["Idioma"] = idioma;
-                }
-            }
-            else
-            {
-                //idioma.Descripcion =  Master.obtenerIdiomaCombo();
-                Session["Idioma"] = idioma;
+                //p.ElegirIdioma();
+                //IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
+                //Session["Traducciones"] = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
+                //Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"];
+                //IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
+                Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
+
+                IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+
+               
             }
 
-            DropDownList ddlIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
-            if (ddlIdioma != null)
-            {
-                ddlIdioma.SelectedValue = idioma.Descripcion;
-            }
-            usuarioentidad = (UsuarioEntidad)Session["Usuario"];
 
 
         }
+
+        void IObservador.Traducirme()
+        {
+            
+            RecorrerControles(this);
+         
+
+            try
+            {
+
+                foreach (Control Control in ListaResultado)
+                {
+
+                    foreach (var traduccion in Traducciones )
+                    {
+
+                     
+
+                        if (Equals(Control.ID, traduccion.NombreDelControl ))
+                        {
+
+                            //ESTO SON LOS <a>
+                            if ((Control) is System.Web.UI.HtmlControls.HtmlAnchor)
+                            {
+
+                                var mapeo = (System.Web.UI.HtmlControls.HtmlAnchor)Control;
+                                mapeo.InnerText = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
+                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputControl)
+                            {
+
+                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
+                                mapeo.Value = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <BUTTON>
+                            else if ((Control) is System.Web.UI.HtmlControls.HtmlButton)
+                            {
+                                var mapeo = (System.Web.UI.HtmlControls.HtmlButton)Control;
+                                mapeo.InnerText = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
+                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputButton)
+                            {
+                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputButton)Control;
+                                mapeo.Value = traduccion.Texto;
+                            }
+                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputText)
+                            {
+                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
+                                mapeo.Value = traduccion.Texto;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch
+            {
+            }
+
+        }
+        private void RecorrerControles(Control pObjetoContenedor)
+        {
+            foreach (Control Controlobj in pObjetoContenedor.Controls)
+            {
+                ListaResultado.Add(Controlobj);
+
+                if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
+                {
+                    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
+                }
+
+
+                if (Controlobj.Controls.Count > 0)
+                {
+                    RecorrerControles(Controlobj);
+                }
+
+                ListaResultado.Add(Controlobj);
+            }
+        }
+
+        private void RecorrerDropDown(System.Web.UI.WebControls.DropDownList pMenuStrip)
+        {
+            ListaResultado.Add(pMenuStrip);
+            foreach (System.Web.UI.WebControls.ListItem item in pMenuStrip.Items)
+            {
+                ListaResultado.Add(item);
+            }
+
+
+        }
+
 
         protected void btnComprar_Click(object sender, EventArgs e)
         {
             Response.Redirect("NuestrosServicios.aspx");
         }
-
-
-
-
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    ArrayList lista = new ArrayList();
-        //    string[] archivos = System.IO.Directory.GetFiles(Server.MapPath("../../Content/Image/Carrusel"),"*.jpg");
-        //    foreach (string archivo in archivos)
-        //    {
-        //        lista.Add("/Content/Image/Carrusel/"+ System.IO.Path.GetFileName(archivo));
-        //    }
-        //    Repeater1.DataSource = lista;
-        //    Repeater1.DataBind();
-        //}
 
 
 

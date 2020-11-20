@@ -33,7 +33,7 @@
 
   <center>
    
-    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowDataBound="GVPedido_RowDataBound"  AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged">
+    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowDataBound="GVPedido_RowDataBound" OnDataBound="GVPedido_DataBound"  AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo" >
             <HeaderStyle HorizontalAlign="Center" />
@@ -51,6 +51,9 @@
             </asp:BoundField>
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />
             <asp:BoundField DataField="Hora" HeaderText="Hora" DataFormatString="{0:t}" />
+              <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
+            <HeaderStyle HorizontalAlign="Center" />
+            </asp:BoundField>
               <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" >
             <HeaderStyle HorizontalAlign="Center" />
             <ItemStyle HorizontalAlign="Center" />
@@ -77,7 +80,7 @@
     <br />
          
      <center>
-    <asp:GridView ID="GVMisDirecciones" runat="server" Width="867px"   cssclass="table table-striped "    OnSelectedIndexChanged="GVMisDirecciones_SelectedIndexChanged"  OnRowCommand="GVMisDirecciones_RowCommand" AutoGenerateColumns="False" CellPadding="3" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
+    <asp:GridView ID="GVMisDirecciones" runat="server" Width="867px"   cssclass="table table-striped " OnDataBound="GVMisDirecciones_DataBound"    OnSelectedIndexChanged="GVMisDirecciones_SelectedIndexChanged"  OnRowCommand="GVMisDirecciones_RowCommand" AutoGenerateColumns="False" CellPadding="3" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
         <Columns>
           
             <asp:BoundField DataField="IdDireccion" HeaderText="IdDireccion" />

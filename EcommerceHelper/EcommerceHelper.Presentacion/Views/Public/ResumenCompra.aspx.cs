@@ -78,7 +78,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 foreach (ItemOrdenDeTrabajoEntidad item in ItemDeServicios)
                 {
                     
-                    suma += item.Precio ;
+                    suma += item.Precio * item.Cantidad ;
                     txtTotal.Text = " $ " + suma.ToString();
                    
 
@@ -121,6 +121,24 @@ namespace EcommerceHelper.Presentacion.Views.Private
             img.Attributes.Add("width", "90%");
 
             e.Row.Cells[3].Controls.Add(img);
+        }
+
+        protected void GVPedido_DataBound(object sender, EventArgs e)
+        {
+            GVPedido.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GVPedido.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
+        }
+
+        protected void GVMisDirecciones_DataBound(object sender, EventArgs e)
+        {
+            GVMisDirecciones.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GVMisDirecciones.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
         }
     }
 }

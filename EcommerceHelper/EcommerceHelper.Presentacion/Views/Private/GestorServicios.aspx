@@ -73,7 +73,7 @@
 </div>
     <center>
 
-     <asp:GridView ID="GrillaServicios" runat="server" Width="1000px" OnRowCommand ="GrillaServicios_RowCommand" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GrillaServicios_RowDataBound">
+     <asp:GridView ID="GrillaServicios" runat="server" Width="1000px" OnRowCommand ="GrillaServicios_RowCommand" AutoGenerateColumns="False" OnDataBound="GrillaServicios_DataBound" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GrillaServicios_RowDataBound">
          <AlternatingRowStyle BackColor="White" />
          <Columns>
              <asp:BoundField DataField="IdServicio" HeaderText="IdServicio" SortExpression="IdServicio" />

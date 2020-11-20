@@ -133,6 +133,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
             txtDepartamento.Text = string.Empty;
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MisDirecciones.aspx");
+        }
     }
 
 }

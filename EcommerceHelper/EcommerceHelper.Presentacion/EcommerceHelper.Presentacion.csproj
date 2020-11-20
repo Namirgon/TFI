@@ -374,16 +374,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\IIdiomaObserver.cs" />
-    <Compile Include="App_GlobalResources\Global.en.designer.cs">
-      <DependentUpon>Global.en.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="App_GlobalResources\Global.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Global.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_Code\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -687,24 +677,6 @@
       <Project>{ed87ad9e-9ee5-49e8-8f20-be35acc4c02e}</Project>
       <Name>EcommerceHelper.Funciones</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\Global.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Global.designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_LocalResources\PaginaMaestra.Master.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_LocalResources\PaginaMaestra.Master.En.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\Global.en.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Global.en.designer.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

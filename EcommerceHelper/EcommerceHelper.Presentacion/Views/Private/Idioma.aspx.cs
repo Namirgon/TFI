@@ -16,7 +16,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
-        IdiomaBLL GestorIdioma = new IdiomaBLL();
+        IdiomaBLL GestorIdioma ;
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -154,6 +154,15 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 }
             }
             catch { }
+        }
+
+        protected void GVGrilla_DataBound(object sender, EventArgs e)
+        {
+            GVGrilla.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GVGrilla.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
         }
     }
 }

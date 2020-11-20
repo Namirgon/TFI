@@ -90,16 +90,56 @@ namespace EcommerceHelper.DAL
         /// <summary>
         /// Selects all records from the LenguajeControl table.
         /// </summary>
-        public List<MultiIdiomaEntidad> SelectAll()
+        public List<MultiIdiomaEntidad> SelectAll( int idIdioma)
+
         {
-            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "MultiIdiomaControlSelectAll"))
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdIdioma", idIdioma)
+            };
+
+
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "MultiIdiomaControlSelectAll", parameters))
             {
                 List<MultiIdiomaEntidad> lenguajeControlEntidadList = new List<MultiIdiomaEntidad>();
 
-                lenguajeControlEntidadList = Mapeador.Mapear<MultiIdiomaEntidad>(dt);
+                lenguajeControlEntidadList = MapearTextos(ds);
 
                 return lenguajeControlEntidadList;
             }
+        }
+
+        public List<MultiIdiomaEntidad> MapearTextos(DataSet ds)
+        {
+
+            List<MultiIdiomaEntidad> ListTextosTraducidos = new List<MultiIdiomaEntidad>();
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    MultiIdiomaEntidad unaTraduccion = new MultiIdiomaEntidad();
+
+                    // unaTraduccion.IdMultiIdioma = (int)row["IdMultiIdioma"];
+
+                    //unaTraduccion.MiIdioma = new IdiomaEntidad();
+                    //unaTraduccion.MiIdioma.IdIdioma = (int)row["IdIdioma"];
+
+                    unaTraduccion.NombreDelControl= row["NombreDelControl"].ToString();
+                
+                    unaTraduccion.Texto= row["Texto"].ToString();
+
+                    ListTextosTraducidos.Add(unaTraduccion);
+                }
+                return ListTextosTraducidos;
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
         }
 
 

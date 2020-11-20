@@ -22,7 +22,7 @@ namespace EcommerceHelper.Entidades.Servicios
         public static string CarlcularDigitoUsuario(UsuarioEntidad unUsuario)
         {
 
-            string cadena =  unUsuario.Nombre + unUsuario.Apellido + unUsuario.NumeroDocumento + unUsuario.Email + unUsuario.Password + unUsuario.NumeroTelefono;
+            string cadena =  unUsuario.Nombre + unUsuario.Apellido + unUsuario.NumeroDocumento + unUsuario.Email + unUsuario.NumeroTelefono;
             double resultado=0;
 
             foreach ( char  c in cadena)

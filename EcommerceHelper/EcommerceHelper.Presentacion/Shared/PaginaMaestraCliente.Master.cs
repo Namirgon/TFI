@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.BLL.Managers;
+﻿using EcommerceHelper.BLL;
+using EcommerceHelper.BLL.Managers;
 using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.Entidades;
 using EcommerceHelper.Funciones.Seguridad;
@@ -14,7 +15,10 @@ namespace EcommerceHelper.Presentacion.Shared
     public partial class PaginaMaestraCliente : System.Web.UI.MasterPage
     {
         private HttpContext Current = HttpContext.Current;
-       
+        private List<IdiomaEntidad> idiomaEntidad;
+        IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
+        List<MultiIdiomaEntidad> Traducciones = new List<MultiIdiomaEntidad>();
+        IdiomaBLL _IdiomaBLL = new IdiomaBLL();
         UsuarioEntidad usuario = new UsuarioEntidad();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +26,7 @@ namespace EcommerceHelper.Presentacion.Shared
             usuario = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
             try
             {
-                string nombre = Session["NomUsuario"].ToString();               
+                string nombre = Session["NomUsuario"].ToString();
                 lblNombreUsuario.Text = "  Hola " + nombre;
 
             }
@@ -31,9 +35,39 @@ namespace EcommerceHelper.Presentacion.Shared
 
                 Response.Redirect("/Views/Public/Default.aspx");
             }
+            if (!IsPostBack)
+            {
+                ElegirIdioma();
+                IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
+                Session["Traducciones"] = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
+                Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"];
+                IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
+            }
 
         }
-       
+            public void ElegirIdioma()
+            {
+
+                ddlidioma.Items.Clear();
+                ddlidioma.SelectedValue = null;
+                idiomaEntidad = _IdiomaBLL.FindAll();
+                ddlidioma.DataSource = idiomaEntidad;
+                ddlidioma.DataValueField = "IdIdioma";
+                ddlidioma.DataTextField = "Descripcion";
+                ddlidioma.DataBind();
+
+            }
+
+        protected void ddlidioma_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
+            Session["Traducciones"] = _IdiomaBLL.DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
+            Traducciones = (List<MultiIdiomaEntidad>)HttpContext.Current.Session["Traducciones"];
+            IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
+
+
+        }
+
         public bool Autenticar(string elPermiso)
         {
             UsuarioEntidad usuarioAutenticado = new UsuarioEntidad();
@@ -88,5 +122,6 @@ namespace EcommerceHelper.Presentacion.Shared
             Response.Redirect("/Views/Public/Default.aspx");
         }
 
+       
     }
 }

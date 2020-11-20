@@ -36,7 +36,7 @@
                 <nav id="nav">
                      <ul class="nav">
                  <li>    <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="medium" ></asp:Label> <%--// poner nombre del Usuario--%></li>
-                 <li>    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text="<%$Resources:Global, CerrarSesion  %>"></asp:LinkButton></li>
+                 <li>    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text=" CerrarSesion  " ClientIDMode="Static"></asp:LinkButton></li>
                     
                  <li style="font-size:18px; margin-right: 20px">RRHH
                             <ul>
@@ -67,17 +67,7 @@
                                          
 
  
-                             <div id="google_translate_element" style="float: left; margin-left: 10px; margin-top: 20px;"></div>
-                         <%-- <a ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" CssClass="form-control"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
-                       
-                                    <asp:ListItem Text="<%$Resources:Global, Espanol %>" Value="es" />
-                                    <asp:ListItem Text="<%$Resources:Global, Ingles %>" Value="en-us" />
-                             </asp:DropDownList>
-                           </a>--%>
-
-                                         
-                            
-
+                      
                          </li>
 
                        

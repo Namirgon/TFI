@@ -16,7 +16,7 @@
    <br />
    <br />     
    <br />
-<asp:Label ID="lblIniciarSesion" ClientIDMode="Static"  runat="server" style="margin-left:30px; font-size:24px" Text="<%$Resources:Global, IniciarSesion %>"></asp:Label>
+<asp:Label ID="lblIniciarSesion" ClientIDMode="Static"  runat="server" style="margin-left:30px; font-size:24px" Text=" IniciarSesion"></asp:Label>
   
    <br />
    <br />     
@@ -27,20 +27,20 @@
    <br />
    <br />
   
-       <asp:Label ID="EtiquetaEmail" runat="server" Text="<%$Resources:Global, Usuario %>" visible="true"  style=" margin-left:100px"></asp:Label>
+       <asp:Label ID="EtiquetaEmail" runat="server" Text="Usuario " visible="true" ClientIDMode="Static"  style=" margin-left:100px"></asp:Label>
        <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:70px"></asp:TextBox>  
        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
  
   <br />
   <br />
-    <asp:Label ID="EtiquetaPassword2" runat="server" Text="<%$Resources:Global, Password %>" style=" margin-left:100px"></asp:Label>
+    <asp:Label ID="EtiquetaPassword2" runat="server" Text="Password " ClientIDMode="Static"  style=" margin-left:100px"></asp:Label>
     <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:50px"></asp:TextBox> 
     
    <br />
   
    <br />
-   <asp:Button style="margin-left:180px " ID="BtnAceptar" runat="server" Text="<%$Resources:Global, Aceptar %>"  Width="150px" OnClick="Button1_Click" />
-   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text="<%$Resources:Global, Cancelar %>" Width="150px" OnClick="BtnCancelar_Click" />
+   <asp:Button style="margin-left:180px " ID="BtnAceptar" runat="server"  ClientIDMode="Static" Text=" Aceptar"  Width="150px" OnClick="Button1_Click" />
+   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" ClientIDMode="Static"  Text=" Cancelar" Width="150px" OnClick="BtnCancelar_Click" />
    <br />
    <br />
    
@@ -52,10 +52,10 @@
 </div>
 
     <div>
-        <asp:LinkButton ID="registrarme"  runat="server" style="margin-left:100px; font-size:18px " Text="<%$Resources:Global, Registrarme %> " OnClick="lblRegistrarme_Click"></asp:LinkButton>
+        <asp:LinkButton ID="registrarme"  runat="server" style="margin-left:100px; font-size:18px " ClientIDMode="Static"  Text=" Registrarme " OnClick="lblRegistrarme_Click"></asp:LinkButton>
    </div>
      <div>
-        <asp:LinkButton ID="recuperarContrasena"  runat="server" style="margin-left:100px; font-size:18px " Text="<%$Resources:Global, RecuperarContraseña %> " OnClick="recuperarContrasena_Click"></asp:LinkButton>
+        <asp:LinkButton ID="recuperarContrasena"  runat="server" style="margin-left:100px; font-size:18px "  ClientIDMode="Static" Text=" RecuperarContraseña" OnClick="recuperarContrasena_Click"></asp:LinkButton>
    </div>
   </div>
 </asp:Content>

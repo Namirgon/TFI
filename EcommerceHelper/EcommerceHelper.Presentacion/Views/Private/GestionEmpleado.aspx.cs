@@ -197,6 +197,20 @@ namespace EcommerceHelper.Presentacion.Views.Private
             EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Modificacion Empleado", "Update Empleado: " + unUsuario.Apellido, "modificado correctamente", (unUsuario.IdUsuario).ToString());
             Response.Redirect("/Views/Private/MenuAdministracion.aspx");
         }
+
+        protected void GVGrillaEmpleado_DataBound(object sender, EventArgs e)
+        {
+            GVGrillaEmpleado.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GVGrillaEmpleado.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuAdministracion.aspx");
+        }
     }
 
       

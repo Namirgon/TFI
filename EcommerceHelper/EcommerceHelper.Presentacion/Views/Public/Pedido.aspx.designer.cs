@@ -13,6 +13,15 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class Pedido {
         
         /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        
+        /// <summary>
         /// Control GVPedido.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnContinuar;
+        
+        /// <summary>
+        /// Control btnIrADirecciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnIrADirecciones;
         
         /// <summary>
         /// Propiedad Master.

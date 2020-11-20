@@ -16,7 +16,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
         protected void Page_Load(object sender, EventArgs e)
         {
             // nombre de la patente de la pagina
-            string[] unosPermisosTest = new string[] { "GestionServicios" };
+            string[] unosPermisosTest = new string[] {"GestionServicios"};
             if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
             {
                 Response.Redirect("../Public/Default.aspx");
@@ -181,6 +181,16 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                 e.Row.Cells[4].Controls.Add(img);
             
+        }
+
+        protected void GrillaServicios_DataBound(object sender, EventArgs e)
+        {
+
+            GrillaServicios.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GrillaServicios.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
         }
     }
 }

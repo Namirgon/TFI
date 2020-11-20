@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestra" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true "   CodeBehind="PaginaMaestra.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestra" %>
 
 <%--<!DOCTYPE html>--%>
 
@@ -28,18 +28,17 @@
                 <a href="Default.aspx" class="logo">Helper</a>
                 
                     <nav id="nav">
-                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="IniciarSesion"  runat="server" text="Iniciar Sesión" ></asp:Label></a>
-                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="NuestrosServicios" runat="server"  text="Nuestros Servicios"></asp:Label></a>
+                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="IniciarSesion" ClientIDMode="Static"  runat="server" text="Iniciar Sesión" ></asp:Label></a>
+                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="NuestrosServicios" runat="server" ClientIDMode="Static"  text="Nuestros Servicios"></asp:Label></a>
                   
-                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="Intranet" runat="server"  Text="Intranet"></asp:Label></a>
+                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="Intranet" ClientIDMode="Static" runat="server"  Text="Intranet"></asp:Label></a>
                    
-                     <div id="google_translate_element" style="float:right; margin-left: 10px; margin-top: 20px;"></div>
-                    <%-- <a  ><asp:DropDownList ID="ddlIdioma" runat="server" AutoPostBack="true" CssClass="form-control"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
-                       
-                                   <%-- <asp:ListItem  Text="Espanol"  Value="es" />
-                                    <asp:ListItem Text=" Ingles"  Value="en-us" />
-                    </asp:DropDownList>
-                    </a>--%>
+                  
+                     <a  >
+                <asp:DropDownList ID="ddlidioma" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlidioma_SelectedIndexChanged"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                                    
+                </asp:DropDownList>
+                    </a>
                 </nav>
                    
             </div>

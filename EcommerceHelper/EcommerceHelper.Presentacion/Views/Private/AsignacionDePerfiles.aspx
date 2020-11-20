@@ -28,21 +28,45 @@
    <br />
    <br />
    <br />
-   <p style="margin-left:300px; color:white">Ingrese DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <input Placeholder="Numero de DNI" style="width:350px; margin-left:50px"/> &nbsp;&nbsp;<label> muestra nombre del empleado</label></p> 
+    <div runat="server"  style="width:1000px; margin-left:100px">
+        <br />
    <br />
-    <p style="margin-left:300px; color:white">Seleccione Perfil  <asp:DropDownList runat="server"  style="width:350px; margin-left:50px">
-                        <asp:ListItem>Perfil</asp:ListItem>
-                        <asp:ListItem>Ventas</asp:ListItem>
-                        <asp:ListItem>RRHH</asp:ListItem>
-                        
-                        </asp:DropDownList></p>
+    <br />  
+   <br />
+   <div class="form-group row" >
+   <asp:label runat="server" Text="Seleccione Empleado" style="margin-left:100px; color:white ; font-size:15px; " AssociatedControlID="ddlEmpleado" > </asp:label> 
+    <asp:DropDownList ID="ddlEmpleado" runat="server" AutoPostBack="true"  style="width:400px; margin-left:80px"  CssClass="form-control"></asp:DropDownList>
+   <asp:DropDownList runat="server" ID="DDLIDEmpleado" AutoPostBack="true" visible="false"  style="width:400px; margin-left:120px">  </asp:DropDownList>     
+
+   </div>
    <br />
   
    <br />
-   <asp:Button style="margin-left:400px " ID="Button1" runat="server" Text="Aceptar"  Width="150px" />
-   <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar" Width="150px" PostBackUrl ="~/Views/Public/Default.aspx" />
+    <div class="form-group row" >
+    <asp:label runat="server" Text="Seleccione Perfil" style="margin-left:100px; color:white ; font-size:15px" AssociatedControlID="ddlFamilia"> </asp:label>  
+    <asp:DropDownList ID="ddlFamilia" runat="server" AutoPostBack="true"  style="width:400px; margin-left:110px"  CssClass="form-control"></asp:DropDownList>
+   </div>
    <br />
    <br />
+    <br />  
+   <br />
+      
+    <br />  
+   <br />
+  <br />
+            <div class="btn-group"  >
+    <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" Width="150px" style="margin-left:300px" CssClass="form-control" OnClick="BtnAceptar_Click1"  /> 
+    <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px" style="margin-left:100px" CssClass="form-control" OnClick="BtnCancelar_Click1" />
+                 </div>
+  <br />  
+   <br />
+  <br />
+           
+   <br />
+        <br />  
+   <br />
+  <br />
+        </div>
    <br />
     </div>
    </div>

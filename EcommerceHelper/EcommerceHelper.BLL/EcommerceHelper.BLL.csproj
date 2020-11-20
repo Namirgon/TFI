@@ -67,6 +67,8 @@
     <Compile Include="ServicioBLL.cs" />
     <Compile Include="Servicios\DVHBLL.cs" />
     <Compile Include="Servicios\DVVBLL.cs" />
+    <Compile Include="Servicios\IObservable.cs" />
+    <Compile Include="Servicios\IObservador.cs" />
     <Compile Include="SexoBLL.cs" />
     <Compile Include="TarjetaBLL.cs" />
     <Compile Include="TipoDomicilioBLL.cs" />

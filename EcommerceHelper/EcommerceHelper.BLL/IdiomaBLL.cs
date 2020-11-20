@@ -1,4 +1,5 @@
-﻿using EcommerceHelper.DAL;
+﻿using EcommerceHelper.BLL.Servicios;
+using EcommerceHelper.DAL;
 using EcommerceHelper.Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,15 +10,16 @@ using System.Web.UI;
 
 namespace EcommerceHelper.BLL
 {
-  public   class IdiomaBLL
+  public   class IdiomaBLL: IObservable
     {
 
-        private IdiomaDAL _dal;
+        private IdiomaDAL _dal  ;
         private MultiIdiomaDAL _dalControl;
         private List<object> ListaResultado = new List<object>();
 
 
-        #region Constructor
+        //SINGLETON
+        private static IdiomaBLL _BLLServicioIdiomaUnico;
 
         public IdiomaBLL()
         {
@@ -25,7 +27,41 @@ namespace EcommerceHelper.BLL
             _dalControl = new MultiIdiomaDAL();
         }
 
-        #endregion Constructor
+
+        public static IdiomaBLL GetBLLServicioIdiomaUnico()
+        {
+            if (_BLLServicioIdiomaUnico == null)
+                _BLLServicioIdiomaUnico = new IdiomaBLL();
+            return _BLLServicioIdiomaUnico;
+        }
+
+        //END SINGLETON
+
+        public void Traducir( int elIdioma)
+        {
+            try
+            {
+
+                //ir a la BD y traer los textos y ponerlos en una variable de sesion 
+               // FindControlsByLenguaje(elIdioma);
+                ActualizarEstadoObservadores();
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+        }
+
+        public List< MultiIdiomaEntidad> DevuelverTodosLosTextos(int id)
+        {
+
+
+            return _dalControl.SelectAll(id);
+        }
+
+
+        
+
 
         public IdiomaEntidad Find(int id)
         {
@@ -42,14 +78,15 @@ namespace EcommerceHelper.BLL
             return _dalControl.Select(control, lenguajeID);
         }
 
-        public List<MultiIdiomaEntidad> FindControlAll()
+        public List<MultiIdiomaEntidad> FindControlAll(int id)
         {
-            return _dalControl.SelectAll();
+            return _dalControl.SelectAll(id);
         }
 
+     
         public List<MultiIdiomaEntidad> FindControlsByLenguaje(int id)
         {
-            return FindControlAll().Where(x => x.MiIdioma.IdIdioma  == id).ToList();
+            return FindControlAll(id).Where(x => x.MiIdioma.IdIdioma  == id).ToList();
         }
 
 

@@ -20,7 +20,7 @@
        
    <br />     
    <br />
-           <asp:Label ID="lblGestionDePermisos" runat="server" style="margin-left:30px; font-size:24px" Text="<%$Resources:Global, GestiondePermisos %>"></asp:Label>
+           <asp:Label ID="lblGestionDePermisos" runat="server" style="margin-left:30px; font-size:24px" Text=" GestiondePermisos" ClientIDMode="Static"></asp:Label>
     
 
    <br />
@@ -46,7 +46,7 @@
     <br />
           <div class="row">  
              <div class="col-md-4" style="margin-left:100px">
-                  <asp:Label ID="lbldisponibles" class="miLabel"  runat="server" Text="<%$Resources:Global, Disponibles %>"></asp:Label> <br />
+                  <asp:Label ID="lbldisponibles" class="miLabel"  runat="server" Text=" Disponibles" ClientIDMode="Static"></asp:Label> <br />
                 <div style="margin-left:70px"> <br />
                 <asp:UpdatePanel ID="upTreeDisp" runat="server" UpdateMode="Conditional" >
                     <ContentTemplate>
@@ -63,7 +63,7 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-4">
-            <asp:Label ID="lblasignados" class="page-header" runat="server" Text="<%$Resources:Global, Asignados %>"></asp:Label>
+            <asp:Label ID="lblasignados" class="page-header" runat="server" Text=" Asignados " ClientIDMode="Static"></asp:Label>
 
       
                 <asp:UpdatePanel ID="uptreeAsig" runat="server" UpdateMode="Conditional">

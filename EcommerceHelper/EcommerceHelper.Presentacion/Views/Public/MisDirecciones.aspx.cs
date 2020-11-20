@@ -146,6 +146,14 @@ namespace EcommerceHelper.Presentacion.Views.Public
             Response.Redirect("ResumenCompra.aspx");
         }
 
-            
+        protected void GVMisDirecciones_DataBound(object sender, EventArgs e)
+        {
+            GVMisDirecciones.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in GVMisDirecciones.Rows)
+            {
+                row.Cells[0].Visible = false;
+            }
+        }
+
     }
 }

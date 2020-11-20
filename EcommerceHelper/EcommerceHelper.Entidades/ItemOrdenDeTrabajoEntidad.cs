@@ -57,6 +57,8 @@ namespace EcommerceHelper.Entidades
         public DateTime Fecha { get; set; }
         public DateTime Hora { get; set; }
 
+        public int Cantidad { get; set; }
+
 
         #endregion
     }

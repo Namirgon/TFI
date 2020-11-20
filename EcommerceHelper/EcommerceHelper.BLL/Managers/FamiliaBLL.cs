@@ -212,7 +212,10 @@ namespace EcommerceHelper.BLL.Managers
             unaFamiliaDAL.UsuarioFamiliaInsert(unUsuario);
         }
 
-
+        public void UsuarioFamiliaUpdate(int unUsuario, int unaFamilia)
+        {
+           unaFamiliaDAL.UsuarioFamiliaUpdate(unUsuario, unaFamilia);
+        }
 
 
         public void UsuarioUpdatePermisosFamilia(UsuarioEntidad elUsuario)

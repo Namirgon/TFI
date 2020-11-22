@@ -140,8 +140,14 @@ namespace EcommerceHelper.Presentacion.Views.Public
                
                     unUsuario.DVH = int.Parse (DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
 
-
+                    // inserta el usuario y trae el IdUsuario del nuevo Usuario creado
                     NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
+
+
+                    int familia = unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
+                    string email = unUsuario.Email = txtusuario.Text;
+                    // Inserto en la tabla FamiliaUsuario el nuevo Cliente
+                    unManagerUsuario.InsertFamiliaUsuario(NroUsuario, familia, email );
 
                     //Direccion
                     UnaDireccion.Calle = txtCalle.Text;

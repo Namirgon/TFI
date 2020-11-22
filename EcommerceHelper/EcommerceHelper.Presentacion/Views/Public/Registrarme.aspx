@@ -29,9 +29,9 @@
     <div class="form-group">
        
     <asp:Label ID="lblUsuario" runat="server" Text="Usuario" style="margin-left:100px;color:white">Usuario</asp:Label>
-    <asp:TextBox  runat="server" style=" margin-left:200px; " ID="txtusuario"  placeholder="Ingrese Correo Electronico"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="  *  " ControlToValidate="txtusuario" Font-Bold="True"></asp:RequiredFieldValidator>
-    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese Email Valido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtusuario"></asp:RegularExpressionValidator>    
+    <asp:TextBox  runat="server" style=" margin-left:200px; " ID="txtusuario" TextMode="Email"  placeholder="Ingrese Correo Electronico"></asp:TextBox>
+   <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="  *  " ControlToValidate="txtusuario" Font-Bold="True"></asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese Email Valido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtusuario"></asp:RegularExpressionValidator>    --%>
 
     </div>
 
@@ -48,7 +48,8 @@
  <asp:Label ID="lblrcontrasena" runat="server" for="txtrepetircontrasena" style="margin-left:100px;color:white">Reingresar Contraseña</asp:Label>
  &nbsp;&nbsp;
  <asp:TextBox  ID="txtrepetircontrasena" runat="server" type="Password" style=" margin-left:95px" placeholder="Reingrese Contraseña" ></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="  *  " ControlToValidate="txtrepetircontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
+<asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="CompareValidator" ControlToValidate="txtrepetircontrasena" ControlToCompare="txtcontrasena" text="Las contraseñas deben ser iguales" ></asp:CompareValidator>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="  *  " ControlToValidate="txtrepetircontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
         </div>
     <br />
   
@@ -137,6 +138,14 @@
  </div>
 </div>
 
+    <script type="text/javascript">
+    function balidatu(){
+        var pas1 = $("#txtcontrasena").val();
+        var pas2 = $("#txtrepetircontrasena").val();
+        return (pas1 === pas2);
 
+
+    }
+</script>
   
 </asp:Content>

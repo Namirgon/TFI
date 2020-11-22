@@ -72,82 +72,69 @@
     <br />
      <div class="form-group">
     <asp:Label ID="lblTipoTelefono" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" AssociatedControlID="ddTipoTelefono">Tipo de Telefono</asp:Label> 
-    <asp:DropDownList runat="server" ID="ddTipoTelefono" AutoPostBack="true" style="width:400px; margin-left:144px" CssClass="dropdownlist">  </asp:DropDownList>  
+    <asp:DropDownList runat="server" ID="ddTipoTelefono" AutoPostBack="true" style="width:400px; margin-left:146px" CssClass="dropdownlist">  </asp:DropDownList>  
          </div>
         <br />
                                                                                                                                     
    <br />
      <div class="form-group row">
     <asp:Label ID="lblTelefono" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" AssociatedControlID="txtTelefono">Telefono</asp:Label> 
-    <asp:TextBox ID="txtTelefono" style="width:400px; margin-left:205px" runat="server" TextMode="Phone"></asp:TextBox>
+    <asp:TextBox ID="txtTelefono" style="width:400px; margin-left:208px" runat="server" TextMode="Phone"></asp:TextBox>
          </div>
       <br />
    <br />
      <div class="form-group row">
      <asp:Label ID="lblCalle" runat="server" Text="Calle" style="margin-left:100px; color:white; font-size:15px" AssociatedControlID="txtCalle">Calle</asp:Label>
-    <asp:TextBox ID="txtCalle" runat="server" style="width:400px; margin-left:220px"></asp:TextBox>
+    <asp:TextBox ID="txtCalle" runat="server" style="width:400px; margin-left:229px"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Ingrese Calle" Font-Bold="True" ControlToValidate="txtCalle"></asp:RequiredFieldValidator>
      </div>
          <br />
    <br />
      <div class="form-group row">
     <asp:Label ID="lblNumero" runat="server" Text="Label"  style="margin-left:100px; color:white; font-size:15px" AssociatedControlID="txtNumero"> Numero</asp:Label>
-    <asp:TextBox ID="txtNumero" runat="server" style="width:400px; margin-left:199px" TextMode="Number"></asp:TextBox>
+    <asp:TextBox ID="txtNumero" runat="server" style="width:400px; margin-left:213px" TextMode="Number"></asp:TextBox>
          </div>
    <br />
      <br />
      <div class="form-group row">
     <asp:Label ID="lblPiso" runat="server" Text="Label" style="margin-left:100px; color:white; font-size:15px" AssociatedControlID="txtPiso"> Piso</asp:Label>
-    <asp:TextBox ID="txtPiso" runat="server" style="width:400px; margin-left:223px" TextMode="Number"></asp:TextBox>
+    <asp:TextBox ID="txtPiso" runat="server" style="width:400px; margin-left:236px" TextMode="Number"></asp:TextBox>
 </div>
     <br />
      <br />
      <div class="form-group row">
     <asp:Label ID="LblDepartamento" runat="server" style="margin-left:100px; color:white; font-size:15px" Text="Label" AssociatedControlID="txtDepartamento">Departamento</asp:Label>
-    <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:144px"></asp:TextBox>
+    <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:176px"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Ingrese Departamento" ControlToValidate="txtDepartamento" Font-Bold="True"></asp:RequiredFieldValidator>
    </div>
      <br /> 
      <br />
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-             <br /> 
- <br /> 
-
-                    <div class="form-group row">
-                 
+                    <div class="form-group row">                 
                   <asp:Label ID="lblProvincia" For="ddProvincia" style="margin-left:100px; color:white; font-size:15px" runat="server" Text="Provincia" AssociatedControlID="ddProvincia"></asp:Label>  
-                <asp:DropDownList ID="ddProvincia" runat="server" ClientIDMode="static" CssClass="dropdownlist"   Width="400px" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="True" style="margin-left:192px">
+                <asp:DropDownList ID="ddProvincia" runat="server" ClientIDMode="static" CssClass="dropdownlist"   Width="400px" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="True" style="margin-left:203px">
                   </asp:DropDownList> 
-<br /> 
-                  <br />
                     </div>
                   <br /> 
                   <br />
-             <div class="form-group row">
+                  <div class="form-group row">
                   <asp:Label ID="lblLocalidad" for="ddLocalidad" style="margin-left:100px; color:white; font-size:15px" AssociatedControlID="ddLocalidad" runat="server" Text="Localidad"></asp:Label>
-                  <asp:DropDownList ID="ddLocalidad" runat="server" Width="400px" ClientIDMode="static" style="margin-left:190px"  CssClass="dropdownlist">
+                  <asp:DropDownList ID="ddLocalidad" runat="server" Width="400px" ClientIDMode="static" style="margin-left:200px"  CssClass="dropdownlist">
                   </asp:DropDownList>
-                 <br />
-    <br />
-                 </div>
-             <br />
-             <br /> 
-
+                 </div>          
          </ContentTemplate>
     </asp:UpdatePanel>
     <br />
     <br />
      <div class="form-group row">
     <asp:Label ID="Label2" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" AssociatedControlID="DDLTipodeDireccion">Tipo de Direccion</asp:Label> 
-    <asp:DropDownList runat="server" ID="DDLTipodeDireccion" AutoPostBack="true" style="width:400px; margin-left:140px" CssClass="dropdownlist">  </asp:DropDownList>    
+    <asp:DropDownList runat="server" ID="DDLTipodeDireccion" AutoPostBack="true" style="width:400px; margin-left:152px" CssClass="dropdownlist">  </asp:DropDownList>    
     </div>
     
     <br />
      <br />
-    <div class="btn-group">
-   <asp:Button style="margin-left:50px " ID="BtnContinuar" runat="server" Text="Confirmar"  Width="150px"  OnClick="BtnContinuar_Click"/>
-   <asp:Button style="margin-left:50px " ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px" OnClick="BtnCancelar_Click"  />
+    <div class="btn-group row">
         </div>
  <br />
         <br />
@@ -162,7 +149,15 @@
    <br />
    <br />
    <br />
-   <br />
+    <br />
+    <br />
+    <br />
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <asp:Button style="margin-left:50px " ID="BtnContinuar" runat="server" Text="Confirmar"  Width="150px"  OnClick="BtnContinuar_Click"/>
+   <asp:Button style="margin-left:50px " ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px" OnClick="BtnCancelar_Click"  />
+        <br />
+    <br />
     </div>
    <br />
    <br />

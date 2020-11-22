@@ -136,6 +136,21 @@ namespace EcommerceHelper.BLL
 
         }
 
+        public int InsertFamiliaUsuario(int usuario, int familia, string email)
+        {
+            try
+            {
+                _DalUsuario.InsertFamiliaUsuario(usuario, familia, email);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
         public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
         {
 

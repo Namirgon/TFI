@@ -2,6 +2,7 @@
 using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.Entidades;
 using EcommerceHelper.Entidades.Servicios;
+using EcommerceHelper.Funciones.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,8 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 cargarLocalidades();
                 cargarTipodeDireccion();
             }
-            string[] unosPermisosTest = new string[] { "AltaEmpleado" };
+            // nombre de la patente de la pagina
+            string[] unosPermisosTest = new string[] {"AltaEmpleado"};
             if (unUsuario == null || !this.Master.Autenticar(unosPermisosTest))
             {
                 Response.Redirect("../Public/Default.aspx");
@@ -129,12 +131,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                 {
 
-                    //unUsuario.Familia = new FamiliaEntidad();
-                    //unUsuario.Familia.IdFamilia  = FamiliaEntidad.PermisoFamilia.Empleado; // Usuario Empleado
+                   
                     unUsuario.MiUsuario = new TipoUsuarioEntidad();
                     unUsuario.MiUsuario.IdTipoUsuario = 3;
                     unUsuario.Email = txtusuario.Text;
-                    unUsuario.Password = txtcontrasena.Text;
+                    unUsuario.Password = ServicioSecurizacion.AplicarHash(txtcontrasena.Text);
                     unUsuario.Nombre = txtNombre.Text;
                     unUsuario.Apellido = txtApellido.Text;
                     unUsuario.MiSexo = new SexoEntidad();
@@ -146,6 +147,13 @@ namespace EcommerceHelper.Presentacion.Views.Private
                     unUsuario.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
 
                     NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
+
+
+                    int familia = unUsuario.MiUsuario.IdTipoUsuario = 3; // Empleado
+                    string email = unUsuario.Email = txtusuario.Text;
+                    int usuario = unUsuario.IdUsuario = NroUsuario;
+                    // Inserto en la tabla FamiliaUsuario el nuevo Cliente
+                    unManagerUsuario.InsertFamiliaUsuario(NroUsuario, familia, email);
 
                     //Direccion
                     UnaDireccion.Calle = txtCalle.Text;
@@ -168,7 +176,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                     managerDVV.InsertarDVV("DVV", "Usuario");
                    
-                    Response.Redirect("../Private/IniciarSesionIntranet.aspx");
+                    Response.Redirect("/Private/IniciarSesionIntranet.aspx");
                 }
                 else
                 {

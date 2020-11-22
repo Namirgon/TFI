@@ -39,15 +39,15 @@
 <center>
 
   
-    <asp:gridview runat="server" cssclass="table table-striped " Id="gvFacturas" OnRowCommand="gvFacturas_RowCommand"  Width="1000px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
+    <asp:gridview runat="server" cssclass="table table-striped " Id="gvFacturas" OnRowCommand="gvFacturas_RowCommand" OnDataBound="gvFacturas_DataBound"  Width="1000px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="IdComprobante" HeaderText="Numero Factura" />
             <asp:BoundField DataField="MiTipoComprobante.Descripcion" HeaderText="Tipo Comprobante" />
             <asp:BoundField DataField="MiSucursal.Descripcion" HeaderText="Sucursal" />
-            <%--<asp:BoundField DataField="MiOrdenDeTrabajo.IdOrdenDeTrabajo" HeaderText="Numero Orden De Trabajo" />--%>
+         
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />
-            <%--<asp:BoundField HeaderText="Importe" />--%>
+  
                     <asp:ButtonField CommandName="btnVerDetalle" Text="Ver Detalle" ButtonType="Button " ControlStyle-BackColor="Green"  ControlStyle-ForeColor="White" >
 <ControlStyle BackColor="Green" ForeColor="White"></ControlStyle>
             </asp:ButtonField>

@@ -11,10 +11,22 @@ namespace EcommerceHelper.Presentacion.Views.Private
 {
     public partial class GestorServicios : System.Web.UI.Page
     {
+        public UsuarioEntidad unUsuario = new UsuarioEntidad();
         ServicioBLL ServicioBLL = new ServicioBLL();
         UsuarioEntidad usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
+            var Current = HttpContext.Current;
+            unUsuario = (UsuarioEntidad)HttpContext.Current.Session["Usuario"];
+
+            string nombre = Session["NomUsuario"].ToString();
+
+            if (!IsPostBack)
+            {
+
+                Cargargrilla();
+
+            }
             // nombre de la patente de la pagina
             string[] unosPermisosTest = new string[] {"GestionServicios"};
             if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
@@ -22,7 +34,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 Response.Redirect("../Public/Default.aspx");
             }
 
-            Cargargrilla();
+            
         }
 
 

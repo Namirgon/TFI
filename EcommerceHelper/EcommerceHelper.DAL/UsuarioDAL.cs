@@ -125,6 +125,22 @@ namespace EcommerceHelper.DAL
             usuario.IdUsuario = IdUsuarioRes;
          }
 
+        //InsertFamiliaUsuario
+        public void InsertFamiliaUsuario(int Usuario, int Familia, string email)
+        {
+           
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdFamilia", Familia),
+                new SqlParameter("@IdUsuario", Usuario),
+                new SqlParameter("@Email", email),
+
+
+            };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "FamiliaUsuarioInsert", parameters);
+        }
         public void UsuarioDireccionCrear(DireccionEntidad direccionUsuario, UsuarioEntidad elUsuario)
         {
             ValidationUtility.ValidateArgument("UsuarioDireccion", direccionUsuario);

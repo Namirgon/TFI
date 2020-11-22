@@ -338,6 +338,7 @@
     <Content Include="Shared\Error.aspx" />
     <Content Include="Views\Private\AltaEmpleado.aspx" />
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
+    <Content Include="Views\Private\AsignacionDeServicios.aspx" />
     <Content Include="Views\Private\BackUp.aspx" />
     <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\Facturacion.aspx" />
@@ -428,6 +429,13 @@
     </Compile>
     <Compile Include="Views\Private\AsignacionDePerfiles.aspx.designer.cs">
       <DependentUpon>AsignacionDePerfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\AsignacionDeServicios.aspx.cs">
+      <DependentUpon>AsignacionDeServicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\AsignacionDeServicios.aspx.designer.cs">
+      <DependentUpon>AsignacionDeServicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\BackUp.aspx.cs">
       <DependentUpon>BackUp.aspx</DependentUpon>

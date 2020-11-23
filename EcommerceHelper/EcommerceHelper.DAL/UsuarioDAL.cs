@@ -111,10 +111,7 @@ namespace EcommerceHelper.DAL
                 new SqlParameter("@Nombre", usuario.Nombre),
                 new SqlParameter("@Apellido", usuario.Apellido),
                  new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
-                //new SqlParameter("@IdTipoDeDocumento",usuario.MiDocumento.IdTipoDeDocumento),
-                new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
-               
-               
+                new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento), 
                 new SqlParameter("@IdTipoTelefono", usuario.MiTelefono.IdTipoTelefono),
                 new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
                  new SqlParameter("@DVH", usuario.DVH),
@@ -305,6 +302,21 @@ namespace EcommerceHelper.DAL
         public List<UsuarioEntidad> SelectAllEmpleados()
         {
             using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectEmpleado"))
+            {
+
+                List<UsuarioEntidad> AllEmpleados = new List<UsuarioEntidad>();
+
+
+
+                AllEmpleados = MapearUsuarioEmpleado(dt);
+
+                return AllEmpleados;
+            }
+
+        }
+        public List<UsuarioEntidad> SelectAllEmpleadoDeLimpieza()
+        {
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectEmpleadoDeLimpieza"))
             {
 
                 List<UsuarioEntidad> AllEmpleados = new List<UsuarioEntidad>();

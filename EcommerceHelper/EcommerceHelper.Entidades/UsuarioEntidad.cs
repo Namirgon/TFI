@@ -35,7 +35,7 @@ namespace EcommerceHelper.Entidades
 
         public TipoTelefonoEntidad MiTelefono { get; set; }
 
-        public int NumeroTelefono { get; set; }
+        public Int64 NumeroTelefono { get; set; }
 
         public int IdTipoUsuario { get; set; }
         public int  DVH { get; set; }

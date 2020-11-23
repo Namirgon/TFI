@@ -22,6 +22,7 @@
 <div style="border:groove; background-image:url('../../Content/Image/bannerIntranet.jpg'); background-size:cover">
    
    <br />
+      <asp:Label ID="lblMensaje" runat="server" Visible="false" Text="Label"  style="color:white; font-size:20px; margin-left:500px" ></asp:Label> <br /><br />
    <br />
     <div class="form-group">
     <asp:Label ID="lblUsuario" runat="server" Text="Usuario" style="margin-left:100px;color:white; font-size:15px" AssociatedControlID="txtusuario">Usuario</asp:Label>
@@ -32,14 +33,15 @@
     <div class="form-group">
  <asp:Label ID="lblContrasena" runat="server" for="txtcontrasena" style="margin-left:100px;color:white; font-size:15px" AssociatedControlID="txtcontrasena">Contraseña</asp:Label>
  <asp:TextBox  ID="txtcontrasena" runat="server" type="Password" style="width:400px; margin-left:181px"></asp:TextBox>
- <asp:RequiredFieldValidator ID="RequiredFieldValidatorF" runat="server" ErrorMessage="Ingrese Contraseña" ControlToValidate="txtcontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
+ <asp:RequiredFieldValidator ID="RequiredFieldValidatorF" runat="server" ErrorMessage="Ingrese Contraseña" ControlToValidate="txtcontrasena"  Font-Bold="True"></asp:RequiredFieldValidator>
      </div>
      <br />
      <br />
     <div class="form-group">
  <asp:Label ID="lblrcontrasena" runat="server" for="txtrepetircontrasena" style="margin-left:102px;color:white; font-size:15px" AssociatedControlID="txtrepetircontrasena">Reingresar Contraseña</asp:Label>
- <asp:TextBox  ID="txtrepetircontrasena" runat="server" type="Password" style="width:400px; margin-left:109px"></asp:TextBox>
+ <asp:TextBox  ID="txtrepetircontrasena" runat="server" type="Password" style="width:400px; margin-left:109px" CausesValidation="true"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Reingrese la Constraseña" ControlToValidate="txtrepetircontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
+       <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las Contraseñas no son Iguales" ControlToCompare="txtcontrasena" ControlToValidate="txtrepetircontrasena" ValidationGroup="gvcontrasenias"></asp:CompareValidator>
         </div>
      <br />
   <br />
@@ -149,12 +151,12 @@
    <br />
    <br />
    <br />
-    <br />
+    <br /><%--ValidationGroup="gvcontrasenias"--%>
     <br />
     <br />
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <asp:Button style="margin-left:50px " ID="BtnContinuar" runat="server" Text="Confirmar"  Width="150px"  OnClick="BtnContinuar_Click"/>
+   <asp:Button style="margin-left:50px " ID="BtnContinuar" runat="server" Text="Confirmar"  Width="150px"   OnClick="BtnContinuar_Click"/>
    <asp:Button style="margin-left:50px " ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px" OnClick="BtnCancelar_Click"  />
         <br />
     <br />

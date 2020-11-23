@@ -112,77 +112,91 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void BtnContinuar_Click(object sender, EventArgs e)
         {
-
-
-            try
+            // revisa si el usuario ya existe 
+            UsuarioEntidad Existe = new UsuarioEntidad();
+            string email = txtusuario.Text;
+            Existe =  unManagerUsuario.BuscarMail(email);
+            if (Existe != null)
             {
-                var NroUsuario = 0;
-                if (Page.IsValid)
 
-                {
-                    //unUsuario.Familia = new FamiliaEntidad();
-                    //unUsuario.Familia.IdFamilia = FamiliaEntidad.PermisoFamilia.Cliente;
-                    unUsuario.MiUsuario = new TipoUsuarioEntidad();
-                    unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
-                    unUsuario.Email = txtusuario.Text;
-                    unUsuario.Password =ServicioSecurizacion.AplicarHash( txtcontrasena.Text);
-                    unUsuario.Nombre = txtNombre.Text;
-                    unUsuario.Apellido = txtApellido.Text;
-                    unUsuario.MiSexo = new SexoEntidad();
-                    unUsuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
-                    unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
-                    unUsuario.MiTelefono = new TipoTelefonoEntidad();
-                    unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
-                    unUsuario.MiDocumento = new TipoDeDocumentoEntidad();
-                    unUsuario.MiDocumento.IdTipoDeDocumento = 1;
-                    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
-
-               
-                    unUsuario.DVH = int.Parse (DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
-
-                    // inserta el usuario y trae el IdUsuario del nuevo Usuario creado
-                    NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
-
-
-                    int familia = unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
-                    string email = unUsuario.Email = txtusuario.Text;
-                    // Inserto en la tabla FamiliaUsuario el nuevo Cliente
-                    unManagerUsuario.InsertFamiliaUsuario(NroUsuario, familia, email );
-
-                    //Direccion
-                    UnaDireccion.Calle = txtCalle.Text;
-                    UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
-                    UnaDireccion.Piso = txtPiso.Text;
-                    UnaDireccion.Departamento = txtDepartamento.Text;
-                    UnaDireccion.MiProvincia = new ProvinciaEntidad();
-                    UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
-                    UnaDireccion.MiLocalidad = new LocalidadEntidad();
-                    UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
-                    UnaDireccion._MiTipoDireccion = new TipoDireccionEntidad();
-                    UnaDireccion._MiTipoDireccion.IdTipoDireccion = Int32.Parse(DDLTipodeDireccion.SelectedValue);
-
-                    unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
-
-                    limpiarCampos();
-                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Alta usuario", "Alta usuario: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
-
-                    DVVBLL managerDVV = new DVVBLL();
-
-                    managerDVV.InsertarDVV("DVV","Usuario");
-                    Response.Redirect("../Public/IniciarSesion.aspx");
-                }
-                else
-                {
-                   
-                    
-                }
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "El Usuario ya se encuentra registrado";
 
             }
-            catch(Exception ex)
+            else
             {
-                EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLog(ex, "Alta Usuario", unUsuario.Apellido, (unUsuario.IdUsuario).ToString());
-                Response.Redirect("/Shared/Error.aspx");
 
+
+                try
+                {
+                    var NroUsuario = 0;
+                    if (Page.IsValid)
+
+                    {
+                        //unUsuario.Familia = new FamiliaEntidad();
+                        //unUsuario.Familia.IdFamilia = FamiliaEntidad.PermisoFamilia.Cliente;
+                        unUsuario.MiUsuario = new TipoUsuarioEntidad();
+                        unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
+                        unUsuario.Email = txtusuario.Text;
+                        unUsuario.Password = ServicioSecurizacion.AplicarHash(txtcontrasena.Text);
+                        unUsuario.Nombre = txtNombre.Text;
+                        unUsuario.Apellido = txtApellido.Text;
+                        unUsuario.MiSexo = new SexoEntidad();
+                        unUsuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
+                        unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
+                        unUsuario.MiTelefono = new TipoTelefonoEntidad();
+                        unUsuario.MiTelefono.IdTipoTelefono = Int32.Parse(ddTipoTelefono.SelectedValue);
+                        unUsuario.MiDocumento = new TipoDeDocumentoEntidad();
+                        unUsuario.MiDocumento.IdTipoDeDocumento = 1;
+                        unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
+
+
+                        unUsuario.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
+
+                        // inserta el usuario y trae el IdUsuario del nuevo Usuario creado
+                        NroUsuario = unManagerUsuario.RegistrarUsuario(unUsuario);
+
+
+                        int familia = unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
+                       // string email = unUsuario.Email = txtusuario.Text;
+                        // Inserto en la tabla FamiliaUsuario el nuevo Cliente
+                        unManagerUsuario.InsertFamiliaUsuario(NroUsuario, familia, email);
+
+                        //Direccion
+                        UnaDireccion.Calle = txtCalle.Text;
+                        UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
+                        UnaDireccion.Piso = txtPiso.Text;
+                        UnaDireccion.Departamento = txtDepartamento.Text;
+                        UnaDireccion.MiProvincia = new ProvinciaEntidad();
+                        UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
+                        UnaDireccion.MiLocalidad = new LocalidadEntidad();
+                        UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
+                        UnaDireccion._MiTipoDireccion = new TipoDireccionEntidad();
+                        UnaDireccion._MiTipoDireccion.IdTipoDireccion = Int32.Parse(DDLTipodeDireccion.SelectedValue);
+
+                        unManagerUsuario.InsertDireccionDeFacturacion(UnaDireccion, unUsuario);
+
+                        limpiarCampos();
+                        EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Alta usuario", "Alta usuario: " + unUsuario.Apellido, "creado correctamente", (unUsuario.IdUsuario).ToString());
+
+                        DVVBLL managerDVV = new DVVBLL();
+
+                        managerDVV.InsertarDVV("DVV", "Usuario");
+                        Response.Redirect("../Public/IniciarSesion.aspx");
+                    }
+                    else
+                    {
+
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLog(ex, "Alta Usuario", unUsuario.Apellido, (unUsuario.IdUsuario).ToString());
+                    Response.Redirect("/Shared/Error.aspx");
+
+                }
             }
         }
         public void limpiarCampos()

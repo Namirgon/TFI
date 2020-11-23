@@ -22,6 +22,7 @@
    
    <br />
    <br />
+          <asp:Label ID="lblMensaje" runat="server" Visible="false" Text="Label"  style="color:white; font-size:20px; margin-left:500px" ></asp:Label> <br /><br />
    <br />
    <br />
 
@@ -30,10 +31,7 @@
        
     <asp:Label ID="lblUsuario" runat="server" Text="Usuario" style="margin-left:100px;color:white">Usuario</asp:Label>
     <asp:TextBox  runat="server" style=" margin-left:200px; " ID="txtusuario" TextMode="Email"  placeholder="Ingrese Correo Electronico"></asp:TextBox>
-   <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="  *  " ControlToValidate="txtusuario" Font-Bold="True"></asp:RequiredFieldValidator>
-    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese Email Valido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtusuario"></asp:RegularExpressionValidator>    --%>
-
-    </div>
+  </div>
 
     <br />
     <div class="form-group">
@@ -50,6 +48,8 @@
  <asp:TextBox  ID="txtrepetircontrasena" runat="server" type="Password" style=" margin-left:95px" placeholder="Reingrese Contraseña" ></asp:TextBox>
 <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="CompareValidator" ControlToValidate="txtrepetircontrasena" ControlToCompare="txtcontrasena" text="Las contraseñas deben ser iguales" ></asp:CompareValidator>
 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="  *  " ControlToValidate="txtrepetircontrasena" Font-Bold="True"></asp:RequiredFieldValidator>
+              <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Las Contraseñas no son Iguales" ControlToCompare="txtcontrasena" ControlToValidate="txtrepetircontrasena" ValidationGroup="gvcontrasenias"></asp:CompareValidator>
+
         </div>
     <br />
   

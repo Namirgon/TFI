@@ -11,7 +11,8 @@ namespace EcommerceHelper.Presentacion.Views.Private
 {
     public partial class AsignacionDeServicios : System.Web.UI.Page
     {
-
+        List<UsuarioEntidad> ListEmpleados = new List<UsuarioEntidad>();
+        UsuarioBLL GestorUsuario = new UsuarioBLL();
         UsuarioEntidad usuario;
         List<ComprobanteEntidad> Facturas = new List<ComprobanteEntidad>();
         ComprobanteBLL GestorComprobante = new ComprobanteBLL();
@@ -25,6 +26,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             {
 
                 CargarGrillaFactura();
+                cargarEmpleados();
 
             }
             string[] unosPermisosTest = new string[] { "AsignacionDeServicios" };
@@ -32,6 +34,21 @@ namespace EcommerceHelper.Presentacion.Views.Private
             {
                 Response.Redirect("../Public/Default.aspx");
             }
+        }
+
+        public void cargarEmpleados()
+        {
+
+
+            ddlEmpleado.DataSource = null;
+            ListEmpleados = GestorUsuario.SelectALLEmpleadoDeLimpieza();
+
+            DDLIDEmpleado.DataSource = ListEmpleados.Select(a => a.IdUsuario);
+            DDLIDEmpleado.DataBind();
+            ddlEmpleado.DataSource = ListEmpleados.Select(a => a.Apellido + ", " + a.Nombre);
+            ddlEmpleado.DataBind();
+
+
         }
 
         public void CargarGrillaFactura()
@@ -126,6 +143,16 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 row.Cells[0].Visible = false;
                 
             }
+        }
+
+        protected void BtnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuAdministracion.aspx");
         }
     }
 }

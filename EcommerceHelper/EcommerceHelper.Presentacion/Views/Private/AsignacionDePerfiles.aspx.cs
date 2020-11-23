@@ -75,14 +75,17 @@ namespace EcommerceHelper.Presentacion.Views.Private
             unEmpleado.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(unEmpleado));
             unEmpleado.MiUsuario = new TipoUsuarioEntidad();
             unEmpleado.MiUsuario.IdTipoUsuario = IdFamilia;
-            // Actualizo tabla DVV
-            DVVBLL managerDVV = new DVVBLL();
-            managerDVV.InsertarDVV("DVV", "Usuario");
+           
             // Grabo datos actualizados del empleado
             GestorUsuario.UpdateDatosEmpleado(unEmpleado);
 
+
             // actualizo taba FamiliaUsuario
             GestorFamilia.UsuarioFamiliaUpdate(IdUsuario, IdFamilia);
+
+            // Actualizo tabla DVV
+            DVVBLL managerDVV = new DVVBLL();
+            managerDVV.InsertarDVV("DVV", "Usuario");
 
             cargarEmpleados();
             

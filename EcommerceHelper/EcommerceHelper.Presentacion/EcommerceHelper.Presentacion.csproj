@@ -340,7 +340,6 @@
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
     <Content Include="Views\Private\AsignacionDeServicios.aspx" />
     <Content Include="Views\Private\BackUp.aspx" />
-    <Content Include="Views\Private\DireccionEmpleado.aspx" />
     <Content Include="Views\Private\Facturacion.aspx" />
     <Content Include="Views\Private\GestionDePermisos.aspx" />
     <Content Include="Views\Private\GestionEmpleado.aspx" />
@@ -443,13 +442,6 @@
     </Compile>
     <Compile Include="Views\Private\BackUp.aspx.designer.cs">
       <DependentUpon>BackUp.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Private\DireccionEmpleado.aspx.cs">
-      <DependentUpon>DireccionEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Private\DireccionEmpleado.aspx.designer.cs">
-      <DependentUpon>DireccionEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\Facturacion.aspx.cs">
       <DependentUpon>Facturacion.aspx</DependentUpon>

@@ -38,6 +38,10 @@ namespace EcommerceHelper.BLL
         {
             return _DalComprobante.SelectAllFacturas();
         }
+        public List<ComprobanteEntidad> FindAllFacturasSinAsignar()
+        {
+            return _DalComprobante.FindAllFacturasSinAsignar();
+        }
 
         public ComprobanteEntidad FindComprobante(int id)
         {

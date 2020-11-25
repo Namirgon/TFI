@@ -27,6 +27,8 @@ namespace EcommerceHelper.BLL
 
         }
 
+       
+
         public OrdenDeTrabajoEntidad SelectODT(int id)
         {
             return GestorOrdenDeTrabajo.Select(id);

@@ -314,9 +314,34 @@ namespace EcommerceHelper.DAL
             }
 
         }
-        public List<UsuarioEntidad> SelectAllEmpleadoDeLimpieza()
+        public List<UsuarioEntidad> SelectAllEmpleadoDeLimpieza( )
         {
+            //SqlParameter[] parameter = new SqlParameter[]
+            //{
+            //    new SqlParameter ("@IdLocalidad", idLocalidad)
+
+            //};
             using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "SelectEmpleadoDeLimpieza"))
+            {
+
+                List<UsuarioEntidad> AllEmpleados = new List<UsuarioEntidad>();
+
+
+
+                AllEmpleados = MapearUsuarioEmpleado(dt);
+
+                return AllEmpleados;
+            }
+
+        }
+        public List<UsuarioEntidad> SelectALLEmpleadoDeLimpiezabyLocalidad(int idLocalidad)
+        {
+            SqlParameter[] parameter = new SqlParameter[]
+            {
+                new SqlParameter ("@IdLocalidad", idLocalidad)
+
+            };
+            using (DataSet dt = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "[SelectALLEmpleadoDeLimpiezabyLocalidad]", parameter))
             {
 
                 List<UsuarioEntidad> AllEmpleados = new List<UsuarioEntidad>();

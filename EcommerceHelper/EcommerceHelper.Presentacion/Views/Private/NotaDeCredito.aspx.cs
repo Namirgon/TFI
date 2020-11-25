@@ -122,14 +122,14 @@ namespace EcommerceHelper.Presentacion.Views.Private
             }
         }
 
-        protected void gvNotaDeCredito_DataBound(object sender, EventArgs e)
-        {
-            gvNotaDeCredito.HeaderRow.Cells[0].Visible = false;
-            foreach (GridViewRow row in gvNotaDeCredito.Rows)
-            {
-                row.Cells[0].Visible = false;
+        //protected void gvNotaDeCredito_DataBound(object sender, EventArgs e)
+        //{
+        //    gvNotaDeCredito.HeaderRow.Cells[0].Visible = false;
+        //    foreach (GridViewRow row in gvNotaDeCredito.Rows)
+        //    {
+        //        row.Cells[0].Visible = false;
 
-            }
-        }
+        //    }
+        //}
     }
 }

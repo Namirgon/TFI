@@ -225,6 +225,21 @@ namespace EcommerceHelper.DAL
             SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListaDeItemUpDate", parameters);
         }
 
+
+        public void UsuarioServicioInsert( int IdUs, int Id) // aca!!
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+                {
+
+                new SqlParameter("@IdOrdenDeTrabajo",Id),
+               
+                new SqlParameter("@IdUsuario", IdUs)
+
+                };
+
+            SqlClientUtility.ExecuteNonQuery(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UsuarioServicioInsert", parameters);
+        }
+
         public ItemOrdenDeTrabajoEntidad Select(ItemOrdenDeTrabajoEntidad listaItem)
         {
             SqlParameter[] parameters = new SqlParameter[]
@@ -271,7 +286,7 @@ namespace EcommerceHelper.DAL
 
             return UnaItemOT;
         }
-        public List<ItemOrdenDeTrabajoEntidad> ResumenDeComprabyIdODT(int idOrdenDeTrabajo) // aca !
+        public List<ItemOrdenDeTrabajoEntidad> ResumenDeComprabyIdODT(int idOrdenDeTrabajo) 
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -284,6 +299,53 @@ namespace EcommerceHelper.DAL
                 List<ItemOrdenDeTrabajoEntidad> ItemOrdenDeTrabajoEntidad = new List<ItemOrdenDeTrabajoEntidad>();
                 ItemOrdenDeTrabajoEntidad = MapeadorResumenCompraItemservicio(ds);
                 return ItemOrdenDeTrabajoEntidad;
+            }
+        }
+
+        public List<ItemOrdenDeTrabajoEntidad> ResumenDeCompraIdODTByIdLocalidad(int idOrdenDeTrabajo)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdOrdenDeTrabajo", idOrdenDeTrabajo),
+
+            };
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "[ResumenCompraByIdLocalidad]", parameters))
+            {
+
+                List<ItemOrdenDeTrabajoEntidad> ItemOrdenDeTrabajoEntidad = new List<ItemOrdenDeTrabajoEntidad>();
+                ItemOrdenDeTrabajoEntidad = MapeadorResumenByIdLocalidad(ds);
+                return ItemOrdenDeTrabajoEntidad;
+            }
+        }
+        private List<ItemOrdenDeTrabajoEntidad> MapeadorResumenByIdLocalidad(DataSet ds)// estoy aca!
+        {
+
+            List<ItemOrdenDeTrabajoEntidad> ListaItemOT = new List<ItemOrdenDeTrabajoEntidad>();
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ItemOrdenDeTrabajoEntidad UnaItemOT = new ItemOrdenDeTrabajoEntidad();
+
+                    UnaItemOT.IdItemOrdenDeTrabajo = (int)row["IdItemOrdenDeTrabajo"];
+
+                    UnaItemOT.MiDireccion = new DireccionEntidad();
+                    UnaItemOT.MiDireccion.IdDireccion = (int)row["IdDireccion"];
+                    UnaItemOT.MiDireccion.MiLocalidad = new LocalidadEntidad();
+                    UnaItemOT.MiDireccion.MiLocalidad.IdLocalidad= (int)row["IdLocalidad"];
+
+
+
+                    ListaItemOT.Add(UnaItemOT);
+                }
+
+                return ListaItemOT;
+            }
+            catch (Exception es)
+            {
+                throw;
             }
         }
 

@@ -127,6 +127,12 @@ namespace EcommerceHelper.BLL
             return _DalUsuario.SelectAllEmpleadoDeLimpieza();
 
         }
+        public List<UsuarioEntidad> SelectALLEmpleadoDeLimpiezabyLocalidad(int idLoc)
+        {
+
+            return _DalUsuario.SelectALLEmpleadoDeLimpiezabyLocalidad(idLoc);
+
+        }
         public int RegistrarUsuario(UsuarioEntidad usuario)
         {
             try

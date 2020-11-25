@@ -65,6 +65,26 @@ namespace EcommerceHelper.BLL
             return unItemDAL.ResumenDeComprabyIdODT(IdODT);
 
         }
+        public List<ItemOrdenDeTrabajoEntidad> ResumenDeCompraByIdLocalidad(int IdODT)
+        {
+            return unItemDAL.ResumenDeCompraIdODTByIdLocalidad(IdODT);
+
+        }
+
+        public int UsuarioServicioInsert(int Idusuario, int IdOdt) // aca 
+        {
+            try
+            {
+                unItemDAL.UsuarioServicioInsert(Idusuario, IdOdt);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
         public int ListaDeItemUpdate(int Id, DateTime fecha, DateTime hora, int Cantidad)
         {
 

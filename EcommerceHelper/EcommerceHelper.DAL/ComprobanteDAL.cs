@@ -49,6 +49,21 @@ namespace EcommerceHelper.DAL
 
         }
 
+        public List<ComprobanteEntidad> FindAllFacturasSinAsignar()
+        {
+
+
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarFacturaBSinAsignar"))
+            {
+                List<ComprobanteEntidad> ListaDeFacturas = new List<ComprobanteEntidad>();
+
+                ListaDeFacturas = MapearMisComprobantes(ds);
+
+                return ListaDeFacturas;
+            }
+
+        }
+
         public List<ComprobanteEntidad> SelectAllNC()
         {
 

@@ -54,7 +54,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
         public void CargarGrillaFactura()
         {
 
-            Facturas = GestorComprobante.FindAllFacturas();
+            Facturas = GestorComprobante.FindAllFacturasSinAsignar();
 
             gvFacturas.DataSource = Facturas;
             gvFacturas.DataBind();
@@ -68,6 +68,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
 
             ComprobanteEntidad Factura;
+            OrdenDeTrabajoEntidad unaOrden = new OrdenDeTrabajoEntidad();
+            OrdenDeTrabajoBLL gestorODT = new OrdenDeTrabajoBLL();
+            List<ItemOrdenDeTrabajoEntidad> unItem = new List<ItemOrdenDeTrabajoEntidad>();
+            ItemOrdenDeTrabajoBLL GestorItem = new ItemOrdenDeTrabajoBLL();
+
 
 
             // Busca el IdFactura para traer todos sus datos
@@ -77,17 +82,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                 case "btnVerDetalle":
                     {
-
-                        OrdenDeTrabajoEntidad unaOrden = new OrdenDeTrabajoEntidad();
-                        OrdenDeTrabajoBLL gestorODT = new OrdenDeTrabajoBLL();
-
+                   
 
                         // Busca la OrdenDeTrabajo que figura en la Factura.
                         unaOrden = gestorODT.SelectODT(Factura.MiOrdenDeTrabajo.IdOrdenDeTrabajo);
 
-                        List<ItemOrdenDeTrabajoEntidad> unItem = new List<ItemOrdenDeTrabajoEntidad>();
-                        ItemOrdenDeTrabajoBLL GestorItem = new ItemOrdenDeTrabajoBLL();
-
+                       
                         // Busca los Item que pertenecen a la OrdenDeTrabajo
                         unItem = GestorItem.ResumenDeCompra(unaOrden.IdOrdenDeTrabajo);
 
@@ -96,30 +96,76 @@ namespace EcommerceHelper.Presentacion.Views.Private
                         DetalleFactura.DataSource = unItem;
                         DetalleFactura.DataBind();
 
+                        break;
+                    }
+                case "btnSeleccionar":
+
+                    {
+                        // recarga el ddlist de usuarios empleados que tienen el mismo idlocalidad que el usuario cliente
+
+                       
+                        // Busca la OrdenDeTrabajo que figura en la Factura.
+                        unaOrden = gestorODT.SelectODT(Factura.MiOrdenDeTrabajo.IdOrdenDeTrabajo);
+
+                        // Busca los Item que pertenecen a la OrdenDeTrabajo
+                        unItem = GestorItem.ResumenDeCompraByIdLocalidad(unaOrden.IdOrdenDeTrabajo);
+
+                        foreach (ItemOrdenDeTrabajoEntidad x in unItem)
+                        {
+                            int idloc = x.MiDireccion.MiLocalidad.IdLocalidad;
+        
+                            //busca en la tabla el iddireccion para obtener el idlocalidad
+
+
+                            ddlEmpleado.DataSource = null;
+                           ListEmpleados = GestorUsuario.SelectALLEmpleadoDeLimpiezabyLocalidad(idloc );
+
+                            DDLIDEmpleado.DataSource = ListEmpleados.Select(a => a.IdUsuario);
+                            DDLIDEmpleado.DataBind();
+                            ddlEmpleado.DataSource = ListEmpleados.Select(a => a.Apellido + ", " + a.Nombre);
+                            ddlEmpleado.DataBind();
+                        }
+
+
 
 
                         break;
-                    }
-                case "btnAsignar":
 
+                    }
+
+                //BtnAsignar
+                case "BtnAsignar":
                     {
-                        // Genera comprobante de tipo Nota de Credito = 2 , Sucursal General Rodriguez = 1 , Fecha = hoy
+                        // Busca la OrdenDeTrabajo que figura en la Factura.
+                        unaOrden = gestorODT.SelectODT(Factura.MiOrdenDeTrabajo.IdOrdenDeTrabajo);
 
 
                         
+                            int IdEmpleado = Int32.Parse(DDLIDEmpleado.Items[ddlEmpleado.SelectedIndex].ToString());
+                            int IdOdt = unaOrden.IdOrdenDeTrabajo;
+
+                            GestorItem.UsuarioServicioInsert(IdEmpleado, IdOdt);
 
 
+                        
+                        CargarGrillaFactura();
 
                         break;
-
                     }
-
-
-
 
             }
 
 
+        }
+
+        protected void BtnAceptar_Click(object sender, EventArgs e)
+        {
+
+            //ItemOrdenDeTrabajoEntidad asignarItem = new ItemOrdenDeTrabajoEntidad();
+
+            //asignarItem.MiUsuario = new UsuarioEntidad();
+            //asignarItem.MiUsuario.IdUsuario = int.Parse(ddlEmpleado.SelectedValue);
+           // asignarItem.IdItemOrdenDeTrabajo =
         }
 
         protected void DetalleFactura_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
@@ -129,10 +175,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void DetalleFactura_DataBound(object sender, EventArgs e)
         {
-            DetalleFactura.HeaderRow.Cells[0].Visible = false;
-            
-               DetalleFactura.Rows[0].Visible = false;
-           
+            //DetalleFactura.HeaderRow.Cells[0].Visible = false;
+
+            //DetalleFactura.Rows[0].Visible = false;
+
         }
 
         protected void gvFacturas_DataBound(object sender, EventArgs e)
@@ -145,10 +191,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             }
         }
 
-        protected void BtnAceptar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         protected void BtnCancelar_Click(object sender, EventArgs e)
         {

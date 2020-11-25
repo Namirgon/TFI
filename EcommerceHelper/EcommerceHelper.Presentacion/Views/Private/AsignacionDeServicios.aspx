@@ -25,7 +25,7 @@
     <center>
 
   
-    <asp:gridview runat="server" cssclass="table table-striped " Id="gvFacturas" OnRowCommand="gvFacturas_RowCommand"  OnDataBound="gvFacturas_DataBound" Width="850px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
+    <asp:gridview runat="server" cssclass="table table-striped " Id="gvFacturas" OnRowCommand="gvFacturas_RowCommand"  OnDataBound="gvFacturas_DataBound" Width="750px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="IdComprobante" HeaderText="Numero Factura" />
@@ -37,9 +37,10 @@
                     <asp:ButtonField CommandName="btnVerDetalle" Text="Ver Detalle" ButtonType="Button " ControlStyle-BackColor="Green"  ControlStyle-ForeColor="White" >
 <ControlStyle BackColor="Green" ForeColor="White"></ControlStyle>
             </asp:ButtonField>
-             <asp:ButtonField CommandName="btnAsignar" Text="Asignar" ButtonType="Button " ControlStyle-BackColor="Red"  ControlStyle-ForeColor="White" >
+             <asp:ButtonField CommandName="btnSeleccionar" Text="Seleccionar" ButtonType="Button " ControlStyle-BackColor="Red"  ControlStyle-ForeColor="White" >
 <ControlStyle BackColor="Red" ForeColor="White"></ControlStyle>
             </asp:ButtonField>
+            <asp:ButtonField ButtonType="Button" CommandName="BtnAsignar" Text="Asignar" ControlStyle-BackColor="Blue"  ControlStyle-ForeColor="White" />
         </Columns>
 
 

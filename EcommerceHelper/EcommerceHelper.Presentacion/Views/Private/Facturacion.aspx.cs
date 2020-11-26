@@ -124,15 +124,15 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         }
 
-        protected void gvFacturas_DataBound(object sender, EventArgs e)
-        {
-            gvFacturas.HeaderRow.Cells[0].Visible = false;
-            foreach (GridViewRow row in gvFacturas.Rows)
-            {
-                row.Cells[0].Visible = false;
+        //protected void gvFacturas_DataBound(object sender, EventArgs e)
+        //{
+        //    gvFacturas.HeaderRow.Cells[0].Visible = false;
+        //    foreach (GridViewRow row in gvFacturas.Rows)
+        //    {
+        //        row.Cells[0].Visible = false;
 
-            }
-        }
+        //    }
+        //}
     }
 
 }

@@ -33,7 +33,7 @@
      
   
  
-    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowUpdating="GVPedido_RowUpdating" OnRowDataBound="GVPedido_RowDataBound"  OnRowEditing="GVPedido_RowEditing" AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged" OnDataBound="GVPedido_DataBound">
+    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowUpdating="GVPedido_RowUpdating"   OnRowEditing="GVPedido_RowEditing" AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged" OnDataBound="GVPedido_DataBound">
         <Columns>
             <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo"  >
             <HeaderStyle HorizontalAlign="Center" />

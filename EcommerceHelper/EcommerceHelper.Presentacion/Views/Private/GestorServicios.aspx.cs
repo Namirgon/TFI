@@ -27,14 +27,14 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 Cargargrilla();
 
             }
+          
             // nombre de la patente de la pagina
-            string[] unosPermisosTest = new string[] {"GestionServicios"};
-            if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
+            string[] unosPermisosTest = new string[] { "ABMServicios" };
+            if (unUsuario == null || !this.Master.Autenticar(unosPermisosTest))
             {
-                Response.Redirect("../Public/Default.aspx");
+                Response.Redirect("../Private/MenuAdministracion.aspx");
             }
 
-            
         }
 
 

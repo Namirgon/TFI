@@ -77,7 +77,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                             ServicioLog.CrearLogEventos("Restaurar", "Restauración realizada correctamente", usuarioentidad.Apellido ,(usuarioentidad.IdUsuario).ToString());
                             Session.Abandon();
                           
-                            Response.Redirect("/views/Private/MenuAdministracion.aspx", false);
+                            Response.Redirect("../../Private/MenuAdministracion.aspx", false);
                         }
                     }
                     else
@@ -109,7 +109,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("../../Private/MenuAdministracion.aspx");
         }
     }
 }

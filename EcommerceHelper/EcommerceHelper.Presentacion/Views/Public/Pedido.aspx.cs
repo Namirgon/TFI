@@ -69,11 +69,22 @@ namespace EcommerceHelper.Presentacion.Views.Public
             ExisteOrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
 
             //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
-            ItemDeServicios = GestorItemODT.ListaItemSelectAllByIdODT(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);          
+            ItemDeServicios = GestorItemODT.ListaItemSelectAllByIdODT(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);     
+            
+            if (ItemDeServicios.Count < 1 )
+            {
 
-            GVPedido.DataSource = ItemDeServicios;
-            GVPedido.DataBind();
-          
+                Response.Write("<script>alert('No posee pedidos')</script>");
+                //Response.Redirect("../../NuestrosServicios.aspx");
+            }
+            else
+            {
+
+                GVPedido.DataSource = ItemDeServicios;
+                GVPedido.DataBind();
+
+            }
+
         }
 
         protected void btnDatosPersonales(object sender, EventArgs e)
@@ -151,7 +162,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 {
                     if (!bandera)
                     {
-                        Response.Redirect("MisDirecciones.aspx");
+                        Response.Redirect("../../Direccion.aspx");
                     }
                     else
                     {
@@ -233,11 +244,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         }
 
-        protected void GVPedido_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            
-        }
-
+       
         protected void GVPedido_RowEditing(object sender, GridViewEditEventArgs e)
         {
         }
@@ -286,7 +293,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void btnIrADirecciones_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MisDirecciones.aspx");
+            Response.Redirect("../../Direccion.aspx");
         }
     }
 }

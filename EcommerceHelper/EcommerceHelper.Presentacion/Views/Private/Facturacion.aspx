@@ -39,7 +39,7 @@
 <center>
 
   
-    <asp:gridview runat="server" cssclass="table table-striped " Id="gvFacturas" OnRowCommand="gvFacturas_RowCommand" OnDataBound="gvFacturas_DataBound"  Width="1000px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
+    <asp:gridview runat="server" cssclass="table table-striped " Id="gvFacturas" OnRowCommand="gvFacturas_RowCommand"   Width="850px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="IdComprobante" HeaderText="Numero Factura" />

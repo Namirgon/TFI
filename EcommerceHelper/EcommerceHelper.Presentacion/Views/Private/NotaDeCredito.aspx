@@ -39,7 +39,7 @@
    <br />
 <center>
   
-    <asp:gridview runat="server" cssclass="table table-striped " Id="gvNotaDeCredito" OnRowCommand="gvNotaDeCredito_RowCommand" OnDataBound="gvNotaDeCredito_DataBound"  Width="750px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
+    <asp:gridview runat="server" cssclass="table table-striped " Id="gvNotaDeCredito" OnRowCommand="gvNotaDeCredito_RowCommand"   Width="750px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="IdComprobante" HeaderText="Numero NC" />

@@ -30,7 +30,7 @@
             <div class="col-md-10 col-md-offset-2">
                 <b>
                     <asp:Label ID="Label2" runat="server" Text=" Logs del sistema  "  style="color:aliceblue ; font-size: 20px; margin-left:30px"  ></asp:Label></b>
-                <select id="idelTIpoLog" runat="server" class="browser-default custom-select form-control ">
+                <select id="idelTIpoLog" runat="server"  class="browser-default custom-select form-control " style="width:200px">
                     <option value="Evento">Evento</option>
                     <option value="Error">Error</option>
                 </select>

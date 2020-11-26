@@ -43,7 +43,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             string[] unosPermisosTest = new string[] { "GestionEmpleado" };
             if (usuario == null || !this.Master.Autenticar(unosPermisosTest))
             {
-                Response.Redirect("../Public/Default.aspx");
+                Response.Redirect("../Private/MenuAdministracion.aspx");
             }
         }
         public void cargarProvincias(int? elIndice = null)
@@ -209,7 +209,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MenuAdministracion.aspx");
+            Response.Redirect("../Private/MenuAdministracion.aspx");
         }
     }
 

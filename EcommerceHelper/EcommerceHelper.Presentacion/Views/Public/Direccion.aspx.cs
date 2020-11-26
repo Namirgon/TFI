@@ -103,7 +103,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
                     limpiarCampos();
                     EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Nueva Direccion", "Ingreso nueva direccion: " + logueadoStatic.Apellido, "creada correctamente", (logueadoStatic.IdUsuario).ToString());
-                    Response.Redirect("MisDirecciones.aspx");
+                    Response.Redirect("../../Direccion.aspx");
                 }
             
              

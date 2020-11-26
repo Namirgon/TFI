@@ -41,24 +41,20 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void Page_Load(object sender, EventArgs e)
         {
-               
-            var Current = HttpContext.Current;
-            EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
+
           
+            EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
+
             if (!IsPostBack)
             {
-                //p.ElegirIdioma();
-                //IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
-                //Session["Traducciones"] = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
-                //Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"];
-                //IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
-                Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
 
-                IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
 
-               
+               Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
+
+               IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+
+
             }
-
 
 
         }
@@ -67,7 +63,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         {
             
             RecorrerControles(this);
-         
+            Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
 
             try
             {

@@ -63,6 +63,8 @@
       </div> 
      <br />
      <br />
+     <br />
+     <br />
      <div style="margin-left:100px">
 
            <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" CssClass="btn btn-primary " OnClick="btnNuevo_Click" Width="162px" />

@@ -28,7 +28,7 @@
    <br />
   
        <asp:Label ID="EtiquetaEmail" runat="server" Text="Usuario " visible="true" ClientIDMode="Static"  style=" margin-left:100px"></asp:Label>
-       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:70px"></asp:TextBox>  
+       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:60px"></asp:TextBox>  
        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
  
   <br />

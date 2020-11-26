@@ -1,7 +1,9 @@
-﻿using EcommerceHelper.Funciones;
+﻿using EcommerceHelper.BLL;
+using EcommerceHelper.Funciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
@@ -26,10 +28,14 @@ namespace EcommerceHelper.Presentacion
         protected void Session_Start(object sender, EventArgs e)
         {
             // Código que se ejecuta cuando se inicia una nueva sesión
-            IdiomaManager.UpdateCulture();
-        }
 
-        protected void Application_BeginRequest(object sender, EventArgs e)
+            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("Es-es");
+            //Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+
+            //IdiomaManager.UpdateCulture();
+            //Session["Traducciones"] = new MultiIdiomaManager();
+        }
+            protected void Application_BeginRequest(object sender, EventArgs e)
         {
 
             //Se activa cuando se recibe una solicitud de aplicación.

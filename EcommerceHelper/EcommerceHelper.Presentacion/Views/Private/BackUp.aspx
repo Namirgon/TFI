@@ -27,20 +27,26 @@
 <div style="border:groove; background-image:url('../../Content/Image/bannerIntranet.jpg'); background-size:cover; height:400px">
    
    <br />
+   <br />
+   <br />     
+   <br />
+   
     <div class="container paddingPaginas">
         
         <div class="form-group">
             <div class="col-md-8 col-md-offset-2">
                  <div>
-                     
-                  <b>   <asp:Label Text=" Nombre " runat="server" style="color:aliceblue ; font-size: 20px; margin-left:30px" /></b> 
-                     <asp:TextBox ID="txtNombreArchivo" CssClass="form-control input-md" runat="server" required="required" placeholder=" Ingrese Nombre "></asp:TextBox><br /><br />
+                     <br />
+                     <br />     
+                     <br />
+                  <b>   <asp:Label Text=" Nombre " runat="server" style="color:aliceblue ; font-size: 20px; margin-left:100px; margin-right:20px" /></b> 
+                     <asp:TextBox ID="txtNombreArchivo" CssClass="form-control input-md" runat="server" required="required" placeholder=" Ingrese Nombre " Width="260px" ></asp:TextBox><br /><br />
 
                      <asp:UpdatePanel ID="up1" runat="server">
                          <ContentTemplate>
                                                   
 
-                             <asp:Button ID="btnUpload" runat="server" Text="Backup " OnClick="btnUpload_Click1" class="btn btn-primary " style="margin-left:150px" Width="156px" />
+                             <asp:Button ID="btnUpload" runat="server" Text="Backup " OnClick="btnUpload_Click1" class="btn btn-primary " style="margin-left:100px" Width="156px" />
                              <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" class="btn btn-primary" Width="157px"/>
                          </ContentTemplate>
                          <Triggers>

@@ -26,10 +26,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
         BLL.Managers.FamiliaBLL UnManagerFamilia = new BLL.Managers.FamiliaBLL();
         UsuarioBLL UnServicioFamilia = new UsuarioBLL();
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
-
+       
         private IdiomaEntidad idioma;
         private List<object> ListaResultado = new List<object>(); //xxxxx
-
+        HttpContext Current = HttpContext.Current; //xxxx
         List<MultiIdiomaEntidad> Traducciones = new List<MultiIdiomaEntidad>(); // xxxxx
 
 
@@ -51,7 +51,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
 
-            var Current = HttpContext.Current;
+         
 
             Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
 
@@ -65,6 +65,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             RecorrerControles(this);
 
+            Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
             try
             {
 

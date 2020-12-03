@@ -95,16 +95,16 @@
    <br />
     <center>
    <div class="form-group row" >
-   <asp:label runat="server" Text="Seleccione Empleado" style="margin-left:100px; color:white ; font-size:15px; " AssociatedControlID="ddlEmpleado" > </asp:label> 
+   <asp:label runat="server" Text="Seleccione Empleado" style="margin-left:300px; color:white ; font-size:18px; " AssociatedControlID="ddlEmpleado" > </asp:label> 
     <asp:DropDownList ID="ddlEmpleado" runat="server" AutoPostBack="true"  style="width:400px; margin-left:80px"  CssClass="form-control"></asp:DropDownList>
-   <asp:DropDownList runat="server" ID="DDLIDEmpleado" AutoPostBack="true" visible="false"  style="width:400px; margin-left:120px">  </asp:DropDownList>     
+   <asp:DropDownList runat="server" ID="DDLIDEmpleado" AutoPostBack="true" visible="false"  style="width:400px; margin-left:320px">  </asp:DropDownList>     
 
    </div>
         </center>
    <br />
    <br />
       <div class="btn-group"  >
-    <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" Width="150px" style="margin-left:300px" CssClass="form-control" OnClick="BtnAceptar_Click"  /> 
+    <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" Width="150px" style="margin-left:500px" CssClass="form-control" OnClick="BtnAceptar_Click"  /> 
     <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px" style="margin-left:100px" CssClass="form-control" OnClick="BtnCancelar_Click" />
                  </div>
   <br />  

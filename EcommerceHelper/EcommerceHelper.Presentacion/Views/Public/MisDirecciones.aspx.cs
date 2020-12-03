@@ -117,10 +117,12 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             MisDirecciones=  ListDireccion.ListarDirecciones(numeroIdUsuario);
 
+           
+                GVMisDirecciones.DataSource = null;
+                GVMisDirecciones.DataSource = MisDirecciones;
+                GVMisDirecciones.DataBind();
 
-            GVMisDirecciones.DataSource = null;
-            GVMisDirecciones.DataSource = MisDirecciones;
-            GVMisDirecciones.DataBind();
+         
 
 
         }

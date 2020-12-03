@@ -45,6 +45,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
@@ -336,6 +360,20 @@
     <Content Include="Script\Thirdparty\jquery.signalR-2.1.2.min.js" />
     <Content Include="Script\Thirdparty\jquery.timeago.js" />
     <Content Include="Shared\Error.aspx" />
+    <Content Include="Shared\ErrorCliente.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Private\AltaEmpleado.aspx" />
     <Content Include="Views\Private\AsignacionDePerfiles.aspx" />
     <Content Include="Views\Private\AsignacionDeServicios.aspx" />
@@ -349,6 +387,8 @@
     <Content Include="Views\Private\MenuAdministracion.aspx" />
     <Content Include="Views\Private\NotaDeCredito.aspx" />
     <Content Include="Views\Private\NotaDeDebito.aspx" />
+    <Content Include="Views\Private\ReporteDeEmpleado.aspx" />
+    <Content Include="Views\Private\ReporteDeVentas.aspx" />
     <Content Include="Views\Private\Restaurar.aspx" />
     <Content Include="Views\Private\VerLogs.aspx" />
     <Content Include="Views\Public\ABMTarjetasDeCredito.aspx" />
@@ -394,6 +434,13 @@
     <Compile Include="Shared\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Shared\ErrorCliente.aspx.cs">
+      <DependentUpon>ErrorCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ErrorCliente.aspx.designer.cs">
+      <DependentUpon>ErrorCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shared\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,6 +462,7 @@
     <Compile Include="Shared\PaginaMaestraCliente.Master.designer.cs">
       <DependentUpon>PaginaMaestraCliente.Master</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Private\AltaEmpleado.aspx.cs">
       <DependentUpon>AltaEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -505,6 +553,20 @@
     </Compile>
     <Compile Include="Views\Private\NotaDeDebito.aspx.designer.cs">
       <DependentUpon>NotaDeDebito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\ReporteDeEmpleado.aspx.cs">
+      <DependentUpon>ReporteDeEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\ReporteDeEmpleado.aspx.designer.cs">
+      <DependentUpon>ReporteDeEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Private\ReporteDeVentas.aspx.cs">
+      <DependentUpon>ReporteDeVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Private\ReporteDeVentas.aspx.designer.cs">
+      <DependentUpon>ReporteDeVentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Private\Restaurar.aspx.cs">
       <DependentUpon>Restaurar.aspx</DependentUpon>
@@ -683,6 +745,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WSPago\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportventas.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

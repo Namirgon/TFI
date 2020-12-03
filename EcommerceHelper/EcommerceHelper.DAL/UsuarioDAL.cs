@@ -105,7 +105,7 @@ namespace EcommerceHelper.DAL
             SqlParameter[] parameters = new SqlParameter[]
             {
 
-                new SqlParameter("@IdTipoUsuario", usuario.IdTipoUsuario),
+                new SqlParameter("@IdTipoUsuario", usuario.MiUsuario.IdTipoUsuario),
                  new SqlParameter("@Email", usuario.Email),
                 new SqlParameter("@Password", usuario.Password),
                 new SqlParameter("@Nombre", usuario.Nombre),

@@ -35,29 +35,22 @@
            <asp:TextBox ID="txtNombreTitular" runat="server"  style="width:400px;  margin-left:235px; margin-right:40px" CssClass="form-control" placeholder="ingrese Titular de la Tarjeta"></asp:TextBox> 
           
                <br />
-               <br />
                 
            <asp:Label ID="idNumerotarjeta" runat="server" Text="Numero"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
            <asp:TextBox ID="txtNumeroTarjeta" runat="server"  style="width:400px;  margin-left:235px; margin-right:40px" CssClass="form-control" placeholder="ingrese Numero de la Tarjeta"></asp:TextBox> 
             
                <br />
-               <br />
            <asp:Label ID="txtFechaVencimiento" runat="server" Text="Fecha De Vencimiento"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
            <input id="txtFecha" type="date" name="txtfecha"  style="width:400px;  margin-left:235px; margin-right:40px" class="form-control" runat="server"   />
-          
-                 <br />
+         
                 <br />
             <asp:Label ID="Label1" runat="server" Text="Codigo de Seguridad"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
                 <asp:TextBox ID="txtcodseguridad" runat="server"  style="width:400px;  margin-left:235px; margin-right:40px" CssClass="form-control" placeholder="ingrese codigo de Seguridad"></asp:TextBox> 
                  <br />
-               <br />
-           
-            
-              <asp:Label ID="lblTipoTarjeta" runat="server" Text="Tipo Tarjeta" style="margin-left:30px; font-size:16px">Tipo de Direccion</asp:Label> 
+ 
+              <asp:Label ID="lblTipoTarjeta" runat="server" Text="Tipo Tarjeta" style="margin-left:30px; font-size:16px">Tipo de Tarjeta</asp:Label> 
                 <asp:DropDownList runat="server" ID="ddlTipoTarjeta" AutoPostBack="true" CssClass="form-control" style="width:400px; margin-left:230px">  </asp:DropDownList>     
-                  <br />
-                   
-               <br />
+
                <br />
                <br />
                <br />

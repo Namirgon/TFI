@@ -156,7 +156,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 }
 
                     GestorItemODT.ListaDeItemUpdate(id, d, t, Int32.Parse( cantidad));
-
+                    CargarPedido();
                 }
                 if (bandera == true)
                 {
@@ -277,7 +277,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 row.Cells[4].Controls.Add(img);
 
                 //     < input type = "text"  class="form-control"   placeholder="YYYY-MM-DD" autocomplete="off" name="DatePickerFecha" style=\"width:120px;background-color:#ffffff; align-self:center \">"
-                LiteralControl txtFecha = new LiteralControl("<input type=\"date\" id=\"Fecha"+row.Cells[0].Text+ "\" name=\"Fecha" + row.Cells[0].Text + "\" min=\"2020-11-18\" max=\"2021-01-19\">");
+                LiteralControl txtFecha = new LiteralControl("<input type=\"date\" id=\"Fecha"+row.Cells[0].Text+ "\" name=\"Fecha" + row.Cells[0].Text + "\" min=\"" + DateTime.Now.Year.ToString()+"-"+DateTime.Now.Month.ToString()+"-"+DateTime.Now.Day.ToString() + "\" max=\"2021-01-19\">");
 
                 row.Cells[5].Controls.Add(txtFecha);
                 LiteralControl txtHora = new LiteralControl("<input type=\"time\" id=\"Hora" + row.Cells[0].Text + "\" name=\"Hora" + row.Cells[0].Text + "\" min=\"08:00\" max=\"15:00\" step=\"3600\" >");
@@ -293,7 +293,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void btnIrADirecciones_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../Direccion.aspx");
+            Response.Redirect("../Public/MisDirecciones.aspx");
         }
     }
 }

@@ -60,17 +60,24 @@
                         <br />
                         <img id="uploadFile" style="max-width: 50%; max-height: 50%;" src="#" alt="" />
                     </div>  
-      </div> 
+    </div>  <br />
+     <br />
+     <br />
+      
      <br />
      <br />
      <br />
      <br />
-     <div style="margin-left:100px">
+   <br />
+     <br />
+     <div style="margin-left:100px" class="btn-group">
 
            <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" CssClass="btn btn-primary " OnClick="btnNuevo_Click" Width="162px" />
       <asp:Button ID="BtnModificar" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary " Width="162px"  OnClick="BtnModificar_Click"/>
      </div>
-   <br />
+      <br />
+     <br />
+     <br />
      <br />
 </div>
     <center>

@@ -71,7 +71,9 @@
 
     <br />
     <br />
+    <div style="margin-left:300px">
     <asp:Button ID="btnAMBTarjeta" runat="server" Text="Registrar / Actualizar Tarjeta" OnClick="btnAMBTarjeta_Click"  CssClass="btn btn-primary " Width="244px"/>
+        </div>
     <div>
 
 

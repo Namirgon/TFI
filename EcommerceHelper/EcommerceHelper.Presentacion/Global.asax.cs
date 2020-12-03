@@ -32,7 +32,7 @@ namespace EcommerceHelper.Presentacion
             //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("Es-es");
             //Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-            //IdiomaManager.UpdateCulture();
+          //  IdiomaManager.UpdateCulture();
             //Session["Traducciones"] = new MultiIdiomaManager();
         }
             protected void Application_BeginRequest(object sender, EventArgs e)

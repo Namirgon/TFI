@@ -56,10 +56,10 @@
     <div class="text-center">
 
        
-                  <asp:Label ID="ldlDefaultCentroUno" runat="server" ClientIDMode="Static"  Text=" DefaultCentroUno "></asp:Label>
+                  <asp:Label ID="DefaultCentroUno" runat="server" ClientIDMode="Static"  Text="DefaultCentroUno"></asp:Label>
          
             <br />
-                 <asp:Label ID="ldlDefaultCentroDos" runat="server" ClientIDMode="Static"  Text=" DefaultCentroDos "></asp:Label>
+                 <asp:Label ID="DefaultCentroDos" runat="server" ClientIDMode="Static"  Text="DefaultCentroDos"></asp:Label>
            
         
 
@@ -73,23 +73,23 @@
             <br />
                       
             <br />
-            <asp:Label ID="lblServicios" style="margin-left: 15px; font-size:24px" ClientIDMode="Static"  runat="server" Text="Servicios"></asp:Label>
+            <asp:Label ID="Servicios" style="margin-left: 15px; font-size:24px" ClientIDMode="Static"  runat="server" Text="Servicios"></asp:Label>
             
             <br />
 
             <br />
             <p style="margin-left: 15px">
-                 <asp:Label ID="LblServicios1" ClientIDMode="Static"  style="margin-left: 15px; font-size:16px"  runat="server" Text=" Servicios1 "></asp:Label>
+                 <asp:Label ID="Servicios1" ClientIDMode="Static"  style="margin-left: 15px; font-size:16px"  runat="server" Text="Servicios1"></asp:Label>
             
                
                 <br />
-                <asp:Label ID="lblServicios2" ClientIDMode="Static"  style="margin-left: 15px; font-size:16px"  runat="server" Text=" Servicios2"></asp:Label>
+                <asp:Label ID="Servicios2" ClientIDMode="Static"  style="margin-left: 15px; font-size:16px"  runat="server" Text="Servicios2"></asp:Label>
             
               
             </p>
 
             <p style="margin-left: 15px">
-                  <asp:Label ID="lblServicios3" ClientIDMode="Static"  style="margin-left: 15px; font-size:16px"  runat="server" Text=" Servicios3 "></asp:Label>
+                  <asp:Label ID="Servicios3" ClientIDMode="Static"  style="margin-left: 15px; font-size:16px"  runat="server" Text="Servicios3 "></asp:Label>
           
             </p>
         </div>
@@ -97,16 +97,16 @@
         <div class="col-md-4">
             <br />
             <br />
-              <asp:Label ID="lblContactanos" style="margin-left: 15px; font-size:24px" ClientIDMode="Static"  runat="server" Text=" Contactanos "></asp:Label>
+              <asp:Label ID="Contactanos" style="margin-left: 15px; font-size:24px" ClientIDMode="Static"  runat="server" Text="Contactanos"></asp:Label>
             <br />
-              <asp:Label ID="lblContactanos1" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos1 "></asp:Label>
+              <asp:Label ID="Contactanos1" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text="Contactanos1"></asp:Label>
             
             <p>
-              <asp:Label ID="lblContactanos2" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos2 "></asp:Label> <br />
-                 <asp:Label ID="lblContactanos3" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos3"></asp:Label> <br />
-                 <asp:Label ID="lblContactanos4" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos4 "></asp:Label> <br />
-                 <asp:Label ID="lblContactanos5" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos5 "></asp:Label> <br />
-                 <asp:Label ID="lblContactanos6" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos6"></asp:Label> <br />
+              <asp:Label ID="Contactanos2" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text="Contactanos2"></asp:Label> <br />
+                 <asp:Label ID="Contactanos3" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text="Contactanos3"></asp:Label> <br />
+                 <asp:Label ID="Contactanos4" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos4 "></asp:Label> <br />
+                 <asp:Label ID="Contactanos5" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos5 "></asp:Label> <br />
+                 <asp:Label ID="Contactanos6" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contactanos6"></asp:Label> <br />
               <br />
              <br />
           

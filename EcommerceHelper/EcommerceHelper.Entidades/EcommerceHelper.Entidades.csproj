@@ -58,6 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinciaEntidad.cs" />
     <Compile Include="ReciboEntidad.cs" />
+    <Compile Include="ReporteDeEmpleadoEntidad.cs" />
+    <Compile Include="ReporteDeVentasEntidad.cs" />
     <Compile Include="ServicioEntidad.cs" />
     <Compile Include="Servicios\DigitoVerificador\DigitoVerificadorH.cs" />
     <Compile Include="Servicios\DigitoVerificador\DVGReflection.cs" />

@@ -72,8 +72,8 @@ namespace EcommerceHelper.Presentacion.Views.Private
                         txtTitulo.Text = unServicio.Titulo;
                         txtDescripcion.Text = unServicio.Descripcion;
                         txtPrecio.Text = ( unServicio.Precio).ToString();
-                        
 
+                        Cargargrilla();
                         break;
                     }
                 case "btnEliminar":

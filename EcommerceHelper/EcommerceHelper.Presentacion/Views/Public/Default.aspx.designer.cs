@@ -13,121 +13,121 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class Default {
         
         /// <summary>
-        /// Control ldlDefaultCentroUno.
+        /// Control DefaultCentroUno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ldlDefaultCentroUno;
+        protected global::System.Web.UI.WebControls.Label DefaultCentroUno;
         
         /// <summary>
-        /// Control ldlDefaultCentroDos.
+        /// Control DefaultCentroDos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ldlDefaultCentroDos;
+        protected global::System.Web.UI.WebControls.Label DefaultCentroDos;
         
         /// <summary>
-        /// Control lblServicios.
+        /// Control Servicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServicios;
+        protected global::System.Web.UI.WebControls.Label Servicios;
         
         /// <summary>
-        /// Control LblServicios1.
+        /// Control Servicios1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblServicios1;
+        protected global::System.Web.UI.WebControls.Label Servicios1;
         
         /// <summary>
-        /// Control lblServicios2.
+        /// Control Servicios2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServicios2;
+        protected global::System.Web.UI.WebControls.Label Servicios2;
         
         /// <summary>
-        /// Control lblServicios3.
+        /// Control Servicios3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServicios3;
+        protected global::System.Web.UI.WebControls.Label Servicios3;
         
         /// <summary>
-        /// Control lblContactanos.
+        /// Control Contactanos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos;
+        protected global::System.Web.UI.WebControls.Label Contactanos;
         
         /// <summary>
-        /// Control lblContactanos1.
+        /// Control Contactanos1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos1;
+        protected global::System.Web.UI.WebControls.Label Contactanos1;
         
         /// <summary>
-        /// Control lblContactanos2.
+        /// Control Contactanos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos2;
+        protected global::System.Web.UI.WebControls.Label Contactanos2;
         
         /// <summary>
-        /// Control lblContactanos3.
+        /// Control Contactanos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos3;
+        protected global::System.Web.UI.WebControls.Label Contactanos3;
         
         /// <summary>
-        /// Control lblContactanos4.
+        /// Control Contactanos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos4;
+        protected global::System.Web.UI.WebControls.Label Contactanos4;
         
         /// <summary>
-        /// Control lblContactanos5.
+        /// Control Contactanos5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos5;
+        protected global::System.Web.UI.WebControls.Label Contactanos5;
         
         /// <summary>
-        /// Control lblContactanos6.
+        /// Control Contactanos6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContactanos6;
+        protected global::System.Web.UI.WebControls.Label Contactanos6;
         
         /// <summary>
         /// Control btnComprar.

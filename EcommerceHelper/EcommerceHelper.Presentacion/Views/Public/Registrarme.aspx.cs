@@ -133,8 +133,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                     if (Page.IsValid)
 
                     {
-                        //unUsuario.Familia = new FamiliaEntidad();
-                        //unUsuario.Familia.IdFamilia = FamiliaEntidad.PermisoFamilia.Cliente;
+                       
                         unUsuario.MiUsuario = new TipoUsuarioEntidad();
                         unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
                         unUsuario.Email = txtusuario.Text;
@@ -158,9 +157,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
 
                         int familia = unUsuario.MiUsuario.IdTipoUsuario = 2; // cliente
-                       // string email = unUsuario.Email = txtusuario.Text;
+                      
                         // Inserto en la tabla FamiliaUsuario el nuevo Cliente
-                        unManagerUsuario.InsertFamiliaUsuario(NroUsuario, familia, email);
+                        unManagerUsuario.InsertFamiliaUsuario(unUsuario.IdUsuario, familia, email);
 
                         //Direccion
                         UnaDireccion.Calle = txtCalle.Text;
@@ -182,7 +181,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                         DVVBLL managerDVV = new DVVBLL();
 
                         managerDVV.InsertarDVV("DVV", "Usuario");
-                        Response.Redirect("../Public/IniciarSesion.aspx");
+                      
                     }
                     else
                     {
@@ -194,7 +193,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 catch (Exception ex)
                 {
                     EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLog(ex, "Alta Usuario", unUsuario.Apellido, (unUsuario.IdUsuario).ToString());
-                    Response.Redirect("/Shared/Error.aspx");
+                    Response.Redirect("/Shared/ErrorCliente.aspx");
 
                 }
             }

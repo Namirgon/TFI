@@ -62,6 +62,7 @@
                                 <li><a href="../Private/NotaDeCredito.aspx">Nota De Credito</a></li>
                                  <li><a href="../Private/NotaDeDebito.aspx">Nota De Debito</a></li>
                                   <li><a href="../Private/AsignacionDeServicios.aspx">Asignacion De Servicios</a></li>
+                                <li><a href="../Private/ReporteDeVentas.aspx">Reporte de Ventas</a></li>
                             </ul> 
                         </li>
                                      <li>

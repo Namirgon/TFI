@@ -288,7 +288,7 @@
             <Top>2.80141cm</Top>
             <Left>1.42557cm</Left>
             <Height>1.41167cm</Height>
-            <Width>18.45375cm</Width>
+            <Width>18.45374cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -350,6 +350,7 @@
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>White</BackgroundColor>
           </Style>
         </PageHeader>
         <PageFooter>
@@ -395,6 +396,7 @@
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>White</BackgroundColor>
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>

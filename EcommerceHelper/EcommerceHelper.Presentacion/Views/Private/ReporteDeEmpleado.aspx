@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestraAdministracion.Master" AutoEventWireup="true" CodeBehind="ReporteDeEmpleado.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.ReporteDeEmpleado" %>
 
+
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
+
 <%@ MasterType VirtualPath="~/Shared/PaginaMaestraAdministracion.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

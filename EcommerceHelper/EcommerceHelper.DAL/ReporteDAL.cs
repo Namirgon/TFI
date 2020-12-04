@@ -47,14 +47,43 @@ namespace EcommerceHelper.DAL
 
             };
 
-            using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ReportePorEmpleado", parameters))
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ReportePorEmpleado", parameters))
 
             {
                 List<ReporteDeEmpleadoEntidad> ListaReporteEmpleado = new List<ReporteDeEmpleadoEntidad>();
 
-                ListaReporteEmpleado = Mapeador.Mapear<ReporteDeEmpleadoEntidad>(dt);
+                ListaReporteEmpleado = MapearEmpleados(ds);
 
                 return ListaReporteEmpleado;
+            }
+
+        }
+
+        public List<ReporteDeEmpleadoEntidad> MapearEmpleados(DataSet ds)
+        {
+
+            List<ReporteDeEmpleadoEntidad> ListEmpleados = new List<ReporteDeEmpleadoEntidad>();
+
+            try
+            {
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    ReporteDeEmpleadoEntidad unEmpleado = new ReporteDeEmpleadoEntidad();
+
+                    unEmpleado.Nombre = row["Nombre"].ToString();
+                    unEmpleado.Apellido = row["Apellido"].ToString();
+                    unEmpleado.Cantidad= (int)row["Cantidad"];
+                   
+                 
+                    ListEmpleados.Add(unEmpleado);
+                }
+                return ListEmpleados;
+
+            }
+            catch (Exception es)
+            {
+                throw;
             }
 
         }

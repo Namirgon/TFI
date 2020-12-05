@@ -28,11 +28,11 @@ namespace EcommerceHelper.Presentacion.Shared
          {
             if (!IsPostBack)
             {
-                ElegirIdioma();
-                IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
-                Session["Traducciones"] = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
-                Traducciones = (List<MultiIdiomaEntidad>)Session["Traducciones"];
-                IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
+                //ElegirIdioma();
+                //IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
+                //Session["Traducciones"] = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
+                //Traducciones = (List<MultiIdiomaEntidad>)Session["Traducciones"];
+                //IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
             }
         }
 

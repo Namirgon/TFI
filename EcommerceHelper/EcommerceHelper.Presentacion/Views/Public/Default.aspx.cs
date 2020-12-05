@@ -109,7 +109,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                                 var mapeo = (System.Web.UI.WebControls.LinkButton)Control;
                                 mapeo.Text = traduccion.Texto;
                             }
-                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputText)
+                            else if ((Control) is System.Web.UI.WebControls.TextBox  )
                             {
                                 var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
                                 mapeo.Value = traduccion.Texto;

@@ -13,10 +13,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
     public partial class Idioma : System.Web.UI.Page
     {
-
+        private List<IdiomaEntidad> idiomaEntidad;
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
-        IdiomaBLL GestorIdioma ;
+         IdiomaBLL GestorIdioma = new IdiomaBLL();
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             if (!Page.IsPostBack)
             {
 
-
+                ElegirIdioma();
                 CargarGrilla();
             }
             string[] unosPermisosTest = new string[] { "GestionIdioma" };
@@ -39,25 +39,53 @@ namespace EcommerceHelper.Presentacion.Views.Private
             }
 
         }
-        public void CargarGrilla()
+
+        public void ElegirIdioma()
         {
 
-            GVGrilla.DataSource = GestorIdioma.FindAll();
+
+            ddlIdioma.Items.Clear();
+            ddlIdioma.SelectedValue = null;
+            idiomaEntidad = GestorIdioma.FindAll();
+            ddlIdioma.DataSource = idiomaEntidad;
+            ddlIdioma.DataValueField = "IdIdioma";
+            ddlIdioma.DataTextField = "Descripcion";
+            ddlIdioma.DataBind();
+
+        }
+        public void CargarGrilla()
+        {
+            List<MultiIdiomaEntidad> listaControles = new List<MultiIdiomaEntidad>();
+
+            listaControles = GestorIdioma.MultidiomaSelectAllControles();
+
+            GVGrilla.DataSource = null;
+            GVGrilla.DataSource = listaControles;
             GVGrilla.DataBind();
+        }
+
+        protected void GVGrilla_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+            GVGrilla.PageIndex = e.NewPageIndex;
+            CargarGrilla();
+            
         }
 
         protected void BtnAltaIdioma_Click(object sender, EventArgs e)
         {
-            IdiomaEntidad unIdioma = new IdiomaEntidad();
+            MultiIdiomaEntidad unIdioma = new MultiIdiomaEntidad();
 
 
             try
             {
-                unIdioma.IdIdioma = 1;
-                unIdioma.Descripcion = txtIdioma.Text;
-                GestorIdioma.RegistrarIdioma(unIdioma);
+                unIdioma.MiIdioma = new IdiomaEntidad();
+                unIdioma.MiIdioma.IdIdioma=int.Parse (ddlIdioma.SelectedValue);
+                unIdioma.NombreDelControl = TXTNombreDelControl.Text;
+                unIdioma.Texto = TxtTextoControl.Text;
+                GestorIdioma.RegistrarControlTraduccion(unIdioma);
                 LimpiarTextos();
-                CargarGrilla();
+               CargarGrilla();
                
 
             }
@@ -72,7 +100,8 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         public void LimpiarTextos()
         {
-            txtIdioma.Text = string.Empty;
+            TxtTextoControl.Text = string.Empty;
+            TXTNombreDelControl.Text = string.Empty;
         
 
 
@@ -83,15 +112,16 @@ namespace EcommerceHelper.Presentacion.Views.Private
             int id = Int32.Parse(GVGrilla.Rows[Int32.Parse(e.CommandArgument.ToString())].Cells[0].Text);
 
 
-            IdiomaEntidad idioma;
-            idioma = GestorIdioma.Find(id);
+            MultiIdiomaEntidad idioma;
+            idioma = GestorIdioma.ControlFind(id);
             switch (e.CommandName)
             {
 
                 case "btnModificar":
                     {
-                        hid.Value = idioma.IdIdioma.ToString();  
-                        txtIdioma.Text =idioma.Descripcion;
+                        hid.Value = idioma.IdMultiIdioma.ToString();
+                        TXTNombreDelControl.Text = idioma.NombreDelControl;
+                        TxtTextoControl.Text = idioma.Texto;
 
                         break;
                     }
@@ -99,23 +129,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                     {
 
-                        System.Text.StringBuilder sb = new System.Text.StringBuilder();
-
-                        if (idioma.Descripcion == "Ingles" | idioma.Descripcion == "Español")
-                        {
-                            sb.Append(@"<script type='text/javascript'>");
-                            sb.Append("alert('No se puede Eliminar Idioma');");
-                            sb.Append(@"</script>");
-                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
-                                       "CrearOK", sb.ToString(), false);
-                            CargarGrilla();
-                        }
-                        else
-                        {
-                            GestorIdioma.EliminarIdioma(id);
+                        
+                        
+                            GestorIdioma.EliminarControlMultiIdioma(id);
                             CargarGrilla();
                             LimpiarTextos();
-                        }
+                        
 
                         break;
                     }
@@ -132,23 +151,28 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
             try
             {
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+         
 
-                if (txtIdioma.Text == "Ingles" | txtIdioma.Text == "Español")
+                if (TXTNombreDelControl .Text == " " | TxtTextoControl.Text == " ")
                 {
-                    sb.Append(@"<script type='text/javascript'>");
-                    sb.Append("alert('No se puede modificar Idioma');");
-                    sb.Append(@"</script>");
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(),
-                               "CrearOK", sb.ToString(), false);
+                    LbMensaje.Text =" Debe ingresar valores";
+                    LbMensaje.Visible = true;
                 }
                 else
                 {
-                    IdiomaEntidad unIdioma = new IdiomaEntidad();
-                    unIdioma.IdIdioma = Int32.Parse(hid.Value);
-                    unIdioma.Descripcion = txtIdioma.Text;
 
-                    GestorIdioma.ModificarIdioma(unIdioma);
+                    LbMensaje.Visible = false;
+
+                    MultiIdiomaEntidad  unIdioma = new MultiIdiomaEntidad();
+
+                    unIdioma.IdMultiIdioma = int.Parse(hid.Value);
+                    unIdioma.MiIdioma = new IdiomaEntidad();
+                    unIdioma.MiIdioma.IdIdioma = int.Parse(ddlIdioma.SelectedValue);
+                    unIdioma.NombreDelControl = TXTNombreDelControl.Text;
+                    unIdioma.Texto = TxtTextoControl.Text;
+                   
+
+                    GestorIdioma.ModificarControlMultiIdioma(unIdioma);
                     LimpiarTextos();
                     CargarGrilla();
                 }
@@ -164,5 +188,12 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 row.Cells[0].Visible = false;
             }
         }
+
+        protected void GVGrilla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

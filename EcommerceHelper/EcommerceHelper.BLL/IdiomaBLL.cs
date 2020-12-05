@@ -68,9 +68,18 @@ namespace EcommerceHelper.BLL
             return _dal.Select(id);
         }
 
+        public MultiIdiomaEntidad ControlFind(int id)
+        {
+            return _dal.SelectControl(id);
+        }
         public List<IdiomaEntidad> FindAll()
         {
             return _dal.SelectAll();
+        }
+
+        public List<MultiIdiomaEntidad> MultidiomaSelectAllControles()
+        {
+            return _dal.MultidiomaSelectAllControles();
         }
 
         public MultiIdiomaEntidad FindControl(int lenguajeID, string control)
@@ -226,6 +235,21 @@ namespace EcommerceHelper.BLL
 
 
         }
+        public int RegistrarControlTraduccion(MultiIdiomaEntidad idioma)
+        {
+            try
+            {
+                _dal.RegistrarControlTraduccion(idioma);
+                return 0;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
         public int ModificarIdioma(IdiomaEntidad idioma)
         {
             try
@@ -240,12 +264,39 @@ namespace EcommerceHelper.BLL
 
 
         }
+        public int ModificarControlMultiIdioma(MultiIdiomaEntidad idioma)
+        {
+            try
+            {
+                _dal.MultiIdiomaControlUpdate(idioma);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+
+        }
         public int EliminarIdioma(int  idioma)
         {
             try
             {
                 _dal.Delete(idioma);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+        public int EliminarControlMultiIdioma(int idioma)
+        {
+            try
+            {
+                _dal.DeleteControlMultiIdioma(idioma);
                 return 0;
             }
             catch (Exception ex)

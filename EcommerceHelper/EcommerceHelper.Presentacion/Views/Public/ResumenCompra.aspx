@@ -11,7 +11,7 @@
    <br /> 
       <br />
    <br />
-      <h3  style="margin-left:30px; margin-top:30px">  Resumen Compra</h3>
+      <h3  ><asp:Label ID="Resumen2" runat="server"  Font-Bold="true"   style="margin-left:30px; margin-top:30px" ></asp:Label> </h3>
    <br />
    <br />     
   
@@ -20,7 +20,7 @@
    
    
     <br />
-    <h3  style="margin-left:30px; margin-top:30px; color:aliceblue"> Servicios  /  Pedidos  / Mis Direcciones / Resumen Compra</h3>
+    <h3  ><asp:Label ID="ServicioPedidoMisDirecciones2" runat="server"  Font-Bold="true"   style="margin-left:30px; margin-top:30px" ></asp:Label></h3>
 
      <br />
      <br />
@@ -109,8 +109,8 @@
     <br />  
     
     
-   <asp:Button style="margin-left:500px " ID="Button1" runat="server" Text="Pagar"  Width="150px" CssClass="btn btn-primary"  PostBackUrl ="~/Views/Public/Pago.aspx" />
-   <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar" Width="150px" CssClass="btn btn-primary "  PostBackUrl ="~/Views/Public/Default.aspx" />
+   <asp:Button style="margin-left:500px " ID="Aceptar" runat="server"   Width="150px" CssClass="btn btn-primary"  PostBackUrl ="~/Views/Public/Pago.aspx" />
+   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server"  Width="150px" CssClass="btn btn-primary "  PostBackUrl ="~/Views/Public/Default.aspx" />
    <br />
    <br />
  </div>

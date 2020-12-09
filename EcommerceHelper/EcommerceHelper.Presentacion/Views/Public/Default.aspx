@@ -121,14 +121,14 @@
         <div class="col-md-4">
             <br />
             <br />
-                          <asp:Label ID="lblContacto" style="margin-left: 15px; font-size:24px" ClientIDMode="Static"  runat="server" Text=" Contacto "></asp:Label>
+                          <asp:Label ID="Contacto" style="margin-left: 15px; font-size:24px" ClientIDMode="Static"  runat="server" ></asp:Label>
            
             <br />
             <p>
-                      <asp:Label ID="lblContacto1" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contacto1 "></asp:Label>
+                      <asp:Label ID="Contacto1" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" ></asp:Label>
               
                 <br />
-                <asp:Label ID="lblContacto2" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" Text=" Contacto2 "></asp:Label>
+                <asp:Label ID="Contacto2" style="margin-left: 15px; font-size:16px" ClientIDMode="Static"  runat="server" ></asp:Label>
               
                
                 <br />

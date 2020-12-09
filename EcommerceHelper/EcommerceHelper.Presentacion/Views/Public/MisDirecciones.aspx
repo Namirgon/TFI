@@ -6,14 +6,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../../Content/EstilosPermisos.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ScriptSection" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <br />
     <br />
      <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />
    <br />     
-   <h3  style="margin-left:30px; margin-top:30px"> Servicios  /  Pedidos  / Mis Direcciones</h3>
+   <h3 >  <asp:Label ID="ServicioPedidoMisDirecciones" runat="server"  Font-Bold="true"   style="margin-left:30px; margin-top:30px" ></asp:Label> </h3>
    <br />     
     <br />
       </div>
@@ -35,12 +35,7 @@
             <asp:BoundField DataField="MiProvincia.Descripcion" HeaderText="Provincia" />
             <asp:BoundField DataField="MiTipoDireccion.Descripcion" HeaderText="Tipo Domicilio" />
 
-<%--            <asp:TemplateField HeaderText="Seleccione">
-            <ItemTemplate>
-                <asp:CheckBox ID="chbItem" runat="server"  OnCheckedChanged="chbItem_CheckedChanged" />
-            </ItemTemplate>
-        </asp:TemplateField>
-           --%>     
+    
             <asp:ButtonField CommandName="btnConfirmar"  Text="Seleccionar" ButtonType="Button" ControlStyle-ForeColor="White"  ControlStyle-BackColor="Green" />
             <asp:ButtonField CommandName="btnEliminar" Text="Eliminar" ButtonType="Button " ControlStyle-BackColor="Red"  ControlStyle-ForeColor="White" />
         </Columns>
@@ -53,9 +48,6 @@
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                           <EmptyDataTemplate>No se encontraron registros</EmptyDataTemplate>
 
-        
-        
-        
 
     </asp:GridView>
 
@@ -66,9 +58,9 @@
 
       </div>
     <div style="margin-left:200px">
-        <asp:LinkButton ID="linkAltaDireccion" OnClick="linkAltaDireccion_Click" runat="server" CssClass="btn btn-primary"  >Agregar Direccion</asp:LinkButton>
+        <asp:LinkButton ID="linkAltaDireccion" OnClick="linkAltaDireccion_Click" runat="server" CssClass="btn btn-primary"  ></asp:LinkButton>
       
-        <asp:LinkButton ID="BtnContinuar" OnClick="BtnContinuar_Click" runat="server"  CssClass="btn btn-primary" Width="214px" >Ver Resumen de Compra</asp:LinkButton>
+        <asp:LinkButton ID="Continuar" OnClick="BtnContinuar_Click" runat="server"  CssClass="btn btn-primary" Width="214px" ></asp:LinkButton>
 
 
         </div>
@@ -80,5 +72,6 @@
 
 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ScriptSection" runat="server">
+
 </asp:Content>

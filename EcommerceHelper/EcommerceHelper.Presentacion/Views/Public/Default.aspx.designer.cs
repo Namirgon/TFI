@@ -139,31 +139,31 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.LinkButton btnComprar;
         
         /// <summary>
-        /// Control lblContacto.
+        /// Control Contacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContacto;
+        protected global::System.Web.UI.WebControls.Label Contacto;
         
         /// <summary>
-        /// Control lblContacto1.
+        /// Control Contacto1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContacto1;
+        protected global::System.Web.UI.WebControls.Label Contacto1;
         
         /// <summary>
-        /// Control lblContacto2.
+        /// Control Contacto2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContacto2;
+        protected global::System.Web.UI.WebControls.Label Contacto2;
         
         /// <summary>
         /// Propiedad Master.

@@ -13,6 +13,15 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class Registrarme {
         
         /// <summary>
+        /// Control Registrarme2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Registrarme2;
+        
+        /// <summary>
         /// Control lblMensaje.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
-        /// Control lblUsuario.
+        /// Control Usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        protected global::System.Web.UI.WebControls.Label Usuario;
         
         /// <summary>
         /// Control txtusuario.
@@ -40,13 +49,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.TextBox txtusuario;
         
         /// <summary>
-        /// Control lblContrasena.
+        /// Control Password.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContrasena;
+        protected global::System.Web.UI.WebControls.Label Password;
         
         /// <summary>
         /// Control txtcontrasena.
@@ -67,13 +76,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorF;
         
         /// <summary>
-        /// Control lblrcontrasena.
+        /// Control Password2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrcontrasena;
+        protected global::System.Web.UI.WebControls.Label Password2;
         
         /// <summary>
         /// Control txtrepetircontrasena.
@@ -112,13 +121,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
-        /// Control lblNombre.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
+        protected global::System.Web.UI.WebControls.Label Nombre;
         
         /// <summary>
         /// Control txtNombre.
@@ -139,13 +148,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Control lblApellido.
+        /// Control Apellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApellido;
+        protected global::System.Web.UI.WebControls.Label Apellido;
         
         /// <summary>
         /// Control txtApellido.
@@ -166,13 +175,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// Control lblSexo.
+        /// Control Sexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSexo;
+        protected global::System.Web.UI.WebControls.Label Sexo;
         
         /// <summary>
         /// Control ddSexo.
@@ -184,13 +193,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList ddSexo;
         
         /// <summary>
-        /// Control lblDNI.
+        /// Control DNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDNI;
+        protected global::System.Web.UI.WebControls.Label DNI;
         
         /// <summary>
         /// Control txtDNI.
@@ -211,13 +220,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
-        /// Control lblTipoTelefono.
+        /// Control TipoTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoTelefono;
+        protected global::System.Web.UI.WebControls.Label TipoTelefono;
         
         /// <summary>
         /// Control ddTipoTelefono.
@@ -229,13 +238,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList ddTipoTelefono;
         
         /// <summary>
-        /// Control lblTelefono.
+        /// Control Telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTelefono;
+        protected global::System.Web.UI.WebControls.Label Telefono;
         
         /// <summary>
         /// Control txtTelefono.
@@ -256,13 +265,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
-        /// Control lblCalle.
+        /// Control Calle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCalle;
+        protected global::System.Web.UI.WebControls.Label Calle;
         
         /// <summary>
         /// Control txtCalle.
@@ -283,13 +292,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
-        /// Control lblNumero.
+        /// Control Numero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumero;
+        protected global::System.Web.UI.WebControls.Label Numero;
         
         /// <summary>
         /// Control txtNumero.
@@ -310,13 +319,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
         
         /// <summary>
-        /// Control lblPiso.
+        /// Control Piso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPiso;
+        protected global::System.Web.UI.WebControls.Label Piso;
         
         /// <summary>
         /// Control txtPiso.
@@ -337,13 +346,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
         
         /// <summary>
-        /// Control LblDepartamento.
+        /// Control Departamento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDepartamento;
+        protected global::System.Web.UI.WebControls.Label Departamento;
         
         /// <summary>
         /// Control txtDepartamento.
@@ -382,13 +391,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control lblProvincia.
+        /// Control Provincia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProvincia;
+        protected global::System.Web.UI.WebControls.Label Provincia;
         
         /// <summary>
         /// Control ddProvincia.
@@ -400,13 +409,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList ddProvincia;
         
         /// <summary>
-        /// Control lblLocalidad.
+        /// Control Localidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLocalidad;
+        protected global::System.Web.UI.WebControls.Label Localidad;
         
         /// <summary>
         /// Control ddLocalidad.
@@ -418,13 +427,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList ddLocalidad;
         
         /// <summary>
-        /// Control Label2.
+        /// Control TipoDeDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label TipoDeDireccion;
         
         /// <summary>
         /// Control DDLTipodeDireccion.
@@ -436,22 +445,22 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList DDLTipodeDireccion;
         
         /// <summary>
-        /// Control BtnContinuar.
+        /// Control Continuar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnContinuar;
+        protected global::System.Web.UI.WebControls.Button Continuar;
         
         /// <summary>
-        /// Control BtnCancelar.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCancelar;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// Propiedad Master.

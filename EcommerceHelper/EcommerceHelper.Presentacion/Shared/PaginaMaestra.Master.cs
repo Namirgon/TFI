@@ -22,10 +22,10 @@ namespace EcommerceHelper.Presentacion.Shared
         public UsuarioEntidad usuario { get; set; }
         private List< IdiomaEntidad > idiomaEntidad;
         IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
-        List<MultiIdiomaEntidad> Traducciones;
-        IdiomaBLL _IdiomaBLL = new IdiomaBLL();
+        List<MultiIdiomaEntidad> Traducciones;//xxxx
+  
         private List<object> ListaResultado = new List<object>(); //xxxxx
-
+        IdiomaBLL _IdiomaBLL = new IdiomaBLL();
 
         public PaginaMaestra()
         {
@@ -132,6 +132,10 @@ namespace EcommerceHelper.Presentacion.Shared
 
                 foreach (Control Control in ListaResultado)
                 {
+                    if (Control.ID == "CerrarSesion")
+                        Control.ID = Control.ID;
+                    string tipo;
+                    tipo = Control.GetType().ToString();
 
                     foreach (var traduccion in Traducciones)
                     {
@@ -140,8 +144,7 @@ namespace EcommerceHelper.Presentacion.Shared
 
                         if (Equals(Control.ID, traduccion.NombreDelControl))
                         {
-                            string tipo;
-                            tipo = Control.GetType().ToString();
+                            
                             //ESTO SON LOS <a>
                             if (Control is Label lbltradu)
                             {
@@ -155,18 +158,25 @@ namespace EcommerceHelper.Presentacion.Shared
 
                                 txttradu.Text = traduccion.Texto;
                             }
+                            else if (Control is Button btntradu)
+                            {
+                                btntradu.Text = traduccion.Texto;
+                            }
+
+                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
+                            else if (Control is LinkButton lbtntradu)
+                            {
+                                lbtntradu.Text = traduccion.Texto;
+                            }
                             //ESTOS SON LOS <BUTTON>
                             else if (Control is IButtonControl ibtntradu)
                             {
 
                                 ibtntradu.Text = traduccion.Texto;
                             }
-                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
-                            else if (Control is LinkButton lbtntradu)
-                            {
-                                lbtntradu.Text = traduccion.Texto;
-                            }
                            
+                            
+
                         }
 
                     }

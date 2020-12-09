@@ -14,7 +14,7 @@
    <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />
    <br />    
-       <asp:Label ID="LblNuestrosServicios" runat="server"  style="margin-left:30px; margin-top:30px; font-size:24px" Text=" NuestrosServicios" ClientIDMode="Static"></asp:Label>
+       <asp:Label ID="NuestrosServicios2" runat="server"  style="margin-left:30px; margin-top:30px; font-size:24px"  ClientIDMode="Static"></asp:Label>
  
    <br />     
    <br />
@@ -44,7 +44,7 @@
                             <br />
                             
                     
-                          <asp:Label ID="LblIdServicio" runat="server" Text='<%#Eval("IdServicio")%>' Visible="false"></asp:Label>
+                          <asp:Label ID="lblIdServicio" runat="server" Text='<%#Eval("IdServicio")%>' Visible="false"></asp:Label>
                             <a runat="server"><img src='<%# Eval("URLImagen")%>' class="img-responsive col-md-12" /></a>
                            
                          
@@ -54,7 +54,7 @@
 
                         </div>
                          <div class="item-toolbar">
-                             <asp:Button ID="BtnComprar" runat="server" Text=" Comprar" ClientIDMode="Static"  data-target="#mdl_servicio_agregado" data-toggle="modal" onclick="BtnComprar_Click"  class="btn btn-primary btn-lg" UseSubmitBehavior="false"/>
+                             <asp:Button ID="Comprar" runat="server"  ClientIDMode="Static"  data-target="#mdl_servicio_agregado" data-toggle="modal" onclick="BtnComprar_Click"  class="btn btn-primary btn-lg" UseSubmitBehavior="false"/>
 
                            
                          </div>
@@ -84,7 +84,7 @@
                     <div class="modal-body text-center"> <%--Cuerpo de la ventana--%>
                        
                         
-                         <h4 style="color: black;"><asp:Label ID="Label2" runat="server"  Text=" AgregadoAlCarrito" ClientIDMode="Static"><%# Eval("Titulo")%></asp:Label></h4>
+                         <h4 style="color: black;"><asp:Label ID="AgregadoAlCarrito" runat="server"   ClientIDMode="Static"><%# Eval("Titulo")%></asp:Label></h4>
                    
                     </div>
                     <div class="modal-footer">

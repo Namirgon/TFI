@@ -14,7 +14,7 @@
      <div  style="background-image:url('../../Content/Image/banner-curso-degrade.png')">
    <br />
    <br />     
-   <h3  style="margin-left:30px; margin-top:30px"> Servicios  /  Pedidos  </h3>
+   <h2 > <asp:Label ID="ServicioPedido" runat="server"  Font-Bold="true"   style="margin-left:30px; margin-top:30px" ></asp:Label>  </h2>
    <br />     
    <br />
       </div>
@@ -25,7 +25,7 @@
     <br />     
     <br />
 
-      <%-- <span id="lblmensaje"  visible="false"></span>--%>
+     
         <asp:Label ID="lblMensaje" runat="server" Visible="false" Text="Label" ClientIDMode="Static"   style="color:white; font-size:20px" ></asp:Label> <br /><br />
   <center>
    
@@ -58,9 +58,6 @@
                 <ItemTemplate >
 
                  <div class="dates" style="display:flex; color:#000000; width:120px">
-                   
-<%--                    <input type="text"  class="form-control" id ="<% Response.Write("usr" + (this.Controls.Count).ToString()); %>"  placeholder="YYYY-MM-DD" autocomplete="off" name="DatePickerFecha" style="width:120px;background-color:#ffffff; align-self:center " >--%>
-
 
                      </div>
                   
@@ -77,9 +74,6 @@
                 <ItemTemplate >
            
                     <div class='times' style="display:flex; color:#000000; width:110px">
-
-                    <%--<input  type="text"   id="disableTimeRangesExample"  class="form-control" name="DatePickerTime" style="width:110px;background-color:#ffffff; align-self:center "/>--%>
-                                       
                       </div>
                     </ItemTemplate>
 
@@ -119,9 +113,9 @@
 
 
  
-    <div  class="item-toolbar" runat="server"  style="margin-left:160px" >
-        <asp:Button ID="BtnContinuar" runat="server" Text=" Continuar " ClientIDMode="Static"  OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
-    <asp:Button ID="btnIrADirecciones" runat="server" Text="Seleccionar Dirección" OnClick="btnIrADirecciones_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 275px; background-color:cadetblue " />     
+    <div style="margin-left:160px" >
+        <asp:Button ID="Continuar" runat="server"  ClientIDMode="Static"  OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
+    <asp:Button ID="IrADirecciones" runat="server"  OnClick="btnIrADirecciones_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 275px; background-color:cadetblue " />     
    </div>
   
     <style>

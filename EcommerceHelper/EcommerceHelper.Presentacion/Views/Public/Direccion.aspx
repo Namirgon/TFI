@@ -18,7 +18,7 @@
    <br />
    <br />     
    <br />
-<asp:Label ID="lblDireccion" runat="server" Text=" Direccion"  ClientIDMode="Static" style="margin-left:30px; font-size:16px"></asp:Label>
+<asp:Label ID="Direccion2" runat="server"   ClientIDMode="Static" style="margin-left:30px; font-size:22px"></asp:Label>
    
    <br />
    <br />     
@@ -28,52 +28,62 @@
    <br />
    <br />
    <br />
-    <asp:Label ID="lblCalle" runat="server" Text=" Calle " ClientIDMode="Static"  style="margin-left:100px; color:white"></asp:Label>
-    <asp:TextBox ID="txtCalle" runat="server" style="width:400px; margin-left:195px"></asp:TextBox>
+ <div style="width:700px">
+    <fieldset>
+  <legend>
+    <asp:Label ID="Calle" runat="server"  ClientIDMode="Static"  style="margin-left:180px; color:white"></asp:Label>
+    <asp:TextBox ID="txtCalle" runat="server" style="width:400px; margin-left:150px"></asp:TextBox></legend>
 
    <br />
-    <asp:Label ID="lblNumero" runat="server" Text=" Numero" ClientIDMode="Static"  style="margin-left:100px; color:white"> </asp:Label>
-    <asp:TextBox ID="txtNumero" runat="server" style="width:400px; margin-left:178px" TextMode="Number"></asp:TextBox>
+ <legend>    
+   <asp:Label ID="Numero" runat="server" ClientIDMode="Static"  style="margin-left:180px; color:white"> </asp:Label>
+    <asp:TextBox ID="txtNumero" runat="server" style="width:400px; margin-left:150px" TextMode="Number"></asp:TextBox></legend>
+
   
      <br />
-    <asp:Label ID="lblPiso" runat="server" Text=" Piso " ClientIDMode="Static" style="margin-left:90px; color:white"> </asp:Label>
-    <asp:TextBox ID="txtPiso" runat="server" style="width:400px; margin-left:210px" TextMode="Number"></asp:TextBox>
+        <legend>
+    <asp:Label ID="Piso" runat="server"  ClientIDMode="Static" style="margin-left:180px; color:white"> </asp:Label>
+    <asp:TextBox ID="txtPiso" runat="server" style="width:400px; margin-left:150px" TextMode="Number"></asp:TextBox></legend>
 
      <br />
-    <asp:Label ID="LblDepartamento" runat="server" style="margin-left:100px; color:white" Text=" Departamento " ClientIDMode="Static"></asp:Label>
-    <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:140px"></asp:TextBox>
+        <legend>
+    <asp:Label ID="Departamento" runat="server" style="margin-left:180px; color:white"  ClientIDMode="Static"></asp:Label>
+    <asp:TextBox ID="txtDepartamento" runat="server" style="width:400px; margin-left:150px"></asp:TextBox></legend>
    <br /> 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
                 
-                 
-                  <asp:Label ID="lblProvincia" For="ddProvincia" style=" color:white; margin-right:160px; margin-left:100px" runat="server" Text=" Provincia " ClientIDMode="Static"></asp:Label>  
-                  <div style="margin-left:330px">     
-                  <asp:DropDownList ID="ddProvincia" runat="server" AutoPostBack="True" Width="400px" CssClass="form-control" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" >
-                  </asp:DropDownList>
-                  </div>
+                 <legend>
+                  <asp:Label ID="Provincia" For="ddProvincia" style=" color:white; margin-right:160px; margin-left:180px" runat="server"  ClientIDMode="Static"></asp:Label>  
+                   
+                  <asp:DropDownList ID="ddProvincia" runat="server" AutoPostBack="True" Width="400px" CssClass="dropdownlist" style="margin-left:150px" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" >
+                  </asp:DropDownList></legend>
+                  
                 
                   <br />
+            <legend>
+                <asp:Label ID="Localidad" for="ddLocalidad" style=" color:white; margin-right:160px; margin-left:180px" runat="server" ClientIDMode="Static"></asp:Label>
+                     
+                  <asp:DropDownList ID="ddLocalidad" runat="server" Width="400px" ClientIDMode="Static" CssClass="dropdownlist" style="margin-left:150px">
+                  </asp:DropDownList></legend>
+
             
-                  <asp:Label ID="lblLocalidad" for="ddLocalidad" style=" color:white; margin-right:160px; margin-left:100px" runat="server" Text=" Localidad" ClientIDMode="Static"></asp:Label>
-                  <div style="margin-left:330px;">     
-                  <asp:DropDownList ID="ddLocalidad" runat="server" Width="400px" ClientIDMode="Static" CssClass="form-control">
-                  </asp:DropDownList>
-                  </div>
                
 
             </ContentTemplate>
     </asp:UpdatePanel>
    <br />
-    <asp:Label ID="Label2" runat="server" Text="Label" style="margin-left:100px;color:white">Tipo de Direccion</asp:Label> 
-    <asp:DropDownList runat="server" ID="DDLTipodeDireccion" AutoPostBack="true" CssClass="form-control" style="width:400px; margin-left:330px">  </asp:DropDownList>     
+        <legend>
+    <asp:Label ID="TipoDeDireccion" runat="server"  style="margin-left:180px;color:white"></asp:Label> 
+    <asp:DropDownList runat="server" ID="DDLTipodeDireccion" AutoPostBack="true" CssClass="dropdownlist" style="width:400px; margin-left:150px">  </asp:DropDownList>  </legend>   
    
     <br />
     <br />  
     <br />
-    
-   <asp:Button style="margin-left:250px " ID="btnNuevaDireccion" runat="server" Text= "Continuar" OnClick="btnNuevaDireccion_Click"  Width="150px" />
-   <asp:Button style="margin-left:100px " ID="Button2" runat="server" Text="Cancelar " Width="150px" OnClick="Button2_Click"  />
+    </fieldset>
+     </div>
+   <asp:Button style="margin-left:250px " ID="Aceptar" runat="server"  OnClick="btnNuevaDireccion_Click"  Width="150px" />
+   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server"  Width="150px" OnClick="Button2_Click"  />
    <br />
    <br />
    <br />

@@ -13,6 +13,15 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class ABMTarjetasDeCredito {
         
         /// <summary>
+        /// Control ServicioPedido3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ServicioPedido3;
+        
+        /// <summary>
         /// Control hid.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.HiddenField hid;
         
         /// <summary>
-        /// Control idNombreTitular.
+        /// Control NombreTitular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idNombreTitular;
+        protected global::System.Web.UI.WebControls.Label NombreTitular;
         
         /// <summary>
         /// Control txtNombreTitular.
@@ -40,13 +49,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.TextBox txtNombreTitular;
         
         /// <summary>
-        /// Control idNumerotarjeta.
+        /// Control Numerotarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idNumerotarjeta;
+        protected global::System.Web.UI.WebControls.Label Numerotarjeta;
         
         /// <summary>
         /// Control txtNumeroTarjeta.
@@ -58,13 +67,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.TextBox txtNumeroTarjeta;
         
         /// <summary>
-        /// Control txtFechaVencimiento.
+        /// Control FechaVencimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtFechaVencimiento;
+        protected global::System.Web.UI.WebControls.Label FechaVencimiento;
         
         /// <summary>
         /// Control txtFecha.
@@ -76,13 +85,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFecha;
         
         /// <summary>
-        /// Control Label1.
+        /// Control CodigodeSeguridad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label CodigodeSeguridad;
         
         /// <summary>
         /// Control txtcodseguridad.
@@ -94,13 +103,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.TextBox txtcodseguridad;
         
         /// <summary>
-        /// Control lblTipoTarjeta.
+        /// Control TipoTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoTarjeta;
+        protected global::System.Web.UI.WebControls.Label TipoTarjeta;
         
         /// <summary>
         /// Control ddlTipoTarjeta.
@@ -112,31 +121,31 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoTarjeta;
         
         /// <summary>
-        /// Control btnAltaTarjeta.
+        /// Control AltaTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAltaTarjeta;
+        protected global::System.Web.UI.WebControls.Button AltaTarjeta;
         
         /// <summary>
-        /// Control BtnModificarTarjeta.
+        /// Control ModificarTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnModificarTarjeta;
+        protected global::System.Web.UI.WebControls.Button ModificarTarjeta;
         
         /// <summary>
-        /// Control btnVolverPago.
+        /// Control VolverPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolverPago;
+        protected global::System.Web.UI.WebControls.Button VolverPago;
         
         /// <summary>
         /// Control GVTarjetas.

@@ -13,13 +13,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class MenuPrincipal {
         
         /// <summary>
-        /// Control LblNuestrosServicios.
+        /// Control NuestrosServicios2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNuestrosServicios;
+        protected global::System.Web.UI.WebControls.Label NuestrosServicios2;
         
         /// <summary>
         /// Control InfoServicio.
@@ -31,13 +31,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.Repeater InfoServicio;
         
         /// <summary>
-        /// Control Label2.
+        /// Control AgregadoAlCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label AgregadoAlCarrito;
         
         /// <summary>
         /// Control Label3.

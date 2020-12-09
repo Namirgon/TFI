@@ -392,8 +392,6 @@
     <Content Include="Views\Private\Restaurar.aspx" />
     <Content Include="Views\Private\VerLogs.aspx" />
     <Content Include="Views\Public\ABMTarjetasDeCredito.aspx" />
-    <Content Include="Views\Public\DatosPersonales.aspx" />
-    <Content Include="Views\Public\FormaDePago.aspx" />
     <Content Include="Views\Public\MenuPrincipal.aspx" />
     <Content Include="Views\Public\ResumenCompra.aspx" />
     <Content Include="Views\Public\MisDirecciones.aspx" />
@@ -406,8 +404,6 @@
     <Content Include="Views\Public\Presupuesto.aspx" />
     <Content Include="Views\Public\RecuperarContrasena.aspx" />
     <Content Include="Views\Public\Registrarme.aspx" />
-    <Content Include="Views\Public\Resumen.aspx" />
-    <Content Include="Views\Public\TusServicios.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -589,20 +585,6 @@
     <Compile Include="Views\Public\ABMTarjetasDeCredito.aspx.designer.cs">
       <DependentUpon>ABMTarjetasDeCredito.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Public\DatosPersonales.aspx.cs">
-      <DependentUpon>DatosPersonales.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Public\DatosPersonales.aspx.designer.cs">
-      <DependentUpon>DatosPersonales.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Public\FormaDePago.aspx.cs">
-      <DependentUpon>FormaDePago.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Public\FormaDePago.aspx.designer.cs">
-      <DependentUpon>FormaDePago.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Public\MenuPrincipal.aspx.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -686,20 +668,6 @@
     </Compile>
     <Compile Include="Views\Public\Registrarme.aspx.designer.cs">
       <DependentUpon>Registrarme.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Public\Resumen.aspx.cs">
-      <DependentUpon>Resumen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Public\Resumen.aspx.designer.cs">
-      <DependentUpon>Resumen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Public\TusServicios.aspx.cs">
-      <DependentUpon>TusServicios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Public\TusServicios.aspx.designer.cs">
-      <DependentUpon>TusServicios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

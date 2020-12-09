@@ -49,13 +49,22 @@ namespace EcommerceHelper.Presentacion.Shared {
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
         
         /// <summary>
-        /// Control btnCerrarSesion.
+        /// Control CerrarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCerrarSesion;
+        protected global::System.Web.UI.WebControls.Button CerrarSesion;
+        
+        /// <summary>
+        /// Control Pedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Pedido;
         
         /// <summary>
         /// Control ddlidioma.

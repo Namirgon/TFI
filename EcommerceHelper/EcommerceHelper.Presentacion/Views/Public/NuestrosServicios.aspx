@@ -64,15 +64,13 @@
         <h2><asp:Label runat ="server" ID="Contactanos12" ClientIDMode="Static"></asp:Label></h2>
 
         <p >
-
-                Cortinas Black-out <br/>
-                Cortinas de Tela Tupida <br/>
-                Estilos Señoriales y Bando<br/>
-                Enrollables y mucho mas! <br/>
-
-        </p>
+            <asp:Label runat ="server" ID="Contactanos13" ClientIDMode="Static"></asp:Label> <br /> 
+            <asp:Label runat ="server" ID="Contactanos14" ClientIDMode="Static"></asp:Label> <br /> 
+            <asp:Label runat ="server" ID="Contactanos15" ClientIDMode="Static"></asp:Label> <br /> 
+            <asp:Label runat ="server" ID="Contactanos16" ClientIDMode="Static"></asp:Label> <br /> 
+     </p>
           <p> <asp:LinkButton ID="Comprar4" runat="server" class="btn btn-primary" href="IniciarSesion.aspx" ClientIDMode="Static"></asp:LinkButton></p>
-         <img  style="width:70%" src="../../Content/Image/Limpiezadecortinas.jpg"/>
+         <img  style="width:70%" src="../../Content/Image/Limpiezadecortinas.jpg" alt=""/>
       
         
     </div>
@@ -83,44 +81,52 @@
 
     
     <div  class="col-md-4">
-         <h3 style="margin-left:15px ">Limpieza Interior</h3>
+         <h3 style="margin-left:15px ">  <asp:Label runat ="server" ID="Contactanos17" ClientIDMode="Static"></asp:Label>  </h3>
         <p style="margin-left:15px " >
-            Limpieza dormitorios <br /> 
-            Limpieza Baños <br />
-            living, cocinas, playroom y mas..<br />
-            Consulta planes a tu medida!
+            <asp:Label runat ="server" ID="Contactanos18" ClientIDMode="Static"></asp:Label> <br />
+            <asp:Label runat ="server" ID="Contactanos19" ClientIDMode="Static"></asp:Label> <br />
+            <asp:Label runat ="server" ID="Contactanos20" ClientIDMode="Static"></asp:Label> <br />
+            <asp:Label runat ="server" ID="Contactanos6" ClientIDMode="Static"></asp:Label> <br />
+      
+          
+         <br />
+        
         </p>  
            <p style="margin-left:15px ">
              <asp:LinkButton ID="Comprar" runat="server" class="btn btn-primary" href="IniciarSesion.aspx" ClientIDMode="Static"></asp:LinkButton></p>
-         <img style="width:60%; border: groove; margin-left:15px "   src="../../Content/Image/domestica2.png"/>
+         <img style="width:60%; border: groove; margin-left:15px " alt=""  src="../../Content/Image/domestica2.png"/>
       
          </div>
     <div class="col-md-4">
-        <h2 >Limpieza Exterior</h2>
-        <p>Quinchos, Jardines de invierno <br />
-            Explanadas y veredas <br />
-            Galerias, Glorietas <br />
-            Galerias y mas!!
+        <h2 ><asp:Label runat ="server" ID="Contactanos21" ClientIDMode="Static"></asp:Label></h2>
+        <p>  <asp:Label runat ="server" ID="Contactanos22" ClientIDMode="Static"></asp:Label> <br />
+             <asp:Label runat ="server" ID="Contactanos23" ClientIDMode="Static"></asp:Label> <br />
+             <asp:Label runat ="server" ID="Contactanos24" ClientIDMode="Static"></asp:Label> <br />
+             <asp:Label runat ="server" ID="Contactanos25" ClientIDMode="Static"></asp:Label> <br />
 
+         <br />
+        
         </p>
           <p> <asp:LinkButton ID="Comprar5" runat="server" class="btn btn-primary" href="IniciarSesion.aspx" ClientIDMode="Static"></asp:LinkButton></p>
-         <img  style="width:65%" src="../../Content/Image/pisoexteior.jpg"/>
+         <img  style="width:65%" src="../../Content/Image/pisoexteior.jpg" alt=""/>
       
       
         
      
     </div>
     <div class="col-md-4">
-        <h2>Planes</h2>
+        <h2><asp:Label runat ="server" ID="Contactanos26" ClientIDMode="Static"></asp:Label></h2>
 
             <p >
-
-                Arma un plan a tu medida!! <br/>
-                Programa tus servicios  <br/>
-                Horas diarias, semanales, mensuales.<br/>
-                Contamos con el mejor equipo de la zona! <br/></p>
+                 <asp:Label runat ="server" ID="Contactanos27" ClientIDMode="Static"></asp:Label> <br />
+                 <asp:Label runat ="server" ID="Contactanos28" ClientIDMode="Static"></asp:Label> <br />
+                 <asp:Label runat ="server" ID="Contactanos29" ClientIDMode="Static"></asp:Label> <br />
+                 <asp:Label runat ="server" ID="Contactanos30" ClientIDMode="Static"></asp:Label> <br />
+                <br/>
+                       
+                 <br/></p>
              <p>  <asp:LinkButton ID="Presupuesto" runat="server" class="btn btn-primary" href="Presupuesto.aspx" ClientIDMode="Static"></asp:LinkButton></p>
-             <img  style="width:75%" src="../../Content/Image/cocina2.jpg"/>
+             <img  alt="" style="width:75%" src="../../Content/Image/cocina2.jpg"/>
            
     </div>
 

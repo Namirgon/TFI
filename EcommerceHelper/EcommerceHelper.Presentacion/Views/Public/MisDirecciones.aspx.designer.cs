@@ -13,6 +13,15 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class MisDirecciones {
         
         /// <summary>
+        /// Control ServicioPedidoMisDirecciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ServicioPedidoMisDirecciones;
+        
+        /// <summary>
         /// Control GVMisDirecciones.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.LinkButton linkAltaDireccion;
         
         /// <summary>
-        /// Control BtnContinuar.
+        /// Control Continuar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnContinuar;
+        protected global::System.Web.UI.WebControls.LinkButton Continuar;
         
         /// <summary>
         /// Propiedad Master.

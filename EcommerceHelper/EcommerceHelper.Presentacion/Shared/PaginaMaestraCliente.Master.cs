@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Shared
 {
-    public partial class PaginaMaestraCliente : System.Web.UI.MasterPage
+    public partial class PaginaMaestraCliente : System.Web.UI.MasterPage, IObservador
     {
         private HttpContext Current = HttpContext.Current;
         private List<IdiomaEntidad> idiomaEntidad;
@@ -20,6 +20,15 @@ namespace EcommerceHelper.Presentacion.Shared
         List<MultiIdiomaEntidad> Traducciones = new List<MultiIdiomaEntidad>();
         IdiomaBLL _IdiomaBLL = new IdiomaBLL();
         UsuarioEntidad usuario = new UsuarioEntidad();
+
+        public PaginaMaestraCliente() 
+        {
+            IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+
+        }
+
+        //List<MultiIdiomaEntidad> Traducciones; // xxxxx
+        private List<object> ListaResultado = new List<object>(); //xxxxx
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,9 +47,13 @@ namespace EcommerceHelper.Presentacion.Shared
             if (!IsPostBack)
             {
                 ElegirIdioma();
+                Traducciones = new List<MultiIdiomaEntidad>();
+
                 IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
-                Session["Traducciones"] = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
-                Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"];
+
+                IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
+                Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
+             
                 IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
             }
 
@@ -61,10 +74,10 @@ namespace EcommerceHelper.Presentacion.Shared
         protected void ddlidioma_SelectedIndexChanged1(object sender, EventArgs e)
         {
             IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
-            Session["Traducciones"] = _IdiomaBLL.DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
-            Traducciones = (List<MultiIdiomaEntidad>)HttpContext.Current.Session["Traducciones"];
-            IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
 
+            IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl = IdiomaBLL.GetBLLServicioIdiomaUnico().DevuelverTodosLosTextos(IdiomaSeleccionado.IdIdioma);
+
+            IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
 
         }
 
@@ -81,7 +94,7 @@ namespace EcommerceHelper.Presentacion.Shared
                     return true;
                 if (FamiliaBLL.BuscarPermiso(usuarioAutenticado.Permisos, PermisosPagina))
                     return true;
-                //return usuarioAutenticado.Permisos.Any(X => X.NombreIFamPat == elPermiso);
+                
             }
             return false;
 
@@ -121,7 +134,97 @@ namespace EcommerceHelper.Presentacion.Shared
             Session.Abandon();
             Response.Redirect("/Views/Public/Default.aspx");
         }
+        void IObservador.Traducirme()
+        {
+            ListaResultado.Clear();
+            RecorrerControles(this);
 
-       
+            Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
+
+            try
+            {
+
+                foreach (Control Control in ListaResultado)
+                {
+                  
+                    string tipo;
+                    tipo = Control.GetType().ToString();
+
+                    foreach (var traduccion in Traducciones)
+                    {
+
+
+
+                        if (Equals(Control.ID, traduccion.NombreDelControl))
+                        {
+                            //string tipo;
+                            //tipo = Control.GetType().ToString();
+                            //ESTO SON LOS <a>
+                            if (Control is Label lbltradu)
+                            {
+
+                                lbltradu.Text = traduccion.Texto;
+
+                            }
+                            //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
+                            else if (Control is TextBox txttradu)
+                            {
+
+                                txttradu.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <BUTTON>
+                            else if (Control is IButtonControl ibtntradu)
+                            {
+
+                                ibtntradu.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
+                            else if (Control is LinkButton lbtntradu)
+                            {
+                                lbtntradu.Text = traduccion.Texto;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        private void RecorrerControles(Control pObjetoContenedor)
+        {
+            foreach (Control Controlobj in pObjetoContenedor.Controls)
+            {
+                ListaResultado.Add(Controlobj);
+
+              
+                if (Controlobj.Controls.Count > 0)
+                {
+                    RecorrerControles(Controlobj);
+                }
+
+                ListaResultado.Add(Controlobj);
+            }
+        }
+
+        private void RecorrerDropDown(System.Web.UI.WebControls.DropDownList pMenuStrip)
+        {
+            ListaResultado.Add(pMenuStrip);
+            foreach (System.Web.UI.WebControls.ListItem item in pMenuStrip.Items)
+            {
+                ListaResultado.Add(item);
+            }
+
+
+        }
+
+
     }
 }

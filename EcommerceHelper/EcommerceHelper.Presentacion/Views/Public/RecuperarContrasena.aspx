@@ -17,7 +17,7 @@
    <br />
    <br />     
    <br />
-<asp:Label ID="LBLrecuperarContraseña" runat="server" style="margin-left:30px; font-size:24px" Text=" RecuperarContraseña" ClientIDMode="Static"></asp:Label>
+<asp:Label ID="RecuperarContraseña" runat="server" style="margin-left:30px; font-size:24px" ClientIDMode="Static"></asp:Label>
   
    <br />
    <br />     
@@ -36,8 +36,8 @@
    <br />
    <br />
    <br />
-   <asp:Button style="margin-left:200px " ID="BtnRecuperar" runat="server" Text=" Aceptar"  CssClass="form-control" ClientIDMode="Static" Width="150px" OnClick="BtnRecuperar_Click" />
-   <asp:Button style="margin-left:100px " ID="BtnCancelar" runat="server" Text=" Cancelar "  CssClass="form-control" ClientIDMode="Static" Width="150px"  OnClick="BtnCancelar_Click"/>
+   <asp:Button style="margin-left:200px " ID="Aceptar" runat="server" Text=" Aceptar"  CssClass="form-control" ClientIDMode="Static" Width="150px" OnClick="BtnRecuperar_Click" />
+   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" Text=" Cancelar "  CssClass="form-control" ClientIDMode="Static" Width="150px"  OnClick="BtnCancelar_Click"/>
    <br />
    <br />
    <br />

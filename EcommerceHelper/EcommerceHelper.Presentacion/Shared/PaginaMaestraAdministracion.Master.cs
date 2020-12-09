@@ -18,12 +18,15 @@ namespace EcommerceHelper.Presentacion.Shared
 
         private HttpContext Current = HttpContext.Current;
 
-       
-      
+        List<MultiIdiomaEntidad> Traducciones;//xxxx
+
+        private List<object> ListaResultado = new List<object>(); //xxxxx
+
         public UsuarioEntidad usuario { get; set; }
         private IdiomaEntidad idioma;
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
 
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -43,24 +46,11 @@ namespace EcommerceHelper.Presentacion.Shared
 
             if (!IsPostBack)
             {
-                //if (ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
-                //{
-                //    ddlIdioma.Items.FindByValue(CultureInfo.CurrentCulture.Name).Selected = true;
-                //}
-                //if (idioma == null)
-                //{
-                //    Session["Idioma"] = obtenerIdiomaCombo();
-                //}
+
             }
-
         }
 
-        public PaginaMaestraAdministracion()
-        {
-            idioma = new IdiomaEntidad();
-
-        }
-
+       
 
         public bool Autenticar(string elPermiso)
         {
@@ -100,14 +90,7 @@ namespace EcommerceHelper.Presentacion.Shared
 
         }
 
-        //public string obtenerIdiomaCombo()
-        //{
-        //    var val = (ddlIdioma.SelectedItem.Value);
-        //    var val2 = ddlIdioma.SelectedValue;
-        //    return (val2);
-
-        //}
-
+      
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             usuario = new UsuarioEntidad();

@@ -15,7 +15,7 @@
    
     
     <br />
-    <h3  style="margin-left:30px; margin-top:30px; color:black"> Servicios  /  Pedidos  / Mis Direcciones / Resumen Compra / Pago / Mis Tarjetas </h3> 
+    <h3 >  <asp:Label ID="ServicioPedido3" runat="server"  Font-Bold="true"   style="margin-left:30px; margin-top:30px" ></asp:Label> </h3> 
        <br />
     <br />             
    
@@ -25,41 +25,45 @@
     <br />
     <div>
 
-           <div style="align-content:center; margin-left:100px; width:1300px" class="form-group"> <br />
+           <div style="align-content:center; margin-left:100px; width:700px" class="form-group"> <br />
 
-
+<fieldset>
              <asp:HiddenField ID="hid" runat="server" ></asp:HiddenField>
 
- 
-           <asp:Label ID="idNombreTitular" runat="server" Text="Titular"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
-           <asp:TextBox ID="txtNombreTitular" runat="server"  style="width:400px;  margin-left:235px; margin-right:40px" CssClass="form-control" placeholder="ingrese Titular de la Tarjeta"></asp:TextBox> 
-          
+            <legend>
+           <asp:Label ID="NombreTitular" runat="server" ClientIDMode="Static"  style=" font-size: 16px; margin-left:180px; margin-right: 20px" ></asp:Label>
+           <asp:TextBox ID="txtNombreTitular" runat="server"  style="width:400px;  margin-left:150px; margin-right:40px" CssClass="form-control" placeholder="ingrese Titular de la Tarjeta"></asp:TextBox> 
+          </legend>
                <br />
-                
-           <asp:Label ID="idNumerotarjeta" runat="server" Text="Numero"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
-           <asp:TextBox ID="txtNumeroTarjeta" runat="server"  style="width:400px;  margin-left:235px; margin-right:40px" CssClass="form-control" placeholder="ingrese Numero de la Tarjeta"></asp:TextBox> 
-            
+                <legend>
+           <asp:Label ID="Numerotarjeta" runat="server" ClientIDMode="Static"  style=" font-size: 16px; margin-left:180px; margin-right: 20px" ></asp:Label>
+           <asp:TextBox ID="txtNumeroTarjeta" runat="server"  style="width:400px;  margin-left:150px; margin-right:40px" CssClass="form-control" placeholder="ingrese Numero de la Tarjeta"></asp:TextBox> 
+            </legend>
                <br />
-           <asp:Label ID="txtFechaVencimiento" runat="server" Text="Fecha De Vencimiento"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
-           <input id="txtFecha" type="date" name="txtfecha"  style="width:400px;  margin-left:235px; margin-right:40px" class="form-control" runat="server"   />
-         
+            <legend>
+           <asp:Label ID="FechaVencimiento" runat="server" ClientIDMode="Static" style=" font-size: 16px; margin-left:180px; margin-right: 20px" ></asp:Label>
+           <input id="txtFecha" type="date" name="txtfecha"  style="width:400px;  margin-left:150px; margin-right:40px" class="form-control" runat="server"   />
+         </legend>
                 <br />
-            <asp:Label ID="Label1" runat="server" Text="Codigo de Seguridad"  style=" font-size: 16px; margin-left:30px; margin-right: 20px" ></asp:Label>
-                <asp:TextBox ID="txtcodseguridad" runat="server"  style="width:400px;  margin-left:235px; margin-right:40px" CssClass="form-control" placeholder="ingrese codigo de Seguridad"></asp:TextBox> 
-                 <br />
- 
-              <asp:Label ID="lblTipoTarjeta" runat="server" Text="Tipo Tarjeta" style="margin-left:30px; font-size:16px">Tipo de Tarjeta</asp:Label> 
-                <asp:DropDownList runat="server" ID="ddlTipoTarjeta" AutoPostBack="true" CssClass="form-control" style="width:400px; margin-left:230px">  </asp:DropDownList>     
+             <legend>
+            <asp:Label ID="CodigodeSeguridad" runat="server" ClientIDMode="Static"  style=" font-size: 16px; margin-left:180px; margin-right: 20px" ></asp:Label>
+                <asp:TextBox ID="txtcodseguridad" runat="server"  style="width:400px;  margin-left:150px; margin-right:40px" CssClass="form-control" placeholder="ingrese codigo de Seguridad"></asp:TextBox> 
+                </legend> <br />
+ <legend>
+              <asp:Label ID="TipoTarjeta" runat="server" ClientIDMode="Static" style="margin-left:180px; font-size:16px"></asp:Label> 
+                <asp:DropDownList runat="server" ID="ddlTipoTarjeta" AutoPostBack="true" CssClass="form-control" style="width:400px; margin-left:150px">  </asp:DropDownList>     
+     </legend>
+               <br />
+               <br />
 
-               <br />
-               <br />
+    </fieldset>
                <br />
 <div style="margin-left:30PX">
-           <asp:Button ID="btnAltaTarjeta" runat="server" Text="Alta" OnClick="btnAltaTarjeta_Click" class="btn btn-primary btn-lg" Width="167px" />
+           <asp:Button ID="AltaTarjeta" runat="server" ClientIDMode="Static" OnClick="btnAltaTarjeta_Click" class="btn btn-primary btn-lg" Width="167px" />
            &nbsp;
-           <asp:Button ID="BtnModificarTarjeta" runat="server"   Text=" Guardar Cambios " OnClick="BtnModificarTarjeta_Click" class="btn btn-primary btn-lg" Width="178px" />
+           <asp:Button ID="ModificarTarjeta" runat="server" ClientIDMode="Static" OnClick="BtnModificarTarjeta_Click" class="btn btn-primary btn-lg" Width="178px" />
                 &nbsp;
-          <asp:Button ID="btnVolverPago" runat="server"   Text=" Volver A Pago " OnClick="btnVolverPago_Click" class="btn btn-primary btn-lg" Width="178px" />
+          <asp:Button ID="VolverPago" runat="server" ClientIDMode="Static" OnClick="btnVolverPago_Click" class="btn btn-primary btn-lg" Width="178px" />
    
     </div>
 

@@ -17,11 +17,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
     public partial class Default : System.Web.UI.Page, IObservador
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
-        public HttpContext Current = HttpContext.Current;//xxxxx
-        private List<object> ListaResultado = new List<object>(); //xxxxx
+       
         IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
 
-
+        public HttpContext Current = HttpContext.Current;//xxxxx
+        private List<object> ListaResultado = new List<object>(); //xxxxx
         List<MultiIdiomaEntidad> Traducciones; // xxxxx
         public Default() : base()
         {
@@ -56,12 +56,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
             if (!IsPostBack)
             {
                 Traducciones = new List<MultiIdiomaEntidad>();
-              
-               // Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
+             
                  Traducciones=   IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
-
-                
             }
 
 
@@ -82,7 +79,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
                 foreach (Control Control in ListaResultado)
                 {
-
+                    //if (Control.ID == "CerrarSesion")
+                    //    Control.ID = Control.ID;
+                    //string tipo;
+                    //tipo = Control.GetType().ToString();
                     foreach (var traduccion in Traducciones)
                     {
 
@@ -90,39 +90,38 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
                         if (Equals(Control.ID, traduccion.NombreDelControl))
                         {
-                            string tipo;
-                            tipo = Control.GetType().ToString();
+                            //string tipo;
+                            //tipo = Control.GetType().ToString();
                             //ESTO SON LOS <a>
                             if (Control is Label lbltradu)
                             {
 
-                               // var mapeo = (Label)Control;
                                 lbltradu.Text = traduccion.Texto;
-                                //  mapeo.InnerText = traduccion.Texto;
+                         
                             }
                             //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
-                            else if ((Control) is System.Web.UI.WebControls.TextBox)
+                            else if (Control is TextBox)
                             {
 
-                                var mapeo = (System.Web.UI.WebControls.TextBox)Control;
+                                var mapeo = (TextBox)Control;
                                 mapeo.Text = traduccion.Texto;
                             }
                             //ESTOS SON LOS <BUTTON>
-                            else if ((Control) is System.Web.UI.WebControls.IButtonControl)
+                            else if (Control is IButtonControl)
                             {
-                                var mapeo = (System.Web.UI.WebControls.Button)Control;
+                                var mapeo = (IButtonControl )Control;
                                 mapeo.Text = traduccion.Texto;
                             }
                             //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
-                            else if ((Control) is System.Web.UI.WebControls.LinkButton)
+                            else if ((Control) is LinkButton)
                             {
-                                var mapeo = (System.Web.UI.WebControls.LinkButton)Control;
+                                var mapeo = (LinkButton)Control;
                                 mapeo.Text = traduccion.Texto;
                             }
-                            else if ((Control) is System.Web.UI.WebControls.TextBox  )
+                            else if (Control is Button  )
                             {
-                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
-                                mapeo.Value = traduccion.Texto;
+                                var mapeo = (Button )Control;
+                                mapeo.Text = traduccion.Texto;
                             }
 
                         }

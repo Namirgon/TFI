@@ -13,6 +13,24 @@ namespace EcommerceHelper.Presentacion.Views.Private {
     public partial class MiDireccion {
         
         /// <summary>
+        /// Control Resumen2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Resumen2;
+        
+        /// <summary>
+        /// Control ServicioPedidoMisDirecciones2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ServicioPedidoMisDirecciones2;
+        
+        /// <summary>
         /// Control GVPedido.
         /// </summary>
         /// <remarks>
@@ -49,22 +67,22 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.GridView GVMisDirecciones;
         
         /// <summary>
-        /// Control Button1.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
-        /// Control Button2.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// Propiedad Master.

@@ -13,13 +13,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class RecuperarContrasena {
         
         /// <summary>
-        /// Control LBLrecuperarContraseña.
+        /// Control RecuperarContraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLrecuperarContraseña;
+        protected global::System.Web.UI.WebControls.Label RecuperarContraseña;
         
         /// <summary>
         /// Control EtiquetaEmail.
@@ -49,22 +49,22 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Control BtnRecuperar.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRecuperar;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
-        /// Control BtnCancelar.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCancelar;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// Propiedad Master.

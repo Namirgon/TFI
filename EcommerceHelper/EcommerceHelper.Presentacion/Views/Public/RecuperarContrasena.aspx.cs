@@ -11,14 +11,24 @@ using EcommerceHelper.Funciones.Seguridad;
 using System.Configuration;
 using System.Net;
 using System.Net.Mail;
+using EcommerceHelper.BLL.Servicios;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class RecuperarContrasena : System.Web.UI.Page
+    public partial class RecuperarContrasena : System.Web.UI.Page, IObservador
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         UsuarioBLL GestorUsuario = new UsuarioBLL();
         private IdiomaEntidad idioma;
+        public HttpContext Current = HttpContext.Current;//xxxxx
+        private List<object> ListaResultado = new List<object>(); //xxxxx
+        List<MultiIdiomaEntidad> Traducciones; // xxxxx
+
+        public RecuperarContrasena() : base (){
+
+            IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+
+        }
         protected T FindControlFromMaster<T>(string name) where T : Control
         {
             MasterPage master = this.Master;
@@ -37,25 +47,30 @@ namespace EcommerceHelper.Presentacion.Views.Public
             idioma = new IdiomaEntidad();
             if (!IsPostBack)
             {
-                idioma = (IdiomaEntidad)Session["Idioma"];
-                if (idioma == null)
-                {
-                    idioma = new IdiomaEntidad();
-                    idioma.Descripcion = "es";
-                    Session["Idioma"] = idioma;
-                }
+
+                Traducciones = new List<MultiIdiomaEntidad>();
+
+                Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
+
+                //idioma = (IdiomaEntidad)Session["Idioma"];
+                //if (idioma == null)
+                //{
+                //    idioma = new IdiomaEntidad();
+                //    idioma.Descripcion = "es";
+                //    Session["Idioma"] = idioma;
+                //}
             }
             else
             {
                 //idioma.Descripcion = Master.obtenerIdiomaCombo();
-                Session["Idioma"] = idioma;
+               // Session["Idioma"] = idioma;
             }
 
-            DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
-            if (lblIdioma != null)
-            {
-                lblIdioma.SelectedValue = idioma.Descripcion;
-            }
+            //DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
+            //if (lblIdioma != null)
+            //{
+            //    lblIdioma.SelectedValue = idioma.Descripcion;
+            //}
             usuarioentidad = (UsuarioEntidad)Session["Usuario"];
 
         }
@@ -137,5 +152,106 @@ namespace EcommerceHelper.Presentacion.Views.Public
         {
             Response.Redirect("Default.aspx");
         }
+
+        void IObservador.Traducirme()
+        {
+
+            ListaResultado.Clear();
+            RecorrerControles(this);
+
+
+
+            Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
+
+            try
+            {
+
+                foreach (Control Control in ListaResultado)
+                {
+                    //if (Control.ID == "CerrarSesion")
+                    //    Control.ID = Control.ID;
+                    //string tipo;
+                    //tipo = Control.GetType().ToString();
+                    foreach (var traduccion in Traducciones)
+                    {
+
+
+
+                        if (Equals(Control.ID, traduccion.NombreDelControl))
+                        {
+                            //string tipo;
+                            //tipo = Control.GetType().ToString();
+                            //ESTO SON LOS <a>
+                            if (Control is Label lbltradu)
+                            {
+
+                                lbltradu.Text = traduccion.Texto;
+
+                            }
+                            //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
+                            else if (Control is TextBox)
+                            {
+
+                                var mapeo = (TextBox)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <BUTTON>
+                            else if (Control is IButtonControl)
+                            {
+                                var mapeo = (IButtonControl)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
+                            else if ((Control) is LinkButton)
+                            {
+                                var mapeo = (LinkButton)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            else if (Control is Button)
+                            {
+                                var mapeo = (Button)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
+        }
+        private void RecorrerControles(Control pObjetoContenedor)
+        {
+            foreach (Control Controlobj in pObjetoContenedor.Controls)
+            {
+                ListaResultado.Add(Controlobj);
+
+              
+                if (Controlobj.Controls.Count > 0)
+                {
+                    RecorrerControles(Controlobj);
+                }
+
+                ListaResultado.Add(Controlobj);
+            }
+        }
+
+        private void RecorrerDropDown(System.Web.UI.WebControls.DropDownList pMenuStrip)
+        {
+            ListaResultado.Add(pMenuStrip);
+            foreach (System.Web.UI.WebControls.ListItem item in pMenuStrip.Items)
+            {
+                ListaResultado.Add(item);
+            }
+
+
+        }
+
     }
 }

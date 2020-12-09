@@ -26,17 +26,18 @@
    <br />
    <br />
    <br />
+    <div style="width:700px">
     <fieldset>
   <legend>
-       <asp:Label ID="EtiquetaEmail" runat="server"  visible="true" ClientIDMode="Static"  style=" margin-left:180px"></asp:Label> </legend>
-       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:160px"></asp:TextBox>  
+       <asp:Label ID="EtiquetaEmail" runat="server"  visible="true" ClientIDMode="Static"  style=" margin-left:180px"></asp:Label> 
+       <asp:TextBox  ID="TXTEmail" runat="server" style="width:400px; margin-left:160px"></asp:TextBox>  </legend>
        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un Email valido" ControlToValidate="TXTEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
 
   <br />
   <br />
          <legend>
-    <asp:Label ID="EtiquetaPassword2" runat="server" Text="Password " ClientIDMode="Static"  style=" margin-left:180px"></asp:Label></legend>
-    <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:160px"></asp:TextBox> 
+    <asp:Label ID="EtiquetaPassword2" runat="server" Text="Password " ClientIDMode="Static"  style=" margin-left:180px"></asp:Label>
+    <asp:TextBox ID="TXTPassword" type="Password" runat="server" style="width:400px; margin-left:160px"></asp:TextBox> </legend>
     
    <br />
   </fieldset>
@@ -45,7 +46,7 @@
    <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" ClientIDMode="Static"  Text=" Cancelar" Width="150px" OnClick="BtnCancelar_Click" />
    <br />
    <br />
-   
+   </div>
 
      
    <br />

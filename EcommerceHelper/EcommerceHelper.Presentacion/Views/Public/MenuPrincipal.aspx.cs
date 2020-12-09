@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EcommerceHelper.BLL;
+using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.Entidades;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -12,8 +13,16 @@ namespace EcommerceHelper.Presentacion.Views.Public
 {
 
     
-    public partial class MenuPrincipal : System.Web.UI.Page
+    public partial class MenuPrincipal : System.Web.UI.Page, IObservador
     {
+        public MenuPrincipal() : base()
+        {
+            IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+
+        }
+
+        List<MultiIdiomaEntidad> Traducciones; // xxxxx
+        private List<object> ListaResultado = new List<object>(); //xxxxx
 
         List<ServicioEntidad> unServicios = new List<ServicioEntidad>();
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
@@ -36,6 +45,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
             unServicios = (List<ServicioEntidad>)unServicioBLL.SelectALLServicios();
             InfoServicio.DataSource = unServicios;
             InfoServicio.DataBind();
+
+            Traducciones = new List<MultiIdiomaEntidad>();
+
+            Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
 
         }
@@ -129,6 +142,108 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 unaListaItemBLL.ItemOrdenDeTrabajoInsert(unItem);
 
             }
+        }
+        void IObservador.Traducirme()
+        {
+
+            ListaResultado.Clear();
+            RecorrerControles(this);
+
+
+
+            Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
+
+            try
+            {
+
+                foreach (Control Control in ListaResultado)
+                {
+
+                    foreach (var traduccion in Traducciones)
+                    {
+
+
+
+                        if (Equals(Control.ID, traduccion.NombreDelControl))
+                        {
+                            string tipo;
+                            tipo = Control.GetType().ToString();
+                            //ESTO SON LOS <a>
+                            if (Control is Label lbltradu)
+                            {
+
+                                // var mapeo = (Label)Control;
+                                lbltradu.Text = traduccion.Texto;
+                                //  mapeo.InnerText = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
+                            else if ((Control) is System.Web.UI.WebControls.TextBox)
+                            {
+
+                                var mapeo = (System.Web.UI.WebControls.TextBox)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <BUTTON>
+                            else if ((Control) is System.Web.UI.WebControls.IButtonControl)
+                            {
+                                var mapeo = (System.Web.UI.WebControls.Button)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
+                            else if ((Control) is System.Web.UI.WebControls.LinkButton)
+                            {
+                                var mapeo = (System.Web.UI.WebControls.LinkButton)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            else if ((Control) is System.Web.UI.WebControls.TextBox)
+                            {
+                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
+                                mapeo.Value = traduccion.Texto;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
+        }
+        private void RecorrerControles(Control pObjetoContenedor)
+        {
+            foreach (Control Controlobj in pObjetoContenedor.Controls)
+            {
+                ListaResultado.Add(Controlobj);
+
+                //if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
+                //{
+                //    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
+                //}
+
+
+                if (Controlobj.Controls.Count > 0)
+                {
+                    RecorrerControles(Controlobj);
+                }
+
+                ListaResultado.Add(Controlobj);
+            }
+        }
+
+        private void RecorrerDropDown(System.Web.UI.WebControls.DropDownList pMenuStrip)
+        {
+            ListaResultado.Add(pMenuStrip);
+            foreach (System.Web.UI.WebControls.ListItem item in pMenuStrip.Items)
+            {
+                ListaResultado.Add(item);
+            }
+
+
         }
 
 

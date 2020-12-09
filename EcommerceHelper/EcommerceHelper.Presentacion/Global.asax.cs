@@ -29,11 +29,7 @@ namespace EcommerceHelper.Presentacion
         {
             // Código que se ejecuta cuando se inicia una nueva sesión
 
-            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("Es-es");
-            //Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-
-          //  IdiomaManager.UpdateCulture();
-            //Session["Traducciones"] = new MultiIdiomaManager();
+           
         }
             protected void Application_BeginRequest(object sender, EventArgs e)
         {

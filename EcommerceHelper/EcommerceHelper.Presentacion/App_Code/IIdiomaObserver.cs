@@ -1,14 +1,14 @@
-﻿using EcommerceHelper.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿//using EcommerceHelper.Entidades;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
 
-namespace EcommerceHelper.Presentacion.App_Code
-{
-    public interface IIdiomaObserver
-    {
+//namespace EcommerceHelper.Presentacion.App_Code
+//{
+//    public interface IIdiomaObserver
+//    {
 
-        void UpdateLanguage(IdiomaEntidad idioma);
-    }
-}
+//        void UpdateLanguage(IdiomaEntidad idioma);
+//    }
+//}

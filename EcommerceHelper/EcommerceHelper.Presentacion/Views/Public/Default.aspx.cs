@@ -14,15 +14,23 @@ using EcommerceHelper.BLL;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
-    public partial class Default : System.Web.UI.Page , IObservador
+    public partial class Default : System.Web.UI.Page, IObservador
     {
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
-        HttpContext Current = HttpContext.Current;
+        public HttpContext Current = HttpContext.Current;//xxxxx
         private List<object> ListaResultado = new List<object>(); //xxxxx
         IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
 
 
-        List<MultiIdiomaEntidad> Traducciones = new List<MultiIdiomaEntidad>(); // xxxxx
+        List<MultiIdiomaEntidad> Traducciones; // xxxxx
+        public Default() : base()
+        {
+
+
+
+            IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+        }
+
 
 
         protected T FindControlFromMaster<T>(string name) where T : Control
@@ -47,13 +55,13 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             if (!IsPostBack)
             {
+                Traducciones = new List<MultiIdiomaEntidad>();
+              
+               // Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
+                 Traducciones=   IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
 
-                Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
-
-                IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
-
-
+                
             }
 
 
@@ -62,10 +70,12 @@ namespace EcommerceHelper.Presentacion.Views.Public
         void IObservador.Traducirme()
         {
 
+            ListaResultado.Clear();
             RecorrerControles(this);
 
 
-            Traducciones = (List<MultiIdiomaEntidad>)Current.Session["Traducciones"]; // xxxxxx este solo va en las paginas xxxxx
+
+            Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
             try
             {
@@ -83,11 +93,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
                             string tipo;
                             tipo = Control.GetType().ToString();
                             //ESTO SON LOS <a>
-                            if ((Control) is System.Web.UI.WebControls.Label)
+                            if (Control is Label lbltradu)
                             {
 
-                                var mapeo = (System.Web.UI.WebControls.Label)Control;
-                                mapeo.Text = traduccion.Texto;
+                               // var mapeo = (Label)Control;
+                                lbltradu.Text = traduccion.Texto;
                                 //  mapeo.InnerText = traduccion.Texto;
                             }
                             //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
@@ -122,8 +132,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 }
 
             }
-            catch
+            catch (Exception es)
             {
+                throw;
             }
 
         }
@@ -133,10 +144,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
             {
                 ListaResultado.Add(Controlobj);
 
-                if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
-                {
-                    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
-                }
+                //if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
+                //{
+                //    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
+                //}
 
 
                 if (Controlobj.Controls.Count > 0)

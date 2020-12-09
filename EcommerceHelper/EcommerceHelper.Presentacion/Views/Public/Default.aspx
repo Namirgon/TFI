@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"  Inherits="EcommerceHelper.Presentacion.Views.Public.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shared/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" EnableEventValidation="false"  Inherits="EcommerceHelper.Presentacion.Views.Public.Default" %>
 <%@ Import Namespace="System.IO" %>
 <%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
 
@@ -56,10 +56,10 @@
     <div class="text-center">
 
        
-                  <asp:Label ID="DefaultCentroUno" runat="server" ClientIDMode="Static"  Text="DefaultCentroUno"></asp:Label>
+                  <asp:Label ID="DefaultCentroUno" runat="server"   ></asp:Label>
          
             <br />
-                 <asp:Label ID="DefaultCentroDos" runat="server" ClientIDMode="Static"  Text="DefaultCentroDos"></asp:Label>
+                 <asp:Label ID="DefaultCentroDos" runat="server" ClientIDMode="Static" ></asp:Label>
            
         
 

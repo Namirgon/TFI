@@ -31,22 +31,22 @@ namespace EcommerceHelper.Presentacion.Shared {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control IniciarSesion.
+        /// Control IniciarSesion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IniciarSesion;
+        protected global::System.Web.UI.WebControls.Label IniciarSesion2;
         
         /// <summary>
-        /// Control NuestrosServicios.
+        /// Control NuestrosServicios2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NuestrosServicios;
+        protected global::System.Web.UI.WebControls.Label NuestrosServicios2;
         
         /// <summary>
         /// Control Intranet.

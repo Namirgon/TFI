@@ -34,7 +34,7 @@
    <br />
    <br />
 
-     <h3 style="margin-left:50px; color:aliceblue">Alta Idioma</h3>
+     <h3 style="margin-left:50px; color:aliceblue">ABM Idioma</h3>
     
     <br />
      <div style="align-content:center; margin-left:100px; width:90%"> <br />

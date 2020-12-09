@@ -13,13 +13,13 @@ namespace EcommerceHelper.Presentacion.Views.Public {
     public partial class IniciarSesion {
         
         /// <summary>
-        /// Control lblIniciarSesion.
+        /// Control IniciarSesion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIniciarSesion;
+        protected global::System.Web.UI.WebControls.Label IniciarSesion2;
         
         /// <summary>
         /// Control EtiquetaEmail.
@@ -67,40 +67,40 @@ namespace EcommerceHelper.Presentacion.Views.Public {
         protected global::System.Web.UI.WebControls.TextBox TXTPassword;
         
         /// <summary>
-        /// Control BtnAceptar.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAceptar;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
-        /// Control BtnCancelar.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCancelar;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
-        /// Control registrarme.
+        /// Control Registrarme.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton registrarme;
+        protected global::System.Web.UI.WebControls.LinkButton Registrarme;
         
         /// <summary>
-        /// Control recuperarContrasena.
+        /// Control RecuperarContraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton recuperarContrasena;
+        protected global::System.Web.UI.WebControls.LinkButton RecuperarContraseña;
         
         /// <summary>
         /// Propiedad Master.

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true "   CodeBehind="PaginaMaestra.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestra" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true "    CodeBehind="PaginaMaestra.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestra" %>
 
 <%--<!DOCTYPE html>--%>
 
@@ -14,13 +14,13 @@
     <title></title>
     
    
-      <asp:ContentPlaceHolder ID="head" runat="server">
+      <asp:ContentPlaceHolder ID="head" runat="server" >
          
     </asp:ContentPlaceHolder>
 </head>
 <body>
 
-    <form id="form1" runat="server">
+    <form id="form1"  runat="server">
 
         <header id="header">
           
@@ -28,10 +28,10 @@
                 <a href="Default.aspx" class="logo">Helper</a>
                 
                     <nav id="nav">
-                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="IniciarSesion" ClientIDMode="Static"  runat="server" text="Iniciar Sesión" ></asp:Label></a>
-                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="NuestrosServicios" runat="server" ClientIDMode="Static"  text="Nuestros Servicios"></asp:Label></a>
+                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="IniciarSesion2" ClientIDMode="Static"  runat="server"   ></asp:Label></a>
+                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="NuestrosServicios2" runat="server" ></asp:Label></a>
                   
-                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="Intranet" ClientIDMode="Static" runat="server"  Text="Intranet"></asp:Label></a>
+                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="Intranet" ClientIDMode="Static" runat="server"  ></asp:Label></a>
                    
                   
                      <a  >

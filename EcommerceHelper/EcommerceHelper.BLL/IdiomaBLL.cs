@@ -10,13 +10,13 @@ using System.Web.UI;
 
 namespace EcommerceHelper.BLL
 {
-  public   class IdiomaBLL: IObservable
+  public   class IdiomaBLL : IObservable
     {
 
         private IdiomaDAL _dal  ;
         private MultiIdiomaDAL _dalControl;
-        private List<object> ListaResultado = new List<object>();
 
+        public List< MultiIdiomaEntidad> TraduccionesSgl;
 
         //SINGLETON
         private static IdiomaBLL _BLLServicioIdiomaUnico;
@@ -31,7 +31,10 @@ namespace EcommerceHelper.BLL
         public static IdiomaBLL GetBLLServicioIdiomaUnico()
         {
             if (_BLLServicioIdiomaUnico == null)
+            {
                 _BLLServicioIdiomaUnico = new IdiomaBLL();
+                _BLLServicioIdiomaUnico.TraduccionesSgl = new List < MultiIdiomaEntidad>();
+            }
             return _BLLServicioIdiomaUnico;
         }
 
@@ -43,7 +46,7 @@ namespace EcommerceHelper.BLL
             {
 
                 //ir a la BD y traer los textos y ponerlos en una variable de sesion 
-               // FindControlsByLenguaje(elIdioma);
+               
                 ActualizarEstadoObservadores();
             }
             catch (Exception es)
@@ -99,125 +102,6 @@ namespace EcommerceHelper.BLL
         }
 
 
-
-        public void Idioma(System.Web.UI.Page unformulario, int idioma)
-        {
-
-            var listadetraducciones = FindControlsByLenguaje(idioma);
-
-            ObtenerTodo(unformulario);
-
-
-            try
-            {
-
-                foreach (Control Control in ListaResultado)
-                {
-
-                    foreach (var traduccion_loopVariable in listadetraducciones)
-                    {
-
-                        var traduccion = traduccion_loopVariable;
-
-                        if (Equals(Control.ID, traduccion.Texto))
-                        {
-
-                            //ESTO SON LOS <a>
-                            if ((Control) is System.Web.UI.HtmlControls.HtmlAnchor)
-                            {
-
-                                var mapeo = (System.Web.UI.HtmlControls.HtmlAnchor)Control;
-                                mapeo.InnerText = traduccion.NombreDelControl;
-                            }
-                            //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
-                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputControl)
-                            {
-
-                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
-                                mapeo.Value = traduccion.NombreDelControl;
-                            }
-                            //ESTOS SON LOS <BUTTON>
-                            else if ((Control) is System.Web.UI.HtmlControls.HtmlButton)
-                            {
-                                var mapeo = (System.Web.UI.HtmlControls.HtmlButton)Control;
-                                mapeo.InnerText = traduccion.NombreDelControl;
-                            }
-                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
-                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputButton)
-                            {
-                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputButton)Control;
-                                mapeo.Value = traduccion.NombreDelControl;
-                            }
-                            else if ((Control) is System.Web.UI.HtmlControls.HtmlInputText)
-                            {
-                                var mapeo = (System.Web.UI.HtmlControls.HtmlInputText)Control;
-                                mapeo.Value = traduccion.NombreDelControl;
-                            }
-
-                        }
-
-
-                    }
-
-
-
-                }
-
-
-
-
-            }
-            catch
-            {
-            }
-
-
-
-        }
-
-        public void ObtenerTodo(System.Web.UI.Page ElFormulario)
-        {
-            ListaResultado.Clear();
-
-            ListaResultado.Add(ElFormulario);
-
-            RecorrerContenedor(ElFormulario);
-
-
-        }
-
-
-        private void RecorrerContenedor(Control pObjetoContenedor)
-        {
-            foreach (Control Controlobj in pObjetoContenedor.Controls)
-            {
-                ListaResultado.Add(Controlobj);
-
-                if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
-                {
-                    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
-                }
-
-
-                if (Controlobj.Controls.Count > 0)
-                {
-                    RecorrerContenedor(Controlobj);
-                }
-
-                ListaResultado.Add(Controlobj);
-            }
-        }
-
-        private void RecorrerDropDown(System.Web.UI.WebControls.DropDownList pMenuStrip)
-        {
-            ListaResultado.Add(pMenuStrip);
-            foreach (System.Web.UI.WebControls.ListItem item in pMenuStrip.Items)
-            {
-                ListaResultado.Add(item);
-            }
-
-
-        }
 
 
         public int RegistrarIdioma(IdiomaEntidad idioma)

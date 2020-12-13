@@ -35,13 +35,13 @@ namespace EcommerceHelper.DAL
             return valor;
         }
 
-        public int UpdateDireccionEmpleado(DireccionEntidad direccion, UsuarioEntidad usuario)
+        public void UpdateDireccionEmpleado(DireccionEntidad direccion)
         {
             ValidationUtility.ValidateArgument("direccion", direccion);
 
             SqlParameter[] parameters = new SqlParameter[]
             {
-                 new SqlParameter("@IdUsuario", usuario.NumeroDocumento ),
+                 new SqlParameter("@IdDireccion", direccion.IdDireccion),
                 new SqlParameter("@Calle", direccion.Calle),
                 new SqlParameter("@Numero", direccion.Numero),
                 new SqlParameter("@Piso", direccion.Piso),
@@ -52,9 +52,9 @@ namespace EcommerceHelper.DAL
 
             };
 
-            var valor = Convert.ToInt32(SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDireccionEmpleado", parameters));
+            SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDireccionEmpleado", parameters);
 
-            return valor;
+            
         }
 
         public int EliminarDireccion( int IdDireccion, int IdUsuario)

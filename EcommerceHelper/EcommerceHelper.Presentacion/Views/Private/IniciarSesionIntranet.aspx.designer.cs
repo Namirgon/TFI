@@ -13,6 +13,15 @@ namespace EcommerceHelper.Presentacion.Views.Private {
     public partial class IniciarSesionIntranet {
         
         /// <summary>
+        /// Control IniciarSesion2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IniciarSesion2;
+        
+        /// <summary>
         /// Control EtiquetaEmail.
         /// </summary>
         /// <remarks>
@@ -67,22 +76,22 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.Label EtiquetaPassword;
         
         /// <summary>
-        /// Control BtnAceptar.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAceptar;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
-        /// Control Button2.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// Propiedad Master.

@@ -36,13 +36,13 @@
                 <nav id="nav">
                      <ul class="nav">
                  <li>    <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="medium" ></asp:Label> <%--// poner nombre del Usuario--%></li>
-                 <li>    <asp:LinkButton ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" Text=" CerrarSesion  " ClientIDMode="Static"></asp:LinkButton></li>
+                 <li>    <asp:LinkButton ID="CerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" ClientIDMode="Static"></asp:LinkButton></li>
                     
-                 <li style="font-size:18px; margin-right: 20px">RRHH
+                 <li style="font-size:18px; margin-right: 20px; " >RRHH
                             <ul>
-                                <li><a href="../Private/AltaEmpleado.aspx"> Alta Empleado</a></li>
-                                 <li><a href="../Private/GestionEmpleado.aspx"> BM Empleado</a></li>
-                                <li><a href="../Private/AsignacionDePerfiles.aspx">Asignacion de Perfiles</a></li>
+                                <li  ><a href="../Private/AltaEmpleado.aspx">Alta Empleado</a></li>
+                                 <li ><a href="../Private/GestionEmpleado.aspx">BM Empleado</a></li>
+                                <li ><a href="../Private/AsignacionDePerfiles.aspx">Asignacion de Perfiles</a></li>
                             </ul>
                  </li>
 
@@ -69,6 +69,10 @@
                                      <li>
                                          
 
+                <asp:DropDownList ID="ddlidioma" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlidioma_SelectedIndexChanged"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                                    
+                </asp:DropDownList>
+                    
  
                       
                          </li>

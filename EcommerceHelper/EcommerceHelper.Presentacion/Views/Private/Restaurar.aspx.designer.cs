@@ -13,13 +13,22 @@ namespace EcommerceHelper.Presentacion.Views.Private {
     public partial class Restaurar {
         
         /// <summary>
-        /// Control Label1.
+        /// Control Restaurar2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Restaurar2;
+        
+        /// <summary>
+        /// Control Nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Nombre;
         
         /// <summary>
         /// Control up1.
@@ -40,22 +49,22 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.FileUpload fileUpload;
         
         /// <summary>
-        /// Control btnUpload.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpload;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
-        /// Control btnCancelar.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// Control lblMsg.

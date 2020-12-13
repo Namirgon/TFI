@@ -13,6 +13,24 @@ namespace EcommerceHelper.Presentacion.Views.Private {
     public partial class AsignacionDePerfilesaspx {
         
         /// <summary>
+        /// Control AsignacionDePerfiles2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AsignacionDePerfiles2;
+        
+        /// <summary>
+        /// Control SeleccioneEmpleado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SeleccioneEmpleado;
+        
+        /// <summary>
         /// Control ddlEmpleado.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,15 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.DropDownList DDLIDEmpleado;
         
         /// <summary>
+        /// Control SeleccionePerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SeleccionePerfil;
+        
+        /// <summary>
         /// Control ddlFamilia.
         /// </summary>
         /// <remarks>
@@ -40,22 +67,22 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.DropDownList ddlFamilia;
         
         /// <summary>
-        /// Control BtnAceptar.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAceptar;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
-        /// Control BtnCancelar.
+        /// Control Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCancelar;
+        protected global::System.Web.UI.WebControls.Button Cancelar;
         
         /// <summary>
         /// Propiedad Master.

@@ -231,12 +231,19 @@ namespace EcommerceHelper.BLL
 
 
         }
+        public void UpdateDatosEmpleado2(UsuarioEntidad UnUsuario)
+        {
+            // falta re calcular el DVH
+            _DalUsuario.UpdateDatosEmpleado2(UnUsuario);
 
-        public void UpdateDireccionEmpleado(DireccionEntidad direccion, UsuarioEntidad elUsuario)
+
+        }
+
+        public void UpdateDireccionEmpleado(DireccionEntidad direccion)
         {
             try
             {
-                var id = _DalDireccion.UpdateDireccionEmpleado(direccion,elUsuario);
+                _DalDireccion.UpdateDireccionEmpleado(direccion);
                
             }
             catch (Exception ex)

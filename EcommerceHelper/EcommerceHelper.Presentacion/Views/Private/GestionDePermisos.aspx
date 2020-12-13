@@ -20,7 +20,10 @@
        
    <br />     
    <br />
-           <asp:Label ID="lblGestionDePermisos" runat="server" style="margin-left:30px; font-size:24px" Text=" GestiondePermisos" ClientIDMode="Static"></asp:Label>
+
+        <h2 style="margin-left:60px" > <asp:Label ID="GestionPermisos" runat="server" ClientIDMode="Static" > </asp:Label>
+                </h2>
+          
     
 
    <br />
@@ -46,7 +49,7 @@
     <br />
           <div class="row">  
              <div class="col-md-4" style="margin-left:100px">
-                  <asp:Label ID="lbldisponibles" class="miLabel"  runat="server" Text=" Disponibles" ClientIDMode="Static"></asp:Label> <br />
+                  <asp:Label ID="lbldisponibles"   runat="server"  ClientIDMode="Static"></asp:Label> <br />
                 <div style="margin-left:70px"> <br />
                 <asp:UpdatePanel ID="upTreeDisp" runat="server" UpdateMode="Conditional" >
                     <ContentTemplate>
@@ -63,7 +66,7 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-4">
-            <asp:Label ID="lblasignados" class="page-header" runat="server" Text=" Asignados " ClientIDMode="Static"></asp:Label>
+            <asp:Label ID="lblasignados" class="page-header" runat="server"  ClientIDMode="Static"></asp:Label>
 
       
                 <asp:UpdatePanel ID="uptreeAsig" runat="server" UpdateMode="Conditional">
@@ -84,7 +87,7 @@
    
             <div class="col-md-2"  style="margin-left:160px" >
             
-                <asp:Button ID="btnAgregar" runat="server" Text="Agregar Patente" OnClick="btnAgregar_Click"   CssClass="btn btn-primary " />
+                <asp:Button ID="btnAgregar" runat="server"  OnClick="btnAgregar_Click"   CssClass="btn btn-primary " ClientIDMode="Static"  />
            
             </div>
             <div class="col-md-4">
@@ -92,7 +95,7 @@
 
             <div class="col-md-2"  >
            
-                <asp:Button ID="btnQuitar" runat="server" Text="Quitar Patente" OnClick="btnQuitar_Click" style=" float:left;" CssClass="btn btn-primary " />
+                <asp:Button ID="btnQuitar" runat="server"  OnClick="btnQuitar_Click" style=" float:left;" CssClass="btn btn-primary " ClientIDMode="Static"  />
            
             </div>
 
@@ -102,11 +105,11 @@
         <hr />
         <div class="row" style="align-content: center; margin-left:300px">
       
-            <asp:Button ID="btnAltaFamilia" runat="server" Text="Crear Familia" OnClick="btnAltaFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2" />
+            <asp:Button ID="btnAltaFamilia" runat="server" OnClick="btnAltaFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2"  ClientIDMode="Static" />
        
-            <asp:Button ID="btnModificarFamilia" runat="server" Text="Modificar Familia" OnClick="btnModificarFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2"  />
+            <asp:Button ID="btnModificarFamilia" runat="server" OnClick="btnModificarFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2" ClientIDMode="Static"   />
         
-            <asp:Button ID="btnEliminarFamilia" runat="server" Text="Eliminar Familia" OnClick="btnEliminarFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2" />
+            <asp:Button ID="btnEliminarFamilia" runat="server" Text="Eliminar Familia" OnClick="btnEliminarFamilia_Click" CssClass="btn btn-primary btn-lg col-md-2" ClientIDMode="Static"  />
    
         </div>
         <hr />

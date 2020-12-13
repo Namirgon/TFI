@@ -14,13 +14,10 @@
         <br />
    <br />     
    <br />
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2" style="margin-left:100px">
-                <h2 class="page-header">
-                    <asp:Label ID="Label1" runat="server" Text=" Backup "> </asp:Label>
+        
+                <h2 style="margin-left:60px" > <asp:Label ID="BackUp2" runat="server" ClientIDMode="Static" > </asp:Label>
                 </h2>
-            </div>
-        </div>
+          
    <br />
    <br />     
    <br />
@@ -39,18 +36,18 @@
                      <br />
                      <br />     
                      <br />
-                  <b>   <asp:Label Text=" Nombre " runat="server" style="color:aliceblue ; font-size: 20px; margin-left:100px; margin-right:20px" /></b> 
+                    <asp:Label Id="Nombre" ClientIDMode="Static" runat="server" style="color:aliceblue ; font-size: 20px; margin-left:100px; margin-right:20px" />
                      <asp:TextBox ID="txtNombreArchivo" CssClass="form-control input-md" runat="server" required="required" placeholder=" Ingrese Nombre " Width="260px" ></asp:TextBox><br /><br />
 
                      <asp:UpdatePanel ID="up1" runat="server">
                          <ContentTemplate>
                                                   
 
-                             <asp:Button ID="btnUpload" runat="server" Text="Backup " OnClick="btnUpload_Click1" class="btn btn-primary " style="margin-left:100px" Width="156px" />
-                             <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" class="btn btn-primary" Width="157px"/>
+                             <asp:Button ID="Aceptar" runat="server" Text="Backup " OnClick="btnUpload_Click1" class="btn btn-primary " style="margin-left:100px" Width="156px" />
+                             <asp:Button ID="Cancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" class="btn btn-primary" Width="157px"/>
                          </ContentTemplate>
                          <Triggers>
-                             <asp:PostBackTrigger ControlID="btnUpload" />
+                             <asp:PostBackTrigger ControlID="Aceptar" />
                          </Triggers>
                      </asp:UpdatePanel>
                  </div>

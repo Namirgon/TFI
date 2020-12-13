@@ -13,8 +13,9 @@
      <br />     
       <br />
       <br /> 
-     <h3  style="margin-left:50px">ABM Servicios</h3>
-   
+
+     <h2 style="margin-left:60px" > <asp:Label ID="GestionDeServicios" runat="server" ClientIDMode="Static" > </asp:Label>
+                </h2>
      
      <br />
      <br />     
@@ -25,45 +26,46 @@
    <br />
    <br />
 
-     <h3 style="margin-left:50px; color:aliceblue">Alta Servicios</h3>
-    
+    <h3 style="margin-left:60px; color:aliceblue" > <asp:Label ID="AltaServicios"  runat="server" ClientIDMode="Static" > </asp:Label>
+                </h3>
+     
     <br />
- <div style="align-content:center; margin-left:100px; width:1000px"> <br />
+ <div style="align-content:center; margin-left:100px; width:700px"> <br />
       <asp:HiddenField ID="hidServicio" runat="server"  Value="0"></asp:HiddenField>
      <br />
-     <div class="form-group">
-    <asp:Label ID="lblTitulo" runat="server" Text="Titulo" style="margin-left:100px;color:white; font-size:15px" > Titulo</asp:Label>   
-    <asp:TextBox ID="txtTitulo" style="width:400px; margin-left:200px" runat="server"></asp:TextBox>
+     <fieldset>
+   <legend>
+    <asp:Label ID="Titulo" runat="server" style="margin-left:180px;color:white; font-size:15px" ClientIDMode="Static" > </asp:Label>   
+    <asp:TextBox ID="txtTitulo" style="width:400px; margin-left:150px" runat="server"></asp:TextBox></legend>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtTitulo" Font-Bold="True"></asp:RequiredFieldValidator>
-    </div>
+    
     <br />
- <div class="form-group">
-    <asp:Label ID="lblDescripcion" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" > Descripción</asp:Label>   
-    <asp:TextBox ID="txtDescripcion" style="width:400px; margin-left:160px" runat="server"></asp:TextBox>
+ <legend>
+    <asp:Label ID="Descripcion" runat="server" ClientIDMode="Static" style="margin-left:180px;color:white; font-size:15px" > </asp:Label>   
+    <asp:TextBox ID="txtDescripcion" style="width:400px; margin-left:150px" runat="server"></asp:TextBox></legend>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtDescripcion" Font-Bold="True"></asp:RequiredFieldValidator>
-    </div>
+    
     <br />
-     <div class="form-group">
-    <asp:Label ID="lblPrecio" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px"  >Precio</asp:Label>
-    <asp:TextBox ID="txtPrecio" style="width:400px ; margin-left:198px" runat="server"></asp:TextBox>  
+     <legend>
+    <asp:Label ID="Precio" runat="server" ClientIDMode="Static" style="margin-left:180px;color:white; font-size:15px"  ></asp:Label>
+    <asp:TextBox ID="txtPrecio" style="width:400px ; margin-left:150px" runat="server"></asp:TextBox>  </legend>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="*" Font-Bold="True"></asp:RequiredFieldValidator>   
-    </div>
-    <br />
     
     <br />
     <div class="form-group">
                     <div class="form-group">
-                        <asp:Label ID="lblImagen" runat="server" Text="Label" style="margin-left:100px;color:white; font-size:15px" > Imagen</asp:Label>  
+                        <asp:Label ID="Imagen" runat="server" ClientIDMode="Static" style="margin-left:180px;color:white; font-size:15px" > </asp:Label>  
                         <label id="urlErrorMessage" style="color: coral; font-weight: 100;" hidden="hidden">Soporte solo para imagenes: jpeg,jpg,png,gif</label>
 
-                        <asp:FileUpload ID="urlServicio" runat="server" ClientIDMode="static" style="margin-left:190px" onchange="showimagepreview(this)" />
+                        <asp:FileUpload ID="urlServicio" runat="server" ClientIDMode="static" style="margin-left:150px" onchange="showimagepreview(this)" />
                         <br />
                         <img id="uploadFile" style="max-width: 50%; max-height: 50%;" src="#" alt="" />
                     </div>  
     </div>  <br />
      <br />
      <br />
-      
+      </fieldset>
+
      <br />
      <br />
      <br />
@@ -72,8 +74,8 @@
      <br />
      <div style="margin-left:100px" class="btn-group">
 
-           <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" CssClass="btn btn-primary " OnClick="btnNuevo_Click" Width="162px" />
-      <asp:Button ID="BtnModificar" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary " Width="162px"  OnClick="BtnModificar_Click"/>
+       <asp:Button ID="Aceptar" runat="server" ClientIDMode="Static" CssClass="btn btn-primary " OnClick="btnNuevo_Click" Width="162px" />
+      <asp:Button ID="Modificar" runat="server" ClientIDMode="Static" CssClass="btn btn-primary " Width="162px"  OnClick="BtnModificar_Click"/>
      </div>
       <br />
      <br />

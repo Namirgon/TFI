@@ -22,7 +22,10 @@
      <br />     
       <br />
       <br /> 
-     <h3  style="margin-left:50px">ABM Idioma</h3>
+
+     <h2 style="margin-left:60px" > <asp:Label ID="Idioma3" runat="server" ClientIDMode="Static" > </asp:Label>
+                </h2>
+   
    
      
      <br />
@@ -34,7 +37,9 @@
    <br />
    <br />
 
-     <h3 style="margin-left:50px; color:aliceblue">ABM Idioma</h3>
+    <h2 style="margin-left:60px" > <asp:Label ID="AltaIdioma" runat="server" ClientIDMode="Static" > </asp:Label>
+                </h2>
+   
     
     <br />
      <div style="align-content:center; margin-left:100px; width:90%"> <br />
@@ -44,24 +49,31 @@
                <asp:Label ID="LbMensaje" runat="server"   Visible="false"></asp:Label>
                                             </div>
 
-
+         <div style="width:600px">
+            <fieldset>
              <asp:HiddenField ID="hid" runat="server" ></asp:HiddenField>
-           <asp:Label ID="lblIdioma" runat="server" Text="Idioma"  style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 160px"></asp:Label>
-           &nbsp;<asp:DropDownList ID="ddlIdioma" runat="server" CssClass="dropdownlist" ></asp:DropDownList><br />
-           <asp:Label ID="lblNombreDelControl" runat="server" Text="NombreDelControl"  style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px" ></asp:Label>
-           &nbsp;
-           <asp:TextBox ID="TXTNombreDelControl" runat="server"  style="width:400px;  margin-left:35px; margin-right:40px" placeholder="ingrese Idioma"></asp:TextBox> 
-           &nbsp;&nbsp; <br />
-          <asp:Label ID="lblTexto" runat="server" Text="Texto"  style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 140px" ></asp:Label>
-           <asp:TextBox ID="TxtTextoControl" runat="server"  style="width:400px;  margin-left:35px; margin-right:40px" placeholder="ingrese Idioma"></asp:TextBox> 
-           &nbsp;&nbsp; <br />
+            <legend>
+           <asp:Label ID="Idioma2" runat="server"  style="color:aliceblue ; font-size: 20px; margin-left:180px;"></asp:Label>
+           <asp:DropDownList ID="ddlIdioma" runat="server" CssClass="dropdownlist" style=" margin-left:150px" ></asp:DropDownList><br /></legend>
+                <br />
 
+           <legend>
+           <asp:Label ID="NombreDelControl" runat="server"   style="color:aliceblue ; font-size: 20px; margin-left:180px;" ></asp:Label>   
+           <asp:TextBox ID="TXTNombreDelControl" runat="server"  style="width:400px;  margin-left:150px;" placeholder="ingrese Idioma"></asp:TextBox> </legend>
+
+
+            <br />
+                <legend>
+          <asp:Label ID="Texto" runat="server"   style="color:aliceblue ; font-size: 20px; margin-left:180px;" ></asp:Label>
+           <asp:TextBox ID="TxtTextoControl" runat="server"  style="width:400px;  margin-left:150px; " placeholder="ingrese Idioma"></asp:TextBox> </legend>
+         <br />
+             </fieldset>
            <asp:Button ID="BtnAltaIdioma" runat="server" Text="Alta" OnClick="BtnAltaIdioma_Click" class="btn btn-primary btn-lg" Width="167px" />
            &nbsp;
            <asp:Button ID="btnGuardarModificacion" runat="server"   Text=" Guardar Cambios " OnClick="btnGuardarModificacion_Click" class="btn btn-primary btn-lg" Width="178px" />
    
     
-
+         </div>
 
           <br />
           <br />

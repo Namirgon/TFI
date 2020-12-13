@@ -16,7 +16,8 @@
    <br />
     <br />     
    <br />
-   <h3 style="margin-left:30px; margin-top:30px">Ver Logs</h3>
+   <h2 style="margin-left:60px" > <asp:Label ID="Bitacora" runat="server" ClientIDMode="Static" > </asp:Label>
+                </h2>
    <br />
   
        </div>
@@ -29,8 +30,8 @@
          <div class="row">
             <div class="col-md-10 col-md-offset-2">
                 <b>
-                    <asp:Label ID="Label2" runat="server" Text=" Logs del sistema  "  style="color:aliceblue ; font-size: 20px; margin-left:300px"  ></asp:Label></b>
-                <select id="idelTIpoLog" runat="server"  class="browser-default custom-select form-control " style="width:200px">
+                    <asp:Label ID="VerLog2" runat="server" ClientIDMode="Static" style="color:aliceblue ; font-size: 20px; margin-left:300px"  ></asp:Label></b>
+                <select id="idelTIpoLog" runat="server"  class="browser-default custom-select form-control " style="width:200px; margin-left:30px;">
                     <option value="Evento">Evento</option>
                     <option value="Error">Error</option>
                 </select>
@@ -39,15 +40,15 @@
                 <div class="form-inline">
 
                     <b>
-                        <asp:Label ID="Label3" runat="server" Text=" Desde "  style="color:aliceblue ; font-size: 20px; margin-left:300px; margin-right: 20px" > </asp:Label></b>
+                        <asp:Label ID="Desde" runat="server" ClientIDMode="Static"  style="color:aliceblue ; font-size: 20px; margin-left:300px; margin-right: 20px" > </asp:Label></b>
 
                     <input runat="server" type="date" name="nFechaInicio" id="elIdFechaInicio" class="hasDatepicker form-control " required="required" />
 
                     <b>
-                        <asp:Label ID="Label4" runat="server" Text=" Hasta " style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px"> </asp:Label></b>
+                        <asp:Label ID="Hasta" runat="server" ClientIDMode="Static" style="color:aliceblue ; font-size: 20px; margin-left:30px; margin-right: 20px"> </asp:Label></b>
 
                     <input runat="server" type="date" name="nFechaFin" id="elIdFechaFin" class="hasDatepicker form-control " required="required" />
-                    <asp:Button ID="btnFiltrarLogs" runat="server" Text=" Buscar " class="btn btn-primary " OnClick="btnFiltrarLogs_Click" Width="163px" />
+                    <asp:Button ID="Aceptar" runat="server" ClientIDMode="Static" class="btn btn-primary " OnClick="btnFiltrarLogs_Click" Width="163px" />
 
                 </div>
 

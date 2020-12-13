@@ -20,8 +20,8 @@
    <br />
         <div class="row">
             <div class="col-md-8 col-md-offset-2" style="margin-left:100px">
-                <h2 class="page-header">
-                    <asp:Label ID="Label1" runat="server" Text=" Nota De Debito "> </asp:Label>
+                           
+     <h2 style="margin-left:60px" > <asp:Label ID="NDD" runat="server" ClientIDMode="Static" > </asp:Label>
                 </h2>
             </div>
         </div>

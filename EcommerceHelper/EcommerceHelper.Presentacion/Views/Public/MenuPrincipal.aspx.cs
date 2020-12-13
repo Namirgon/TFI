@@ -28,6 +28,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
         HttpContext Current = HttpContext.Current;
         ServicioBLL gestorServicio = new ServicioBLL();
+        IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +37,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
             string nombre= Session["NomUsuario"].ToString();
 
-
+            IdiomaSeleccionado = (IdiomaEntidad)Current.Session["Idioma"];
             if (usuarioentidad == null)
                 Response.Redirect("Default.aspx");
 
@@ -47,7 +48,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
             InfoServicio.DataBind();
 
             Traducciones = new List<MultiIdiomaEntidad>();
-
+            
             Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
 

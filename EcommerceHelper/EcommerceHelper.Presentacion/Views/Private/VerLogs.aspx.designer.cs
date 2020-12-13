@@ -13,13 +13,22 @@ namespace EcommerceHelper.Presentacion.Views.Private {
     public partial class VerLogs {
         
         /// <summary>
-        /// Control Label2.
+        /// Control Bitacora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Bitacora;
+        
+        /// <summary>
+        /// Control VerLog2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label VerLog2;
         
         /// <summary>
         /// Control idelTIpoLog.
@@ -31,13 +40,13 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.HtmlControls.HtmlSelect idelTIpoLog;
         
         /// <summary>
-        /// Control Label3.
+        /// Control Desde.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Desde;
         
         /// <summary>
         /// Control elIdFechaInicio.
@@ -49,13 +58,13 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl elIdFechaInicio;
         
         /// <summary>
-        /// Control Label4.
+        /// Control Hasta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Hasta;
         
         /// <summary>
         /// Control elIdFechaFin.
@@ -67,13 +76,13 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl elIdFechaFin;
         
         /// <summary>
-        /// Control btnFiltrarLogs.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltrarLogs;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
         
         /// <summary>
         /// Control grillaLogs.

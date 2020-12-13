@@ -178,6 +178,30 @@ namespace EcommerceHelper.DAL
             //int IdUsuarioRes = Decimal.ToInt32(Resultado);
             //usuario.IdUsuario = IdUsuarioRes;
         }
+        public void UpdateDatosEmpleado2(UsuarioEntidad usuario)
+        {
+            ValidationUtility.ValidateArgument("usuario", usuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+
+                new SqlParameter("@IdUsuario", usuario.IdUsuario),
+                new SqlParameter("@Nombre", usuario.Nombre),
+                new SqlParameter("@Apellido", usuario.Apellido),
+                new SqlParameter("@NumeroDocumento", usuario.NumeroDocumento),
+              //  new SqlParameter("@IdTipoUsuario", usuario.MiUsuario.IdTipoUsuario ),
+                new SqlParameter("@IdSexo", usuario.MiSexo.IdSexo),
+                new SqlParameter("@Email", usuario.Email),
+                new SqlParameter("@NumeroTelefono", usuario.NumeroTelefono),
+               new SqlParameter("@DVH", usuario.DVH)
+
+        };
+
+            SqlClientUtility.ExecuteScalar(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "UpdateDatosEmpleado2", parameters);
+            // var Resultado =(decimal)
+            //int IdUsuarioRes = Decimal.ToInt32(Resultado);
+            //usuario.IdUsuario = IdUsuarioRes;
+        }
 
         public List<IFamPat> UsuarioTraerPermisos(string email, int IdUsuario)
         {
@@ -523,6 +547,7 @@ namespace EcommerceHelper.DAL
 
                         DireccionEntidad d = new DireccionEntidad();
 
+                        d.IdDireccion = (int)row["IdDireccion"];
                         d.Calle = row["Calle"].ToString();
                         d.Numero = (int)row["Numero"];
                         d.Piso = row["Piso"].ToString();

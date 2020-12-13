@@ -14,7 +14,8 @@
    <br />
    <br />     
    <br />
-   <h2  style="margin-left:30px">Asignacion de Servicios</h2>
+  <h2 style="margin-left:60px" > <asp:Label ID="Asignacionds" runat="server" ClientIDMode="Static" > </asp:Label>
+                </h2>
    <br />
    <br />     
    <br />
@@ -95,7 +96,7 @@
    <br />
     <center>
    <div class="form-group row" >
-   <asp:label runat="server" Text="Seleccione Empleado" style="margin-left:300px; color:white ; font-size:18px; " AssociatedControlID="ddlEmpleado" > </asp:label> 
+   <asp:label runat="server" ID="SeleccioneEmpleado" ClientIDMode="Static" style="margin-left:300px; color:white ; font-size:18px; " AssociatedControlID="ddlEmpleado" > </asp:label> 
     <asp:DropDownList ID="ddlEmpleado" runat="server" AutoPostBack="true"  style="width:400px; margin-left:80px"  CssClass="form-control"></asp:DropDownList>
    <asp:DropDownList runat="server" ID="DDLIDEmpleado" AutoPostBack="true" visible="false"  style="width:400px; margin-left:320px">  </asp:DropDownList>     
 
@@ -104,8 +105,8 @@
    <br />
    <br />
       <div class="btn-group"  >
-    <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" Width="150px" style="margin-left:500px" CssClass="form-control" OnClick="BtnAceptar_Click"  /> 
-    <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" Width="150px" style="margin-left:100px" CssClass="form-control" OnClick="BtnCancelar_Click" />
+    <asp:Button ID="Aceptar" runat="server" ClientIDMode="Static" Width="150px" style="margin-left:500px" CssClass="form-control" OnClick="BtnAceptar_Click"  /> 
+    <asp:Button ID="Cancelar" runat="server" ClientIDMode="Static" Width="150px" style="margin-left:100px" CssClass="form-control" OnClick="BtnCancelar_Click" />
                  </div>
   <br />  
     </div>

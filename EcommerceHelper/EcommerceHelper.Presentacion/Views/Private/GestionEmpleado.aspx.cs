@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace EcommerceHelper.Presentacion.Views.Private
 {
-    public partial class GestionEmpleado : System.Web.UI.Page
+    public partial class GestionEmpleado : System.Web.UI.Page , IObservador
     {
 
         public List<ProvinciaEntidad> unasProvincias = new List<ProvinciaEntidad>();
@@ -22,6 +22,17 @@ namespace EcommerceHelper.Presentacion.Views.Private
         private SexoBLL unManagerSexo = new SexoBLL();
         public List<SexoEntidad> unSexo = new List<SexoEntidad>();
         UsuarioEntidad usuario;
+        public HttpContext Current = HttpContext.Current;//xxxxx
+        private List<object> ListaResultado = new List<object>(); //xxxxx
+        List<MultiIdiomaEntidad> Traducciones; // xxxxx
+        public GestionEmpleado() : base()
+        {
+
+
+
+            IObservable.AgregarObservador(this); //xxxxxxxx copiar en formularios xxxxxxx
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var Current = HttpContext.Current;
@@ -35,6 +46,9 @@ namespace EcommerceHelper.Presentacion.Views.Private
                 cargarProvincias();
                 cargarLocalidades();
                 //CargarGrillaEmpleado();
+                Traducciones = new List<MultiIdiomaEntidad>();
+
+                Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
 
             }
@@ -116,9 +130,9 @@ namespace EcommerceHelper.Presentacion.Views.Private
             switch (e.CommandName)
             {              
 
-                case "BtnModificar":
+                case "btnModificar":
                     {
-                        //var IdUsuario = usuario.IdUsuario;  
+                        hfModificar.Value  = usuario.IdUsuario.ToString();  
                         txtNombre.Text = usuario.Nombre;
                         txtApellido.Text = usuario.Apellido;
                         txtDNI.Text = usuario.NumeroDocumento.ToString() ;
@@ -128,7 +142,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                         foreach (var d in usuario.MiDireccion)
                         {
-                            //var IdDireccion = d.IdDireccion;
+                             hfDireccion.Value = d.IdDireccion.ToString();
                             txtCalle.Text = d.Calle;
                             txtNumero.Text = d.Numero.ToString();
                             txtPiso.Text = d.Piso.ToString();
@@ -143,6 +157,53 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                         break;
                     }
+
+                case "btnGuardar":
+                    {
+
+
+                        // actualizar Empleado
+                        usuario.IdUsuario = Int32.Parse(hfModificar.Value);
+                        usuario.Nombre = txtNombre.Text;
+                        usuario.Apellido = txtApellido.Text;
+                        usuario.Email = txtusuario.Text;
+                        usuario.MiSexo = new SexoEntidad();
+                        usuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
+                        usuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
+                        usuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
+                        usuario.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(usuario));
+
+
+                        unManagerUsuario.UpdateDatosEmpleado2(usuario);
+
+                        DireccionEntidad direccion = new DireccionEntidad(); 
+               
+
+                        // Actualizar Direccion
+                        UnaDireccion.IdDireccion = Int32.Parse( hfDireccion.Value);
+                       
+                        UnaDireccion.Calle = txtCalle.Text;
+                        UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
+                        UnaDireccion.Piso = txtPiso.Text;
+                        UnaDireccion.Departamento = txtDepartamento.Text;
+                        UnaDireccion.MiProvincia = new ProvinciaEntidad();
+                        UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
+                        UnaDireccion.MiLocalidad = new LocalidadEntidad();
+                        UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
+
+
+                        unManagerUsuario.UpdateDireccionEmpleado(UnaDireccion);
+
+                        DVVBLL managerDVV = new DVVBLL();
+
+                        managerDVV.InsertarDVV("DVV", "Usuario");
+
+
+                        EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Modificacion Empleado", "Update Empleado: " + usuario.Apellido, "modificado correctamente", (usuario.IdUsuario).ToString());
+                        Response.Redirect("/Views/Private/MenuAdministracion.aspx");
+
+                        break;
+                    }
                 case "BtnEliminar":
 
                     {
@@ -154,49 +215,49 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         }
 
-        protected void btnModificar_Click(object sender, EventArgs e)
-        {
+        //protected void btnModificar_Click(object sender, EventArgs e)
+        //{
 
-            UsuarioEntidad unUsuario = new UsuarioEntidad();
+        //    UsuarioEntidad unUsuario = new UsuarioEntidad();
 
-            // actualizar Empleado
-            unUsuario.IdUsuario = unUsuario.IdUsuario;
-            unUsuario.Nombre = txtNombre.Text;
-            unUsuario.Apellido = txtApellido.Text;
-            unUsuario.Email = txtusuario.Text;
-            unUsuario.MiSexo = new SexoEntidad();
-            unUsuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
-            unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
-            unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
-            unUsuario.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
+        //    // actualizar Empleado
+        //    unUsuario.IdUsuario = unUsuario.IdUsuario;
+        //    unUsuario.Nombre = txtNombre.Text;
+        //    unUsuario.Apellido = txtApellido.Text;
+        //    unUsuario.Email = txtusuario.Text;
+        //    unUsuario.MiSexo = new SexoEntidad();
+        //    unUsuario.MiSexo.IdSexo = Int32.Parse(ddSexo.SelectedValue);
+        //    unUsuario.NumeroDocumento = Int32.Parse(txtDNI.Text);
+        //    unUsuario.NumeroTelefono = Int32.Parse(txtTelefono.Text);
+        //    unUsuario.DVH = int.Parse(DigitoVerificadorH.CarlcularDigitoUsuario(unUsuario));
 
 
-            unManagerUsuario.UpdateDatosEmpleado(unUsuario);
+        //    unManagerUsuario.UpdateDatosEmpleado(unUsuario);
 
-            DireccionEntidad direccion = new DireccionEntidad(); ;
+        //    DireccionEntidad direccion = new DireccionEntidad(); ;
 
-            // Actualizar Direccion
-            UnaDireccion.IdDireccion = direccion.IdDireccion;
-            UnaDireccion.Calle = txtCalle.Text;
-            UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
-            UnaDireccion.Piso = txtPiso.Text;
-            UnaDireccion.Departamento = txtDepartamento.Text;
-            UnaDireccion.MiProvincia = new ProvinciaEntidad();
-            UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
-            UnaDireccion.MiLocalidad = new LocalidadEntidad();
-            UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
+        //    // Actualizar Direccion
+        //    UnaDireccion.IdDireccion = direccion.IdDireccion;
+        //    UnaDireccion.Calle = txtCalle.Text;
+        //    UnaDireccion.Numero = Int32.Parse(txtNumero.Text);
+        //    UnaDireccion.Piso = txtPiso.Text;
+        //    UnaDireccion.Departamento = txtDepartamento.Text;
+        //    UnaDireccion.MiProvincia = new ProvinciaEntidad();
+        //    UnaDireccion.MiProvincia.IdProvincia = Int32.Parse(ddProvincia.SelectedValue);
+        //    UnaDireccion.MiLocalidad = new LocalidadEntidad();
+        //    UnaDireccion.MiLocalidad.IdLocalidad = Int32.Parse(ddLocalidad.SelectedValue);
            
 
-            unManagerUsuario.UpdateDireccionEmpleado(UnaDireccion, unUsuario);
+        //    unManagerUsuario.UpdateDireccionEmpleado(UnaDireccion);
 
-            DVVBLL managerDVV = new DVVBLL();
+        //    DVVBLL managerDVV = new DVVBLL();
 
-            managerDVV.InsertarDVV("DVV", "Usuario");
+        //    managerDVV.InsertarDVV("DVV", "Usuario");
 
 
-            EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Modificacion Empleado", "Update Empleado: " + unUsuario.Apellido, "modificado correctamente", (unUsuario.IdUsuario).ToString());
-            Response.Redirect("/Views/Private/MenuAdministracion.aspx");
-        }
+        //    EcommerceHelper.Funciones.Seguridad.ServicioLog.CrearLogEventos("Modificacion Empleado", "Update Empleado: " + unUsuario.Apellido, "modificado correctamente", (unUsuario.IdUsuario).ToString());
+        //    Response.Redirect("/Views/Private/MenuAdministracion.aspx");
+        //}
 
         protected void GVGrillaEmpleado_DataBound(object sender, EventArgs e)
         {
@@ -205,14 +266,126 @@ namespace EcommerceHelper.Presentacion.Views.Private
             {
                 row.Cells[0].Visible = false;
             }
+            GVGrillaEmpleado.HeaderRow.Cells[7].Visible = false;
+            foreach (GridViewRow row in GVGrillaEmpleado.Rows)
+            {
+                row.Cells[7].Visible = false;
+            }
         }
+    
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("../Private/MenuAdministracion.aspx");
         }
+
+        void IObservador.Traducirme()
+        {
+
+            ListaResultado.Clear();
+            RecorrerControles(this);
+
+
+
+            Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
+
+            try
+            {
+
+                foreach (Control Control in ListaResultado)
+                {
+                    //if (Control.ID == "CerrarSesion")
+                    //    Control.ID = Control.ID;
+                    //string tipo;
+                    //tipo = Control.GetType().ToString();
+                    foreach (var traduccion in Traducciones)
+                    {
+
+
+
+                        if (Equals(Control.ID, traduccion.NombreDelControl))
+                        {
+                            //string tipo;
+                            //tipo = Control.GetType().ToString();
+                            //ESTO SON LOS <a>
+                            if (Control is Label lbltradu)
+                            {
+
+                                lbltradu.Text = traduccion.Texto;
+
+                            }
+                            //ESTOS SON LOS INPUT CON TYPE TEXT O PASSWORD
+                            else if (Control is TextBox)
+                            {
+
+                                var mapeo = (TextBox)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <BUTTON>
+                            else if (Control is IButtonControl)
+                            {
+                                var mapeo = (IButtonControl)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            //ESTOS SON LOS <INPUT> TYPE BUTTON O SUBMIT
+                            else if ((Control) is LinkButton)
+                            {
+                                var mapeo = (LinkButton)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+                            else if (Control is Button)
+                            {
+                                var mapeo = (Button)Control;
+                                mapeo.Text = traduccion.Texto;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception es)
+            {
+                throw;
+            }
+
+        }
+        private void RecorrerControles(Control pObjetoContenedor)
+        {
+            foreach (Control Controlobj in pObjetoContenedor.Controls)
+            {
+                ListaResultado.Add(Controlobj);
+
+                //if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
+                //{
+                //    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
+                //}
+
+
+                if (Controlobj.Controls.Count > 0)
+                {
+                    RecorrerControles(Controlobj);
+                }
+
+                ListaResultado.Add(Controlobj);
+            }
+        }
+
+        private void RecorrerDropDown(System.Web.UI.WebControls.DropDownList pMenuStrip)
+        {
+            ListaResultado.Add(pMenuStrip);
+            foreach (System.Web.UI.WebControls.ListItem item in pMenuStrip.Items)
+            {
+                ListaResultado.Add(item);
+            }
+
+
+        }
+
     }
 
-      
-    
+
+
 }

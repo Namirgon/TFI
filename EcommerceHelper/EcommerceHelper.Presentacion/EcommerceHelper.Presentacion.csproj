@@ -360,6 +360,7 @@
     <Content Include="Script\Thirdparty\jquery.signalR-2.1.2.min.js" />
     <Content Include="Script\Thirdparty\jquery.timeago.js" />
     <Content Include="Shared\Error.aspx" />
+    <Content Include="Shared\ErrorAdmin.aspx" />
     <Content Include="Shared\ErrorCliente.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -410,9 +411,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\IIdiomaObserver.cs" />
-    <Compile Include="App_Code\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="App_Code\BasePage.cs" />
     <Compile Include="Connected Services\WSPago\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -429,6 +428,13 @@
     </Compile>
     <Compile Include="Shared\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ErrorAdmin.aspx.cs">
+      <DependentUpon>ErrorAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ErrorAdmin.aspx.designer.cs">
+      <DependentUpon>ErrorAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shared\ErrorCliente.aspx.cs">
       <DependentUpon>ErrorCliente.aspx</DependentUpon>

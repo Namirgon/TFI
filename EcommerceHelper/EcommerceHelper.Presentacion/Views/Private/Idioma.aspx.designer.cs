@@ -13,6 +13,24 @@ namespace EcommerceHelper.Presentacion.Views.Private {
     public partial class Idioma {
         
         /// <summary>
+        /// Control Idioma3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Idioma3;
+        
+        /// <summary>
+        /// Control AltaIdioma.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AltaIdioma;
+        
+        /// <summary>
         /// Control LbMensaje.
         /// </summary>
         /// <remarks>
@@ -31,13 +49,13 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.HiddenField hid;
         
         /// <summary>
-        /// Control lblIdioma.
+        /// Control Idioma2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdioma;
+        protected global::System.Web.UI.WebControls.Label Idioma2;
         
         /// <summary>
         /// Control ddlIdioma.
@@ -49,13 +67,13 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.DropDownList ddlIdioma;
         
         /// <summary>
-        /// Control lblNombreDelControl.
+        /// Control NombreDelControl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreDelControl;
+        protected global::System.Web.UI.WebControls.Label NombreDelControl;
         
         /// <summary>
         /// Control TXTNombreDelControl.
@@ -67,13 +85,13 @@ namespace EcommerceHelper.Presentacion.Views.Private {
         protected global::System.Web.UI.WebControls.TextBox TXTNombreDelControl;
         
         /// <summary>
-        /// Control lblTexto.
+        /// Control Texto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTexto;
+        protected global::System.Web.UI.WebControls.Label Texto;
         
         /// <summary>
         /// Control TxtTextoControl.

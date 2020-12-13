@@ -36,8 +36,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
             {
 
                 cargarTipoTarjetas();
-
                 CargarTarjetas();
+
                 Traducciones = new List<MultiIdiomaEntidad>();
 
                 Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
@@ -175,11 +175,22 @@ namespace EcommerceHelper.Presentacion.Views.Public
            
 
             MisTarjetas = GestorTarjeta.ListarTarjetas(numeroIdUsuario);
+             if (MisTarjetas.Count == 0)
+            {
+                
+
+            }
+            else
+            {
+                GVTarjetas.DataSource = null;
+                GVTarjetas.DataSource = MisTarjetas;
+                GVTarjetas.DataBind();
 
 
-            GVTarjetas.DataSource = null;
-            GVTarjetas .DataSource = MisTarjetas;
-            GVTarjetas.DataBind();
+
+            }
+
+          
 
 
         }

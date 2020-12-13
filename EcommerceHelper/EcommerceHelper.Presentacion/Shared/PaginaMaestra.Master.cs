@@ -50,7 +50,13 @@ namespace EcommerceHelper.Presentacion.Shared
 
               
             }
-            
+
+           
+
+           
+         
+
+
         }
 
         public void METODO()
@@ -79,7 +85,8 @@ namespace EcommerceHelper.Presentacion.Shared
          
             IdiomaBLL.GetBLLServicioIdiomaUnico().Traducir(IdiomaSeleccionado.IdIdioma);
 
-
+            //IdiomaSeleccionado.IdIdioma = Int32.Parse(ddlidioma.SelectedValue);
+            //Current.Session["Idioma"] = IdiomaSeleccionado;
         }
         
         public bool Autenticar(string elPermiso)

@@ -19,7 +19,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         private List<object> ListaResultado = new List<object>(); //xxxxx
         HttpContext Current = HttpContext.Current; //xxxx
         List<MultiIdiomaEntidad> Traducciones; // xxxxx
-
+        IdiomaEntidad IdiomaSeleccionado;
         public IniciarSesion() : base()
         {
 
@@ -41,6 +41,12 @@ namespace EcommerceHelper.Presentacion.Views.Public
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            IdiomaSeleccionado = new IdiomaEntidad();
+            EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
+            
+          //  IdiomaSeleccionado.Descripcion = p.ElegirIdioma();
+            Session["Idioma"] = IdiomaSeleccionado;
+
 
             if (!IsPostBack)
             {
@@ -49,10 +55,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
           
                 Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;// xxxxxx este solo va en las paginas xxxxx
 
-
+               
 
             }
-
+           
 
 
         }

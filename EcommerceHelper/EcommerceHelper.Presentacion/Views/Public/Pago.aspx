@@ -25,7 +25,11 @@
     <br /> 
     <br />
     <h3  style="margin-left:30px; margin-top:30px; color:black"> Servicios  /  Pedidos  / Mis Direcciones / Resumen Compra / Pago </h3> 
-      <br />             
+      <br />   
+    
+     <br />
+      <asp:Label ID="lblMensaje" runat="server" Visible="false" Text="Label"  style="color:white; font-size:20px; margin-left:500px" ></asp:Label> <br /><br />
+   <br />
    <br />
  </div>
     <br />

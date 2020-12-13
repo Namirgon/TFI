@@ -57,11 +57,17 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
 
             MisTarjetas = GestorTarjeta.ListarTarjetas(numeroIdUsuario);
+            if (MisTarjetas.Count== 0)
+            {
+                Response.Redirect("ABMTarjetasDeCredito.aspx");
 
+            }
+            else { 
 
             GVTarjetas.DataSource = null;
             GVTarjetas.DataSource = MisTarjetas;
             GVTarjetas.DataBind();
+            }
 
 
         }
@@ -177,8 +183,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                         }
 
-
-                        Response.Write("<script>alert('Pago Exitoso !! Felicitaciones!! ')</script>");
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = " 'Pago Exitoso !! Felicitaciones!! '";
+                        
+                      //  Response.Write("<script>alert('Pago Exitoso !! Felicitaciones!! ')</script>");
 
                         break;
                     }
@@ -195,6 +203,11 @@ namespace EcommerceHelper.Presentacion.Views.Private
             foreach (GridViewRow row in GVTarjetas.Rows)
             {
                 row.Cells[0].Visible = false;
+            }
+            GVTarjetas.HeaderRow.Cells[5].Visible = false;
+            foreach (GridViewRow row in GVTarjetas.Rows)
+            {
+                row.Cells[5].Visible = false;
             }
         }
 

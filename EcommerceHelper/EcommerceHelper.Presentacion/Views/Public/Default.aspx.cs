@@ -49,8 +49,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
 
-          
             EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
 
             if (!IsPostBack)
@@ -60,6 +60,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
                  Traducciones=   IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
             }
+
+
 
 
         }

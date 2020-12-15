@@ -57,15 +57,32 @@ namespace EcommerceHelper.Presentacion.Views.Private
             List<DireccionEntidad> MisDirecciones = new List<DireccionEntidad>();
             DireccionBLL ListDireccion = new DireccionBLL();
 
-            MisDirecciones = ListDireccion.ListarDirecciones(numeroIdUsuario);
 
+            OrdenDeTrabajoBLL OrdenByIdUsuario = new OrdenDeTrabajoBLL();
+            ItemOrdenDeTrabajoBLL GestorItemODT = new ItemOrdenDeTrabajoBLL();
+            OrdenDeTrabajoEntidad ExisteOrdenDeTrabajo;
+            List<ItemOrdenDeTrabajoEntidad> ItemsIdItem;
+            // lista 1 = consulta las ordenes de compras activas por el IdUsuario
+            ExisteOrdenDeTrabajo = OrdenByIdUsuario.OrdenDeTrabajoActivas(numeroIdUsuario);
 
-            GVMisDirecciones.DataSource = null;
-            GVMisDirecciones.DataSource = MisDirecciones;
-            GVMisDirecciones.DataBind();
+            //lista 2 = consulta a la tabla lista de deseos con el IdUsuario los IdServicios
+            ItemsIdItem = GestorItemODT.ListaItemSelectAllByIdODT3(ExisteOrdenDeTrabajo.IdOrdenDeTrabajo);
+
+            
+                foreach (ItemOrdenDeTrabajoEntidad item in ItemsIdItem)
+                {
+                    MisDirecciones = ListDireccion.ListarDireccionesPedido(item.IdItemOrdenDeTrabajo);
+                    GVMisDirecciones.DataSource = null;
+                    GVMisDirecciones.DataSource = MisDirecciones;
+                    GVMisDirecciones.DataBind();
+
+                }
 
 
         }
+
+
+
 
 
         public void CargarPedido()

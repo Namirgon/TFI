@@ -74,6 +74,21 @@ namespace EcommerceHelper.DAL
                 return ItemOrdenDeTrabajoEntidad;
             }
         }
+        public List<ItemOrdenDeTrabajoEntidad> SelectIdItemOrdenDeTrabajo2(int idOrdenDeTrabajo)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdOrdenDeTrabajo", idOrdenDeTrabajo),
+
+            };
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarIdItemByIdOrdenDeTrabajo", parameters))
+            {
+                List<ItemOrdenDeTrabajoEntidad> ItemOrdenDeTrabajoEntidad = new List<ItemOrdenDeTrabajoEntidad>();
+                ItemOrdenDeTrabajoEntidad = MapeadorListaItemOrdenDeTrabajoEntidad(ds);
+                return ItemOrdenDeTrabajoEntidad;
+              
+            }
+        }
 
         private List<ItemOrdenDeTrabajoEntidad> MapeadorMuchosItemservicio(DataSet ds)
         {

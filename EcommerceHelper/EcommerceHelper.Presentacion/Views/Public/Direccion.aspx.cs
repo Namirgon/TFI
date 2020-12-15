@@ -155,7 +155,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../MisDirecciones.aspx");
+            Response.Redirect("/Views/Public/MisDirecciones.aspx");
         }
 
         void IObservador.Traducirme()

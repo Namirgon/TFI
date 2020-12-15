@@ -45,8 +45,8 @@ namespace EcommerceHelper.Presentacion.Views.Public
             EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
             
           //  IdiomaSeleccionado.Descripcion = p.ElegirIdioma();
-            Session["Idioma"] = IdiomaSeleccionado;
-
+         //   Session["Idioma"] = IdiomaSeleccionado;
+           // IdiomaEntidad idioma = new IdiomaEntidad();
 
             if (!IsPostBack)
             {
@@ -55,14 +55,33 @@ namespace EcommerceHelper.Presentacion.Views.Public
           
                 Traducciones = IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;// xxxxxx este solo va en las paginas xxxxx
 
-               
+                //idioma = (IdiomaEntidad)Session["Idioma"];
+                //if (idioma == null)
+                //{
+                //    idioma = new IdiomaEntidad();
+                //    idioma.Descripcion = "es";
+                //    Session["Idioma"] = idioma;
+                //}
+                //else
+                //{
+
+                //    idioma.Descripcion  = Master.ElegirIdioma();
+                //    Session["Idioma"] = idioma;
+
+                //}
 
             }
-           
+         
+            //DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
+            //if (lblIdioma != null)
+            //{
+            //    lblIdioma.SelectedValue = idioma.Descripcion;
+            //}
+
 
 
         }
-      
+
         public void RealizarLogueo(string elUsuario, string laClave)
         {
             UsuarioEntidad usuario = new UsuarioEntidad();

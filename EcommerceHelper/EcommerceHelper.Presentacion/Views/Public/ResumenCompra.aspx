@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestraCliente.Master" AutoEventWireup="true" CodeBehind="ResumenCompra.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.MiDireccion" %>
  <%@ MasterType VirtualPath="~/Shared/PaginaMaestraCliente.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<link  href="../../Content/EstilosPermisos.css" rel="Stylesheet"/>
+<%--<link  href="../../Content/EstilosPermisos.css" rel="Stylesheet"/>--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

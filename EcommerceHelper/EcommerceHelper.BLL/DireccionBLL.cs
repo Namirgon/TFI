@@ -44,6 +44,11 @@ namespace EcommerceHelper.BLL
             return UnaDireccion.ListarDireccionesDAL (IdUsuario);
 
         }
+        public List<DireccionEntidad> ListarDireccionesPedido(int IdItemOrdenDeTrabajo)
+        {
+            return UnaDireccion.ListarDireccionesPedido(IdItemOrdenDeTrabajo);
+
+        }
 
     }
 }

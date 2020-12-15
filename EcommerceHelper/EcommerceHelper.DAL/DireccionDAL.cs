@@ -90,6 +90,25 @@ namespace EcommerceHelper.DAL
             }
 
         }
+        public List<DireccionEntidad> ListarDireccionesPedido(int Id)
+        {
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdItemOrdenDeTrabajo", Id),
+
+            };
+            using (DataSet ds = SqlClientUtility.ExecuteDataSet(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "ListarDireccionPedido", parameters))
+            //using (DataTable dt = SqlClientUtility.ExecuteDataTable(SqlClientUtility.connectionStringName, CommandType.StoredProcedure, "DireccionSelectByNumeroDocumento", parameters))
+            {
+                List<DireccionEntidad> ListaMisDirecciones = new List<DireccionEntidad>();
+
+                ListaMisDirecciones = MapearMisDirecciones(ds);
+
+                return ListaMisDirecciones;
+            }
+
+        }
         public List<DireccionEntidad> MapearMisDirecciones(DataSet ds)
         {
 

@@ -117,7 +117,6 @@ namespace EcommerceHelper.Presentacion.Views.Public
             //Control 'GridView1' of type 'GridView' must be placed inside a form tag with runat=server."  
 
         }
-
         public void CargarDirecciones()
         {
 
@@ -129,20 +128,25 @@ namespace EcommerceHelper.Presentacion.Views.Public
             List<DireccionEntidad> MisDirecciones = new List<DireccionEntidad>();
             DireccionBLL ListDireccion = new DireccionBLL();
 
-            MisDirecciones=  ListDireccion.ListarDirecciones(numeroIdUsuario);
+            MisDirecciones = ListDireccion.ListarDirecciones(numeroIdUsuario);
 
-           
+            if (MisDirecciones.Count == 0)
+            {
+
+                Response.Redirect("Direccion.aspx");
+            }
+            else
+            {
                 GVMisDirecciones.DataSource = null;
                 GVMisDirecciones.DataSource = MisDirecciones;
                 GVMisDirecciones.DataBind();
+            }
 
-         
+            
 
 
         }
-
-
-
+       
        
         protected void linkAltaDireccion_Click(object sender, EventArgs e)
         {

@@ -1,0 +1,6 @@
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Release\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\bin\Release\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Release\EcommerceHelper.Entidades.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Release\EcommerceHelper.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Release\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.Entidades\obj\Release\EcommerceHelper.Entidades.pdb

@@ -1,0 +1,105 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, mi, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    width: 169px;
+    height: 46px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+
+    header h2 + p {
+        font-size: 1.25em;
+        margin-top: -1em;
+    }
+
+    header h3 + p {
+        font-size: 1.1em;
+        margin-top: -0.8em;
+    }
+
+    header h4 + p,
+    header h5 + p,
+    header h6 + p {
+        font-size: 0.9em;
+        margin-top: -0.6em;
+    }
+
+
+ 
+
+
+
+    #header a:hover {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    #header a:last-child {
+        padding-right: 0em;
+    }
+
+@media screen and (max-width: 736px) {
+
+    #header a {
+        padding: 0 0.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        min-width: 320px;
+    }
+}
+
+
+@media screen and (max-width: 980px) {
+
+    #nav {
+        display: none;
+    }
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+}
+
+    .nav li ul li {
+        position: relative;
+    }
+
+.nav li:hover > ul {
+    display: block;
+}
+
+
+
+
+
+.nav li a {
+    background-color: #000;
+    color: #fff;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+    .nav li a:hover {
+        background-color: #434343;
+    }
+
+
+.nav > li {
+    float: left;
+}

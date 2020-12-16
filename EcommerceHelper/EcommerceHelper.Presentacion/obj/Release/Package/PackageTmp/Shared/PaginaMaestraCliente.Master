@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestraCliente.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestraCliente" %>
+
+<!DOCTYPE html>
+
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    
+      
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Scripts/jquery.timepicker.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+    <link href="../Script/Thirdparty/Autocomplete/jquery-ui.css" rel="stylesheet" />
+ 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+  
+       
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+ 
+    <form id="form1" runat="server">
+     
+  
+     <asp:ScriptManager ID="ScriptManager1" runat="server"> 
+
+
+     </asp:ScriptManager>
+
+        <header id="header">
+<%--          ----------------------------------------------------  Menu del cliente ---------------------------------------------------------------------%>
+            <div class="inner">
+                <a href="Default.aspx" class="logo" >Helper</a>
+                
+                <nav id="nav">
+                    <asp:Label ID="lblNombreUsuario" runat="server"  Font-Bold="true" Font-Size="Medium" ></asp:Label> <%--// poner nombre del Usuario--%>
+                 
+                    
+                   <asp:Button ID="CerrarSesion" runat="server" BackColor="Black" BorderWidth="0px"    Font-Bold="True" Font-Size="Small" OnClick="btnCerrarSesion_Click" ></asp:Button>
+                      
+                    <a href="../Public/Pedido.aspx"><asp:Label  runat="server" ID="Pedido" ClientIDMode="Static"></asp:Label><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    
+                
+                     <a>
+                <asp:DropDownList ID="ddlidioma" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlidioma_SelectedIndexChanged1"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                                  
+                </asp:DropDownList></a>
+                    <br />
+                </nav>
+                <br />
+            </div>
+    <%------------------------------------------------------ fin del Menu del cliente ---------------------------------------------------------------------%>
+        </header>
+       <div>
+           
+        </div>
+           <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         
+        
+
+   
+            </asp:ContentPlaceHolder>
+
+              
+        </div>
+
+    </form>
+
+      <br />
+      <br />
+      <br />
+      <div class="container body-content">
+      <br />
+      </div>
+            
+       
+                    
+    <footer >
+        <div style="margin-bottom: 0px" >
+
+            <br />
+               <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+        <script src="/Script/Thirdparty/jquery-3.4.1.min.js"></script>
+        <script src="/Script/Thirdparty/bootstrap.min.js"></script>
+        <script src="/Content/Scripts/jquery.timepicker.js"></script>
+       <script src="/Content/bootstrap-datepicker.js"></script>         
+      
+       <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+
+
+       </asp:ContentPlaceHolder>
+  
+                    
+    </body>
+</html>
+
+
+<style>
+
+.header p {
+ position: relative;
+ margin: 0 0 1.5em 0;
+ 
+ }
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+  
+
+}
+
+    header p {
+        position: relative;
+        margin: 0 0 1.5em 0;
+        
+    }
+#header a {
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    /*text-decoration: none;
+    text-transform: uppercase;*/
+    font-weight: 700;
+    font-size: .85em;
+    text-decoration: none;
+    
+}
+
+    #header .inner {
+        max-width: 65em;
+        width: calc(100% - 6em);
+        margin: 0 auto;
+        position: relative;
+        top: -5px;
+        left: 1px;
+    }
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+        text-align:left;
+    }
+}
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+    }
+
+header p {
+    color: #717171;
+}
+
+#nav {
+    display: inline-block;
+}
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    text-align:left;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: antiquewhite;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+  
+}
+
+
+
+ .goog-logo-link {
+  display: none !important;
+  }
+
+                    .goog-te-gadget {
+                        height: 28px !important;
+                        overflow: hidden;
+                    }
+
+                    .goog-text-highlight {
+                        background: none !important;
+                        box-shadow: none !important;
+                    }
+       </style>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

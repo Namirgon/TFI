@@ -1,0 +1,264 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestraAdministracion.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestraAdministracion" %>
+<%@ MasterType VirtualPath="~/Shared/PaginaMaestra.Master" %>
+<%--<!DOCTYPE html>
+
+<html>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    
+   
+         <link href="/Content/EstilosPermisos.css" rel="stylesheet"  />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+         
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     
+        
+      <asp:ScriptManager ID="ScriptManager1" runat="server">  
+
+
+      </asp:ScriptManager>
+    
+      
+        <div id="header">
+
+            <div class="inner">
+                <a href="../public/Default.aspx" class="logo">Helper</a>
+             
+                <nav id="nav">
+                     <ul class="nav">
+                 <li>    <asp:Label ID="lblNombreUsuario" runat="server" Text="Label" Font-Bold="true" Font-Size="medium" ></asp:Label> <%--// poner nombre del Usuario--%></li>
+                 <li>    <asp:LinkButton ID="CerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" ClientIDMode="Static"></asp:LinkButton></li>
+                    
+                 <li style="font-size:18px; margin-right: 20px; " >RRHH
+                            <ul>
+                                <li  ><a href="../Private/AltaEmpleado.aspx">Alta Empleado</a></li>
+                                 <li ><a href="../Private/GestionEmpleado.aspx">BM Empleado</a></li>
+                                <li ><a href="../Private/AsignacionDePerfiles.aspx">Asignacion de Perfiles</a></li>
+                            </ul>
+                 </li>
+
+                 <li style="font-size:18px; margin-left:20px">Seguridad
+                            <ul>
+                                <li><a href="../Private/BackUp.aspx"> Respaldar</a></li>
+                                <li><a href="../Private/Restaurar.aspx"> Restaurar BD</a></li>
+                                <li><a href="../Private/VerLogs.aspx"> Bitacora</a></li>
+                                 <li><a href="../Private/Idioma.aspx"> ABM Idioma</a></li>
+                                <li><a href="../Private/GestionDePermisos.aspx"> ABM Permisos</a></li>
+                            </ul>
+                </li>
+                         <li style="font-size:18px; margin-left:20px">Comercial
+                            <ul>
+                                <li><a href="../Private/GestorServicios.aspx">ABM Servicios</a></li>
+                                <li><a href="../Private/Facturacion.aspx">Facturacion</a></li>
+                                <li><a href="../Private/NotaDeCredito.aspx">Nota De Credito</a></li>
+                                 <li><a href="../Private/NotaDeDebito.aspx">Nota De Debito</a></li>
+                                  <li><a href="../Private/AsignacionDeServicios.aspx">Asignacion De Servicios</a></li>
+                                <li><a href="../Private/ReporteDeVentas.aspx">Reporte de Ventas</a></li>
+                                <li><a href="../Private/ReporteDeEmpleado.aspx">Reporte de Empleados</a></li>
+                            </ul> 
+                        </li>
+                                     <li>
+                                         
+
+                <asp:DropDownList ID="ddlidioma" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlidioma_SelectedIndexChanged"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                                    
+                </asp:DropDownList>
+                    
+ 
+                      
+                         </li>
+
+                       
+                        
+                         
+                    </ul>
+                  
+                </nav>
+                   
+            </div>
+        </div>
+        <div>
+               <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+              </div>
+           
+        </div>
+            
+    </form>
+        <div class="container body-content">
+    <footer >
+        <div >
+
+            <br />
+          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+      </div>
+  
+   
+    
+    <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+    </asp:ContentPlaceHolder>
+
+    
+
+</body>
+</html>
+<style type="text/css">
+
+* {
+ padding: 0px;
+ margin: 0px;
+ 
+ }
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+  
+
+}
+
+
+ul,  ol, li {
+
+   list-style: none;
+
+}
+
+.nav > li{
+
+    float:left;
+
+}
+
+#header a {
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    text-decoration: none;
+   
+}
+
+    #header .inner {
+        max-width: 65em;
+        width: calc(100% - 6em);
+    
+        margin: 0 auto;
+        position: relative;
+    }
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+        text-align:left;
+     
+    }
+}
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+    }
+
+   .nav li a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+        background-color:#1c1c1c;
+        text-decoration:none;
+        padding: 10px  15px;
+        display:block;
+        width:180px;
+
+    }
+   .nav li ul{
+
+       display:none;
+       position:absolute;
+       min-width:100px;
+   }
+
+   .nav li:hover > ul{
+
+ display:block;
+
+   }
+header p {
+    color: #717171;
+}
+
+.nav li a:hover{
+    background-color:#717171;
+
+}
+#nav {
+    display: inline-block;
+}
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    text-align:center;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: antiquewhite;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+
+
+ .goog-logo-link {
+  display: none !important;
+  }
+
+                    .goog-te-gadget {
+                        height: 28px !important;
+                        overflow: hidden;
+                    }
+
+                    .goog-text-highlight {
+                        background: none !important;
+                        box-shadow: none !important;
+                    }
+       </style>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

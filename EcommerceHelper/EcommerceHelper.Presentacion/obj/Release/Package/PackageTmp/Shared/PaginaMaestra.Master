@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true "    CodeBehind="PaginaMaestra.master.cs" Inherits="EcommerceHelper.Presentacion.Shared.PaginaMaestra" %>
+
+<%--<!DOCTYPE html>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<%--<html>--%>
+
+<head >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+  
+    <title></title>
+    
+   
+      <asp:ContentPlaceHolder ID="head" runat="server" >
+         
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1"  runat="server">
+
+        <header id="header">
+          
+            <div class="inner">
+                <a href="Default.aspx" class="logo">Helper</a>
+                
+                    <nav id="nav">
+                     <a href="../Public/IniciarSesion.aspx"> <asp:Label ID="IniciarSesion2" ClientIDMode="Static"  runat="server"   ></asp:Label></a>
+                    <a href="../Public/NuestrosServicios.aspx"> <asp:Label ID="NuestrosServicios2" runat="server" ></asp:Label></a>
+                  
+                    <a href="../Private/IniciarSesionIntranet.aspx"><asp:Label ID="Intranet" ClientIDMode="Static" runat="server"  ></asp:Label></a>
+                   
+                  
+                     <a  >
+                <asp:DropDownList ID="ddlidioma" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlidioma_SelectedIndexChanged"  style="width:200px;  margin-left:55px; background-color: #000000; color: white; border: none;">
+                                    
+                </asp:DropDownList>
+                    </a>
+                </nav>
+                   
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+
+      <div class="container body-content">
+    <footer >
+        <div >
+
+            <br />
+          <p style="font-size:large; align-content:center"> CopyRight Argentina 2020 - Helper</p>
+        </div>
+        
+    </footer>
+      </div>
+ 
+       <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+
+
+       </asp:ContentPlaceHolder>
+
+
+</body>
+  
+</html>  
+
+<style type="text/css">
+
+body{
+ margin: 0px;
+padding: 0px;
+ 
+ }
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+  
+
+}
+
+    header p {
+        position: relative;
+        margin: 0 0 1.5em 0;
+        
+    }
+#header a {
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .85em;
+    
+}
+
+    #header .inner {
+        max-width: 65em;
+        width: calc(100% - 6em);
+        margin: 0 auto;
+        position: relative;
+    }
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+        text-align:left;
+    }
+}
+ #header nav a {
+        font-size:18px;
+        color:antiquewhite;
+        text-align:right;
+    }
+
+header p {
+    color: #717171;
+}
+
+#nav {
+    display: inline-block;
+}
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    text-align:left;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: antiquewhite;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+ .goog-logo-link {
+  display: none !important;
+  }
+
+                    .goog-te-gadget {
+                        height: 28px !important;
+                        overflow: hidden;
+                    }
+
+                    .goog-text-highlight {
+                        background: none !important;
+                        box-shadow: none !important;
+                    }
+       </style>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+

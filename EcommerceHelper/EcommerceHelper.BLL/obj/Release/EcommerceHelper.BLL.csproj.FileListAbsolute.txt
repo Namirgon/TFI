@@ -1,0 +1,16 @@
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.BLL.dll.config
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.BLL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.BLL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.DAL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.Entidades.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.Funciones.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\Newtonsoft.Json.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.DAL.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.Entidades.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\EcommerceHelper.Funciones.pdb
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\bin\Release\Newtonsoft.Json.xml
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Release\EcommerceHelper.BLL.csprojAssemblyReference.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Release\EcommerceHelper.BLL.csproj.CoreCompileInputs.cache
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Release\EcommerceHelper.BLL.csproj.CopyComplete
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Release\EcommerceHelper.BLL.dll
+C:\Users\natal\Desktop\TFI\EcommerceHelper\EcommerceHelper.BLL\obj\Release\EcommerceHelper.BLL.pdb

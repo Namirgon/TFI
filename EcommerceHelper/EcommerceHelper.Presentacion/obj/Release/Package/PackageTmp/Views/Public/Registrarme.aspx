@@ -134,7 +134,7 @@
     <br />
      <div class="form-group">
    <asp:Button style="margin-left:150px " ID="Continuar" runat="server" Text="Confirmar"  Width="150px"  OnClick="BtnContinuar_Click"/>
-   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" Text="Cancelar" Width="150px"   />
+   <asp:Button style="margin-left:100px " ID="Cancelar" CausesValidation="False"  runat="server" Text="Cancelar" OnClick="Cancelar_Click" Width="150px"   />
          </div>
    <br />
    

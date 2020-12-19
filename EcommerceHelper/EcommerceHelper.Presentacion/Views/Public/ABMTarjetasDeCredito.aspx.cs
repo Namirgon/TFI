@@ -101,21 +101,40 @@ namespace EcommerceHelper.Presentacion.Views.Public
        
         protected void BtnModificarTarjeta_Click(object sender, EventArgs e)
         {
+            UsuarioEntidad logueadoStatic;
+            var Current = HttpContext.Current;
+            logueadoStatic = (UsuarioEntidad)Current.Session["Usuario"];
+            int numeroIdUsuario = logueadoStatic.IdUsuario;
 
-           
-            TarjetaEntidad nuevatarjeta = new TarjetaEntidad();
+            List<TarjetaEntidad> MisTarjetas = new List<TarjetaEntidad>();
 
-            nuevatarjeta.IdTarjeta = int.Parse( hid.Value);
 
-            nuevatarjeta.MiTipoTarjeta = new TipoTarjetaEntidad();
-            nuevatarjeta.MiTipoTarjeta.IdTipoTarjeta = int.Parse(ddlTipoTarjeta.SelectedValue);
-            nuevatarjeta.NombreTitular = txtNombreTitular.Text;
-            nuevatarjeta.NumeroTarjeta = Int64.Parse(txtNumeroTarjeta.Text);
-            nuevatarjeta.FechaVencimiento = DateTime.Parse(txtFecha.Value);
-            nuevatarjeta.CodigoSeguridad = int.Parse(txtcodseguridad.Text);
-            GestorTarjeta.UpdateTarjeta(nuevatarjeta);
-            limpiarCampos();
-            CargarTarjetas();
+            MisTarjetas = GestorTarjeta.ListarTarjetas(numeroIdUsuario);
+
+            if (MisTarjetas.Count == 0)
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text ="No posee Tarjetas";
+
+            }
+            else
+            {
+                lblMensaje.Visible = false;
+                TarjetaEntidad nuevatarjeta = new TarjetaEntidad();
+
+                nuevatarjeta.IdTarjeta = int.Parse(hid.Value);
+
+                nuevatarjeta.MiTipoTarjeta = new TipoTarjetaEntidad();
+                nuevatarjeta.MiTipoTarjeta.IdTipoTarjeta = int.Parse(ddlTipoTarjeta.SelectedValue);
+                nuevatarjeta.NombreTitular = txtNombreTitular.Text;
+                nuevatarjeta.NumeroTarjeta = Int64.Parse(txtNumeroTarjeta.Text);
+                nuevatarjeta.FechaVencimiento = DateTime.Parse(txtFecha.Value);
+                nuevatarjeta.CodigoSeguridad = int.Parse(txtcodseguridad.Text);
+                GestorTarjeta.UpdateTarjeta(nuevatarjeta);
+                limpiarCampos();
+                CargarTarjetas();
+            }
+            
            
         }
 
@@ -205,10 +224,10 @@ namespace EcommerceHelper.Presentacion.Views.Public
             txtNombreTitular.Text = string.Empty;
         }
 
-            protected void btnVolverPago_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Pago.aspx");
-        }
+        //protected void btnVolverPago_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("../Pago.aspx");
+        //}
 
         protected void GVTarjetas_DataBound(object sender, EventArgs e)
         {
@@ -327,6 +346,11 @@ namespace EcommerceHelper.Presentacion.Views.Public
             }
 
 
+        }
+
+        protected void VolverPago_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Public/Pago.aspx");
         }
     }
 }

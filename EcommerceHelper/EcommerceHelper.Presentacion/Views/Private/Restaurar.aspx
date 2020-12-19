@@ -41,7 +41,7 @@
                              <br />
                            
                              <asp:Button ID="Aceptar" runat="server" ClientIDMode="Static"   OnClick="btnUpload_Click" class="btn btn-primary" style="margin-left:20px" Width="161px" />
-                              <asp:Button ID="Cancelar" runat="server" ClientIDMode="Static" OnClick="btnCancelar_Click" style="margin-left:40px" class="btn btn-primary " Width="162px" />
+                              <asp:Button ID="Cancelar" runat="server" ClientIDMode="Static" OnClick="btnCancelar_Click" style="margin-left:40px" class="btn btn-primary " Width="162px" CausesValidation="false" />
                              <br />
                              <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
                          </ContentTemplate>

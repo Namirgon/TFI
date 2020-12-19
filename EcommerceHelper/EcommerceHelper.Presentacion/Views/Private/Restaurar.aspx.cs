@@ -45,7 +45,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             string[] unosPermisosTest = new string[] { "Restaurar" };
             if (usuarioentidad == null || !this.Master.Autenticar(unosPermisosTest))
             {
-                Response.Redirect("../Public/Default.aspx");
+                Response.Redirect("../Private/MenuAdministracion.aspx");
             }
         }
 
@@ -71,13 +71,19 @@ namespace EcommerceHelper.Presentacion.Views.Private
                             return;
                         }
                         filePath = fileUpload.PostedFile.FileName;
-                        if (File.Exists(Server.MapPath(@"../../Content/Files/" + filePath.Trim())))
-                        {
-                            File.Delete(Server.MapPath(@"../../Content/Files/" + filePath.Trim()));
-                        }
-                        fileUpload.PostedFile.SaveAs(Server.MapPath(@"../../Content/Files/" + filePath.Trim()));
+                        if (File.Exists(Path.GetFullPath(@"/Program Files/Microsoft SQL Server/MSSQL14.SQLEXPRESS01/MSSQL/Backup/" + filePath.Trim())))
 
-                        if (!ServicioBackup.Restaurar(NombreBD, Server.MapPath(@"../../Content/Files/" + filePath.Trim())))
+                        //  if (File.Exists(Server.MapPath(@"../../Content/Files/" + filePath.Trim())))
+                        {
+                            // File.Delete(Server.MapPath(@"../../Content/Files/" + filePath.Trim()));
+                            File.Delete(Path.GetFullPath(@"/Program Files/Microsoft SQL Server/MSSQL14.SQLEXPRESS01/MSSQL/Backup/" + filePath.Trim()));
+                        }
+
+                        //fileUpload.PostedFile.SaveAs(Server.MapPath(@"../../Content/Files/" + filePath.Trim()));
+                        fileUpload.PostedFile.SaveAs(Path.GetFullPath(@"/Program Files/Microsoft SQL Server/MSSQL14.SQLEXPRESS01/MSSQL/Backup/" + filePath.Trim()));
+
+                       // if (!ServicioBackup.Restaurar(NombreBD, Server.MapPath(@"../../Content/Files/" + filePath.Trim())))
+                            if (!ServicioBackup.Restaurar(NombreBD, Path.GetFullPath(@"/Program Files/Microsoft SQL Server/MSSQL14.SQLEXPRESS01/MSSQL/Backup/" + filePath.Trim())))
                         {
                             ServicioLog.CrearLogEventos("Restaurar", "Restauración fallida", usuarioentidad.Apellido,(usuarioentidad.IdUsuario).ToString());
                             sb.Append(@"<script type='text/javascript'>");
@@ -91,7 +97,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                             ServicioLog.CrearLogEventos("Restaurar", "Restauración realizada correctamente", usuarioentidad.Apellido ,(usuarioentidad.IdUsuario).ToString());
                             Session.Abandon();
                           
-                            Response.Redirect("../../Private/MenuAdministracion.aspx", false);
+                          //  Response.Redirect("../Views/Private/MenuAdministracion.aspx");
                         }
                     }
                     else
@@ -123,7 +129,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../Private/MenuAdministracion.aspx");
+            Response.Redirect("/Views/Private/MenuAdministracion.aspx");
         }
 
         void IObservador.Traducirme()

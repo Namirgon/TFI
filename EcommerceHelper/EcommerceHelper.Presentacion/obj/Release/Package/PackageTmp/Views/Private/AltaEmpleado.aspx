@@ -130,7 +130,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    <asp:Button style="margin-left:50px " ID="Continuar" runat="server" Text="Confirmar"  Width="150px"   OnClick="BtnContinuar_Click"/>
-   <asp:Button style="margin-left:50px " ID="Cancelar" runat="server" Text="Cancelar" Width="150px" OnClick="BtnCancelar_Click"  />
+   <asp:Button style="margin-left:50px " ID="Cancelar" runat="server" Text="Cancelar" CausesValidation="false" Width="150px" OnClick="BtnCancelar_Click"  />
         <br />
     <br />
     </div>

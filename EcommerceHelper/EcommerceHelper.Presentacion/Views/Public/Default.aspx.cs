@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Threading;
 using EcommerceHelper.BLL.Servicios;
 using EcommerceHelper.BLL;
+using EcommerceHelper.Presentacion.Shared;
 
 namespace EcommerceHelper.Presentacion.Views.Public
 {
@@ -19,7 +20,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
         private UsuarioEntidad usuarioentidad = new UsuarioEntidad();
        
         IdiomaEntidad IdiomaSeleccionado = new IdiomaEntidad();
-
+        private IdiomaEntidad idioma;
         public HttpContext Current = HttpContext.Current;//xxxxx
         private List<object> ListaResultado = new List<object>(); //xxxxx
         List<MultiIdiomaEntidad> Traducciones; // xxxxx
@@ -52,14 +53,36 @@ namespace EcommerceHelper.Presentacion.Views.Public
            
 
             EcommerceHelper.Presentacion.Shared.PaginaMaestra p = (EcommerceHelper.Presentacion.Shared.PaginaMaestra)this.Master;
-
+            idioma = new IdiomaEntidad();
             if (!IsPostBack)
             {
+
+                //idioma = (IdiomaEntidad)Session["Idioma"];
+                //if (idioma == null)
+                //{
+                //    idioma = new IdiomaEntidad();
+                //    idioma.Descripcion = "Español";
+                //    Session["Idioma"] = idioma;
+                //}
                 Traducciones = new List<MultiIdiomaEntidad>();
              
                  Traducciones=   IdiomaBLL.GetBLLServicioIdiomaUnico().TraduccionesSgl;
 
             }
+            else
+            {
+
+                // crear ddl de idioma en master page administracion 
+
+              //idioma.Descripcion = Master.ElegirIdioma();
+             //  Session["Idioma"] = idioma;
+
+            }
+            //DropDownList lblIdioma = FindControlFromMaster<DropDownList>("ddlIdioma");
+            //if (lblIdioma != null)
+            //{
+            //    lblIdioma.SelectedValue = idioma.Descripcion;
+            //}
 
 
 

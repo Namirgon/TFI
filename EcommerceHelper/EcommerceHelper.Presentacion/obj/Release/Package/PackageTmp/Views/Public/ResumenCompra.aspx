@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Shared/PaginaMaestraCliente.Master" AutoEventWireup="true" CodeBehind="ResumenCompra.aspx.cs" Inherits="EcommerceHelper.Presentacion.Views.Private.MiDireccion" %>
  <%@ MasterType VirtualPath="~/Shared/PaginaMaestraCliente.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<%--<link  href="../../Content/EstilosPermisos.css" rel="Stylesheet"/>--%>
+    <%--<link  href="../../Content/EstilosPermisos.css" rel="Stylesheet"/>--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -33,30 +33,32 @@
 
   <center>
    
-    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowDataBound="GVPedido_RowDataBound" OnDataBound="GVPedido_DataBound"  AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged">
+    <asp:GridView ID="GVPedido" runat="server" OnRowCommand="GVPedido_RowCommand" OnRowDataBound="GVPedido_RowDataBound" OnDataBound="GVPedido_DataBound"  AutoGenerateColumns="False" CellPadding="3" Height="263px" Width="878px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="GVPedido_SelectedIndexChanged"  cssclass="table table-striped ">
         <Columns>
             <asp:BoundField DataField="IdItemOrdenDeTrabajo" HeaderText="IdItem" SortExpression="IdItemOrdenDeTrabajo" >
-            <HeaderStyle HorizontalAlign="Center" />
-            <ItemStyle HorizontalAlign="Center" />
-            </asp:BoundField>
+           </asp:BoundField>
             <asp:BoundField DataField="MiServicio.Titulo" HeaderText="Titulo" SortExpression="Titulo" >
-            <HeaderStyle HorizontalAlign="Center" />
-            <ItemStyle HorizontalAlign="Center" />
+           
             </asp:BoundField>
-            <asp:BoundField DataField="MiServicio.Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" >
-            <HeaderStyle HorizontalAlign="Center" />
-            <ItemStyle HorizontalAlign="Center" />
-            </asp:BoundField>      
-            <asp:BoundField DataField="MiServicio.URLimagen" HeaderText="Imagen"  >
-            </asp:BoundField>
+            <asp:BoundField DataField="MiServicio.Descripcion" HeaderText="Descripcion" SortExpression="Descripcion"  >
+           
+            </asp:BoundField>   
+            <%--<asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Image ID="imagen" runat="server" ImageUrl='<% Eval("MiServicio.URLimagen")  %>'    />
+                </ItemTemplate>
+
+            </asp:TemplateField>--%>
+            <asp:BoundField DataField="MiServicio.URLimagen" HeaderText="Imagen" />
+               
+            
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />
             <asp:BoundField DataField="Hora" HeaderText="Hora" DataFormatString="{0:t}" />
               <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
-            <HeaderStyle HorizontalAlign="Center" />
+           
             </asp:BoundField>
               <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" >
-            <HeaderStyle HorizontalAlign="Center" />
-            <ItemStyle HorizontalAlign="Center" />
+           
             </asp:BoundField>
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#000066" />

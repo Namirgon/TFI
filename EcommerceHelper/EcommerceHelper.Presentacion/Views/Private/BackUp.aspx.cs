@@ -54,7 +54,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void btnUpload_Click1(object sender, EventArgs e)
         {
-
+            //Resguardo resg = new Resguardo();
+            //    resg.Usuario = (Usuario) Session["usuario"];
+            //    resg.Fecha = DateTime.Now;
+            //    resg.Tipo = "BackUP";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
             try
@@ -65,24 +68,38 @@ namespace EcommerceHelper.Presentacion.Views.Private
                     string nombre = txtNombreArchivo.Text.Trim() + ".bak";
                     //Directory directorio;
                     //directorio.CreateDirectory(path);
-                    string ruta = Path.GetFullPath(@"/Backup/" + nombre);
+
+                    //C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS01\MSSQL\Backup
+                    string ruta = Path.GetFullPath(@"/Program Files/Microsoft SQL Server/MSSQL14.SQLEXPRESS01/MSSQL/Backup/" + nombre);
+                    //if (!Directory.Exists(ruta))
+                    //{
+                    //    Directory.CreateDirectory(ruta);
+                    //}
+                    //string nombre = "backUp-" + DateTime.Now.ToString("dd-MM-yyyy-hhmmss") + ".bak";
+                    //resg.Nombre = nombre;
+                    //resg.Path = path;
+                    //string pathCompleto = objeto.Path + objeto.Nombre;
+                    //string ruta = Path.GetFullPath(@"/Windows/Backup/" + nombre);
                     if (File.Exists(ruta))
                     {
                         File.Delete(ruta);
                     }
-                    if (ServicioBackup.Respaldar( ruta))
+                    //if (ServicioBackup.Respaldar(ruta))
+
+                    if (ServicioBackup.Respaldar(ruta))
                     {
                         ServicioLog.CrearLogEventos("Backup", "Backup realizado correctamente", usuarioentidad.Apellido ,(usuarioentidad.IdUsuario).ToString());
-                        Current.Response.ContentType = "application/octet-stream";
-                      
-                        Current.Response.AppendHeader("Content-Disposition", "attachment; filename=\" "+nombre );
-                    
-                        Current.Response.TransmitFile(Path.GetFullPath(@"/Backup/" + nombre));
-                       // Current.Response.TransmitFile(Server.MapPath(@"../../Content/Files/" + nombre));
-                        Current.Response.Flush();
-                       
-                        Current.Response.SuppressContent = true;
-                        Current.ApplicationInstance.CompleteRequest();
+                        //// Current.Response.ContentType = "application/octet-stream";
+
+                        //// Current.Response.AppendHeader("Content-Disposition", "attachment; filename=\" "+nombre );
+
+                        //// Current.Response.TransmitFile(Path.GetFullPath(@" / Program Files / Microsoft SQL Server / MSSQL14.SQLEXPRESS01 / MSSQL / Backup" + nombre));
+                        ////// Current.Response.TransmitFile(Server.MapPath(@"../../Content/Files/" + nombre));
+                        //// Current.Response.Flush();
+
+                        //// Current.Response.SuppressContent = true;
+                        //// Current.ApplicationInstance.CompleteRequest();
+                        txtNombreArchivo.Text = string.Empty;
                     }
                     else
                     {
@@ -116,7 +133,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MenuAdministracion.aspx");
+          
         }
 
         void IObservador.Traducirme()
@@ -224,5 +241,15 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
         }
 
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+           // txtNombreArchivo.Text = string.Empty;
+          
+        }
+
+        protected void Cancelar_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("../Private/MenuAdministracion.aspx");
+        }
     }
 }

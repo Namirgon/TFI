@@ -190,7 +190,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                         DVVBLL managerDVV = new DVVBLL();
 
                         managerDVV.InsertarDVV("DVV", "Usuario");
-                      
+                        lblMensaje.Visible = false;
                     }
                     else
                     {
@@ -334,6 +334,9 @@ namespace EcommerceHelper.Presentacion.Views.Public
 
         }
 
-
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Public/Default.aspx");
+        }
     }
 }

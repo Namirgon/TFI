@@ -21,6 +21,9 @@
    
  </div>
     <br />
+    <br />
+      <asp:Label ID="lblMensaje" runat="server" Visible="false" Text="Label"  style="color:black; font-size:20px; margin-left:500px" ></asp:Label> <br /><br />
+   <br />
     <br /> 
     <br />
     <div>
@@ -63,7 +66,7 @@
            &nbsp;
            <asp:Button ID="ModificarTarjeta" runat="server" ClientIDMode="Static" OnClick="BtnModificarTarjeta_Click" class="btn btn-primary btn-lg" Width="178px" />
                 &nbsp;
-          <asp:Button ID="VolverPago" runat="server" ClientIDMode="Static" OnClick="btnVolverPago_Click" class="btn btn-primary btn-lg" Width="178px" />
+          <asp:Button ID="VolverPago" runat="server" ClientIDMode="Static" CausesValidation="false" OnClick="VolverPago_Click" class="btn btn-primary btn-lg" Width="178px" />
    
     </div>
 
@@ -102,6 +105,7 @@
         </asp:GridView>
 
     </div>
+        </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptSection" runat="server">
 </asp:Content>

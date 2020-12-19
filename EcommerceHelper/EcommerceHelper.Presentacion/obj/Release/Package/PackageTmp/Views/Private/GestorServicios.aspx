@@ -48,15 +48,15 @@
     <br />
      <legend>
     <asp:Label ID="Precio" runat="server" ClientIDMode="Static" style="margin-left:180px;color:white; font-size:15px"  ></asp:Label>
-    <asp:TextBox ID="txtPrecio" style="width:400px ; margin-left:150px" runat="server"></asp:TextBox>  </legend>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="*" Font-Bold="True"></asp:RequiredFieldValidator>   
+    <asp:TextBox ID="txtPrecio" style="width:400px ; margin-left:150px" runat="server" ValidationExpression = "^\d+?$" ></asp:TextBox>  </legend>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Type="integer" runat="server"  ControlToValidate="txtPrecio" ErrorMessage="*" Font-Bold="True"></asp:RequiredFieldValidator>   
     
     <br />
     <div class="form-group">
                     <div class="form-group">
                         <asp:Label ID="Imagen" runat="server" ClientIDMode="Static" style="margin-left:180px;color:white; font-size:15px" > </asp:Label>  
                         <label id="urlErrorMessage" style="color: coral; font-weight: 100;" hidden="hidden">Soporte solo para imagenes: jpeg,jpg,png,gif</label>
-
+                       
                         <asp:FileUpload ID="urlServicio" runat="server" ClientIDMode="static" style="margin-left:150px" onchange="showimagepreview(this)" />
                         <br />
                         <img id="uploadFile" style="max-width: 50%; max-height: 50%;" src="#" alt="" />

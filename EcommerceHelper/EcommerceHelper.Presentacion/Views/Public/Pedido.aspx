@@ -114,8 +114,8 @@
 
  
     <div style="margin-left:160px" >
-        <asp:Button ID="Continuar" runat="server"  ClientIDMode="Static"  OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 75px; background-color:cadetblue " />
-    <asp:Button ID="IrADirecciones" runat="server"  OnClick="btnIrADirecciones_Click"  class="btn btn-lg btn-default  " style="position: fixed; margin-left: 275px; background-color:cadetblue " />     
+        <asp:Button ID="Continuar" runat="server"  ClientIDMode="Static"  OnClick="BtnContinuar_Click"  class="btn btn-lg btn-default  " style=" margin-left: 75px; background-color:cadetblue " />
+    <asp:Button ID="IrADirecciones" runat="server"  OnClick="btnIrADirecciones_Click"  class="btn btn-lg btn-default  " style=" margin-left: 275px; background-color:cadetblue " />     
    </div>
   
     <style>

@@ -132,7 +132,7 @@ namespace EcommerceHelper.Presentacion.Views.Public
                 smtp.EnableSsl = true;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Credentials = new NetworkCredential(correoAdministrador, contraseniaAdministrador);
-                smtp.Timeout = 20000;
+                smtp.Timeout = 200000;
 
 
             }

@@ -32,21 +32,28 @@
          
                  <legend>
            <asp:Label runat ="server" ID="Nombre" ClientIDMode="Static"></asp:Label> <input style=" width:250px" type="text"  id="txtnombre"  runat="server" class="input"  />
-              
-           <asp:Label runat ="server" ID="Apellido" ClientIDMode="Static"></asp:Label><input  style=" width:250px" type="text"  id="txtapellidos" runat="server"  class="input " /></legend>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtnombre"></asp:RequiredFieldValidator>
+ 
+           <asp:Label runat ="server" ID="Apellido" ClientIDMode="Static"></asp:Label><input  style=" width:250px" type="text"  id="txtapellidos" runat="server"  class="input " />
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtapellidos"></asp:RequiredFieldValidator>
+                 </legend>
     <legend>
-             <asp:Label runat ="server" ID="EtiquetaEmail" ClientIDMode="Static"></asp:Label><input  style="margin-left:15px; width:400px" type="text"  id="txtemail" runat="server"  class="input " /></legend>
+             <asp:Label runat ="server" ID="EtiquetaEmail" ClientIDMode="Static"></asp:Label><input  style="margin-left:15px; width:400px" type="text"  id="txtemail" runat="server"   class="input " />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtemail"></asp:RequiredFieldValidator>
+    </legend>
             <legend>
              <asp:Label runat ="server" ID="Calle" ClientIDMode="Static"></asp:Label> <input  id="txtcalle" runat="server"  style="width:300px; margin-left:20px"/>
-
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtcalle"></asp:RequiredFieldValidator>
          
              <asp:Label runat ="server" ID="Numero" ClientIDMode="Static"></asp:Label><input style="width:80px; margin-left:50px;" id="txtaltura" runat="server" />
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtaltura"></asp:RequiredFieldValidator>
               
              <asp:Label runat ="server" ID="Piso" ClientIDMode="Static"></asp:Label><input style="width:80px; margin-left:50px;" id="txtpiso" runat="server" /></legend>
-    
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ControlToValidate="txtpiso"></asp:RequiredFieldValidator>
          <br />
       
         <textarea style=" width: 800px; height: 150px;" rows="5" cols="50" id="txttexto" runat="server"></textarea>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ControlToValidate="txttexto"></asp:RequiredFieldValidator>
 
 
        
@@ -55,7 +62,7 @@
  <br />
         
    <asp:Button style="margin-left:350px " ID="Aceptar" runat="server" Text="Enviar"  Width="150px" onClick="Enviar_Click"/>
-   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" Text="Cancelar" Width="150px"  OnClick="Cancelar_Click"/>
+   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" Text="Cancelar" Width="150px" CausesValidation="false"  OnClick="Cancelar_Click"/>
    <br />
    <br />
    <br />

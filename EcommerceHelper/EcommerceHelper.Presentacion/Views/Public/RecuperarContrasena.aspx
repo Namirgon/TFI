@@ -37,7 +37,7 @@
    <br />
    <br />
    <asp:Button style="margin-left:200px " ID="Aceptar" runat="server" Text=" Aceptar"  CssClass="form-control" ClientIDMode="Static" Width="150px" OnClick="BtnRecuperar_Click" />
-   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" Text=" Cancelar "  CssClass="form-control" ClientIDMode="Static" Width="150px"  OnClick="BtnCancelar_Click"/>
+   <asp:Button style="margin-left:100px " ID="Cancelar" runat="server" CausesValidation="False"  Text=" Cancelar "   CssClass="form-control" ClientIDMode="Static" Width="150px"   OnClick="BtnCancelar_Click"/>
    <br />
    <br />
    <br />

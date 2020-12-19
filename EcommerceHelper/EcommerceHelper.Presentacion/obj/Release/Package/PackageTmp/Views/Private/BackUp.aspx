@@ -37,19 +37,21 @@
                      <br />     
                      <br />
                     <asp:Label Id="Nombre" ClientIDMode="Static" runat="server" style="color:aliceblue ; font-size: 20px; margin-left:100px; margin-right:20px" />
-                     <asp:TextBox ID="txtNombreArchivo" CssClass="form-control input-md" runat="server" required="required" placeholder=" Ingrese Nombre " Width="260px" ></asp:TextBox><br /><br />
-
-                     <asp:UpdatePanel ID="up1" runat="server">
+                     <asp:TextBox ID="txtNombreArchivo"  runat="server" placeholder=" Ingrese Nombre " Width="260px" ></asp:TextBox><br /><br />
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtNombreArchivo"></asp:RequiredFieldValidator>
+ 
+                    <%-- <asp:UpdatePanel ID="up1" runat="server">
                          <ContentTemplate>
-                                                  
+                                                  --%>
 
                              <asp:Button ID="Aceptar" runat="server" Text="Backup " OnClick="btnUpload_Click1" class="btn btn-primary " style="margin-left:100px" Width="156px" />
-                             <asp:Button ID="Cancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" style="margin-left:20px" class="btn btn-primary" Width="157px"/>
-                         </ContentTemplate>
+                               <asp:Button ID="Cancelar" runat="server" ClientIDMode="Static" OnClick="Cancelar_Click1" style="margin-left:40px" class="btn btn-primary " Width="162px" CausesValidation="false" />
+                          
+                       <%--  </ContentTemplate>
                          <Triggers>
                              <asp:PostBackTrigger ControlID="Aceptar" />
                          </Triggers>
-                     </asp:UpdatePanel>
+                     </asp:UpdatePanel>--%>
                  </div>
             </div>
         </div>

@@ -722,8 +722,8 @@
     <WCFMetadataStorage Include="Connected Services\WSPago\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ReportEmpleados.rdlc" />
-    <EmbeddedResource Include="Reportventas.rdlc" />
+    <Content Include="ReportEmpleados.rdlc" />
+    <Content Include="Reportventas.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

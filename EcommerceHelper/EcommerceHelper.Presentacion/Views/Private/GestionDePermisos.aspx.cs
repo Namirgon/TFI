@@ -117,7 +117,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             string[] unosPermisosTest = new string[] { "GestionPermisos" };
             if (usuarioentidad == null || !this.Master.Autenticar(unosPermisosTest))
             {
-                Response.Redirect("../Public/Default.aspx");
+                Response.Redirect("../Private/MenuAdministracion.aspx");
             }
         }
 

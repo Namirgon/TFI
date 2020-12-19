@@ -123,10 +123,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
                      unServicio.URLimagen= ext;
                     if (ext == ".jpeg" | ext == ".gif" | ext == ".png" | ext ==".jpg")
                     {
-                        urlServicio.SaveAs(Server.MapPath("/Content/Image/ " + urlServicio.FileName));
+                       urlServicio.SaveAs(Server.MapPath("/Content/Image/ " + urlServicio.FileName));
 
                     }
-                    unServicio.URLimagen = urlServicio.FileName;
+                    unServicio.URLimagen = "/Content/Image/ " + urlServicio.FileName;
                 }
 
                 else
@@ -163,7 +163,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
                unServicio.Titulo = txtTitulo.Text  ;
                 unServicio.Descripcion= txtDescripcion.Text  ;
                 unServicio.Precio =decimal.Parse( txtPrecio.Text );
-                unServicio.URLimagen = urlServicio.FileName;
+              
                 if (urlServicio.HasFile)
                 {
                     string ext = System.IO.Path.GetExtension(urlServicio.FileName);
@@ -171,10 +171,10 @@ namespace EcommerceHelper.Presentacion.Views.Private
                    
                     if (ext== ".jpg" | ext == ".gif" | ext ==".png")
                     {
-                        urlServicio.SaveAs("../Content/Image/" + urlServicio.FileName);
+                        urlServicio.SaveAs(Server.MapPath("/Content/Image/ " + urlServicio.FileName));
 
                     }
-                   
+                    unServicio.URLimagen = "/Content/Image/ " + urlServicio.FileName;
                 }
             
                 else
@@ -196,7 +196,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             catch (Exception ex)
             {
 
-
+                throw;
             }
         }
 
@@ -235,10 +235,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                 foreach (Control Control in ListaResultado)
                 {
-                    //if (Control.ID == "CerrarSesion")
-                    //    Control.ID = Control.ID;
-                    //string tipo;
-                    //tipo = Control.GetType().ToString();
+                   
                     foreach (var traduccion in Traducciones)
                     {
 
@@ -246,8 +243,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
 
                         if (Equals(Control.ID, traduccion.NombreDelControl))
                         {
-                            //string tipo;
-                            //tipo = Control.GetType().ToString();
+                           
                             //ESTO SON LOS <a>
                             if (Control is Label lbltradu)
                             {
@@ -299,11 +295,7 @@ namespace EcommerceHelper.Presentacion.Views.Private
             {
                 ListaResultado.Add(Controlobj);
 
-                //if ((Controlobj) is System.Web.UI.WebControls.DropDownList)
-                //{
-                //    RecorrerDropDown(((System.Web.UI.WebControls.DropDownList)Controlobj));
-                //}
-
+               
 
                 if (Controlobj.Controls.Count > 0)
                 {

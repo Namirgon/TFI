@@ -71,8 +71,10 @@ namespace EcommerceHelper.Presentacion.Shared
             idiomaEntidad = _IdiomaBLL.FindAll();
             ddlidioma.DataSource = idiomaEntidad;
             ddlidioma.DataValueField = "IdIdioma";
-            ddlidioma.DataTextField = "Descripcion";
+           ddlidioma.DataTextField = "Descripcion";
             ddlidioma.DataBind();
+
+           
 
         }
 
